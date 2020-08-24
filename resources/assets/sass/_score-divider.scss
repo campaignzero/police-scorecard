@@ -1,0 +1,57 @@
+.score-divider-full {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+
+    &::before {
+        content: '';
+        width: 50%;
+        height: 40px;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &.grade-a {
+        &::before {
+            background-color: $grade-a;
+        }
+    }
+
+    &.grade-b {
+        &::before {
+            background-color: $grade-b;
+        }
+    }
+
+    &.grade-c {
+        &::before {
+            background-color: $grade-c;
+        }
+    }
+
+    &.grade-d {
+        &::before {
+            background-color: $grade-d;
+        }
+    }
+
+    &.grade-f {
+        &::before {
+            background-color: $grade-f;
+        }
+    }
+
+    &.grade-f-minus {
+        &::before {
+            background-color: $grade-f-minus;
+        }
+    }
+
+    &.grade-incomplete {
+        &::before {
+            background-color: $grade-incomplete;
+        }
+    }
+}

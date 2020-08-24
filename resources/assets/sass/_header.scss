@@ -1,0 +1,55 @@
+.header {
+    height: 120px;
+
+    .content {
+        height: 120px;
+    }
+
+    .logo {
+        position: relative;
+        top: 33px;
+        left: 25px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 300;
+        font-size: 28px;
+        word-break: break-word;
+        width: 150px;
+        display: inline-block;
+        line-height: 0.96;
+    }
+
+    #mobile-toggle {
+        display: none;
+    }
+
+    #menu {
+        float: right;
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            line-height: 110px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                color: #FFF;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: $font-default;
+                letter-spacing: 1px;
+                padding: 20px 0;
+                transition: color 0.25s;
+
+                &:hover, &.active {
+                    color: #c4e2ff;
+                }
+            }
+        }
+    }
+}

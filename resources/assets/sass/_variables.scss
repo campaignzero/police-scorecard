@@ -1,0 +1,59 @@
+$color-black: #000000;
+$color-dk-gray: #5a6f83;
+$color-green-bkgrd: #1f8234;
+$color-green: #7cc381;
+$color-lt-gray: #aab8c5;
+$color-lt-green-bkgrd: #537c15;
+$color-lt-green: #a9c37c;
+$color-ltlt-gray: #f3f4f6;
+$color-md-grayblue: #5a6f83;
+$color-orange-bkgrd: #9e6711;
+$color-orange: #dca146;
+$color-red-bkgrd: #b02424;
+$color-red-orange-bkgrd: #c14923;
+$color-red-orange: #dc6a46;
+$color-red: #dc4646;
+$color-updated-grayblue: #57708a;
+$color-white: #ffffff;
+$color-yellow-bkgrd: #717b02;
+$color-yellow: #d5ce71;
+
+
+$grade-a: $color-green-bkgrd;
+$grade-b: $color-lt-green-bkgrd;
+$grade-c: $color-yellow-bkgrd;
+$grade-d: $color-orange-bkgrd;
+$grade-f: $color-red-orange-bkgrd;
+$grade-f-minus: $color-red-bkgrd;
+$grade-incomplete: $color-md-grayblue;
+
+/* Old Colors */
+
+$primary-gray: #464648;
+$primary-orange: #F19975;
+$primary-green: #a7cc84;
+$primary-yellow: #D8BD26;
+$primary-blue: #5a6f83;
+$primary-light-gray: #F2F4F6;
+
+$grade-light-green: $color-green-bkgrd;
+$grade-green: $color-lt-green-bkgrd;
+$grade-yellow: $color-yellow-bkgrd;
+$grade-orange: $color-orange-bkgrd;
+$grade-red: $color-red-bkgrd;
+
+$text-black: $primary-gray;
+$text-white: #FFFFFF;
+$text-blue: $primary-blue;
+
+$border-color: #EFEFEF;
+
+$bp-max-width: 940px;
+
+$font-default: 11px;
+$font-header-large: 24px;
+$font-header: 22px;
+$font-large: 18px;
+$font-paragraph: 16px;
+$font-medium: 10px;
+$font-small: 8px;

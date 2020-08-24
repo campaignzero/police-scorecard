@@ -1,0 +1,211 @@
+/* RESPONSIVE DESKTOP */
+@media screen and (min-width: $bp-max-width) {
+    .left {
+        table {
+            a:focus::before {
+                content: "";
+                width: 100%;
+                left: 0;
+                top: 0;
+                height: 100%;
+            }
+        }
+    }
+
+    .right {
+        table {
+            a:focus::before {
+                content: "";
+                width: calc(100% + 4px);
+                left: -4px;
+                top: 0;
+                height: 100%;
+            }
+        }
+    }
+
+    .header {
+        .logo {
+            left: 0;
+        }
+    }
+
+    .hide-desktop {
+        display: none;
+    }
+
+    .section.hero.report {
+        .buttons {
+            text-align: left;
+        }
+    }
+
+    .section.hero.home {
+        .buttons {
+            text-align: center;
+        }
+    }
+
+    .section-header {
+        font-size: $font-header;
+        position: relative;
+
+        .source-link-wrapper {
+            text-align: right;
+            margin-top: 12px !important;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .tooltip {
+            position: relative !important;
+            margin-left: 4px !important;
+            top: 0 !important;
+        }
+
+        .results-info {
+            position: absolute !important;
+            right: 24px !important;
+            top: 12px !important;
+        }
+
+        h1.title {
+            background: white;
+            color: $color-md-grayblue;
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 500;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 60px;
+            position: absolute;
+            text-transform: uppercase;
+            vertical-align: bottom;
+            z-index: 10;
+
+            &::after {
+                content: '';
+                width: 28px;
+                height: 28px;
+                background-color: white;
+                transform: rotate(45deg);
+                position: absolute;
+                z-index: 0;
+                top: 6px;
+                right: -14px;
+            }
+        }
+
+        .score-divider {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            color: white;
+            height: 40px;
+            width: 100%;
+            margin: 0 auto;
+            line-height: 40px;
+            vertical-align: top;
+            position: relative;
+            z-index: 2;
+            text-align: right;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 40px;
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 0;
+            }
+
+            .section-label {
+                opacity: 0.7;
+                font-size: 16px;
+                line-height: 40px;
+                vertical-align: top;
+                padding-right: 8px;
+                z-index: 30;
+                position: relative;
+            }
+
+            .section-score {
+                font-size: 20px;
+                line-height: 40px;
+                vertical-align: top;
+                z-index: 30;
+                position: relative;
+            }
+
+            .stats-change.tooltip,
+            .grade-arrow span,
+            .grade-arrow small {
+                color: #FFF !important;
+            }
+
+            .stats-change.tooltip {
+                top: -2px !important;
+                z-index: 30;
+                position: relative;
+            }
+
+            &.grade-a {
+                background-color: $grade-a;
+
+                &::after {
+                    background-color: $grade-a;
+                }
+            }
+
+            &.grade-b {
+                background-color: $grade-b;
+
+                &::after {
+                    background-color: $grade-b;
+                }
+            }
+
+            &.grade-c {
+                background-color: $grade-c;
+
+                &::after {
+                    background-color: $grade-c;
+                }
+            }
+
+            &.grade-d {
+                background-color: $grade-d;
+
+                &::after {
+                    background-color: $grade-d;
+                }
+            }
+
+            &.grade-f {
+                background-color: $grade-f;
+
+                &::after {
+                    background-color: $grade-f;
+                }
+            }
+
+            &.grade-f-minus {
+                background-color: $grade-f-minus;
+
+                &::after {
+                    background-color: $grade-f-minus;
+                }
+            }
+
+            &.grade-incomplete {
+                background-color: $grade-incomplete;
+
+                &::after {
+                    background-color: $grade-incomplete;
+                }
+            }
+        }
+    }
+}

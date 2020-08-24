@@ -1,0 +1,19 @@
+@keyframes pulse {
+    from {
+        width: 30px;
+        height: 30px;
+        transform: translate3d(-15px, -15px, 0);
+    }
+
+    50% {
+        width: 42px;
+        height: 42px;
+        transform: translate3d(-21px, -21px, 0);
+    }
+
+    to {
+        width: 30px;
+        height: 30px;
+        transform: translate3d(-15px, -15px, 0);
+    }
+}

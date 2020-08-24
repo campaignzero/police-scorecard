@@ -1,0 +1,399 @@
+#state-map-layer,
+#usa-map-layer {
+    width: 100%;
+    height: 340px;
+    margin: 0;
+    display: block;
+    position: relative;
+}
+
+#map-loading {
+    background: rgba(255, 255, 255, 0.85);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 24px;
+    color: #464648;
+}
+
+
+
+text.highcharts-credits {
+    display: none;
+}
+
+svg.highcharts-root {
+    overflow: visible;
+
+    path.highcharts-point {
+        stroke: #444;
+        stroke-width: 0.25px;
+    }
+}
+
+.highcharts-container {
+    overflow: visible !important;
+}
+
+.highcharts-label.highcharts-data-label {
+    display: none !important;
+}
+
+.highcharts-mappoint-series {
+    &.highcharts-series-8 {
+        image {
+            filter: url(#drop-shadow)
+        }
+    }
+}
+
+.highcharts-map-series path {
+    fill: #FFF;
+    transition: fill 0.25s;
+
+    &.highcharts-color-1,
+    &.highcharts-color-2,
+    &.highcharts-color-3,
+    &.highcharts-color-4,
+    &.highcharts-color-5,
+    &.highcharts-color-6,
+    &.highcharts-color-7 {
+        fill: #dddee0;
+        stroke: transparent;
+    }
+
+    /* Grade Incomplete */
+    &.highcharts-color-1:hover {
+        fill: $grade-incomplete !important;
+        stroke: $grade-incomplete !important;
+    }
+
+    &.highcharts-color-1.active,
+    &.highcharts-color-1.active:hover {
+        fill: $grade-incomplete !important;
+        stroke: $grade-incomplete!important;
+    }
+
+    /* Grade F Minus */
+    &.highcharts-color-2:hover {
+        fill: $grade-f-minus !important;
+        stroke: $grade-f-minus !important;
+    }
+
+    &.highcharts-color-2.active,
+    &.highcharts-color-2.active:hover {
+        fill: $grade-f-minus !important;
+        stroke: $grade-f-minus !important;
+    }
+
+    /* Grade F */
+    &.highcharts-color-3:hover {
+        fill: $grade-f !important;
+        stroke: $grade-f !important;
+    }
+
+    &.highcharts-color-3.active,
+    &.highcharts-color-3.active:hover {
+        fill: $grade-f !important;
+        stroke: $grade-f !important;
+    }
+
+    /* Grade D */
+    &.highcharts-color-4:hover {
+        fill: $grade-d !important;
+        stroke: $grade-d !important;
+    }
+
+    &.highcharts-color-4.active,
+    &.highcharts-color-4.active:hover {
+        fill: $grade-d !important;
+        stroke: $grade-d !important;
+    }
+
+    /* Grade C */
+    &.highcharts-color-5:hover {
+        fill: $grade-c !important;
+        stroke: $grade-c !important;
+    }
+
+    &.highcharts-color-5.active,
+    &.highcharts-color-5.active:hover {
+        fill: $grade-c !important;
+        stroke: $grade-c !important;
+    }
+
+    /* Grade B */
+    &.highcharts-color-6:hover {
+        fill: $grade-b !important;
+        stroke: $grade-b !important;
+    }
+
+    &.highcharts-color-6.active,
+    &.highcharts-color-6.active:hover {
+        fill: $grade-b !important;
+        stroke: $grade-b !important;
+    }
+
+    /* Grade A */
+    &.highcharts-color-7:hover {
+        fill: $grade-a !important;
+        stroke: $grade-a !important;
+    }
+
+    &.highcharts-color-7.active,
+    &.highcharts-color-7.active:hover {
+        fill: $grade-a !important;
+        stroke: $grade-a !important;
+    }
+}
+
+
+#state-map.police-department {
+    .highcharts-map-series path {
+
+        &.highcharts-color-1,
+        &.highcharts-color-2,
+        &.highcharts-color-3,
+        &.highcharts-color-4,
+        &.highcharts-color-5,
+        &.highcharts-color-6,
+        &.highcharts-color-7 {
+            fill: #FFF;
+        }
+
+        /* Grade Incomplete */
+        &.highcharts-color-1:hover {
+            fill: $grade-incomplete !important;
+            stroke: $grade-incomplete !important;
+        }
+
+        /* Grade F Minus */
+        &.highcharts-color-2:hover {
+            fill: $grade-f-minus !important;
+            stroke: $grade-f-minus !important;
+        }
+
+        /* Grade F */
+        &.highcharts-color-3:hover {
+            fill: $grade-f !important;
+            stroke: $grade-f !important;
+        }
+
+        /* Grade D */
+        &.highcharts-color-4:hover {
+            fill: $grade-d !important;
+            stroke: $grade-d !important;
+        }
+
+        /* Grade C */
+        &.highcharts-color-5:hover {
+            fill: $grade-c !important;
+            stroke: $grade-c !important;
+        }
+
+        /* Grade B */
+        &.highcharts-color-6:hover {
+            fill: $grade-b !important;
+            stroke: $grade-b !important;
+        }
+
+        /* Grade A */
+        &.highcharts-color-7:hover {
+            fill: $grade-a !important;
+            stroke: $grade-a !important;
+        }
+    }
+}
+
+#static-map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &.police-department {
+        background: url('/images/maps/nationwide-police-desktop.png') center center no-repeat;
+        background-size: contain;
+    }
+
+    &.sheriff {
+        background: url('/images/maps/nationwide-sheriff-desktop.png') center center no-repeat;
+        background-size: contain;
+    }
+}
+
+#state-map,
+#usa-map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: visible !important;
+
+    &.police-department {
+        svg.highcharts-root path.highcharts-point {
+            stroke: #444;
+            stroke-width: 0.25px;
+        }
+
+        .highcharts-map-series {
+            path.highcharts-color-1,
+            path.highcharts-color-2,
+            path.highcharts-color-3,
+            path.highcharts-color-4,
+            path.highcharts-color-5,
+            path.highcharts-color-6,
+            path.highcharts-color-7 {
+                fill: #f7f7f7;
+            }
+        }
+
+        /* Grade Incomplete */
+        .highcharts-halo.highcharts-color-1 {
+            stroke: $grade-incomplete !important;
+        }
+
+        /* Grade F Minus */
+        .highcharts-halo.highcharts-color-2 {
+            stroke: $grade-f-minus !important;
+        }
+
+        /* Grade F */
+        .highcharts-halo.highcharts-color-3 {
+            stroke: $grade-f !important;
+        }
+
+        /* Grade D */
+        .highcharts-halo.highcharts-color-4 {
+            stroke: $grade-d !important;
+        }
+
+        /* Grade C */
+        .highcharts-halo.highcharts-color-5 {
+            stroke: $grade-c !important;
+        }
+
+        /* Grade B */
+        .highcharts-halo.highcharts-color-6 {
+            stroke: $grade-b !important;
+        }
+
+        /* Grade A */
+        .highcharts-halo.highcharts-color-7 {
+            stroke: $grade-a !important;
+        }
+    }
+
+    &.sheriff {
+        svg.highcharts-root path.highcharts-point {
+            stroke: #444;
+            stroke-width: 0.25px;
+        }
+
+        .highcharts-halo {
+            display: none !important;
+        }
+    }
+}
+
+#state-map-shadow,
+#usa-map-shadow {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    &.police-department {
+        svg.highcharts-root path.highcharts-point {
+            stroke: #AAA;
+            stroke-width: 3;
+        }
+    }
+
+    &.sheriff {
+        svg.highcharts-root path.highcharts-point {
+            stroke: #AAA;
+            stroke-width: 3;
+        }
+    }
+}
+
+.highcharts-tooltip {
+    &.highcharts-color-1 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-dk-gray;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-2 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-red-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-3 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-red-orange-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-4 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-orange-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-5 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-yellow-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-6 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-lt-green-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+
+    &.highcharts-color-7 {
+        path.highcharts-label-box.highcharts-tooltip-box {
+            fill: $color-green-bkgrd;
+            stroke: rgb(255, 255, 255);
+            stroke-opacity: 0;
+            stroke-width: 0;
+        }
+    }
+}
+
+svg.highcharts-root .current-marker image {
+    animation: 1.25s ease-in-out 0s 3 pulse;
+}

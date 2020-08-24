@@ -1,2 +1,25 @@
-# police-scorecard
-Nationwide Police Scorecard
+Police Scorecard
+===
+
+[![Build Status](https://circleci.com/gh/campaignzero/police-scorecard/tree/master.svg?style=shield)](https://circleci.com/gh/campaignzero/police-scorecard/tree/master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/campaignzero/police-scorecard/master/LICENSE)  [![GitHub contributors](https://img.shields.io/github/contributors/campaignzero/police-scorecard.svg)](https://github.com/campaignzero/police-scorecard/graphs/contributors)
+
+![Website Image](docs/img/website.jpg "Website Image")
+
+
+Developer Overview
+---
+
+1. [Downloading Website](docs/downloading-website.md)
+2. [Getting Setup with Docker ( Recommended )](docs/getting-setup-with-docker.md)
+3. [Development Scripts](docs/development-scripts.md)
+4. [Unit Testing and Code Coverage Reports](docs/unit-testing-and-code-coverage-reports.md)
+
+#### Additional Setup without Docker
+
+* [Getting Setup without Docker](docs/getting-setup-without-docker.md)
+
+#### Additional Information
+
+* [Remote Device Testing](docs/device-testing.md)
+* [Laravel Docs](https://laravel.com/docs/7.x)
+* [Troubleshooting](docs/troubleshooting.md)

@@ -1,0 +1,150 @@
+{
+    "name": "police-scorecard",
+    "version": "1.0.0",
+    "description": "Nationwide Police Scorecard",
+    "author": "Peter Schmalfeldt <me@peterschmalfeldt.com>",
+    "keywords": [
+        "CampaignZero",
+        "Nationwide",
+        "Police",
+        "Scorecard"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "start": "php artisan serv",
+        "test-lint": "./tests/commands/phplint.sh",
+        "test-unit": "./vendor/bin/phpunit",
+        "test-coverage": "./vendor/bin/phpunit -d memory_limit=1024M --log-junit 'reports/unitreport.xml' --coverage-html 'reports/clover_html' tests/",
+        "test": "npm run test-lint && npm run test-unit",
+        "clean": "rm -fr ./public/css && rm -fr ./public/fonts && rm -fr ./public/images && rm -fr ./public/js && rm -fr ./public/san-diego",
+        "clear-cache": "php artisan cache:clear && php artisan route:clear && php artisan config:clear && php artisan view:clear && php artisan config:cache",
+        "dev": "npm run clean && npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "opcache:clear": "php artisan opcache:clear",
+        "opcache:compile": "php artisan opcache:compile",
+        "opcache:config": "php artisan opcache:config",
+        "opcache:status": "php artisan opcache:status",
+        "docker:build": "docker-compose up -d --build",
+        "docker:up": "docker-compose up -d",
+        "docker:stop": "docker-compose stop",
+        "docker:restart": "docker-compose restart",
+        "docker:logs": "docker-compose logs",
+        "docker:down": "docker-compose down",
+        "docker:clean": "docker-compose exec app php artisan cache:clear && docker-compose exec app php artisan route:clear && docker-compose exec app php artisan config:clear && docker-compose exec app php artisan view:clear && docker-compose exec app php artisan config:cache",
+        "docker:opcache:clear": "docker-compose exec app php artisan opcache:clear",
+        "docker:opcache:compile": "docker-compose exec app php artisan opcache:compile --force",
+        "docker:opcache:config": "docker-compose exec app php artisan opcache:config",
+        "docker:opcache:status": "docker-compose exec app php artisan opcache:status",
+        "help": "node node_modules/npm-scripts-help"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/campaignzero/police-scorecard.git"
+    },
+    "author": "",
+    "bugs": {
+        "url": "https://github.com/campaignzero/police-scorecard/issues"
+    },
+    "homepage": "https://github.com/campaignzero/police-scorecard#readme",
+    "devDependencies": {
+        "axios": "^0.19",
+        "cross-env": "^7.0",
+        "laravel-mix": "^5.0.1",
+        "laravel-mix-versionhash": "^1.1.3",
+        "lodash": "^4.17.13",
+        "npm-scripts-help": "^0.8.0",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "scriptshelp": {
+        "help-message": "Police Scorecard NPM Script Commands:",
+        "start": {
+            "description": "Start PHP Application in Browser"
+        },
+        "test-lint": {
+            "description": "Check PHP Code for Invalid Markup"
+        },
+        "test-unit": {
+            "description": "Run PHP Unit Tests"
+        },
+        "test-coverage": {
+            "description": "Generate Code Coverage Reports into ./reports/clover_html/"
+        },
+        "test": {
+            "description": "Runs `npm run test-lint` and `npm run test-unit`"
+        },
+        "clean": {
+            "description": "Remove Generated Static Assets"
+        },
+        "clear-cache": {
+            "description": "Clear PHP Application Cache"
+        },
+        "dev": {
+            "description": "Build Website for Development"
+        },
+        "watch": {
+            "description": "Build Website for Development and Watch for Live Changes"
+        },
+        "hot": {
+            "description": "Build Website for Development and Enable Hot Module Replacement"
+        },
+        "production": {
+            "description": "Build Website for Production"
+        },
+        "opcache:clear": {
+            "description": "Clear PHP OPCache"
+        },
+        "opcache:compile": {
+            "description": "Compile PHP Scripts Using OPCache"
+        },
+        "opcache:config": {
+            "description": "Output OPCache Config Settings"
+        },
+        "opcache:status": {
+            "description": "Output OPCache Status Results"
+        },
+        "docker:build": {
+            "description": "Tell Docker to Rebuild Docker Containers then Spin them Up"
+        },
+        "docker:up": {
+            "description": "Tell Docker to Start Docker Services"
+        },
+        "docker:stop": {
+            "description": "Tell Docker to Stop"
+        },
+        "docker:restart": {
+            "description": "Tell Docker to Restart"
+        },
+        "docker:logs": {
+            "description": "Tell Docker to View output from Docker containers"
+        },
+        "docker:down": {
+            "description": "Tell Docker to Stop and remove Docker Containers, Networks, Images & Volumes"
+        },
+        "docker:clean": {
+            "description": "Tell Docker to Clear PHP Application Cache"
+        },
+        "docker:opcache:clear": {
+            "description": "Tell Docker to Clear PHP OPCache"
+        },
+        "docker:opcache:compile": {
+            "description": "Tell Docker to Compile PHP Scripts Using OPCache"
+        },
+        "docker:opcache:config": {
+            "description": "Tell Docker to Output OPCache Config Settings"
+        },
+        "docker:opcache:status": {
+            "description": "Tell Docker to Output OPCache Status Results"
+        },
+        "help": {
+            "description": "Generates List of Scripts you can run"
+        }
+    }
+}
