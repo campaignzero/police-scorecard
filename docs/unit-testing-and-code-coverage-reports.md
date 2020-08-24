@@ -9,7 +9,6 @@ Unit tests are run with [PHPUnit](https://phpunit.de). All unit tests exist in t
 
 ```bash
 npm run test
-
 ```
 
 #### Code Coverage

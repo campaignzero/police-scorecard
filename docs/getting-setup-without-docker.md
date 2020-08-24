@@ -6,7 +6,7 @@ Getting Setup without Docker
 Requirements
 ---
 
-* [PHP 7.2+](http://php.net/manual/en/install.php)
+* [PHP 7.3+](http://php.net/manual/en/install.php)
 * [Composer](https://getcomposer.org)
 * [Node](https://nodejs.org)
 
@@ -33,13 +33,13 @@ Now that we have all the dependencies installed, we can build the website:
 #### Build for Development
 
 ```bash
-yarn run dev
+npm run dev
 ```
 
 #### Build for Production
 
 ```bash
-yarn run production
+npm run prod
 ```
 
 

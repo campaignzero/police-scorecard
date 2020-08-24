@@ -3,8 +3,14 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-label" id="dialog">
         <div id="modal-header-tabs">
             <button id="modal-close" {!! trackData('Nav', 'Modal' , 'Close' ) !!}>✖</button>
+
+            @if (isset($stateData['police-department']) && !empty($stateData['police-department']))
             <button class="show-button{{ $type === 'police-department' ? ' active' : '' }}" id="show-police" {!! trackData('Nav', 'Modal' , 'Show Police' ) !!}>Police</button>
+            @endif
+
+            @if (isset($stateData['sheriff']) && !empty($stateData['sheriff']))
             <button class="show-button{{ $type === 'sheriff' ? ' active' : '' }}" id="show-sheriff" {!! trackData('Nav', 'Modal' , 'Show Sheriffs' ) !!}>Sheriffs</button>
+            @endif
         </div>
 
         <div id="modal-content">
@@ -14,6 +20,7 @@
 
             @if ($stateData)
             <ul id="city-select" class="{{ $type }}">
+                @if (isset($stateData['police-department']) && !empty($stateData['police-department']))
                 @php usort($stateData['police-department'], function($a, $b) { return strcmp($a['agency_name'], $b['agency_name']); }); @endphp
                 @foreach($stateData['police-department'] as $index => $department)
                 <li class="police-department">
@@ -22,7 +29,9 @@
                     </a>
                 </li>
                 @endforeach
+                @endif
 
+                @if (isset($stateData['sheriff']) && !empty($stateData['sheriff']))
                 @php usort($stateData['sheriff'], function($a, $b) { return strcmp($a['agency_name'], $b['agency_name']); }); @endphp
                 @foreach($stateData['sheriff'] as $index => $department)
                 <li class="sheriff">
@@ -31,6 +40,7 @@
                     </a>
                 </li>
                 @endforeach
+                @endif
             </ul>
             @endif
 

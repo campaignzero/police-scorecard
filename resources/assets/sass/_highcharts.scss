@@ -329,6 +329,11 @@ svg.highcharts-root {
     }
 }
 
+#state-map, #state-map-shadow {
+    height: 90%;
+    padding-top: 10%;
+}
+
 .highcharts-tooltip {
     &.highcharts-color-1 {
         path.highcharts-label-box.highcharts-tooltip-box {

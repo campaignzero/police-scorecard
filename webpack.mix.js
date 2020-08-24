@@ -5,7 +5,7 @@ const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 const dev = !mix.inProduction();
-const sassOptions = dev ? null : { outputStyle: 'compressed' };
+const sassOptions = dev ? null : { sassOptions: { outputStyle: 'compressed' } };
 
 /**
  * Copy Static Asset Resources
