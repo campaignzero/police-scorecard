@@ -209,6 +209,17 @@
             opacity: 0.75;
         }
     }
+
+    .mapboxgl-ctrl-logo {
+        width: 23px;
+        overflow: hidden;
+        transition: width 0.15s;
+
+        &:hover, &:focus {
+            width: 88px;
+            overflow: unset;
+        }
+    }
 }
 
 @media screen and (max-width: $bp-max-width) {
