@@ -594,7 +594,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         var alaskaOverlay = new mapboxgl.Map({
             center: mapAlaska.center,
             container: 'alaska-overlay',
-            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f',
+            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f?fresh=true',
             interactive: false,
             zoom: 0.6
         });
@@ -602,7 +602,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         var hawaiiOverlay = new mapboxgl.Map({
             center: mapHawaii.center,
             container: 'hawaii-overlay',
-            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f',
+            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f?fresh=true',
             interactive: false,
             zoom: 3
         });
