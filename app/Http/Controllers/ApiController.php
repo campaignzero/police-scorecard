@@ -48,7 +48,7 @@ class ApiController extends Controller
 
         if ($cached_response) {
             $api_data = json_decode($cached_response, true);
-            return $api_data['data'];
+            return isset($api_data['data']) ? $api_data['data'] : $api_data;
         } else {
             $apiRequest = $this->client->get($endpoint);
             $response = $apiRequest->getBody()->getContents();
@@ -56,11 +56,11 @@ class ApiController extends Controller
 
             if (!$api_data) {
                 abort(403, 'Invalid Request: ' . $endpoint);
-            } else if ($api_data['errors'] && count($api_data['errors']) > 0) {
+            } else if (isset($api_data['errors']) && count($api_data['errors']) > 0) {
                 abort(403, $api_data['errors'][0]);
             } else {
                 Cache::add($cache_key, $response, config('api.cache_expire'));
-                return $api_data['data'];
+                return isset($api_data['data']) ? $api_data['data'] : $api_data;
             }
         }
     }
@@ -125,5 +125,20 @@ class ApiController extends Controller
      */
     public function fetchStateData($state) {
         return $this->makeRequest("scorecard/state/{$state}");
+    }
+
+    /**
+     * Fetch Data for Specific State
+     *
+     * <code>
+     * $api = new ApiController();
+     * $geojson = api->fetchNationwideMapData('sheriff');
+     * </code>
+     *
+     * @param $type
+     * @return mixed
+     */
+    public function fetchNationwideMapData($type) {
+        return $this->makeRequest("/scorecard/map/us/{$type}?format=geojson");
     }
 }

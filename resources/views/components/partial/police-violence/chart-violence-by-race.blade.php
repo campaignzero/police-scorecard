@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <p class="note" style="margin-top: 0">^&nbsp; More Racial Bias in Arrests and Deadly Force than {{ num((1 - intval($scorecard['report']['percentile_overall_disparity_index'])), 0, '%', true) }} of Depts &nbsp;&nbsp;</p>
+    <p class="note" style="margin-top: 0">^&nbsp; More Racial Disparities in Arrests and Deadly Force than {{ num((1 - intval($scorecard['report']['percentile_overall_disparity_index'])), 0, '%', true) }} of Depts &nbsp;&nbsp;</p>
 
     <p class="source-link-wrapper">
         Source:

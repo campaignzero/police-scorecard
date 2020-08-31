@@ -9,17 +9,21 @@ class Hero extends Component
     public $type;
     public $location;
     public $total;
+    public $totalPolice;
+    public $totalSheriff;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type = 'police-department', $location = null, $total = 0)
+    public function __construct($type = 'police-department', $location = null, $total = 0, $totalPolice = 0, $totalSheriff = 0)
     {
         $this->type = $type;
         $this->location = $location;
         $this->total = $total;
+        $this->totalPolice = $totalPolice;
+        $this->totalSheriff = $totalSheriff;
     }
 
     /**

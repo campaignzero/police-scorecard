@@ -1,0 +1,13 @@
+/* TEAM */
+
+Project Manager: Samuel Sinyangwe
+Website: https://twitter.com/samswey
+From: New York, NY, USA
+
+Designer: Emily Biondo
+Website: https://emilybiondodesign.com
+From: Washington, DC, USA
+
+Software Engineer: Peter Schmalfeldt
+Website: https://peterschmalfeldt.com
+From: St. Petersburg, FL, USA

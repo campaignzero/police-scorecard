@@ -29,7 +29,7 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
         </h2>
 
         <p>
-            ^ Compared to other {{ $type === "sheriff" ? "sheriff's" : "police" }} depts nationwide in {{ $type === 'sheriff' ? 'counties' : 'cities' }} with over 250k residents.
+            ^ Compared to other {{ $type === "sheriff" ? "sheriff's" : "police" }} depts nationwide in {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }} residents.
         </p>
     </div>
 

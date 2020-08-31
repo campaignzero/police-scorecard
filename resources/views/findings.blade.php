@@ -143,4 +143,6 @@
             </div>
         </div>
     </div>
+
+    <x-partial.footer :states="$states" />
 @endsection

@@ -3,7 +3,7 @@
  * (c) 2020 JoinCampaignZero.org
  * License: https://github.com/campaignzero/police-scorecard/blob/master/README
  */
-window.PoliceScorecard = {
+window.PoliceScorecard = window.PoliceScorecard || {
     /**
      * Developer Flags
      */

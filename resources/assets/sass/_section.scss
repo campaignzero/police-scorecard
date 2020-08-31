@@ -1447,7 +1447,7 @@
                 }
 
                 &::before {
-                    content: "NONE REPORTED";
+                    content: "NO COMPLAINTS";
                     position: absolute;
                     right: 29px;
                     margin-top: 6px;
@@ -1469,7 +1469,7 @@
                 }
 
                 &::before {
-                    content: "INCOMPLETE";
+                    content: "NONE REPORTED";
                     position: absolute;
                     right: 37px;
                     margin-top: 6px;
@@ -1515,7 +1515,7 @@
             margin-top: 50px;
         }
 
-        h2 {
+        h1, h2 {
             color: #FFF;
             font-family: 'Barlow Condensed', sans-serif;
             text-transform: uppercase;

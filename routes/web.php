@@ -11,6 +11,7 @@ Route::get('/', function () {
     $grades = getNationalGrades($states, 'police-department');
     $scorecard = getNationalSummary($states);
     $total = getNationalTotal($states);
+    $totalPolice = getNationalPoliceTotal($states);
 
     return view('home', [
         'description' => 'The Police Scorecard evaluates police departments based on quantitative data on arrests, use of force, accountability and other policing issues to make progress towards more just and equitable policing outcomes.',
@@ -20,16 +21,28 @@ Route::get('/', function () {
         'states' => $states,
         'title' => 'Police Scorecard',
         'total' => $total,
+        'totalPolice' => $totalPolice,
+        'totalSheriff' => 0,
         'type' => 'police-department'
     ]);
 });
 
 Route::get('/findings', function () {
-    return view('findings');
+    $api = new ApiController();
+    $states = $api->fetchStates();
+
+    return view('findings', [
+        'states' => $states
+    ]);
 });
 
 Route::get('/sandiego', function () {
-    return view('sandiego');
+    $api = new ApiController();
+    $states = $api->fetchStates();
+
+    return view('sandiego', [
+        'states' => $states
+    ]);
 });
 
 Route::get('/admin', function () {
@@ -60,6 +73,7 @@ Route::get('/us', function () {
     $grades = getNationalGrades($states, 'police-department');
     $scorecard = getNationalSummary($states);
     $total = getNationalTotal($states);
+    $totalPolice = getNationalPoliceTotal($states);
 
     return view('home', [
         'description' => 'The Police Scorecard evaluates police departments based on quantitative data on arrests, use of force, accountability and other policing issues to make progress towards more just and equitable policing outcomes.',
@@ -69,6 +83,8 @@ Route::get('/us', function () {
         'states' => $states,
         'title' => 'Police Scorecard',
         'total' => $total,
+        'totalPolice' => $totalPolice,
+        'totalSheriff' => 0,
         'type' => 'police-department'
     ]);
 });
@@ -79,6 +95,7 @@ Route::get('/us/police-department', function () {
     $grades = getNationalGrades($states, 'police-department');
     $scorecard = getNationalSummary($states);
     $total = getNationalTotal($states);
+    $totalPolice = getNationalPoliceTotal($states);
 
     return view('home', [
         'description' => 'The Police Scorecard evaluates police departments based on quantitative data on arrests, use of force, accountability and other policing issues to make progress towards more just and equitable policing outcomes.',
@@ -88,6 +105,8 @@ Route::get('/us/police-department', function () {
         'states' => $states,
         'title' => 'Police Scorecard',
         'total' => $total,
+        'totalPolice' => $totalPolice,
+        'totalSheriff' => 0,
         'type' => 'police-department'
     ]);
 });
@@ -98,6 +117,7 @@ Route::get('/us/sheriff', function () {
     $grades = getNationalGrades($states, 'sheriff');
     $scorecard = getNationalSummary($states);
     $total = getNationalTotal($states);
+    $totalSheriff = getNationalSheriffTotal($states);
 
     return view('home', [
         'description' => 'The Police Scorecard evaluates police departments based on quantitative data on arrests, use of force, accountability and other policing issues to make progress towards more just and equitable policing outcomes.',
@@ -107,6 +127,8 @@ Route::get('/us/sheriff', function () {
         'states' => $states,
         'title' => 'Police Scorecard',
         'total' => $total,
+        'totalPolice' => 0,
+        'totalSheriff' => $totalSheriff,
         'type' => 'sheriff'
     ]);
 });

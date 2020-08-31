@@ -457,6 +457,48 @@ if (!function_exists('getNationalTotal')) {
 }
 
 /**
+ * Get National Police Total
+ *
+ * @param string $states
+ *
+ * @return string
+ */
+if (!function_exists('getNationalPoliceTotal')) {
+    function getNationalPoliceTotal($states) {
+        $total = 0;
+
+        foreach($states as $abbr => $state) {
+            if (!empty($state['police-department'])) {
+                $total += count($state['police-department']);
+            }
+        }
+
+        return num($total);
+    }
+}
+
+/**
+ * Get National Sheriff Total
+ *
+ * @param string $states
+ *
+ * @return string
+ */
+if (!function_exists('getNationalSheriffTotal')) {
+    function getNationalSheriffTotal($states) {
+        $total = 0;
+
+        foreach($states as $abbr => $state) {
+            if (!empty($state['sheriff'])) {
+                $total += count($state['sheriff']);
+            }
+        }
+
+        return num($total);
+    }
+}
+
+/**
  * Get National Map Data
  *
  * @param string $states
