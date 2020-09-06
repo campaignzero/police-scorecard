@@ -3,20 +3,21 @@
 Development Process
 ===
 
-> The following is how our projects are setup, and the workflows in place to help make development easy on everyone.
+> The following is how our projects workflows are in place to help make development easy.
 
 Branch Workflows
 ---
 
 Our workflow consists of five types of branches, each with different roles:
 
-| BRANCH      | EXAMPLE                 | ROLE                                            |
-|:------------|:------------------------|:------------------------------------------------|
-| `master`    | -                       | Production Ready Code                           |
-| `develop`   | -                       | Integration Branch before Merging into `master` |
-| `feature/*` | `feature/mobile-header` | Based on latest `develop` and Feature Specific  |
-| `release/*` | `release/v1.2.3`        | Based on latest `develop` and Release Specific  |
-| `hotfix/*`  | `hotfix/mobile-menu`    | Based on latest `master` and Hotfix Specific    |
+| BRANCH      | EXAMPLE                 | ROLE                                                |
+|:------------|:------------------------|:----------------------------------------------------|
+| `develop`   | -                       | Integration Branch before Merging into `master`     |
+| `master`    | -                       | Production Ready Code                               |
+| `feature/*` | `feature/mobile-header` | Based on latest `develop` and Feature Specific      |
+| `fix/*`     | `fix/123-broken-form`   | Based on latest `develop` and GitHub Issue Specific |
+| `hotfix/*`  | `hotfix/mobile-menu`    | Based on latest `master` and Hotfix Specific        |
+| `release/*` | `release/v1.2.3`        | Based on latest `develop` and Release Specific      |
 
 Here is an example of how code flows through this repository:
 
@@ -28,14 +29,29 @@ Creating New Branches
 Feature
 ---
 
+> Each New Feature should reside in its own `feature/` branch. The branch name should be formatted `feature/feature-name` where `feature-name` is a 1-3 word summary of the new feature.
+
 1. Checkout latest `develop` branch
 2. Pull down the latest changes via `git pull`
 3. Create a new branch with the structure `feature/*`, e.g. `feature/mobile-header`
 4. When you are ready to submit your code, submit a new Pull Request that merges your code into `develop`
 5. Tag your new Pull Request with `Ready for Code Review`
 
+Fix
+---
+
+> Each Bug Fix reported on GitHub should have its own `fix/*` branch.  The branch name should be formatted `fix/###-issue-name` where `###` is the GitHub Issue Number, and `issue-name` is a 1-3 word summary of the issue.
+
+1. Checkout latest `develop` branch
+2. Pull down the latest changes via `git pull`
+3. Create a new branch with the structure `fix/*`, e.g. `fix/123-broken-form`
+4. When you are ready to submit your code, submit a new Pull Request that merges your code into `develop`
+5. Tag your new Pull Request with `Ready for Code Review`
+
 Hotfix
 ---
+
+> Emergency Hotfixes should reside in their own `hotfix/` branch.  The branch name should be formatted `hotfix/hotfix-name` where `hotfix-name` is a 1-3 word summary of the new hotfix.
 
 **NOTE:**  New Hotfix Branches should only be created by the Release Manager.
 
@@ -48,6 +64,8 @@ Hotfix
 Release
 ---
 
+> Each New Release should reside in its own `release/` branch.  The branch name should be formatted `release/v#.#.#` where `v#.#.#` is the next version number to be deployed. Our version numbers use [Semantic Versioning](https://semver.org/), e.g. MAJOR.MINOR.PATCH.
+
 **NOTE:**  New Release Branches should only be created by the Release Manager.
 
 1. Checkout latest `develop` branch
@@ -59,7 +77,7 @@ Release
 Continuous Integration
 ===
 
-We have three Environments, each setup with Continuous Integration and independent URLs for testing.
+We have three Environments, each set up with Continuous Integration and independent URLs for testing.
 
 | ENVIRONMENT | TAG | BRANCH | SOURCE BRANCH |
 |:------------|:----|:-------|:-----|
