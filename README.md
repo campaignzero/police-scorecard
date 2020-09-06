@@ -20,6 +20,7 @@ Developer Overview
 
 #### Additional Information
 
+* [Development Process](docs/development-process.md)
 * [Remote Device Testing](docs/device-testing.md)
 * [Laravel Docs](https://laravel.com/docs/7.x)
 * [Troubleshooting](docs/troubleshooting.md)
