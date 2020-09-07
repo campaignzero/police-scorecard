@@ -1,23 +1,44 @@
-#### Overview:
+Overview
+---
 
-_( a detailed overview of the problem this ticket will solve and the targeted audience )_
+> Overview of Problem and Targeted Users:
+
+TEXT
+
+Details
+---
+
+> Info about the Environment:
+
+* **URL**:
+* **Environment**:
+* **Browser**:
+* **Device**:
+* **Operating System**:
+
+Acceptance Criteria
+---
+
+> Issue will be considered complete when the following criteria are met:
+
+- [ ] TEXT
+
+Steps to Duplicate
+---
+
+> A step by step guide written for a person who might be looking at this for the first time:
+
+1. TEXT
+
+Documentation
+---
+
+> Screenshots, Business Manager Imports, Jira Issues, etc
 
 
-#### Acceptance Criteria:
 
-_( issue will not be considered complete unless this list of criteria is met, e.g. intended usage, expected functionality, specific metrics met, etc. )_
+Dev & QA Notes
+---
 
+> Any additional notes from developers or QA required to complete this issue.
 
-#### Steps to Duplicate _( required for bug reports )_:
-
-_( a step by step guide written for a person who might be looking at this for the first time )_
-
-
-#### System Info _( required for bug reports )_:
-
-_( e.g. "iPhone 6 iOS 8.3" or "OSX 10.10 and Google Chrome Version 44.0.2403.89 (64-bit)" )_
-
-
-#### Relevant Documentation _( optional )_
-
-_( e.g. Screenshots, Github Issues, etc )_
