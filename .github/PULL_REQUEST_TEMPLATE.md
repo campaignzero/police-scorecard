@@ -1,48 +1,33 @@
-#### What does this Pull Request do? ( required )
+Overview:
+---
 
-_write_something_
+TEXT
 
+Reviewer:
+---
 
-#### Where should the reviewer start? ( required )
+> Where should the reviewer start? How to Test? Background Context? etc ( required )
 
-_write_something_
+TEXT
 
+Checklist:
+---
 
-#### How should this be manually tested?  ( required )
+> I have tested each of the following, and they work as expected: ( required )
 
-_write_something_
+- [ ] Meets [Contributing Guide](https://github.com/campaignzero/police-scorecard/blob/develop/.github/CONTRIBUTING.md) Requirements
+- [ ] Pulled in the Latest Code from the `develop` branch
+- [ ] Works on a Desktop / Laptop Device
+- [ ] Works on a Mobile Device
+- [ ] `npm test` Does Not Generate Errors
 
+Documentation:
+---
 
-#### Your Contribution Contains: ( required )
-
-- [ ] New Components
-- [ ] New Documentation
-- [ ] New Unit Tests
-- [ ] Change to Existing Components
-- [ ] Change to Existing Documentation
-- [ ] Change to Existing Unit Tests
-
-
-#### You have tested each of the following, and they work as expected: ( required )
-
-- [ ] `npm test`
-
-
-#### Any background context you want to provide?  ( optional )
-
-_write_something_
+> Screenshots, Attachments, Linked GitHub Issues, etc ( optional )
 
 
-#### What are the relevant GitHub issues? ( optional )
 
-_write_something_
+#### What GIF best describes this PR or how it makes you feel?
 
-
-#### Screenshots ( optional )
-
-_drag_and_drop_here_
-
-
-#### What GIF best describes this PR or how it makes you feel? ( optional )
-
-_drag_and_drop_something_fun_here_
+> Drag & Drop Something Fun Here ( optional )

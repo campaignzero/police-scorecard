@@ -10,14 +10,14 @@ Branch Workflows
 
 Our workflow consists of five types of branches, each with different roles:
 
-| BRANCH      | EXAMPLE                 | ROLE                                                |
-|:------------|:------------------------|:----------------------------------------------------|
-| `develop`   | -                       | Integration Branch before Merging into `master`     |
-| `master`    | -                       | Production Ready Code                               |
-| `feature/*` | `feature/mobile-header` | Based on latest `develop` and Feature Specific      |
-| `fix/*`     | `fix/123-broken-form`   | Based on latest `develop` and GitHub Issue Specific |
-| `hotfix/*`  | `hotfix/mobile-menu`    | Based on latest `master` and Hotfix Specific        |
-| `release/*` | `release/v1.2.3`        | Based on latest `develop` and Release Specific      |
+| BRANCH      | EXAMPLE                     | ROLE                                                |
+|:------------|:----------------------------|:----------------------------------------------------|
+| `develop`   | -                           | Integration Branch before Merging into `master`     |
+| `master`    | -                           | Production Ready Code                               |
+| `feature/*` | `feature/123-mobile-header` | Based on latest `develop` and Feature Specific      |
+| `fix/*`     | `fix/123-broken-form`       | Based on latest `develop` and GitHub Issue Specific |
+| `hotfix/*`  | `hotfix/mobile-menu`        | Based on latest `master` and Hotfix Specific        |
+| `release/*` | `release/v1.2.3`            | Based on latest `develop` and Release Specific      |
 
 Here is an example of how code flows through this repository:
 
@@ -29,11 +29,11 @@ Creating New Branches
 Feature
 ---
 
-> Each New Feature should reside in its own `feature/` branch. The branch name should be formatted `feature/feature-name` where `feature-name` is a 1-3 word summary of the new feature.
+> Each New Feature should reside in its own `feature/` branch. The branch name should be formatted `feature/###-feature-name` where `###` is the GitHub Issue Number, and `feature-name` is a 1-3 word summary of the feature.
 
 1. Checkout latest `develop` branch
 2. Pull down the latest changes via `git pull`
-3. Create a new branch with the structure `feature/*`, e.g. `feature/mobile-header`
+3. Create a new branch with the structure `feature/*`, e.g. `feature/123-mobile-header`
 4. When you are ready to submit your code, submit a new Pull Request that merges your code into `develop`
 5. Tag your new Pull Request with `Ready for Code Review`
 
