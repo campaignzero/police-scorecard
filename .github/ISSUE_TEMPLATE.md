@@ -1,11 +1,9 @@
-Overview
+Overview:
 ---
-
-> Overview of Problem and Targeted Users:
 
 TEXT
 
-Details
+Details:
 ---
 
 > Info about the Environment:
@@ -16,28 +14,28 @@ Details
 * **Device**:
 * **Operating System**:
 
-Acceptance Criteria
+Acceptance Criteria:
 ---
 
 > Issue will be considered complete when the following criteria are met:
 
 - [ ] TEXT
 
-Steps to Duplicate
+Steps to Duplicate:
 ---
 
 > A step by step guide written for a person who might be looking at this for the first time:
 
 1. TEXT
 
-Documentation
+Documentation:
 ---
 
-> Screenshots, Business Manager Imports, Jira Issues, etc
+> Screenshots, Attachments, Linked GitHub Issues, etc
 
 
 
-Dev & QA Notes
+Dev & QA Notes:
 ---
 
 > Any additional notes from developers or QA required to complete this issue.
