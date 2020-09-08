@@ -29,9 +29,7 @@ jobs:
         run: npm run -s test-unit
 
       - name: Clean Up Build Files
-        run: |
-          find . -type f -exec rm {} \;
-          find . -type d -exec rm -R {} \;
+        run: rm -fr ./{*,.*} 2> /dev/null
   deploy:
     name: Deploy to Development
     runs-on: [self-hosted, linux, X64]
