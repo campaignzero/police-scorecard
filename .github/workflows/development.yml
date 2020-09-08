@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   build:
-    name: Build for Test
+    name: Build Application for Testing
     runs-on: [self-hosted, linux, X64]
     steps:
       - name: Check out Repository
@@ -15,11 +15,12 @@ jobs:
       - name: Install Dependencies
         run: |
           composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+          mkdir -p bootstrap/cache
           chmod -R 777 storage bootstrap/cache
           npm install --no-optional
           npm run -s dev
   test:
-    name: Run Tests
+    name: Run Lint & Unit Tests
     runs-on: [self-hosted, linux, X64]
     needs: build
     steps:
