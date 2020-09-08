@@ -28,9 +28,10 @@ jobs:
       - name: Run Unit Tests
         run: npm run -s test-unit
 
-      - name: Clean Up
+      - name: Clean Up Build Files
         run: |
           rm -rf *
+          rm -fr .*
   deploy:
     name: Deploy to Development
     runs-on: [self-hosted, linux, X64]
