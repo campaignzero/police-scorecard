@@ -1,4 +1,4 @@
-name: Police Scorecard Website Development
+name: Police Scorecard - Development
 on:
   push:
     branches:
