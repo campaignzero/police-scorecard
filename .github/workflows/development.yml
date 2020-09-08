@@ -4,34 +4,28 @@ on:
     branches:
       - develop
 jobs:
-  build:
-    name: Build Application for Testing
+  build_and_test:
+    name: Build Application and Run Tests
     runs-on: [self-hosted, linux, X64]
     steps:
       - name: Check out Repository
         uses: actions/checkout@v2
+
       - name: Prepare The Environment
         run: cp .env.ci .env
-      - name: Install Dependencies
-        run: |
-          composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-          mkdir -p bootstrap/cache
-          chmod -R 777 storage bootstrap/cache
-          npm install --no-optional
-          npm run -s dev
-  test:
-    name: Run Lint & Unit Tests
-    runs-on: [self-hosted, linux, X64]
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Tests
-        run: npm test
+
+      - name: Install Composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+      - name: Run Lint Tests
+        run: npm run -s test-lint
+
+      - name: Run Unit Tests
+        run: npm run -s test-unit
   deploy:
     name: Deploy to Development
     runs-on: [self-hosted, linux, X64]
-    needs: [build, test]
+    needs: [build_and_test]
     steps:
-      - uses: actions/checkout@v2
       - name: Trigger Development Deployment
         run: /usr/local/bin/deploy-development
