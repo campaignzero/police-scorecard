@@ -30,8 +30,8 @@ jobs:
 
       - name: Clean Up Build Files
         run: |
-          rm -rf *
-          rm -fr .*
+          find . -type f -exec rm {} \;
+          find . -type d -exec rm -R {} \;
   deploy:
     name: Deploy to Development
     runs-on: [self-hosted, linux, X64]

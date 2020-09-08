@@ -67,6 +67,9 @@
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
     },
+    "pre-commit": [
+        "test"
+    ],
     "scriptshelp": {
         "help-message": "Police Scorecard NPM Script Commands:",
         "start": {
