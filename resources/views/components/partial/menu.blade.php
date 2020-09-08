@@ -15,6 +15,7 @@
                     <li><a href="https://docs.google.com/document/d/11lWNmN-5RmVWpgvFMQXjB_MsQ47QgSU6xoqbVA1hwW8/edit" rel="noopener" target="_blank" {!! trackData('External Nav', 'Header', 'About the Data') !!}>About the Data</a></li>
                     <li><a href="/findings" class="{{ (request()->is('findings')) ? 'active' : '' }}" {!! trackData('Nav', 'Header', 'Key Findings') !!}>Key Findings</a></li>
                     <li><a href="/sandiego" class="{{ (request()->is('sandiego')) ? 'active' : '' }}" {!! trackData('Nav', 'Header', 'Reports') !!}>Reports</a></li>
+                    <li><a href="https://forms.gle/WPC2Z6A92tBqxGWZ8" rel="noopener" target="_blank" {!! trackData('External Nav', 'Header', 'Contribute Data') !!}>Contribute Data</a></li>
                 </ul>
             </div>
         </div>
