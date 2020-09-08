@@ -29,7 +29,7 @@ jobs:
         run: npm run -s test-unit
 
       - name: Clean Up Build Files
-        run: rm -fr ./{*,.*} 2> /dev/null
+        run: rm -rf .[^.] .??*
   deploy:
     name: Deploy to Development
     runs-on: [self-hosted, linux, X64]
