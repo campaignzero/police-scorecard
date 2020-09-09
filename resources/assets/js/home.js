@@ -393,9 +393,14 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
             }, 'admin-0-country-borders');
 
             // Join the sheriff data with the lookup data based on FIPS code
-            function setCounties(e) {
+            function setCounties() {
+                if (!lookupData || !sheriffData || typeof sheriffData.features === 'undefined') {
+                    return false;
+                }
+
                 sheriffData.features.forEach(function(row) {
-                    if (row.properties.fips < 46000 || row.properties.fips > 47000) {
+                    // validate Mapping of FIPS data before using it
+                    if (typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof lookupData[row.properties.fips] !== 'undefined') {
                         window.PoliceScorecardHome.map.setFeatureState({
                             source: 'countyData',
                             sourceLayer: 'boundaries_admin_2',
@@ -413,7 +418,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                 });
             }
 
-            // Check if `statesData` source is loaded.
+            // Check if `countyData` source is loaded.
             function setAfterLoad(e) {
                 if (e.sourceId === 'countyData' && e.isSourceLoaded) {
                     setCounties();
@@ -421,7 +426,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                 }
             }
 
-            // If `statesData` source is loaded, call `setStates()`.
+            // If `countyData` source is loaded, call `setCounties()`.
             if (mapOption.isSourceLoaded('countyData')) {
                 setCounties();
             } else {
@@ -521,7 +526,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         layers: ['county-join']
                     });
 
-                    if (!features.length) {
+                    if (!features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined') {
                         mapOption.getCanvas().style.cursor = 'pointer';
                         return;
                     }
