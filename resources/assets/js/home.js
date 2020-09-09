@@ -526,7 +526,8 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         layers: ['county-join']
                     });
 
-                    if (!features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined') {
+                    const hasNoCountyData = !features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined';
+                    if (hasNoCountyData) {
                         mapOption.getCanvas().style.cursor = 'pointer';
                         return;
                     }
