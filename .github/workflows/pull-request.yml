@@ -5,10 +5,6 @@ on:
       - master
       - staging
       - develop
-defaults:
-  run:
-    shell: bash
-    working-directory: /home/staywoke/actions-runner/_work/police-scorecard/pull-request
 jobs:
   build_and_test:
     name: Build Application and Run Tests
@@ -41,4 +37,4 @@ jobs:
         run: npm run -s test-unit
 
       - name: Clean Up Build Files
-        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/pull-request/{*,.*} > /dev/null 2>&1 &
+        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/police-scorecard/{*,.*} > /dev/null 2>&1 &
