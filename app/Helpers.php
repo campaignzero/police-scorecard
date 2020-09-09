@@ -1443,3 +1443,24 @@ if (!function_exists('getPoliceFundingChart')) {
         ));
     }
 }
+
+/**
+ * Sort Grades
+ *
+ * @param object $grades
+ *
+ * @return object
+ */
+if (!function_exists('sortGrades')) {
+    function sortGrades($grades) {
+        if (!is_array($grades)) {
+            return array();
+        }
+
+        usort($grades, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        return $grades;
+    }
+}

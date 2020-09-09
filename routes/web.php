@@ -142,15 +142,10 @@ Route::get('/{state}', function ($state) {
     $total = getStateTotal($states, $state);
     $location = $scorecard['agency']['slug'];
 
-    // Sort Grades
-    usort($grades, function($a, $b) {
-        return $a['overall_score'] > $b['overall_score'];
-    });
-
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
@@ -170,15 +165,10 @@ Route::get('/{state}/{type}', function ($state, $type) {
     $total = getStateTotal($states, $state);
     $location = $scorecard['agency']['slug'];
 
-    // Sort Grades
-    usort($grades, function($a, $b) {
-        return $a['overall_score'] > $b['overall_score'];
-    });
-
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
@@ -197,15 +187,10 @@ Route::get('/{state}/{type}/{location}', function ($state, $type, $location) {
     $states = $api->fetchStates();
     $total = getStateTotal($states, $state);
 
-    // Sort Grades
-    usort($grades, function($a, $b) {
-        return $a['overall_score'] > $b['overall_score'];
-    });
-
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
