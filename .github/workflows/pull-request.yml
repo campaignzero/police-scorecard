@@ -1,12 +1,14 @@
-name: Police Scorecard - Development
+name: Police Scorecard - Pull Request
 on:
-  push:
+  pull_request:
     branches:
+      - master
+      - staging
       - develop
 defaults:
   run:
     shell: bash
-    working-directory: /home/staywoke/actions-runner/_work/police-scorecard/development
+    working-directory: /home/staywoke/actions-runner/_work/police-scorecard/pull-request
 jobs:
   build_and_test:
     name: Build Application and Run Tests
@@ -26,6 +28,12 @@ jobs:
           composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
           php artisan key:generate
 
+      - name: Install Node Dependencies
+        run: npm install --no-optional
+
+      - name: Test for Successful Build
+        run: npm run -s dev
+
       - name: Run Lint Tests
         run: npm run -s test-lint
 
@@ -33,11 +41,4 @@ jobs:
         run: npm run -s test-unit
 
       - name: Clean Up Build Files
-        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/development/{*,.*} > /dev/null 2>&1 &
-  deploy:
-    name: Deploy to Development
-    runs-on: [self-hosted, linux, X64]
-    needs: [build_and_test]
-    steps:
-      - name: Trigger Development Deployment
-        run: /usr/local/bin/deploy-development
+        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/pull-request/{*,.*} > /dev/null 2>&1 &

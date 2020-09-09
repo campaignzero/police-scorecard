@@ -1,7 +1,9 @@
 Police Scorecard
 ===
 
-[![Build Status](https://circleci.com/gh/campaignzero/police-scorecard/tree/master.svg?style=shield)](https://circleci.com/gh/campaignzero/police-scorecard/tree/master) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/campaignzero/police-scorecard/master/LICENSE)  [![GitHub contributors](https://img.shields.io/github/contributors/campaignzero/police-scorecard.svg)](https://github.com/campaignzero/police-scorecard/graphs/contributors)
+[![Production Status](https://github.com/campaignzero/police-scorecard/workflows/Police%20Scorecard%20-%20Production/badge.svg)](https://github.com/campaignzero/police-scorecard/actions?query=workflow%3A%22Police+Scorecard+-+Production%22)<br>[![Staging Status](https://github.com/campaignzero/police-scorecard/workflows/Police%20Scorecard%20-%20Staging/badge.svg)](https://github.com/campaignzero/police-scorecard/actions?query=workflow%3A%22Police+Scorecard+-+Staging%22)<br>[![Development Status](https://github.com/campaignzero/police-scorecard/workflows/Police%20Scorecard%20-%20Development/badge.svg)](https://github.com/campaignzero/police-scorecard/actions?query=workflow%3A%22Police+Scorecard+-+Development%22)<br>
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://raw.githubusercontent.com/campaignzero/police-scorecard/master/LICENSE) [![GitHub contributors](https://img.shields.io/github/contributors/campaignzero/police-scorecard.svg)](https://github.com/campaignzero/police-scorecard/graphs/contributors) [![GitHub issues](https://img.shields.io/github/issues/campaignzero/police-scorecard.svg)](https://github.com/campaignzero/police-scorecard/graphs/issues)
 
 ![Website Image](docs/img/website.jpg "Website Image")
 

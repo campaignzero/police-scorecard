@@ -1,12 +1,12 @@
-name: Police Scorecard - Development
+name: Police Scorecard - Production
 on:
   push:
     branches:
-      - develop
+      - master
 defaults:
   run:
     shell: bash
-    working-directory: /home/staywoke/actions-runner/_work/police-scorecard/development
+    working-directory: /home/staywoke/actions-runner/_work/police-scorecard/production
 jobs:
   build_and_test:
     name: Build Application and Run Tests
@@ -33,11 +33,11 @@ jobs:
         run: npm run -s test-unit
 
       - name: Clean Up Build Files
-        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/development/{*,.*} > /dev/null 2>&1 &
+        run: rm -fr /home/staywoke/actions-runner/_work/police-scorecard/production/{*,.*} > /dev/null 2>&1 &
   deploy:
-    name: Deploy to Development
+    name: Deploy to Production
     runs-on: [self-hosted, linux, X64]
     needs: [build_and_test]
     steps:
-      - name: Trigger Development Deployment
-        run: /usr/local/bin/deploy-development
+      - name: Trigger Production Deployment
+        run: /usr/local/bin/deploy-production
