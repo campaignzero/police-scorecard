@@ -16,8 +16,8 @@ class Grades extends Component
      */
     public function __construct($grades = [], $type = 'police-department')
     {
-        // Cap Grades Report to worst 500
-        $this->grades = array_slice($grades, 0, 500);
+        // Cap Grades Report to worst 1000
+        $this->grades = array_slice($grades, 0, 1000);
         $this->type = $type;
     }
 
