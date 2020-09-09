@@ -400,7 +400,8 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
                 sheriffData.features.forEach(function(row) {
                     // validate Mapping of FIPS data before using it
-                    if (typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof lookupData[row.properties.fips] !== 'undefined') {
+                    const hasFipsData = typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof lookupData[row.properties.fips] !== 'undefined';
+                    if (hasFipsData) {
                         window.PoliceScorecardHome.map.setFeatureState({
                             source: 'countyData',
                             sourceLayer: 'boundaries_admin_2',
@@ -526,7 +527,8 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         layers: ['county-join']
                     });
 
-                    if (!features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined') {
+                    const hasNoCountyData = !features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined';
+                    if (hasNoCountyData) {
                         mapOption.getCanvas().style.cursor = 'pointer';
                         return;
                     }
