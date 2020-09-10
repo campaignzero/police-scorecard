@@ -372,19 +372,19 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
             // Join the sheriff data with the lookup data based on FIPS code
             function setCounties() {
-                const missingRequiredData = !boundaries || !sheriffData || typeof sheriffData.features === 'undefined';
+                const missingRequiredData = !fipsBoundaries || !sheriffData || typeof sheriffData.features === 'undefined';
                 if (missingRequiredData) {
                     return false;
                 }
 
                 sheriffData.features.forEach(function(row) {
                     // validate Mapping of FIPS data before using it
-                    const hasFipsData = typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof boundaries[row.properties.fips] !== 'undefined';
+                    const hasFipsData = typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof fipsBoundaries[row.properties.fips] !== 'undefined';
                     if (hasFipsData) {
                         window.PoliceScorecardHome.map.setFeatureState({
                             source: 'countyData',
                             sourceLayer: 'boundaries_admin_2',
-                            id: boundaries[row.properties.fips].feature_id
+                            id: fipsBoundaries[row.properties.fips].feature_id
                         }, {
                             complete: row.properties.complete,
                             enableHover: row.properties.enableHover,
