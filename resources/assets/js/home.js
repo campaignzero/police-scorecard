@@ -309,7 +309,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         const createViz = (table) => {
             // Create Lookup Table for MapBox Boundaries
-            const boundaries = filterLookupTable(table);
+            const fipsBoundaries = filterLookupTable(table);
 
             // Add Mapbox Boundaries source for county polygons.
             mapOption.addSource('countyData', {
