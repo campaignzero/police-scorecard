@@ -307,31 +307,9 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         fetch(url).then(res => res.json()).then((out) => { sheriffData = out; createViz(lookupTable); }).catch(err => { throw err });
 
-        function createViz(lookupTable) {
-
-            const lookupData = filterLookupTable(lookupTable);
-
-            // Filters the lookup table to features with the 'US' country code
-            // and keys the table using the `unit_code` property that will be used for the join
-            function filterLookupTable(lookupTable) {
-
-                let lookupData = {};
-
-                for (layer in lookupTable) {
-                    for (worldview in lookupTable[layer].data) {
-                        for (feature in lookupTable[layer].data[worldview]) {
-                            let featureData = lookupTable[layer].data[worldview][feature];
-
-                            // Filter the lookup data for the US
-                            if (featureData.iso_3166_1 == 'US') {
-                                // Use `unit_code` property that has the FIPS code as the lookup key
-                                lookupData[featureData['unit_code']] = featureData;
-                            }
-                        }
-                    }
-                }
-                return lookupData;
-            }
+        const createViz = (table) => {
+            // Create Lookup Table for MapBox Boundaries
+            const fipsBoundaries = filterLookupTable(table);
 
             // Add Mapbox Boundaries source for county polygons.
             mapOption.addSource('countyData', {
@@ -393,13 +371,20 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
             }, 'admin-0-country-borders');
 
             // Join the sheriff data with the lookup data based on FIPS code
-            function setCounties(e) {
+            function setCounties() {
+                const missingRequiredData = !fipsBoundaries || !sheriffData || typeof sheriffData.features === 'undefined';
+                if (missingRequiredData) {
+                    return false;
+                }
+
                 sheriffData.features.forEach(function(row) {
-                    if (row.properties.fips < 46000 || row.properties.fips > 47000) {
+                    // validate Mapping of FIPS data before using it
+                    const hasFipsData = typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof fipsBoundaries[row.properties.fips] !== 'undefined';
+                    if (hasFipsData) {
                         window.PoliceScorecardHome.map.setFeatureState({
                             source: 'countyData',
                             sourceLayer: 'boundaries_admin_2',
-                            id: lookupData[row.properties.fips].feature_id
+                            id: fipsBoundaries[row.properties.fips].feature_id
                         }, {
                             complete: row.properties.complete,
                             enableHover: row.properties.enableHover,
@@ -411,9 +396,12 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         });
                     }
                 });
+
+                // Hide Map Loader
+                document.getElementById('map-loading').style.display = 'none';
             }
 
-            // Check if `statesData` source is loaded.
+            // Check if `countyData` source is loaded.
             function setAfterLoad(e) {
                 if (e.sourceId === 'countyData' && e.isSourceLoaded) {
                     setCounties();
@@ -421,7 +409,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                 }
             }
 
-            // If `statesData` source is loaded, call `setStates()`.
+            // If `countyData` source is loaded, call `setCounties()`.
             if (mapOption.isSourceLoaded('countyData')) {
                 setCounties();
             } else {
@@ -521,7 +509,8 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         layers: ['county-join']
                     });
 
-                    if (!features.length) {
+                    const hasNoCountyData = !features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined';
+                    if (hasNoCountyData) {
                         mapOption.getCanvas().style.cursor = 'pointer';
                         return;
                     }
@@ -539,6 +528,28 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                     return false;
                 }
             });
+        }
+
+        // Filters the lookup table to features with the 'US' country code
+        // and keys the table using the `unit_code` property that will be used for the join
+        const filterLookupTable = (lookupTable) => {
+
+            let lookupData = {};
+
+            for (layer in lookupTable) {
+                for (worldview in lookupTable[layer].data) {
+                    for (feature in lookupTable[layer].data[worldview]) {
+                        let featureData = lookupTable[layer].data[worldview][feature];
+
+                        // Filter the lookup data for the US
+                        if (featureData.iso_3166_1 == 'US') {
+                            // Use `unit_code` property that has the FIPS code as the lookup key
+                            lookupData[featureData['unit_code']] = featureData;
+                        }
+                    }
+                }
+            }
+            return lookupData;
         }
     }
 
@@ -720,7 +731,6 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         map.on('load', function() {
             createSheriffCounties(map);
-            $mapLoading.style.display = 'none';
         });
 
         map.on('resize', function() {
