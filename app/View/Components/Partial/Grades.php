@@ -9,6 +9,8 @@ class Grades extends Component
     public $grades;
     public $type;
 
+    protected $maxGrades = 1000;
+
     /**
      * Create a new component instance.
      *
@@ -16,8 +18,7 @@ class Grades extends Component
      */
     public function __construct($grades = [], $type = 'police-department')
     {
-        // Cap Grades Report to worst 500
-        $this->grades = array_slice($grades, 0, 500);
+        $this->grades = array_slice($grades, 0, $this->maxGrades);
         $this->type = $type;
     }
 

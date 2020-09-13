@@ -11,7 +11,7 @@
     <p>
         {{ num($scorecard['police_accountability']['use_of_force_complaints_reported']) }} Reported
 
-        @if($scorecard['report']['percent_use_of_force_complaints_sustained'])
+        @if(isset($scorecard['report']['percent_use_of_force_complaints_sustained']))
         <span class="divider">&nbsp;|&nbsp;</span>
         {{ num($scorecard['report']['percent_use_of_force_complaints_sustained'], 0, '%') }} Ruled in Favor of Civilians
         @endif
@@ -24,7 +24,7 @@
     <p>
         {{ num($scorecard['police_accountability']['use_of_force_complaints_reported']) }} Reported
 
-        @if($scorecard['report']['percent_use_of_force_complaints_sustained'])
+        @if(isset($scorecard['report']['percent_use_of_force_complaints_sustained']))
         <span class="divider">&nbsp;|&nbsp;</span>
         {{ num($scorecard['report']['percent_use_of_force_complaints_sustained'], 0, '%') }} Ruled in Favor of Civilians
         @endif
