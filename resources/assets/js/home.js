@@ -3,7 +3,7 @@
  * (c) 2020 JoinCampaignZero.org
  * License: https://github.com/campaignzero/police-scorecard/blob/master/README
  */
-window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
+window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
     var mapPopup, lookupTable, hoveredStateId;
 
     function loadDeadlyForceChart() {
@@ -77,7 +77,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                     maintainAspectRatio: false,
                     clip: false
                 },
-                responsive: true,
+                responsive: document.documentElement.clientWidth > 940 ? false : true,
                 legend: {
                     enabled: false
                 },
@@ -126,13 +126,12 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                             align: 'left',
                             y: -8,
                             shadow: false,
-                            useHTML: true,
-                            overflow: 'allow',
                             crop: false,
                             style: {
                                 fontSize: document.documentElement.clientWidth > 940 ? '12px' : '10px',
                                 fontFamily: 'Verdana, sans-serif',
-                                textTransform: 'uppercase'
+                                textTransform: 'uppercase',
+                                opacity: '1 !important'
                             }
                         }
                     }
@@ -217,14 +216,16 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
             'type': 'fill',
             'source': 'stateData',
             'source-layer': 'boundaries_admin_1',
-            'paint': { 'fill-color': '#FFFFFF' }
+            'paint': {
+                'fill-color': '#FFFFFF'
+            }
         }, 'admin-0-country-borders');
 
         // Set Layout Properties
         mapOption.setLayoutProperty('complete-police-departments', 'icon-size', 0.15);
 
         // Change the cursor to a pointer when the mouse is over the places layer.
-        mapOption.on('mousemove', function(e){
+        mapOption.on('mousemove', function(e) {
             var features = mapOption.queryRenderedFeatures(e.point, {
                 layers: ['complete-police-departments']
             });
@@ -270,7 +271,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         });
 
         // Change it back to a pointer when it leaves.
-        mapOption.on('mouseleave', 'complete-police-departments', function(e){
+        mapOption.on('mouseleave', 'complete-police-departments', function(e) {
             mapOption.getCanvas().style.cursor = '';
         });
 
@@ -305,7 +306,12 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
     function createSheriffCounties(mapOption) {
         let url = '/api/map/us/sheriff';
 
-        fetch(url).then(res => res.json()).then((out) => { sheriffData = out; createViz(lookupTable); }).catch(err => { throw err });
+        fetch(url).then(res => res.json()).then((out) => {
+            sheriffData = out;
+            createViz(lookupTable);
+        }).catch(err => {
+            throw err
+        });
 
         const createViz = (table) => {
             // Create Lookup Table for MapBox Boundaries
@@ -576,15 +582,15 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         mapboxgl.accessToken = MB.token;
 
-        var mapWrapperView = function (w, h) {
+        var mapWrapperView = function(w, h) {
             return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
         };
 
-        var mapAlaskaView = function (w, h) {
+        var mapAlaskaView = function(w, h) {
             return geoViewport.viewport([-180, 59, -125, 70], [w, h]);
         };
 
-        var mapHawaiiView = function (w, h) {
+        var mapHawaiiView = function(w, h) {
             return geoViewport.viewport([-162.5, 17.75, -152, 23], [w, h]);
         };
 
@@ -624,7 +630,11 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         });
 
         // Fetch Boundaries
-        fetch(MB.boundaries).then(res => res.json()).then((out) => { lookupTable = out; }).catch(err => { throw err });
+        fetch(MB.boundaries).then(res => res.json()).then((out) => {
+            lookupTable = out;
+        }).catch(err => {
+            throw err
+        });
 
         map.on('load', function() {
             createMapMarkers(map);
@@ -675,15 +685,15 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         mapboxgl.accessToken = MB.token;
 
-        var mapWrapperView = function (w, h) {
+        var mapWrapperView = function(w, h) {
             return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
         };
 
-        var mapAlaskaView = function (w, h) {
+        var mapAlaskaView = function(w, h) {
             return geoViewport.viewport([-180, 59, -125, 70], [w, h]);
         };
 
-        var mapHawaiiView = function (w, h) {
+        var mapHawaiiView = function(w, h) {
             return geoViewport.viewport([-162.5, 17.75, -152, 23], [w, h]);
         };
 
@@ -694,7 +704,11 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         var mapZoom = ($mapElm.clientWidth > 720) ? 1.4 : 1.05;
 
         // Fetch Boundaries
-        fetch(MB.boundaries).then(res => res.json()).then((out) => { lookupTable = out; }).catch(err => { throw err });
+        fetch(MB.boundaries).then(res => res.json()).then((out) => {
+            lookupTable = out;
+        }).catch(err => {
+            throw err
+        });
 
         // USA Map
         var map = new mapboxgl.Map({

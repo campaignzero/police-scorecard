@@ -14,7 +14,7 @@
 
     <x-partial.killings-by-police :type="$type" :scorecard="$scorecard" />
 
-    <x-partial.grades :type="$type" :grades="$grades" />
+    <x-partial.grades :state="$state" :type="$type" :grades="$grades" />
 
     <x-partial.about :type="$type" />
 

@@ -5,7 +5,7 @@
   <p>
     {{ num($scorecard['report']['percent_used_against_people_who_were_unarmed'], 0, '%') }} Unarmed
     <span class="divider">&nbsp;|&nbsp;</span>
-    {{ num($scorecard['report']['percent_used_against_people_who_were_not_armed_with_gun'], 0) }}% Did Not Allegedly Have a Gun
+    {{ num($scorecard['report']['percent_used_against_people_who_were_not_armed_with_gun'], 0, '%') }} Did Not Allegedly Have a Gun
   </p>
 
   <div class="keys" style="padding: 10px 0;">

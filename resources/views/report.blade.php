@@ -141,7 +141,7 @@
     </div>
     @endif
 
-    <x-partial.grades :type="$type" :grades="$grades" />
+    <x-partial.grades :state="$state" :type="$type" :grades="$grades" />
 
     <x-partial.about :type="$type" :scorecard="$scorecard" />
 
