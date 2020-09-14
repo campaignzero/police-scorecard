@@ -14,7 +14,9 @@
         @if($scorecard['report']['total_people_killed'] === 0)
         <p>{{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department did not kill anyone from 2013-2019</p>
         @elseif($scorecard['report']['total_people_killed'] === 1)
-        <p>{{ $scorecard['agency']['name'] }} killed 1 person from 2013-19.</p>
+        <p>{{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department killed 1 person from 2013-19.</p>
+        @elseif(num($scorecard['report']['black_deadly_force_disparity_per_population'], 1, 'x') === '0x' &&  num($scorecard['report']['hispanic_deadly_force_disparity_per_population'], 1, 'x') === '0x')
+        <p>{{ $scorecard['report']['total_people_killed'] }} people killed by {{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department from 2013-19</p>
         @elseif(!isset($scorecard['report']['black_deadly_force_disparity_per_population']) || !isset($scorecard['report']['hispanic_deadly_force_disparity_per_population']))
         <p>That's higher than <strong>{{ num($scorecard['report']['percentile_killed_by_police'], 0, '%', true) }}</strong> of {{ $stateName }} police departments.</p>
         @else
@@ -70,7 +72,7 @@
       <h2><strong>{{ num($scorecard['report']['total_arrests']) }}</strong> arrests made</h2>
 
       <div class="text">
-        <p>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }} of all arrests were for low-level, non-violent offenses.</p>
+        <p>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }} of all arrests were for low-level, non-violent offenses from 2013-18.</p>
       </div>
 
       <div class="chart chart-3">

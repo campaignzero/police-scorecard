@@ -23,7 +23,7 @@
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <p class="note">No Data Found <a href="https://forms.gle/R7ADBELo1cQ4sbfz7" class="btn no-data" rel="noopener" target="_blank" {!! trackData('External Nav', 'Chart', 'Add Data') !!}>Add Data</a></p>
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['report']['percentile_killed_by_police']), 'reverse') }}" data-percent="{{ output(100 - intval($scorecard['report']['percentile_killed_by_police']), 0, '%') }}"></div>

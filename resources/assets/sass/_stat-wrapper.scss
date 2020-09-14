@@ -8,6 +8,23 @@
         text-decoration: none;
     }
 
+    a.btn.no-data {
+        background: #5a6f83;
+        border-radius: 4px;
+        color: white;
+        font-size: 9px;
+        text-decoration: none;
+        border: 0;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: absolute;
+        text-align: center;
+        margin: 0;
+        text-indent: 0;
+        padding: 0 8px;
+        margin-left: 6px;
+    }
+
     .stats-change,
     .tooltip,
     .grade-arrow {
