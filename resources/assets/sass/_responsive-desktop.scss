@@ -28,6 +28,11 @@
         .logo {
             left: 0;
         }
+
+        #menu > ul > li > a {
+            line-height: 110px;
+            padding: 20px 0;
+        }
     }
 
     .hide-desktop {

@@ -141,4 +141,23 @@ class ApiController extends Controller
     public function fetchNationwideMapData($type) {
         return $this->makeRequest("/scorecard/map/us/{$type}?format=geojson");
     }
+
+    /**
+     * Fetch Data for Specific State
+     *
+     * <code>
+     * $api = new ApiController();
+     * $geojson = api->fetchNationwideMapData('sheriff');
+     * </code>
+     *
+     * @param $type
+     * @return mixed
+     */
+    public function search($keyword) {
+        if (!$keyword || strlen($keyword) < 3) {
+            return '[]';
+        }
+
+        return $this->makeRequest("/scorecard/search/{$keyword}");
+    }
 }
