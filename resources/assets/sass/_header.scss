@@ -198,7 +198,7 @@
                 color: #FFF;
                 position: absolute;
                 right: 16px;
-                top: 10px;
+                top: 8px;
                 transform: rotate(-45deg);
                 transition: all 0.15s;
             }
@@ -282,7 +282,7 @@
                 }
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &::after {
                     content: "\25E2";
                     color: #464648;
