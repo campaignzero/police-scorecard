@@ -419,35 +419,34 @@ window.PoliceScorecard = window.PoliceScorecard || {
      */
     doSearch: function(evt) {
         var value = PoliceScorecard.elm.$searchField.value;
-
         // Check if this was an escape key
         if (evt.keyCode === 27) {
             PoliceScorecard.clearSearch();
-        } else if (evt.keyCode < 48 || evt.keyCode > 90) {
+        } else if ((evt.keyCode < 48 || evt.keyCode > 90) && evt.keyCode !== 8 && evt.keyCode !== 46) {
             // Ignore Non Alphanumeric Keys
             return;
         } else if (value.length < 3) {
             PoliceScorecard.elm.$searchField.classList.remove('no-results');
             PoliceScorecard.elm.$searchResultsContainer.innerHTML = '';
         } else if (value.length >= 3) {
-            // If there is a current AJAX call running, kill it, we're doing a new one
-            if (typeof PoliceScorecard.xhr !== 'undefined') {
-                console.log('Aborted');
-                PoliceScorecard.xhr.abort();
-            }
-
-            PoliceScorecard.xhr = new XMLHttpRequest();
-
+            // Show Loading Icon
             PoliceScorecard.elm.$searchIcon.classList.remove('fa-search');
             PoliceScorecard.elm.$searchIcon.classList.add('fa-circle-o-notch');
 
+            // If there is a current AJAX call running, kill it, we're doing a new one
+            if (typeof PoliceScorecard.xhr !== 'undefined') {
+                PoliceScorecard.xhr.abort();
+            }
+
+            // Create New AJAX Request
+            PoliceScorecard.xhr = new XMLHttpRequest();
             PoliceScorecard.xhr.open('POST', '/api/search');
             PoliceScorecard.xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             PoliceScorecard.xhr.onload = function() {
                 if (PoliceScorecard.xhr.status === 200) {
                     const results = JSON.parse(PoliceScorecard.xhr.responseText);
 
-                    if (results.length === 0) {
+                    if (!results || results.length === 0) {
                         PoliceScorecard.elm.$searchField.classList.add('no-results');
                         PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
                     } else {
@@ -480,6 +479,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
                     console.error('Request failed.  Returned status of ' + PoliceScorecard.xhr.status);
                 }
 
+                // Remove AJAX Request
                 delete PoliceScorecard.xhr;
             };
 

@@ -4,6 +4,19 @@
     height: 100%;
     display: block;
 
+    #attributions {
+        position: absolute;
+        bottom: 10px;
+        right: 15%;
+        z-index: 10;
+        text-align: right;
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+    }
+
     #usa-map {
         height: 100%;
         width: 100%;
@@ -209,6 +222,12 @@
             opacity: 0.75;
         }
     }
+}
+
+@media screen and (max-width: $bp-max-width) {
+    #alaska-overlay, #hawaii-overlay {
+        display: none;
+    }
 
     .mapboxgl-ctrl-logo {
         width: 23px;
@@ -219,11 +238,5 @@
             width: 88px;
             overflow: unset;
         }
-    }
-}
-
-@media screen and (max-width: $bp-max-width) {
-    #alaska-overlay, #hawaii-overlay {
-        display: none;
     }
 }

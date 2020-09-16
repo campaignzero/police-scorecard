@@ -40,6 +40,10 @@
             </div>
 
             <div id="mapbox-wrapper">
+                <div id="attributions">
+                    <a href="https://www.mapbox.com/about/maps/" target="_blank" {!! trackData('External Nav', 'Map' , 'Mapbox' ) !!}>&copy; Mapbox</a>
+                </div>
+
                 <div id="usa-map" class="{{ $type }} {{ $location }}"></div>
                 <div id='alaska-overlay' class="{{ $type }} {{ $location }}"></div>
                 <div id='hawaii-overlay'class="{{ $type }} {{ $location }}"></div>

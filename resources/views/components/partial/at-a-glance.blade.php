@@ -28,9 +28,7 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
             Average for 4 Sections: <strong>{{ $scorecard['report']['overall_score'] }}%</strong>
         </h2>
 
-        <p>
-            ^ Compared to other {{ $type === "sheriff" ? "sheriff's" : "police" }} depts nationwide in {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }} residents.
-        </p>
+        <p>Scores range from 0-100% comparing {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }}. {{ $type === 'sheriff' ? 'Counties' : 'Cities' }} with higher scores spend less on policing, use less force, are more likely to hold officers accountable and make fewer arrests for low-level offenses.</p>
     </div>
 
     <div class="content">
