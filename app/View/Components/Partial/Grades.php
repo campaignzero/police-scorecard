@@ -7,17 +7,20 @@ use Illuminate\View\Component;
 class Grades extends Component
 {
     public $grades;
+    public $state;
     public $type;
+
+    protected $maxGrades = 1000;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($grades = [], $type = 'police-department')
+    public function __construct($grades = [], $state = 'US', $type = 'police-department')
     {
-        // Cap Grades Report to worst 500
-        $this->grades = array_slice($grades, 0, 500);
+        $this->grades = array_slice($grades, 0, $this->maxGrades);
+        $this->state = $state;
         $this->type = $type;
     }
 

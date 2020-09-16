@@ -240,13 +240,14 @@ if (!function_exists('getStateName')) {
             'SD' => 'South Dakota',
             'TN' => 'Tennessee',
             'TX' => 'Texas',
+            'US' =>  'United States',
             'UT' => 'Utah',
             'VT' => 'Vermont',
             'VA' => 'Virginia',
             'WA' => 'Washington',
             'WV' => 'West Virginia',
             'WI' => 'Wisconsin',
-            'WY' => 'Wyoming',
+            'WY' => 'Wyoming'
         );
 
         return $states[strtoupper($abbr)];
@@ -263,13 +264,24 @@ if (!function_exists('getStateName')) {
  */
 if (!function_exists('getNationalGrades')) {
     function getNationalGrades($states, $type) {
-        $data = array();
+        $complete = array();
+        $incomplete = array();
 
         foreach($states as $abbr => $state) {
             if ($type === 'police-department' && !empty($state['police-department'])) {
                 foreach($state['police-department'] as $department) {
                     if ($department['complete']) {
-                        $data[] = array(
+                        $complete[] = array(
+                            'agency_name' => $department['agency_name'] . ', '.$abbr,
+                            'complete' => $department['complete'],
+                            'grade_class' => $department['grade_class'],
+                            'grade_letter' => $department['grade_letter'],
+                            'overall_score' => $department['overall_score'],
+                            'url_pretty' => $department['url_pretty'],
+                            'url' => $department['url']
+                        );
+                    } else {
+                        $incomplete[] = array(
                             'agency_name' => $department['agency_name'] . ', '.$abbr,
                             'complete' => $department['complete'],
                             'grade_class' => $department['grade_class'],
@@ -285,7 +297,17 @@ if (!function_exists('getNationalGrades')) {
             if ($type === 'sheriff' && !empty($state['sheriff'])) {
                 foreach($state['sheriff'] as $department) {
                     if ($department['complete']) {
-                        $data[] = array(
+                        $complete[] = array(
+                            'agency_name' => $department['agency_name'] . ', '.$abbr,
+                            'complete' => $department['complete'],
+                            'grade_class' => $department['grade_class'],
+                            'grade_letter' => $department['grade_letter'],
+                            'overall_score' => $department['overall_score'],
+                            'url_pretty' => $department['url_pretty'],
+                            'url' => $department['url']
+                        );
+                    } else {
+                        $incomplete[] = array(
                             'agency_name' => $department['agency_name'] . ', '.$abbr,
                             'complete' => $department['complete'],
                             'grade_class' => $department['grade_class'],
@@ -299,11 +321,19 @@ if (!function_exists('getNationalGrades')) {
             }
         }
 
-        usort($data, function($a, $b) {
+        usort($complete, function($a, $b) {
             return $a['overall_score'] > $b['overall_score'];
         });
 
-        return $data;
+        usort($incomplete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        return array(
+            'complete' => $complete,
+            'incomplete' => $incomplete,
+            'all' => array_merge($complete, $incomplete)
+        );
     }
 }
 
@@ -1441,5 +1471,45 @@ if (!function_exists('getPoliceFundingChart')) {
             'housing' => $housing,
             'health' => $health
         ));
+    }
+}
+
+/**
+ * Sort Grades
+ *
+ * @param object $grades
+ *
+ * @return object
+ */
+if (!function_exists('sortGrades')) {
+    function sortGrades($grades) {
+        if (!is_array($grades)) {
+            return array();
+        }
+
+        $complete = array();
+        $incomplete = array();
+
+        foreach($grades as $grade) {
+            if ($grade['complete']) {
+                $complete[] = $grade;
+            } else {
+                $incomplete[] = $grade;
+            }
+        }
+
+        usort($complete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        usort($incomplete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        return array(
+            'complete' => $complete,
+            'incomplete' => $incomplete,
+            'all' => array_merge($complete, $incomplete)
+        );
     }
 }

@@ -55,7 +55,7 @@ $percent_without_conviction = ($unconvicted_jail_population / $total_jail_popula
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(intval($percent_without_conviction), 'reverse') }}" data-percent="{{ output(intval($percent_without_conviction), 0, '%') }}"></div>

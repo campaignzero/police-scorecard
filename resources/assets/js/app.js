@@ -73,6 +73,10 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$resultsInfoContent = document.getElementById('results-info-content');
         PoliceScorecard.elm.$scoreCard = document.getElementById('score-card');
         PoliceScorecard.elm.$scoreLocation = document.getElementById('score-location');
+        PoliceScorecard.elm.$searchIcon = document.getElementById('search-icon');
+        PoliceScorecard.elm.$searchField = document.getElementById('search');
+        PoliceScorecard.elm.$searchForm = document.getElementById('search-form');
+        PoliceScorecard.elm.$searchResultsContainer = document.getElementById('search-results-container');
         PoliceScorecard.elm.$selectedCity = document.getElementsByClassName('selected-city');
         PoliceScorecard.elm.$selectedState = document.querySelector('#state-select a.active');
         PoliceScorecard.elm.$showLess = document.getElementById('show-less');
@@ -86,6 +90,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$stateSelect = document.getElementById('state-select');
         PoliceScorecard.elm.$stateSelection = document.getElementById('state-selection');
         PoliceScorecard.elm.$toggleAnimate = document.getElementById('toggle-animate');
+        PoliceScorecard.elm.$toggleSearch = document.querySelector('a.toggle-search');
         PoliceScorecard.elm.$trackInput = document.querySelectorAll('input[data-track], textarea[data-track], select[data-track]');
         PoliceScorecard.elm.$trackLinks = document.querySelectorAll('a[data-track], button[data-track]');
         PoliceScorecard.elm.$usaMapLayer = document.getElementById('usa-map-layer');
@@ -99,12 +104,37 @@ window.PoliceScorecard = window.PoliceScorecard || {
         // Debounce Scroll Animations
         PoliceScorecard.debounce = false;
 
+        // Debounce Search
+        PoliceScorecard.debounceSearch = false;
+
         // Event Listeners
         if (PoliceScorecard.elm.$menuToggle) {
             PoliceScorecard.elm.$menuToggle.addEventListener('click', function() {
                 PoliceScorecard.elm.$menu.classList.toggle('open')
             });
         }
+
+        // Search Listeners
+        document.addEventListener('click', PoliceScorecard.clearSearch);
+
+        // Toggle Search Input Field Visibility
+        PoliceScorecard.elm.$toggleSearch.addEventListener('click', PoliceScorecard.toggleSearch);
+
+        // Ignore Clicks inside Search Field
+        PoliceScorecard.elm.$searchField.addEventListener('click', function (evt){
+            evt.preventDefault();
+            evt.stopPropagation();
+        });
+
+        // Listen for Search Inputs
+        PoliceScorecard.elm.$searchField.addEventListener('keyup', function (evt){
+            PoliceScorecard.elm.$searchField.classList.remove('no-results');
+
+            clearTimeout(PoliceScorecard.debounceSearch);
+            PoliceScorecard.debounceSearch = setTimeout(function() {
+                PoliceScorecard.doSearch(evt);
+            }, 250);
+        });
 
         // Modal Listeners
         if (PoliceScorecard.elm.$modal) {
@@ -385,6 +415,84 @@ window.PoliceScorecard = window.PoliceScorecard || {
     },
 
     /**
+     * Perform Search
+     */
+    doSearch: function(evt) {
+        var value = PoliceScorecard.elm.$searchField.value;
+        // Check if this was an escape key
+        if (evt.keyCode === 27) {
+            PoliceScorecard.clearSearch();
+        } else if ((evt.keyCode < 48 || evt.keyCode > 90) && evt.keyCode !== 8 && evt.keyCode !== 46) {
+            // Ignore Non Alphanumeric Keys
+            return;
+        } else if (value.length < 3) {
+            PoliceScorecard.elm.$searchField.classList.remove('no-results');
+            PoliceScorecard.elm.$searchResultsContainer.innerHTML = '';
+        } else if (value.length >= 3) {
+            // Show Loading Icon
+            PoliceScorecard.elm.$searchIcon.classList.remove('fa-search');
+            PoliceScorecard.elm.$searchIcon.classList.add('fa-circle-o-notch');
+
+            // If there is a current AJAX call running, kill it, we're doing a new one
+            if (typeof PoliceScorecard.xhr !== 'undefined') {
+                PoliceScorecard.xhr.abort();
+            }
+
+            // Create New AJAX Request
+            PoliceScorecard.xhr = new XMLHttpRequest();
+            PoliceScorecard.xhr.open('POST', '/api/search');
+            PoliceScorecard.xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            PoliceScorecard.xhr.onload = function() {
+                if (PoliceScorecard.xhr.status === 200) {
+                    const results = JSON.parse(PoliceScorecard.xhr.responseText);
+
+                    if (!results || results.length === 0) {
+                        PoliceScorecard.elm.$searchField.classList.add('no-results');
+                        PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+                    } else {
+                        let html = '<ul>';
+
+                        Array.prototype.forEach.call(results, function(data) {
+                            html = html.concat('<li>');
+                            html = html.concat(`  <a href="${data.url}" class="search-result">`);
+                            html = html.concat(`    <div class="score grade-${data.class}">${data.score}</div>`);
+                            html = html.concat('    <div class="details">');
+                            html = html.concat(`      <div class="label">${data.label}</div>`);
+                            html = html.concat(`      <div class="type">${data.type}</div>`);
+                            html = html.concat('    </div>');
+                            html = html.concat('  </a>');
+                            html = html.concat('</li>');
+                        });
+
+                        html = html.concat('</ul>');
+
+                        PoliceScorecard.elm.$searchResultsContainer.innerHTML = html;
+                        PoliceScorecard.elm.$searchResultsContainer.style.display = 'block';
+                        PoliceScorecard.elm.$searchField.classList.remove('no-results');
+                    }
+
+                    PoliceScorecard.elm.$searchIcon.classList.remove('fa-circle-o-notch');
+                    PoliceScorecard.elm.$searchIcon.classList.add('fa-search');
+                } else if (PoliceScorecard.xhr.status !== 200) {
+                    PoliceScorecard.elm.$searchField.classList.add('no-results');
+                    PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+                    console.error('Request failed.  Returned status of ' + PoliceScorecard.xhr.status);
+                }
+
+                // Remove AJAX Request
+                delete PoliceScorecard.xhr;
+            };
+
+            PoliceScorecard.xhr.send(encodeURI('keyword=' + value));
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
+        }
+    },
+
+    /**
      * Listen for Escape Key
      * @param {*} evt
      */
@@ -428,6 +536,18 @@ window.PoliceScorecard = window.PoliceScorecard || {
         } else if (score >= 98) {
             return 'A+';
         }
+    },
+
+    /**
+     * Hide Search Form
+     */
+    clearSearch: function () {
+        PoliceScorecard.elm.$searchField.classList.remove('no-results');
+        PoliceScorecard.elm.$searchForm.classList.remove('active');
+        PoliceScorecard.elm.$searchForm.reset();
+        PoliceScorecard.elm.$searchResultsContainer.innerHTML = '';
+        PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+        PoliceScorecard.elm.$toggleSearch.classList.remove('active');
     },
 
     /**
@@ -1061,6 +1181,23 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$otherButton.classList.toggle('active');
 
         myBarHistory.update();
+    },
+
+    /**
+     * Toggle Search Form
+     */
+    toggleSearch: function (evt) {
+        PoliceScorecard.elm.$toggleSearch.classList.toggle('active');
+        PoliceScorecard.elm.$searchForm.classList.toggle('active');
+
+        if (PoliceScorecard.elm.$searchForm.classList.contains('active')) {
+            PoliceScorecard.elm.$searchField.focus();
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
+        }
     }
 };
 

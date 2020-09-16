@@ -218,14 +218,14 @@
                 display: block;
             }
 
-            li {
+            & > ul > li {
                 display: block;
                 margin-right: 0;
                 line-height: 24px;
                 width: 100%;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-                a {
+                & > a {
                     color: #FFF;
                     text-transform: uppercase;
                     text-decoration: none;
@@ -508,6 +508,10 @@
                     vertical-align: middle;
                 }
             }
+        }
+
+        .section.grades table td {
+            max-width: calc(100vw - 80px);
         }
     }
 

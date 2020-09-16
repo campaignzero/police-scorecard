@@ -2,7 +2,7 @@
 <div class="section bg-light-gray grades short" id="score-card">
     <div class="content">
         <h1 class="title">
-            United States {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department Scores
+            {{ getStateName($state)  }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department Scores
         </h1>
     </div>
 
@@ -13,12 +13,12 @@
                     <th width="80%">Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach($grades as $index => $card) @if ($index < floor(count($grades) / 2))
+                @foreach($grades['all'] as $index => $card) @if ($index < floor(count($grades['all']) / 2))
                 <tr>
                     <td colspan="2">
                         <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ (count($grades) - $index) }}. {{ $card['agency_name'] }}</span>
-                            <span class="grade grade-{{ $card['grade_class'] }}"></span>
+                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                            <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>
                     </td>
@@ -32,12 +32,12 @@
                     <th width="80%">Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach($grades as $index => $card) @if ($index >= floor(count($grades) / 2))
+                @foreach($grades['all'] as $index => $card) @if ($index >= floor(count($grades['all']) / 2))
                 <tr>
                     <td colspan="2">
-                        <a href="{{ $card['url_pretty'] }}"{!! ($index > (floor(count($grades) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ (count($grades) - $index) }}. {{ $card['agency_name'] }}</span>
-                            <span class="grade grade-{{ $card['grade_class'] }}"></span>
+                        <a href="{{ $card['url_pretty'] }}"{!! ($index > (floor(count($grades['complete']) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
+                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                            <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>
                     </td>
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="content{{ count($grades) <= 10 ? ' hide-mobile' : '' }}{{ count($grades) <= 20 ? ' hide-desktop' : '' }}">
+    <div class="content{{ count($grades['all']) <= 10 ? ' hide-mobile' : '' }}{{ count($grades['all']) <= 20 ? ' hide-desktop' : '' }}">
         <button class="button more" id="show-more" {!! trackData('Nav', 'Grades', 'Show More') !!}>SHOW MORE</a>
         <button class="button less" id="show-less" {!! trackData('Nav', 'Grades', 'Show Less') !!}>SHOW LESS</a>
     </div>

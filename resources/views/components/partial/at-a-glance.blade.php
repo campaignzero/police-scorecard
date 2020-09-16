@@ -9,7 +9,7 @@ $class_g = (is_numeric($scorecard['report']['percentile_low_level_arrests_per_1k
 $class_h = (is_numeric($scorecard['report']['percent_murders_solved'])) ? 'key percent-' . $scorecard['report']['percent_murders_solved'] : 'incomplete';
 $class_i = (is_numeric($scorecard['report']['percentile_jail_incarceration_per_1k_population'])) ? 'key percent-' . $scorecard['report']['percentile_jail_incarceration_per_1k_population'] : 'incomplete';
 $class_j = (is_numeric($scorecard['report']['percentile_jail_deaths_per_1k_jail_population'])) ? 'key percent-' . $scorecard['report']['percentile_jail_deaths_per_1k_jail_population'] : 'incomplete';
-$class_k = (is_numeric($scorecard['police_funding']['percentile_police_spending_ratio'])) ? 'key percent-' . $scorecard['police_funding']['percentile_police_spending_ratio'] : 'incomplete';
+$class_k = (is_numeric($scorecard['report']['percentile_police_spending'])) ? 'key percent-' . $scorecard['report']['percentile_police_spending'] : 'incomplete';
 $class_l = (is_numeric($scorecard['police_funding']['percentile_misconduct_settlements_per_population'])) ? 'key percent-' . $scorecard['police_funding']['percentile_misconduct_settlements_per_population'] : 'incomplete';
 $class_m = (is_numeric($scorecard['police_funding']['percentile_fines_forfeitures_per_resident'])) ? 'key percent-' . $scorecard['police_funding']['percentile_fines_forfeitures_per_resident'] : 'incomplete';
 $class_n = (is_numeric($scorecard['police_funding']['percentile_officers_per_population'])) ? 'key percent-' . $scorecard['police_funding']['percentile_officers_per_population'] : 'incomplete';
@@ -28,9 +28,7 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
             Average for 4 Sections: <strong>{{ $scorecard['report']['overall_score'] }}%</strong>
         </h2>
 
-        <p>
-            ^ Compared to other {{ $type === "sheriff" ? "sheriff's" : "police" }} depts nationwide in {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }} residents.
-        </p>
+        <p>Scores range from 0-100% comparing {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }}. {{ $type === 'sheriff' ? 'Counties' : 'Cities' }} with higher scores spend less on policing, use less force, are more likely to hold officers accountable and make fewer arrests for low-level offenses.</p>
     </div>
 
     <div class="content">

@@ -16,6 +16,19 @@
                     <li><a href="/findings" class="{{ (request()->is('findings')) ? 'active' : '' }}" {!! trackData('Nav', 'Header', 'Key Findings') !!}>Key Findings</a></li>
                     <li><a href="/sandiego" class="{{ (request()->is('sandiego')) ? 'active' : '' }}" {!! trackData('Nav', 'Header', 'Reports') !!}>Reports</a></li>
                     <li><a href="https://forms.gle/WPC2Z6A92tBqxGWZ8" rel="noopener" target="_blank" {!! trackData('External Nav', 'Header', 'Contribute Data') !!}>Contribute Data</a></li>
+                    <li class="menu-divider visible-lg">&nbsp;</li>
+                    <li class="search-wrapper">
+                        <a href="#search" aria-label="Toggle Search" class="toggle-search" {!! trackData('Nav', 'Header', 'Search') !!}>
+                            <i class="fa fa-search fa-lg"></i>
+                        </a>
+                        <form method="post" id="search-form" class="search-form animated fadeIn" autocomplete="off" onsubmit="return false;">
+                            <button type="button" title="Search" class="search-button" {!! trackData('Nav', 'Header', 'Search') !!}>
+                                <i class="fa fa-search fa-lg" id="search-icon"></i>
+                            </button>
+                            <input type="text" id="search" placeholder="SEARCH" class="form-control search-field" autocomplete="off" {!! trackData('Form', 'Search') !!}>
+                            <div id="search-results-container"></div>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

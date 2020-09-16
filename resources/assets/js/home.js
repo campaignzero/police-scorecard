@@ -3,7 +3,7 @@
  * (c) 2020 JoinCampaignZero.org
  * License: https://github.com/campaignzero/police-scorecard/blob/master/README
  */
-window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
+window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
     var mapPopup, lookupTable, hoveredStateId;
 
     function loadDeadlyForceChart() {
@@ -77,7 +77,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                     maintainAspectRatio: false,
                     clip: false
                 },
-                responsive: true,
+                responsive: document.documentElement.clientWidth > 940 ? false : true,
                 legend: {
                     enabled: false
                 },
@@ -126,13 +126,12 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                             align: 'left',
                             y: -8,
                             shadow: false,
-                            useHTML: true,
-                            overflow: 'allow',
                             crop: false,
                             style: {
                                 fontSize: document.documentElement.clientWidth > 940 ? '12px' : '10px',
                                 fontFamily: 'Verdana, sans-serif',
-                                textTransform: 'uppercase'
+                                textTransform: 'uppercase',
+                                opacity: '1 !important'
                             }
                         }
                     }
@@ -217,14 +216,16 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
             'type': 'fill',
             'source': 'stateData',
             'source-layer': 'boundaries_admin_1',
-            'paint': { 'fill-color': '#FFFFFF' }
+            'paint': {
+                'fill-color': '#FFFFFF'
+            }
         }, 'admin-0-country-borders');
 
         // Set Layout Properties
         mapOption.setLayoutProperty('complete-police-departments', 'icon-size', 0.15);
 
         // Change the cursor to a pointer when the mouse is over the places layer.
-        mapOption.on('mousemove', function(e){
+        mapOption.on('mousemove', function(e) {
             var features = mapOption.queryRenderedFeatures(e.point, {
                 layers: ['complete-police-departments']
             });
@@ -270,7 +271,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         });
 
         // Change it back to a pointer when it leaves.
-        mapOption.on('mouseleave', 'complete-police-departments', function(e){
+        mapOption.on('mouseleave', 'complete-police-departments', function(e) {
             mapOption.getCanvas().style.cursor = '';
         });
 
@@ -305,33 +306,16 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
     function createSheriffCounties(mapOption) {
         let url = '/api/map/us/sheriff';
 
-        fetch(url).then(res => res.json()).then((out) => { sheriffData = out; createViz(lookupTable); }).catch(err => { throw err });
+        fetch(url).then(res => res.json()).then((out) => {
+            sheriffData = out;
+            createViz(lookupTable);
+        }).catch(err => {
+            throw err
+        });
 
-        function createViz(lookupTable) {
-
-            const lookupData = filterLookupTable(lookupTable);
-
-            // Filters the lookup table to features with the 'US' country code
-            // and keys the table using the `unit_code` property that will be used for the join
-            function filterLookupTable(lookupTable) {
-
-                let lookupData = {};
-
-                for (layer in lookupTable) {
-                    for (worldview in lookupTable[layer].data) {
-                        for (feature in lookupTable[layer].data[worldview]) {
-                            let featureData = lookupTable[layer].data[worldview][feature];
-
-                            // Filter the lookup data for the US
-                            if (featureData.iso_3166_1 == 'US') {
-                                // Use `unit_code` property that has the FIPS code as the lookup key
-                                lookupData[featureData['unit_code']] = featureData;
-                            }
-                        }
-                    }
-                }
-                return lookupData;
-            }
+        const createViz = (table) => {
+            // Create Lookup Table for MapBox Boundaries
+            const fipsBoundaries = filterLookupTable(table);
 
             // Add Mapbox Boundaries source for county polygons.
             mapOption.addSource('countyData', {
@@ -393,13 +377,20 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
             }, 'admin-0-country-borders');
 
             // Join the sheriff data with the lookup data based on FIPS code
-            function setCounties(e) {
+            function setCounties() {
+                const missingRequiredData = !fipsBoundaries || !sheriffData || typeof sheriffData.features === 'undefined';
+                if (missingRequiredData) {
+                    return false;
+                }
+
                 sheriffData.features.forEach(function(row) {
-                    if (row.properties.fips < 46000 || row.properties.fips > 47000) {
+                    // validate Mapping of FIPS data before using it
+                    const hasFipsData = typeof row.properties !== 'undefined' && typeof row.properties.fips !== 'undefined' && typeof fipsBoundaries[row.properties.fips] !== 'undefined';
+                    if (hasFipsData) {
                         window.PoliceScorecardHome.map.setFeatureState({
                             source: 'countyData',
                             sourceLayer: 'boundaries_admin_2',
-                            id: lookupData[row.properties.fips].feature_id
+                            id: fipsBoundaries[row.properties.fips].feature_id
                         }, {
                             complete: row.properties.complete,
                             enableHover: row.properties.enableHover,
@@ -411,9 +402,12 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         });
                     }
                 });
+
+                // Hide Map Loader
+                document.getElementById('map-loading').style.display = 'none';
             }
 
-            // Check if `statesData` source is loaded.
+            // Check if `countyData` source is loaded.
             function setAfterLoad(e) {
                 if (e.sourceId === 'countyData' && e.isSourceLoaded) {
                     setCounties();
@@ -421,7 +415,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                 }
             }
 
-            // If `statesData` source is loaded, call `setStates()`.
+            // If `countyData` source is loaded, call `setCounties()`.
             if (mapOption.isSourceLoaded('countyData')) {
                 setCounties();
             } else {
@@ -521,7 +515,8 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                         layers: ['county-join']
                     });
 
-                    if (!features.length) {
+                    const hasNoCountyData = !features.length || typeof features[0].state === 'undefined' || typeof features[0].state.url === 'undefined';
+                    if (hasNoCountyData) {
                         mapOption.getCanvas().style.cursor = 'pointer';
                         return;
                     }
@@ -539,6 +534,28 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
                     return false;
                 }
             });
+        }
+
+        // Filters the lookup table to features with the 'US' country code
+        // and keys the table using the `unit_code` property that will be used for the join
+        const filterLookupTable = (lookupTable) => {
+
+            let lookupData = {};
+
+            for (layer in lookupTable) {
+                for (worldview in lookupTable[layer].data) {
+                    for (feature in lookupTable[layer].data[worldview]) {
+                        let featureData = lookupTable[layer].data[worldview][feature];
+
+                        // Filter the lookup data for the US
+                        if (featureData.iso_3166_1 == 'US') {
+                            // Use `unit_code` property that has the FIPS code as the lookup key
+                            lookupData[featureData['unit_code']] = featureData;
+                        }
+                    }
+                }
+            }
+            return lookupData;
         }
     }
 
@@ -565,15 +582,15 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         mapboxgl.accessToken = MB.token;
 
-        var mapWrapperView = function (w, h) {
+        var mapWrapperView = function(w, h) {
             return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
         };
 
-        var mapAlaskaView = function (w, h) {
+        var mapAlaskaView = function(w, h) {
             return geoViewport.viewport([-180, 59, -125, 70], [w, h]);
         };
 
-        var mapHawaiiView = function (w, h) {
+        var mapHawaiiView = function(w, h) {
             return geoViewport.viewport([-162.5, 17.75, -152, 23], [w, h]);
         };
 
@@ -613,7 +630,11 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         });
 
         // Fetch Boundaries
-        fetch(MB.boundaries).then(res => res.json()).then((out) => { lookupTable = out; }).catch(err => { throw err });
+        fetch(MB.boundaries).then(res => res.json()).then((out) => {
+            lookupTable = out;
+        }).catch(err => {
+            throw err
+        });
 
         map.on('load', function() {
             createMapMarkers(map);
@@ -664,15 +685,15 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         mapboxgl.accessToken = MB.token;
 
-        var mapWrapperView = function (w, h) {
+        var mapWrapperView = function(w, h) {
             return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
         };
 
-        var mapAlaskaView = function (w, h) {
+        var mapAlaskaView = function(w, h) {
             return geoViewport.viewport([-180, 59, -125, 70], [w, h]);
         };
 
-        var mapHawaiiView = function (w, h) {
+        var mapHawaiiView = function(w, h) {
             return geoViewport.viewport([-162.5, 17.75, -152, 23], [w, h]);
         };
 
@@ -683,7 +704,11 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
         var mapZoom = ($mapElm.clientWidth > 720) ? 1.4 : 1.05;
 
         // Fetch Boundaries
-        fetch(MB.boundaries).then(res => res.json()).then((out) => { lookupTable = out; }).catch(err => { throw err });
+        fetch(MB.boundaries).then(res => res.json()).then((out) => {
+            lookupTable = out;
+        }).catch(err => {
+            throw err
+        });
 
         // USA Map
         var map = new mapboxgl.Map({
@@ -720,7 +745,6 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function () {
 
         map.on('load', function() {
             createSheriffCounties(map);
-            $mapLoading.style.display = 'none';
         });
 
         map.on('resize', function() {

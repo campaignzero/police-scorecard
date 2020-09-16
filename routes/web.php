@@ -145,7 +145,7 @@ Route::get('/{state}', function ($state) {
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
@@ -168,7 +168,7 @@ Route::get('/{state}/{type}', function ($state, $type) {
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
@@ -190,7 +190,7 @@ Route::get('/{state}/{type}/{location}', function ($state, $type, $location) {
     return view('report', [
         'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
         'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
-        'grades' => $grades,
+        'grades' => sortGrades($grades),
         'location' => $location,
         'scorecard' => $scorecard,
         'state' => $state,
