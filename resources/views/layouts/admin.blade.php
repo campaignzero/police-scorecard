@@ -117,20 +117,38 @@
                 <h1>Mapbox Tiles</h1>
             </div>
 
-            @if($uploaded && $response && isset($response['id']))
+            @if($updated && $response && isset($response['id']))
             <div class="alert alert-success alert-dismissible" role="alert">
-                <strong>SUCCESS:</strong> Updated Mapbox Tileset: {{ $response['id'] }} ( {{ bytesToHuman($response['file_size']) }} )
+                <strong>UPDATE SUCCESS:</strong> Updated Mapbox Tileset: {{ $response['id'] }} ( {{ bytesToHuman($response['file_size']) }} )
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @else
             <div class="alert alert-danger alert-dismissible" role="alert">
-                <strong>ERROR:</strong> <span id="api-error-message">{{ $error ? $error : 'An Unknown Error has Occurred.' }}</span>
+                <strong>UPDATE ERROR:</strong> <span id="api-error-message">{{ $error ? $error : 'An Unknown Error has Occurred.' }}</span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            @endif
+
+            @if($updated && $response && isset($response['id']))
+                @if($published && $response && isset($response['published']))
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <strong>PUBLISH SUCCESS:</strong> Updated Mapbox Tileset: {{ $response['published']['response'] }} ( {{ $response['published']['jobId'] }} )
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @else
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <strong>PUBLISH ERROR:</strong> <span id="api-error-message">{{ $response['published']['response'] }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                @endif
             @endif
 
             <a href="https://studio.mapbox.com/tilesets/policescorecard.aopjgh6s/" class="btn btn-primary" target="_blank">Open Tileset</a>&nbsp;

@@ -73,7 +73,8 @@ Route::get('/admin/clear-cache', function () {
 Route::get('/admin/mapbox', function () {
     $api = new ApiController();
     $geojson = $api->fetchNationwideMapData('police-department');
-    $uploaded = false;
+    $updated = false;
+    $published = false;
     $response = null;
     $error = null;
 
@@ -83,45 +84,33 @@ Route::get('/admin/mapbox', function () {
 
         // Make sure GeoJSON conversion worked, and that we wrote the file to disk
         if (!empty($geojson_ld) && Storage::disk('local')->put('police-department.geojson.ld', $geojson_ld)) {
-            // Setup cURL Request
-            $url = 'https://api.mapbox.com/tilesets/v1/sources/policescorecard/aopjgh6s?access_token=' . config('app.mapbox_tile_token');
-            $filepath = Storage::disk('local')->path('police-department.geojson.ld');
-            $file = new CURLFile(realpath($filepath));
+            // Setup Params fpr Mapbox Update
+            $update_url = 'https://api.mapbox.com/tilesets/v1/sources/policescorecard/aopjgh6s?access_token=' . config('app.mapbox_tile_token');
+            $file_path = Storage::disk('local')->path('police-department.geojson.ld');
 
-            // Verify cURL created a File
-            if ($file) {
-                $post = array (
-                    'file' => $file
-                );
+            if ($file_path) {
+                $update = mapBoxUpdate($update_url, $file_path);
 
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
+                // Check if we got a response back from the Mapbox Update
+                if ($update) {
+                    $updated = (isset($update['success']) && $update['success'] === true);
+                    $response = (isset($update['success']) && $update['success'] === true) ? $update['response'] : null;
+                    $error = (isset($update['success']) && $update['success'] === false) ? $update['response'] : null;
 
-                $result = curl_exec($ch);
+                    // If the Update Completed Successfully, Trigger a Publish
+                    if ($updated) {
+                        $publish_url = 'https://api.mapbox.com/tilesets/v1/policescorecard.aopjgh6s/publish?access_token=' . config('app.mapbox_tile_token');
+                        $publish = mapBoxPublish($publish_url);
 
-                if (curl_errno($ch)) {
-                    $curl_error = curl_error($ch);
-                }
+                        // Check that we got a response from Mapbox Publish
+                        if ($publish) {
+                            $published = (isset($publish['success']) && $publish['success'] === true);
 
-                curl_close($ch);
-
-                if (isset($curl_error)) {
-                    $error = $curl_error;
-                } else if ($result === FALSE) {
-                    $error = 'Failed to Update Mapbox Tile.';
-                } else {
-                    $response = json_decode($result, true);
-
-                    if (!$response) {
-                        $error = 'No Response from Mapbox';
-                    } else if (isset($response['message'])) {
-                        $error = $response['message'];
-                    } else {
-                        $uploaded = true;
+                            $response['published'] = array(
+                                'response' => $publish['response'],
+                                'jobId' => (isset($publish['jobId'])) ? $publish['jobId'] : null
+                            );
+                        }
                     }
                 }
             } else {
@@ -136,10 +125,11 @@ Route::get('/admin/mapbox', function () {
 
     return view('admin', [
         'clearCache' => false,
-        'mapbox' => true,
         'error' => $error,
-        'uploaded' => $uploaded,
-        'response' => $response
+        'mapbox' => true,
+        'published' => $published,
+        'response' => $response,
+        'updated' => $updated
     ]);
 })->middleware('auth.basic.once');
 

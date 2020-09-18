@@ -1533,3 +1533,123 @@ if (!function_exists('bytesToHuman')) {
         return round($bytes, 2) . ' ' . $units[$i];
     }
 }
+
+/**
+ * Mapbox Update - PUT Mapbox Tiles from GeoJSON-LD
+ *
+ * @param string $url
+ * @param string $file_path
+ * @return void
+ */
+if (!function_exists('mapBoxUpdate')) {
+    function mapBoxUpdate($url, $file_path) {
+        $file = new CURLFile(realpath($file_path));
+
+        if (!$file) {
+            return array(
+                'success' => false,
+                'response' => 'Unable to Generate File for Upload'
+            );
+        }
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, array ('file' => $file));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
+
+        $result = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $curl_error = curl_error($ch);
+        }
+
+        curl_close($ch);
+
+        if (isset($curl_error)) {
+            return array(
+                'success' => false,
+                'response' => $curl_error
+            );
+        } else if ($result === FALSE) {
+            return array(
+                'success' => false,
+                'response' => 'Failed to Update Mapbox Tiles.'
+            );
+        } else {
+            $response = json_decode($result, true);
+
+            if (!$response) {
+                return array(
+                    'success' => false,
+                    'response' => 'No Response from Mapbox'
+                );
+            } else if (isset($response['message'])) {
+                return array(
+                    'success' => false,
+                    'response' => $response['message']
+                );
+            } else {
+                return array(
+                    'success' => true,
+                    'response' => $response
+                );
+            }
+        }
+    }
+}
+
+/**
+ * Mapbox Publish - Once Tiles are Updated, this will Publish
+ *
+ * @param string $url
+ * @return void
+ */
+if (!function_exists('mapBoxPublish')) {
+    function mapBoxPublish($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+
+        $result = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $curl_error = curl_error($ch);
+        }
+
+        curl_close($ch);
+
+        if (isset($curl_error)) {
+            return array(
+                'success' => false,
+                'response' => $curl_error
+            );
+        } else if ($result === FALSE) {
+            return array(
+                'success' => false,
+                'response' => 'Failed to Publish Mapbox Tiles.'
+            );
+        } else {
+            $response = json_decode($result, true);
+
+            if (!$response) {
+                return array(
+                    'success' => false,
+                    'response' => 'No Response from Mapbox'
+                );
+            } else if (isset($response['message']) && !isset($response['jobId'])) {
+                return array(
+                    'success' => false,
+                    'response' => $response['message']
+                );
+            } else {
+                return array(
+                    'success' => true,
+                    'response' => $response
+                );
+            }
+        }
+    }
+}
