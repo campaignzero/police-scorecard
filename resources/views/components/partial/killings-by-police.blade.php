@@ -1,10 +1,10 @@
 <div class="section bg-gray stats">
   <div class="content">
     <div class="one-third home-page">
-      <h1><strong>{{ num($scorecard['total_people_killed']) }}</strong> Killings by Police</h1>
+      <h1>7,645 Killings by Police</h1>
 
       <div class="text">
-        <p>Based on population, a Black person was <strong>{{ num($scorecard['black_deadly_force_disparity_per_population'], 1, 'x') }} as likely</strong> and a Latinx person was <strong>{{ num($scorecard['hispanic_deadly_force_disparity_per_population'], 1, 'x') }} as likely</strong> to be killed by police than a White person in America from 2013-19.</p>
+        <p>Based on population, a Black person was 2.6x as likely and a Latinx person was 1.3x as likely to be killed by police as a White person in America from 2013-19</p>
       </div>
 
       <div class="chart chart-1">
