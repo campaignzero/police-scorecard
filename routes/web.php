@@ -96,27 +96,29 @@ Route::get('/admin/mapbox', function () {
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: multipart/form-data'));
-                curl_setopt($ch, CURLOPT_FRESH_CONNECT, 1);
-                curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
-                curl_setopt($ch, CURLOPT_TIMEOUT, 100);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
 
                 $result = curl_exec($ch);
 
-                if ($result === FALSE) {
-                    curl_close($ch);
+                if (curl_errno($ch)) {
+                    $curl_error = curl_error($ch);
+                }
 
+                curl_close($ch);
+
+                if (isset($curl_error)) {
+                    $error = $curl_error;
+                } else if ($result === FALSE) {
                     $error = 'Failed to Update Mapbox Tile.';
                 } else {
-                    curl_close($ch);
-
                     $response = json_decode($result, true);
 
-                    if ($response['message']) {
+                    if (!$response) {
+                        $error = 'No Response from Mapbox';
+                    } else if (isset($response['message'])) {
                         $error = $response['message'];
                     } else {
                         $uploaded = true;
