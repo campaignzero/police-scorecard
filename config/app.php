@@ -18,6 +18,7 @@ return [
     'google_analytics' => env('GOOGLE_ANALYTICS', null),
     'facebook_id' => env('FACEBOOK_ID', null),
     'mapbox_token' => env('MAPBOX_TOKEN', null),
+    'mapbox_tile_token' => env('MAPBOX_TILE_TOKEN', null),
 
     'providers' => [
         Illuminate\Auth\AuthServiceProvider::class,

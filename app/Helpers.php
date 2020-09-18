@@ -1513,3 +1513,23 @@ if (!function_exists('sortGrades')) {
         );
     }
 }
+
+if (!function_exists('encodeNDJSON')) {
+    function encodeNDJSON($data) {
+        $nd_json = '';
+
+        array_walk($data, function ($item) use (&$nd_json) {
+            $nd_json .= json_encode($item, JSON_UNESCAPED_SLASHES) . PHP_EOL;
+        });
+
+        return $nd_json;
+    }
+}
+
+if (!function_exists('bytesToHuman')) {
+    function bytesToHuman($bytes) {
+        $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+        for ($i = 0; $bytes > 1024; $i++) $bytes /= 1024;
+        return round($bytes, 2) . ' ' . $units[$i];
+    }
+}
