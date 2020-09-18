@@ -41,7 +41,7 @@
 
             <div id="mapbox-wrapper">
                 <div id="attributions">
-                    <a href="https://www.mapbox.com/about/maps/" target="_blank" {!! trackData('External Nav', 'Map' , 'Mapbox' ) !!}>&copy; Mapbox</a>
+                    <a href="https://www.mapbox.com/about/maps/" rel="noopener nofollow" target="_blank" {!! trackData('External Nav', 'Map' , 'Mapbox' ) !!}>&copy; Mapbox</a>
                 </div>
 
                 <div id="usa-map" class="{{ $type }} {{ $location }}"></div>

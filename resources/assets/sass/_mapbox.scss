@@ -10,10 +10,15 @@
         right: 15%;
         z-index: 10;
         text-align: right;
+        z-index: 2;
 
         a {
-            color: #666;
+            color: #999;
             text-decoration: none;
+
+            &:hover, &:focus {
+                color: #333;
+            }
         }
     }
 
@@ -229,14 +234,38 @@
         display: none;
     }
 
+    #mapbox-wrapper {
+        #attributions {
+            right: 0;
+
+            a {
+                width: 20px;
+                overflow: hidden;
+                display: block;
+                white-space: nowrap;
+                transition: width 0.25s;
+                font-size: 20px;
+                color: #BBB;
+                font-weight: 400;
+
+                &:hover, &:focus {
+                    width: unset !important;
+                    overflow: unset !important;
+                    font-size: 12px;
+                    color: #999;
+                }
+            }
+        }
+    }
+
     .mapboxgl-ctrl-logo {
-        width: 23px;
-        overflow: hidden;
+        width: 23px !important;
+        overflow: hidden !important;
         transition: width 0.15s;
 
         &:hover, &:focus {
-            width: 88px;
-            overflow: unset;
+            width: 88px !important;
+            overflow: unset !important;
         }
     }
 }

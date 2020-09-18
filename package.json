@@ -19,7 +19,7 @@
         "clean": "rm -fr ./public/css && rm -fr ./public/fonts && rm -fr ./public/images && rm -fr ./public/js && rm -fr ./public/maps && rm -fr ./public/san-diego",
         "clear-cache": "php artisan cache:clear && php artisan route:clear && php artisan config:clear && php artisan view:clear && php artisan config:cache",
         "dev": "npm run clean && npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --display=normal --display-chunks=false --display-entrypoints=false --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",

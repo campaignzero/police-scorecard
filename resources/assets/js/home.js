@@ -583,7 +583,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         mapboxgl.accessToken = MB.token;
 
         var mapWrapperView = function(w, h) {
-            return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
+            return geoViewport.viewport([-126.5, 26, -65, 50], [w, h]); // [ left, bottom, right, top ]
         };
 
         var mapAlaskaView = function(w, h) {
@@ -686,7 +686,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         mapboxgl.accessToken = MB.token;
 
         var mapWrapperView = function(w, h) {
-            return geoViewport.viewport([-125, 26, -65, 50], [w, h]);
+            return geoViewport.viewport([-126.5, 26, -65, 50], [w, h]);
         };
 
         var mapAlaskaView = function(w, h) {
