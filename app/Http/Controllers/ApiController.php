@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Cache;
 class ApiController extends Controller
 {
     /**
-     * @var GuzzleHttp API Client
+     * @var Http API Client
      */
     protected $client;
 
     /**
-     * Create new instance of GuzzleHttp
+     * Create new instance of Http
      */
     public function __construct() {
         $this->client = Http::withOptions([
@@ -147,7 +147,7 @@ class ApiController extends Controller
      *
      * <code>
      * $api = new ApiController();
-     * $geojson = api->fetchNationwideMapData('sheriff');
+     * $search = api->search('St. Louis, MO');
      * </code>
      *
      * @param $type
