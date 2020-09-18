@@ -134,14 +134,14 @@
             @endif
 
             @if($updated && $response && isset($response['id']))
-                @if($published && $response && isset($response['published']))
+                @if($published && $response && isset($response['published']) && isset($response['published']['jobId']))
             <div class="alert alert-success alert-dismissible" role="alert">
-                <strong>PUBLISH SUCCESS:</strong> Updated Mapbox Tileset: {{ $response['published']['response'] }} ( {{ $response['published']['jobId'] }} )
+                <strong>PUBLISH SUCCESS:</strong> {{ $response['published']['response'] }} ( {{ $response['published']['jobId'] }} )
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @else
+                @else
             <div class="alert alert-danger alert-dismissible" role="alert">
                 <strong>PUBLISH ERROR:</strong> <span id="api-error-message">{{ $response['published']['response'] }}</span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

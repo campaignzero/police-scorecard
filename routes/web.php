@@ -107,14 +107,14 @@ Route::get('/admin/mapbox', function () {
                             $published = (isset($publish['success']) && $publish['success'] === true);
 
                             $response['published'] = array(
-                                'response' => $publish['response'],
-                                'jobId' => (isset($publish['jobId'])) ? $publish['jobId'] : null
+                                'response' => (isset($publish['response']) && isset($publish['response']['message'])) ? $publish['response']['message'] : $publish['message'],
+                                'jobId' => (isset($publish['response']) && isset($publish['response']['jobId'])) ? $publish['response']['jobId'] : null
                             );
                         }
                     }
                 }
             } else {
-                $error = 'Unable to Locate File ' . realpath($filepath) . 'for Upload.';
+                $error = 'Unable to Locate File ' . realpath($file_path) . 'for Upload.';
             }
         } else {
             $error = 'Failed to create police-department.geojson.ld file.';
