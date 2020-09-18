@@ -126,7 +126,7 @@
             </div>
             @else
             <div class="alert alert-danger alert-dismissible" role="alert">
-                <strong>ERROR:</strong> <span id="api-error-message">Failed to Update Mapbox Tile</span>
+                <strong>ERROR:</strong> <span id="api-error-message">{{ $error ? $error : 'An Unknown Error has Occurred.' }}</span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

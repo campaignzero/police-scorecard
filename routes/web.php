@@ -75,6 +75,7 @@ Route::get('/admin/mapbox', function () {
     $geojson = $api->fetchNationwideMapData('police-department');
     $uploaded = false;
     $response = null;
+    $error = null;
 
     // Make sure we got some GeoJSON back
     if (!empty($geojson) && isset($geojson['features'])) {
@@ -108,18 +109,33 @@ Route::get('/admin/mapbox', function () {
 
                 if ($result === FALSE) {
                     curl_close($ch);
-                } else{
+
+                    $error = 'Failed to Update Mapbox Tile.';
+                } else {
                     curl_close($ch);
-                    $uploaded = true;
+
                     $response = json_decode($result, true);
+
+                    if ($response['message']) {
+                        $error = $response['message'];
+                    } else {
+                        $uploaded = true;
+                    }
                 }
+            } else {
+                $error = 'Unable to Locate File ' . realpath($filepath) . 'for Upload.';
             }
+        } else {
+            $error = 'Failed to create police-department.geojson.ld file.';
         }
+    } else {
+        $error = 'Failed to fetch GeoJSON for Police Departments.';
     }
 
     return view('admin', [
         'clearCache' => false,
         'mapbox' => true,
+        'error' => $error,
         'uploaded' => $uploaded,
         'response' => $response
     ]);
