@@ -30,9 +30,11 @@
 @section('scripts')
     <script>
         var MB = {
-            type: '{{ $type }}',
+            boundaries: '{{ asset("/maps/boundaries-adm2-v3-us.json") }}',
+            police_style: 'mapbox://styles/policescorecard/{{ config("app.mapbox_police_style") }}?fresh=true',
+            sheriff_style: 'mapbox://styles/policescorecard/{{ config("app.mapbox_sheriff_style") }}?fresh=true',
             token: '{{ config("app.mapbox_token") }}',
-            boundaries: '{{ asset("/maps/boundaries-adm2-v3-us.json") }}'
+            type: '{{ $type }}'
         };
         var barChartData = {
             black: {{ (!isset($scorecard['total_black_population']) || $scorecard['total_black_population'] === 0) ? 0: round(($scorecard['total_black_people_killed'] / $scorecard['total_black_population']) * 100, 2) }},

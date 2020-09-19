@@ -19,6 +19,9 @@ return [
     'facebook_id' => env('FACEBOOK_ID', null),
     'mapbox_token' => env('MAPBOX_TOKEN', null),
     'mapbox_tile_token' => env('MAPBOX_TILE_TOKEN', null),
+    'mapbox_police_style' => env('MAPBOX_POLICE_STYLE', null),
+    'mapbox_police_tileset' => env('MAPBOX_POLICE_TILESET', null),
+    'mapbox_sheriff_style' => env('MAPBOX_SHERIFF_STYLE', null),
 
     'providers' => [
         Illuminate\Auth\AuthServiceProvider::class,

@@ -603,7 +603,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var map = new mapboxgl.Map({
             center: mapWrapper.center,
             container: 'usa-map',
-            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f?fresh=true',
+            style: MB.police_style,
             interactive: false,
             zoom: mapWrapper.zoom * mapZoom
         });
@@ -611,7 +611,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var alaskaOverlay = new mapboxgl.Map({
             center: mapAlaska.center,
             container: 'alaska-overlay',
-            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f?fresh=true',
+            style: MB.police_style,
             interactive: false,
             zoom: 0.6
         });
@@ -619,7 +619,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var hawaiiOverlay = new mapboxgl.Map({
             center: mapHawaii.center,
             container: 'hawaii-overlay',
-            style: 'mapbox://styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f?fresh=true',
+            style: MB.police_style,
             interactive: false,
             zoom: 3
         });
@@ -714,7 +714,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var map = new mapboxgl.Map({
             center: mapWrapper.center,
             container: 'usa-map',
-            style: 'mapbox://styles/policescorecard/ckdtcnr2u02jo19mq0dj7n45r?fresh=true',
+            style: MB.sheriff_style,
             interactive: false,
             zoom: mapWrapper.zoom * mapZoom
         });
@@ -723,7 +723,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var alaskaOverlay = new mapboxgl.Map({
             center: mapAlaska.center,
             container: 'alaska-overlay',
-            style: 'mapbox://styles/policescorecard/ckdtcnr2u02jo19mq0dj7n45r?fresh=true',
+            style: MB.sheriff_style,
             interactive: false,
             zoom: 0.6
         });
@@ -732,7 +732,7 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
         var hawaiiOverlay = new mapboxgl.Map({
             center: mapHawaii.center,
             container: 'hawaii-overlay',
-            style: 'mapbox://styles/policescorecard/ckdtcnr2u02jo19mq0dj7n45r?fresh=true',
+            style: MB.sheriff_style,
             interactive: false,
             zoom: 3
         });
