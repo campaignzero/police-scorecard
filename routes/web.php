@@ -85,7 +85,9 @@ Route::get('/admin/mapbox', function () {
         // Make sure GeoJSON conversion worked, and that we wrote the file to disk
         if (!empty($geojson_ld) && Storage::disk('local')->put('police-department.geojson.ld', $geojson_ld)) {
             // Setup Params fpr Mapbox Update
-            $update_url = 'https://api.mapbox.com/tilesets/v1/sources/policescorecard/aopjgh6s?access_token=' . config('app.mapbox_tile_token');
+            $mapbox_police_tileset = config('app.mapbox_police_tileset');
+            $mapbox_tile_token = config('app.mapbox_police_tileset');
+            $update_url = "https://api.mapbox.com/tilesets/v1/sources/" . str_replace('.', '/', $mapbox_police_tileset) . "?access_token={$mapbox_tile_token}";
             $file_path = Storage::disk('local')->path('police-department.geojson.ld');
 
             if ($file_path) {
@@ -99,7 +101,7 @@ Route::get('/admin/mapbox', function () {
 
                     // If the Update Completed Successfully, Trigger a Publish
                     if ($updated) {
-                        $publish_url = 'https://api.mapbox.com/tilesets/v1/policescorecard.aopjgh6s/publish?access_token=' . config('app.mapbox_tile_token');
+                        $publish_url = "https://api.mapbox.com/tilesets/v1/{$mapbox_police_tileset}/publish?access_token={$mapbox_tile_token}";
                         $publish = mapBoxPublish($publish_url);
 
                         // Check that we got a response from Mapbox Publish
