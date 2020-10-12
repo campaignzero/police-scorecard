@@ -20,3 +20,6 @@ public/js
 public/css
 public/maps
 public/mix-manifest.json
+bootstrap/cache
+storage/framework/cache
+storage/logs
