@@ -411,6 +411,7 @@ if (!function_exists('getNationalSummary')) {
         $total_arrests_2016 = 0;
         $total_arrests_2017 = 0;
         $total_arrests_2018 = 0;
+        $total_arrests_2019 = 0;
 
         foreach($states as $abbr => $state) {
             $total_arrests += $state['total_arrests'];
@@ -434,6 +435,7 @@ if (!function_exists('getNationalSummary')) {
             $total_arrests_2016 += $state['total_arrests_2016'];
             $total_arrests_2017 += $state['total_arrests_2017'];
             $total_arrests_2018 += $state['total_arrests_2018'];
+            $total_arrests_2019 += $state['total_arrests_2019'];
         }
 
         return array(
@@ -454,6 +456,7 @@ if (!function_exists('getNationalSummary')) {
             'total_arrests_2016' => $total_arrests_2016,
             'total_arrests_2017' => $total_arrests_2017,
             'total_arrests_2018' => $total_arrests_2018,
+            'total_arrests_2019' => $total_arrests_2019,
             'black_deadly_force_disparity_per_population' => (($total_black_people_killed / $total_black_population) / ($total_white_people_killed / $total_white_population)),
             'hispanic_deadly_force_disparity_per_population' => (($total_hispanic_people_killed / $total_hispanic_population) / ($total_white_people_killed / $total_white_population)),
             'times_more_misdemeanor_arrests_than_violent_crime' => ($total_low_level_arrests / $total_violent_crime_arrests)
@@ -1048,6 +1051,11 @@ if (!function_exists('generateArrestChart')) {
         if (isset($scorecard['arrests']['arrests_2018'])) {
             $output['labels'][] = '2018';
             $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2018'];
+        }
+
+        if (isset($scorecard['arrests']['arrests_2019'])) {
+            $output['labels'][] = '2019';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2019'];
         }
 
         return json_encode($output);

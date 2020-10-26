@@ -5,10 +5,7 @@
             About This Scorecard
         </h1>
         <p>
-            <strong>This is the first nationwide evaluation of policing in the United States.</strong> It was built
-            using data from state and federal databases, public records requests to local police departments, and media
-            reports. While police data is never perfect, and there are additional indicators that still need to be
-            tracked, the Police Scorecard is designed to provide insight into many important issues in policing.
+            <strong>This is the first nationwide evaluation of policing in the United States.</strong> It was built using data from state and federal databases, public records requests to local police departments, and media reports. While police data is never perfect, and there are additional indicators that still need to be tracked, the Police Scorecard is designed to provide insight into many important issues in policing.
         </p>
         <p>
             <a href="/about" class="button" {!! trackData('Nav', 'About', 'Methodology') !!}>methodology</a>
@@ -16,15 +13,7 @@
         </p>
         <p>&nbsp;</p>
         <p>
-            <strong>Use this Scorecard to identify issues within police departments that require the most urgent
-            interventions and hold officials accountable for implementing solutions.</strong> For example, cities
-            with higher rates of arrests for low level offenses could benefit most from solutions that create
-            alternatives to policing and arrest for these offenses. In cities where police make fewer arrests overall
-            but use more force when making arrests, communities could benefit significantly from policies designed to
-            hold police accountable for this behavior. And cities where complaints of police misconduct are rarely ruled
-            in favor of civilians could benefit from repealing provisions in local police union contracts and state
-            "Police Bill of Rights" laws that obstruct, delay and/or disqualify many investigations into police
-            misconduct.
+            <strong>Use this Scorecard to identify issues within police departments that require the most urgent interventions and hold officials accountable for implementing solutions.</strong> For example, cities with higher rates of misdemeanor arrests could benefit most from solutions that create alternatives to policing and arrest for these offenses. In cities where police make fewer arrests overall but use more force when making arrests, communities could benefit significantly from policies designed to hold police accountable for this behavior. And cities where complaints of police misconduct are rarely ruled in favor of civilians could benefit from creating an oversight structure to independently investigate these complaints.
         </p>
     </div>
     <div class="content">
@@ -44,11 +33,10 @@
                     <ul>
                         <li>
                         @if ($type === 'sheriff')
-                            <strong>Contact Your County Sheriff</strong>, share this scorecard with them and urge them
-                            to enact policies to address the issues you've identified.
+                            <strong>Contact Your County Sheriff</strong>, share your scorecard with them and urge them to enact policies to address the issues you've identified:
                         @else
-                            <strong>Contact your Mayor and Police Chief</strong>, share this scorecard with them and
-                            urge them to enact policies to address the issues you've identified.
+                            <strong>Contact your Mayor and Police Chief</strong>, share your scorecard with them and urge them to enact policies to address the issues you've identified:
+
                         @endif
 
                         @if (!empty($scorecard['agency']))

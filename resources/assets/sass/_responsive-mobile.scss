@@ -4,6 +4,13 @@
         display: none;
     }
 
+    .break-mobile {
+        display: block;
+        width: 100%;
+        height: 0px;
+        clear: both;
+    }
+
     .section.at-a-glance {
         .group-header {
             padding-left: 20px;
@@ -986,6 +993,10 @@
         .content.bt {
             margin-top: 10px;
         }
+    }
+
+    .section.grades .filter-wrapper {
+        padding-left: 20px;
     }
 }
 

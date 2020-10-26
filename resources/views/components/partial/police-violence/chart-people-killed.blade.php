@@ -17,7 +17,7 @@
 
   <div class="progress-bar-wrapper">
     <div class="progress-bar animate-bar grouped key-red" data-percent="{{ output(floatval($scorecard['report']['percent_used_against_people_who_were_unarmed']), 0, '%') }}">
-      <span>{{ (intval($scorecard['report']['percent_used_against_people_who_were_unarmed']) > 5) ? num(intval($scorecard['report']['percent_used_against_people_who_were_unarmed']), 0, '%') : '' }}</span>
+      <span>{{ (intval($scorecard['report']['percent_used_against_people_who_were_unarmed']) > 5) ? num($scorecard['report']['percent_used_against_people_who_were_unarmed'], 0, '%') : '' }}</span>
     </div>
     <div class="progress-bar animate-bar grouped key-orange" data-percent="{{ output(floatval(($scorecard['report']['percent_used_against_people_who_were_not_armed_with_gun'] - $scorecard['report']['percent_used_against_people_who_were_unarmed'])), 0, '%') }}">
       <span>{{ (intval(($scorecard['report']['percent_used_against_people_who_were_not_armed_with_gun'] - $scorecard['report']['percent_used_against_people_who_were_unarmed'])) > 5) ? num(intval(($scorecard['report']['percent_used_against_people_who_were_not_armed_with_gun'] - $scorecard['report']['percent_used_against_people_who_were_unarmed'])), 0, '%') : '' }}</span>
