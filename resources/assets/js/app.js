@@ -58,6 +58,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
     bindEvents: function() {
         // Cache Element Lookups
         PoliceScorecard.elm.$citySelect = document.getElementById('city-select');
+        PoliceScorecard.elm.$filterGrade = document.getElementsByClassName('filter-grade');
         PoliceScorecard.elm.$mainWrapper = document.getElementById('main');
         PoliceScorecard.elm.$menu = document.getElementById('menu');
         PoliceScorecard.elm.$menuToggle = document.getElementById('mobile-toggle');
@@ -73,9 +74,9 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$resultsInfoContent = document.getElementById('results-info-content');
         PoliceScorecard.elm.$scoreCard = document.getElementById('score-card');
         PoliceScorecard.elm.$scoreLocation = document.getElementById('score-location');
-        PoliceScorecard.elm.$searchIcon = document.getElementById('search-icon');
         PoliceScorecard.elm.$searchField = document.getElementById('search');
         PoliceScorecard.elm.$searchForm = document.getElementById('search-form');
+        PoliceScorecard.elm.$searchIcon = document.getElementById('search-icon');
         PoliceScorecard.elm.$searchResultsContainer = document.getElementById('search-results-container');
         PoliceScorecard.elm.$selectedCity = document.getElementsByClassName('selected-city');
         PoliceScorecard.elm.$selectedState = document.querySelector('#state-select a.active');
@@ -344,6 +345,13 @@ window.PoliceScorecard = window.PoliceScorecard || {
             });
         });
 
+        // Click Event for Filter Grade
+        Array.prototype.forEach.call(PoliceScorecard.elm.$filterGrade, function(el) {
+            el.addEventListener('click', function(evt) {
+                PoliceScorecard.filterGrades(evt);
+            });
+        });
+
         // Support Mouse Interaction with Mouse Pointer ( Touch events would not work on this map due to close proximity of markers )
         document.body.onmousedown = function(e) {
             if (!e) {
@@ -499,6 +507,43 @@ window.PoliceScorecard = window.PoliceScorecard || {
     escapeKey: function(evt) {
         if (evt.keyCode == 27) {
             PoliceScorecard.closeModal();
+        }
+    },
+
+    /**
+     * Filter Grades
+     * @param {*} evt
+     */
+    filterGrades: function(evt) {
+        var data;
+
+        if (typeof evt.target !== 'undefined' && typeof evt.target.dataset !== 'undefined' && typeof evt.target.dataset.track !== 'undefined') {
+            data = evt.target.dataset;
+        } else if (typeof evt.target !== 'undefined' && typeof evt.target.parentNode !== 'undefined' && typeof evt.target.parentNode.dataset !== 'undefined' && typeof evt.target.parentNode.dataset.track !== 'undefined') {
+            data = evt.target.parentNode.dataset;
+        }
+
+        var grade = '.grade-' + data.grade;
+        var button = document.querySelector('.filter-grade' + grade);
+        var rows = document.querySelectorAll('.grade-row' + grade);
+
+        if (button.style.opacity < 1) {
+            button.style.opacity = 1;
+            // Show Grades
+            Array.prototype.forEach.call(rows, function(el) {
+                el.style.display = 'table-row';
+            });
+        } else {
+            button.style.opacity = 0.25;
+            // Hide Grades
+            Array.prototype.forEach.call(rows, function(el) {
+                el.style.display = 'none';
+            });
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
         }
     },
 

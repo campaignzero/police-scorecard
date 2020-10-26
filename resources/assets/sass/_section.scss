@@ -1491,6 +1491,15 @@
 .section.stats {
     .section-header {
         height: 80px;
+
+        &.home-page {
+            height: 100px;
+
+            .title {
+                height: 100px;
+                line-height: 120px;
+            }
+        }
     }
 
     h1.title {
@@ -1510,10 +1519,6 @@
         vertical-align: top;
         padding-right: 60px;
         padding-bottom: 60px;
-
-        &.home-page {
-            margin-top: 50px;
-        }
 
         h1, h2 {
             color: #FFF;
@@ -1800,6 +1805,17 @@
         font-weight: 500;
     }
 
+    .grades-header {
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
     .add-new-data {
         border-top: 1px solid #979797;
         padding-top: 30px;
@@ -1834,6 +1850,27 @@
                 cursor: pointer;
                 position: absolute;
                 overflow: visible;
+            }
+        }
+    }
+
+    .filter-wrapper {
+        display: none; /* Disabling for Now */
+        margin-bottom: 8px;
+        line-height: 30px;
+
+        .filter-grade {
+            text-decoration: none;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 12px;
+            padding-right: 8px;
+            transition: opacity 0.25s;
+            opacity: 1;
+
+            .percent {
+                position: relative;
+                top: -2px;
             }
         }
     }

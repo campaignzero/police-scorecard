@@ -1,22 +1,65 @@
 <!-- Grades -->
 <div class="section bg-light-gray grades short" id="score-card">
-    <div class="content">
+    <div class="content grades-header">
         <h1 class="title">
             {{ getStateName($state)  }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department Scores
         </h1>
+
+        <p>Rankings are based upon a 0 to 100 percentage scale. Departments with <strong>higher</strong> scores <strong>use less force, more accountability, less police spending, fewer arrests for low level offenses, and more murders solved</strong>.</p>
+
+        <p>Tap more to see an extended list.</p>
+    </div>
+
+    <div class="content filter-wrapper">
+        <a href="#score-0-29" class="filter-grade grade-f-minus" style="opacity: 1" data-grade="f-minus" {!! trackData('Nav', 'Grades Filter', '0-29%') !!}>
+            <span class="grade grade-f-minus"></span>
+            <span class="percent">0-29%</span>
+        </a>
+
+        <a href="#score-30-59" class="filter-grade grade-f" style="opacity: 1" data-grade="f" {!! trackData('Nav', 'Grades Filter', '30-59%') !!}>
+            <span class="grade grade-f"></span>
+            <span class="percent">30-59%</span>
+        </a>
+
+        <a href="#score-60-69" class="filter-grade grade-d" style="opacity: 1" data-grade="d" {!! trackData('Nav', 'Grades Filter', '60-69%') !!}>
+            <span class="grade grade-d"></span>
+            <span class="percent">60-69%</span>
+        </a>
+
+        <a href="#score-70-79" class="filter-grade grade-c" style="opacity: 1" data-grade="c" {!! trackData('Nav', 'Grades Filter', '70-79%') !!}>
+            <span class="grade grade-c"></span>
+            <span class="percent">70-79%</span>
+        </a>
+
+        <span class="break-mobile"></span>
+
+        <a href="#score-80-89" class="filter-grade grade-b" style="opacity: 1" data-grade="b" {!! trackData('Nav', 'Grades Filter', '80-89%') !!}>
+            <span class="grade grade-b"></span>
+            <span class="percent">80-89%</span>
+        </a>
+
+        <a href="#score-90-100" class="filter-grade grade-a" style="opacity: 1" data-grade="a" {!! trackData('Nav', 'Grades Filter', '90-100%') !!}>
+            <span class="grade grade-a"></span>
+            <span class="percent">90-100%</span>
+        </a>
+
+        <a href="#score-incomplete" class="filter-grade grade-incomplete" style="opacity: 1" data-grade="incomplete" {!! trackData('Nav', 'Grades Filter', 'Incomplete') !!}>
+            <span class="grade grade-incomplete"></span>
+            <span class="percent">Incomplete</span>
+        </a>
     </div>
 
     <div class="content">
         <div class="left">
             <table>
                 <tr>
-                    <th width="80%">Department</th>
+                <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
                 @foreach($grades['all'] as $index => $card) @if ($index < floor(count($grades['all']) / 2))
-                <tr>
+                <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
-                        <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
+                    <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
                             <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
@@ -29,11 +72,11 @@
         <div class="right">
             <table>
                 <tr>
-                    <th width="80%">Department</th>
+                    <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
                 @foreach($grades['all'] as $index => $card) @if ($index >= floor(count($grades['all']) / 2))
-                <tr>
+                <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                         <a href="{{ $card['url_pretty'] }}"{!! ($index > (floor(count($grades['complete']) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
                             <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>

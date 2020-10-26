@@ -7,7 +7,7 @@
         {{ nFormatter($scorecard['report']['police_spending_per_resident'], 2) }} per Resident
     </p>
     <p>
-        More Police Funding per Capita than {{ num($scorecard['police_funding']['percentile_police_spending_ratio'], 0, '%', true) }} of Depts
+        More Police Funding per Capita than {{ num($scorecard['police_funding']['percentile_police_spending_ratio'], 0, '%') }} of Depts
     </p>
 
     <div id="chart-police-funding"></div>
