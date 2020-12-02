@@ -54,7 +54,7 @@
         @elseif($scorecard['report']['complaints_sustained'] > 0)
         <p><strong>{{ num($scorecard['report']['complaints_sustained'], 0, '%') }}</strong> were ruled in favor of civilians from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
         @else
-        <p>Only <strong>1 in every {{ round(intval(str_replace(',', '', $scorecard['police_accountability']['civilian_complaints_reported'])) / intval(str_replace(',', '', $scorecard['police_accountability']['civilian_complaints_sustained']))) }} complaints</strong> were ruled in favor of civilians from 2016-18.</p>
+        <p>Only <strong>1 in every {{ round(intval(str_replace(',', '', $scorecard['police_accountability']['civilian_complaints_reported'])) / intval(str_replace(',', '', $scorecard['police_accountability']['civilian_complaints_sustained']))) }} complaints</strong> were ruled in favor of civilians from 2016-19.</p>
         @endif
       </div>
 
@@ -72,7 +72,7 @@
       <h2><strong>{{ num($scorecard['report']['total_arrests']) }}</strong> arrests made</h2>
 
       <div class="text">
-        <p>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }} of all arrests were for low-level, non-violent offenses from 2013-18.</p>
+        <p>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }} of all arrests were for low-level, non-violent offenses from 2013-19.</p>
       </div>
 
       <div class="chart chart-3">
