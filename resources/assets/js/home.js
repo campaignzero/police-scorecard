@@ -628,13 +628,6 @@ window.PoliceScorecardHome = window.PoliceScorecardHome || (function() {
             closeOnClick: false
         });
 
-        // Fetch Boundaries
-        fetch(MB.boundaries).then(res => res.json()).then((out) => {
-            lookupTable = out;
-        }).catch(err => {
-            throw err
-        });
-
         map.on('load', function() {
             createMapMarkers(map);
             $mapLoading.style.display = 'none';
