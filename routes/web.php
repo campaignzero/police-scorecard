@@ -86,7 +86,7 @@ Route::get('/admin/mapbox', function () {
         if (!empty($geojson_ld) && Storage::disk('local')->put('police-department.geojson.ld', $geojson_ld)) {
             // Setup Params fpr Mapbox Update
             $mapbox_police_tileset = config('app.mapbox_police_tileset');
-            $mapbox_tile_token = config('app.mapbox_police_tileset');
+            $mapbox_tile_token = config('app.mapbox_tile_token');
             $update_url = "https://api.mapbox.com/tilesets/v1/sources/" . str_replace('.', '/', $mapbox_police_tileset) . "?access_token={$mapbox_tile_token}";
             $file_path = Storage::disk('local')->path('police-department.geojson.ld');
 
