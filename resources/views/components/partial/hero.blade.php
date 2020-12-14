@@ -13,7 +13,7 @@
         <div class="header-intro home">
             <h1>We obtained data on America's {{ $type === "sheriff" ? num($totalSheriff) : num($totalPolice) }} {{ $type === "sheriff" ? "sheriff's" : "police" }} departments.</h1>
 
-            <h2>Read the <a href="https://docs.google.com/document/d/1RzyI28Vt9l1fXH7-hAfPLknRRUagTCIngW1LjXwGPrw/edit" rel="noopener" target="_blank" style="color: #5a6f83; text-decoration: underline; font-weight: 400;" {!! trackData('External Nav', 'Hero' , 'Findings' ) !!}>Findings.</a> See the Data for Each Department.</h2>
+            <h2>Read the <a href="/findings" style="color: #5a6f83; text-decoration: underline; font-weight: 400;" {!! trackData('External Nav', 'Hero' , 'Findings' ) !!}>Findings.</a> See the Data for Each Department.</h2>
 
             <div class="buttons">
                 <a href="/us/police-department" class="btn {{ $type === 'police-department' ? 'active' : '' }}" {!! trackData('Nav', 'Hero' , 'Police Depts' ) !!}>Police Depts</a>

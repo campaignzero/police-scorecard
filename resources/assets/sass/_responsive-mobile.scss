@@ -1,7 +1,7 @@
 /* RESPONSIVE MOBILE */
 @media screen and (max-width: $bp-max-width) {
     .hide-mobile {
-        display: none;
+        display: none !important;
     }
 
     .break-mobile {
@@ -997,6 +997,12 @@
 
     .section.grades .filter-wrapper {
         padding-left: 20px;
+    }
+
+    .section.findings {
+        .content {
+            padding: 0 20px;
+        }
     }
 }
 

@@ -94,7 +94,7 @@ class ApiController extends Controller
      *
      * @return mixed
      */
-    public function fetchGrades($state, $type, $limit = 1000) {
+    public function fetchGrades($state, $type, $limit = 500) {
         return $this->makeRequest("scorecard/grades/{$state}/{$type}?limit={$limit}");
     }
 
