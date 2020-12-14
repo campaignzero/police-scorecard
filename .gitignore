@@ -25,3 +25,4 @@ public/mix-manifest.json
 bootstrap/cache
 storage/framework/cache
 storage/logs
+dist

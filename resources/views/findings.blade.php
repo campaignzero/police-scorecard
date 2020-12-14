@@ -2,145 +2,444 @@
 
 @section('title', 'Findings')
 
-@section('styles')
-<style>sup a{font-size:10px;vertical-align:super;font-weight:700}p{margin-bottom:14px;line-height:28px}iframe{max-width:100%!important}.lst-kix_fckzbmam001m-6>li{counter-increment:lst-ctn-kix_fckzbmam001m-6}.lst-kix_uruhbdngh9zy-6>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-6}ol.lst-kix_fckzbmam001m-6.start{counter-reset:lst-ctn-kix_fckzbmam001m-6 0}.lst-kix_fckzbmam001m-7>li{counter-increment:lst-ctn-kix_fckzbmam001m-7}ol.lst-kix_fckzbmam001m-3.start{counter-reset:lst-ctn-kix_fckzbmam001m-3 0}.lst-kix_fckzbmam001m-7>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-7, lower-latin) ". "}.lst-kix_fckzbmam001m-6>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-6, decimal) ". "}ul.lst-kix_pr7wbpbcyk4v-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-7.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-7 0}.lst-kix_fckzbmam001m-8>li{counter-increment:lst-ctn-kix_fckzbmam001m-8}.lst-kix_uruhbdngh9zy-5>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-5}ul.lst-kix_pr7wbpbcyk4v-4{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-5{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-6{list-style-type:none}.lst-kix_fckzbmam001m-5>li{counter-increment:lst-ctn-kix_fckzbmam001m-5}ul.lst-kix_pr7wbpbcyk4v-7{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-0{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-1{list-style-type:none}.lst-kix_fckzbmam001m-1>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-1, lower-latin) ". "}ul.lst-kix_pr7wbpbcyk4v-2{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-3{list-style-type:none}.lst-kix_fckzbmam001m-2>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-2, lower-roman) ". "}ol.lst-kix_fckzbmam001m-0.start{counter-reset:lst-ctn-kix_fckzbmam001m-0 0}.lst-kix_uruhbdngh9zy-8>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-8}ol.lst-kix_fckzbmam001m-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-1.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-1 0}ol.lst-kix_fckzbmam001m-1.start{counter-reset:lst-ctn-kix_fckzbmam001m-1 0}.lst-kix_fckzbmam001m-4>li{counter-increment:lst-ctn-kix_fckzbmam001m-4}.lst-kix_uruhbdngh9zy-3>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-3}ol.lst-kix_fckzbmam001m-2.start{counter-reset:lst-ctn-kix_fckzbmam001m-2 0}ol.lst-kix_fckzbmam001m-8.start{counter-reset:lst-ctn-kix_fckzbmam001m-8 0}ol.lst-kix_uruhbdngh9zy-8.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-8 0}ol.lst-kix_uruhbdngh9zy-2.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-2 0}ol.lst-kix_fckzbmam001m-4{list-style-type:none}ol.lst-kix_fckzbmam001m-5{list-style-type:none}ol.lst-kix_fckzbmam001m-6{list-style-type:none}ol.lst-kix_fckzbmam001m-7{list-style-type:none}ol.lst-kix_fckzbmam001m-0{list-style-type:none}ol.lst-kix_fckzbmam001m-1{list-style-type:none}ol.lst-kix_fckzbmam001m-2{list-style-type:none}ol.lst-kix_fckzbmam001m-3{list-style-type:none}.lst-kix_fckzbmam001m-0>li{counter-increment:lst-ctn-kix_fckzbmam001m-0}.lst-kix_z6y9fbn9tl0s-4>li:before{content:"\0025cb  "}.lst-kix_z6y9fbn9tl0s-6>li:before{content:"\0025cf  "}.lst-kix_z6y9fbn9tl0s-1>li:before{content:"\0025cb  "}.lst-kix_z6y9fbn9tl0s-5>li:before{content:"\0025a0  "}.lst-kix_z6y9fbn9tl0s-0>li:before{content:"\0025cf  "}.lst-kix_z6y9fbn9tl0s-8>li:before{content:"\0025a0  "}.lst-kix_z6y9fbn9tl0s-7>li:before{content:"\0025cb  "}ul.lst-kix_z6y9fbn9tl0s-1{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-2{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-0{list-style-type:none}ol.lst-kix_uruhbdngh9zy-6.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-6 0}.lst-kix_fckzbmam001m-1>li{counter-increment:lst-ctn-kix_fckzbmam001m-1}.lst-kix_z6y9fbn9tl0s-2>li:before{content:"\0025a0  "}.lst-kix_uruhbdngh9zy-0>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-0}.lst-kix_z6y9fbn9tl0s-3>li:before{content:"\0025cf  "}.lst-kix_uruhbdngh9zy-2>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-2, lower-roman) ". "}.lst-kix_uruhbdngh9zy-1>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-1, lower-latin) ". "}.lst-kix_uruhbdngh9zy-5>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-5, lower-roman) ". "}.lst-kix_uruhbdngh9zy-6>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-6, decimal) ". "}.lst-kix_uruhbdngh9zy-0>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-0, decimal) ". "}.lst-kix_uruhbdngh9zy-8>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-8, lower-roman) ". "}ol.lst-kix_fckzbmam001m-7.start{counter-reset:lst-ctn-kix_fckzbmam001m-7 0}ol.lst-kix_uruhbdngh9zy-3.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-3 0}.lst-kix_uruhbdngh9zy-7>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-7, lower-latin) ". "}.lst-kix_uruhbdngh9zy-2>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-2}.lst-kix_fckzbmam001m-2>li{counter-increment:lst-ctn-kix_fckzbmam001m-2}ol.lst-kix_uruhbdngh9zy-0.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-0 0}.lst-kix_uruhbdngh9zy-4>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-4, lower-latin) ". "}.lst-kix_uruhbdngh9zy-3>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-3, decimal) ". "}.lst-kix_pr7wbpbcyk4v-8>li:before{content:"\0025a0  "}.lst-kix_pr7wbpbcyk4v-7>li:before{content:"\0025cb  "}ol.lst-kix_uruhbdngh9zy-4.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-4 0}.lst-kix_pr7wbpbcyk4v-4>li:before{content:"\0025cb  "}.lst-kix_pr7wbpbcyk4v-5>li:before{content:"\0025a0  "}.lst-kix_pr7wbpbcyk4v-6>li:before{content:"\0025cf  "}.lst-kix_fckzbmam001m-3>li{counter-increment:lst-ctn-kix_fckzbmam001m-3}.lst-kix_pr7wbpbcyk4v-0>li:before{content:"\0025cf  "}.lst-kix_pr7wbpbcyk4v-1>li:before{content:"\0025cb  "}.lst-kix_pr7wbpbcyk4v-3>li:before{content:"\0025cf  "}ol.lst-kix_fckzbmam001m-4.start{counter-reset:lst-ctn-kix_fckzbmam001m-4 0}.lst-kix_pr7wbpbcyk4v-2>li:before{content:"\0025a0  "}ol.lst-kix_uruhbdngh9zy-8{list-style-type:none}ol.lst-kix_fckzbmam001m-5.start{counter-reset:lst-ctn-kix_fckzbmam001m-5 0}.lst-kix_uruhbdngh9zy-7>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-7}ol.lst-kix_uruhbdngh9zy-6{list-style-type:none}ol.lst-kix_uruhbdngh9zy-7{list-style-type:none}ol.lst-kix_uruhbdngh9zy-4{list-style-type:none}ol.lst-kix_uruhbdngh9zy-5{list-style-type:none}ol.lst-kix_uruhbdngh9zy-2{list-style-type:none}ol.lst-kix_uruhbdngh9zy-3{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-7{list-style-type:none}ol.lst-kix_uruhbdngh9zy-0{list-style-type:none}.lst-kix_uruhbdngh9zy-1>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-1}ul.lst-kix_z6y9fbn9tl0s-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-1{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-5{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-6{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-3{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-4{list-style-type:none}.lst-kix_uruhbdngh9zy-4>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-4}ol.lst-kix_uruhbdngh9zy-5.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-5 0}ol{margin:0;padding:0}table td,table th{padding:0}.c10{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#15c;text-decoration:underline}.c5{padding-top:0;padding-bottom:0;line-height:1;text-align:left}.c13{background-color:#fff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c12{color:inherit;text-decoration:inherit}.c7{padding:0;margin:0}.c0{margin:5px 0}.c14{width:33%;height:1px}.c16{orphans:2;widows:2}.c19{font-size:10pt}.c2{font-size:10pt}.c15{font-style:italic}.c8{padding-left:0}.c9{height:5pt}.c6{margin-left:0;margin-bottom:8px}.c4{font-weight:700}.subtitle{color:#464648;padding:0;font-size:28px;line-height:32px;font-weight:300;text-transform:uppercase;margin:14px 0;font-family:'Barlow Condensed',sans-serif}.c3 img{max-width:70%}</style>
-@endsection
-
 @section('content')
     <x-partial.menu />
 
-    <div class="section about">
+    <div class="section findings">
         <div class="content">
+
             <h1 class="title">
-                Key Findings
+                POLICE SCORECARD PROJECT METHODOLOGY
             </h1>
-            <p class="c3"><span class="c4 subtitle">We built the first Scorecard to evaluate policing in California. Here&rsquo;s what we found.</span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>Nationwide protests demanding an end to police violence have </span><span class="c10"><a class="c12" href="https://bit.ly/2vCY7j1">shifted public opinion</a></span><span>&nbsp;over the </span><span>past five years</span><span>. An estimated </span><span class="c10"><a class="c12" href="https://www.vox.com/2019/3/22/18259865/great-awokening-white-liberals-race-polling-trump-2020">45 million</a></span><span>&nbsp;Americans have adopted more progressive views on race and racism since the protests </span><span>began</span><span>&nbsp;in 2014. But while public opinion has changed, </span><span>policing</span><span> outcomes in most places have not. The police killed </span><span class="c10"><a class="c12" href="https://www.theroot.com/here-s-how-many-people-police-killed-in-2018-1831469528">more people</a></span><span>&nbsp;</span><span>last year than the year before</span><span>, </span><span>racial disparities in outcomes such as </span><span class="c10"><a class="c12" href="https://ucr.fbi.gov/crime-in-the-u.s/2017/crime-in-the-u.s.-2017/tables/table-43">arrests</a></span><span>&nbsp;and </span><span class="c10"><a class="c12" href="https://mappingpoliceviolence.org/">deadly force</a></span><span>&nbsp;persist</span><span>, and the criminal justice system is not more likely to hold police accountable. In a country with 18,000 law enforcement agencies, each with different issues and outcomes, changing these outcomes on a nationwide scale requires sustained organizing and advocacy efforts in </span><span class="c15">every jurisdiction</span><span>. To do this, </span><span class="c11 c4">communities need the tools to effectively evaluate each law enforcement agency and hold them accountable to measurable results. </span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>But how do you evaluate the police?</span><span class="c4">&nbsp;</span><span>There are substantially different perspectives about what police should or should not do - and whether the institution of policing should continue to exist at all. These differences cannot all be resolved at once, but we believe there are a set of common principles that can provide an initial framework for evaluating </span><span>any </span><span class="c1">agency responsibility for protecting people from harm:</span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <div class="number-list">
-                <p class="c3 number-list n1" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should prioritize protecting people from violence, not arresting people for low level offenses</span></p>
-                <p class="c3 number-list n2" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should avoid the use of force, especially deadly force, to the greatest extent possible</span></p>
-                <p class="c3 number-list n3" style="min-height: 40px; display: flex; align-items: center;"><span>When people come forward to report misconduct by employees of the agency, it should result in some form of accountability</p>
-                <p class="c3 number-list n4" style="min-height: 40px; display: flex; align-items: center;"><span>When people call on the agency to help solve the most serious crimes - those resulting in death - they should be able to trust that agency to find the person responsible</span></p>
-                <p class="c3 number-list n5" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should accomplish these goals in ways that are not biased or discriminatory</span></p>
-            </div>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>Based on these principles, </span><span class="c10"><a class="c12" href="http://joincampaignzero.org">Campaign Zero</a></span><span>&nbsp;obtained data from state and local agencies to evaluate California&rsquo;s 100 largest municipal police departments and converted each evaluation (represented by a &ldquo;score&rdquo; from 0-100) into an easy-to-understand letter grade. Using this methodology, a police department received a higher grade if it made </span><span class="c15">fewer arrests</span><span>&nbsp;for low level offenses, </span><span class="c15">used</span><span>&nbsp;</span><span class="c15">less force </span><span>during arrest, had </span><span class="c15">fewer homicides unsolved</span><span>, </span><span class="c15">did not have racial disparities</span><span>&nbsp;in arrests and use of force, and </span><span class="c15">upheld civilian complaints</span><span>&nbsp;of police misconduct more often than other police departments in the state. </span><span class="c4">See the grade each police department received, and the outcomes informing each grade, at </span><span class="c10 c4"><a class="c12" href="http://policescorecard.org">policescorecard.org. </a></span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
 
-        </div>
-    </div>
+            <h2 class="subtitle">
+                ABOUT THE POLICE SCORECARD
+            </h2>
 
-    <div class="section about bg-gray">
-        <div class="content text-white" style="padding-bottom: 60px;">
-            <p class="c3"><span class="c4 subtitle">The California Department of Justice recently made available data on policing in 2018.</span></p>
-            <div class="number-list">
+            <p>
+                <strong>The Police Scorecard is the first nationwide public evaluation of policing in the United States.</strong> The Scorecard calculates levels of police violence, accountability, racial bias and other policing outcomes for over 16,000 municipal and county law enforcement agencies, covering nearly 100% of the US population. The indicators included in this scorecard were selected based on a review of the research literature, input from activists and experts in the field, and a review of publicly available datasets on policing from federal, state, and local agencies. This project is designed to help communities, researchers, police leaders and policy-makers take data-informed action to reduce police use of force, increase accountability and reimagine public safety in their jurisdictions.
+            </p>
 
-                <p class="c3"><span>We've updated the Police Scorecard to include this information, and expanded our analysis to also evaluate every Sheriff's Department in the state. Here are some of the findings from our analysis:</span></p>
+            <h2 class="subtitle">
+                PROJECT DEVELOPMENT, REVIEW, AND REFINEMENT
+            </h2>
 
-                <p class="c3 number-list n1"><span class="c11 c4">California had Fewer Incidents of Police Violence in 2018:</span></p>
+            <p>
+                The Police Scorecard project was built by Samuel Sinyangwe and a team of data scientists, designers, developers, organizers, and students from across the country who believe in the power of data as a tool for justice, accountability and measurable change. This project and its methodological framework will continue to be updated over time in response to feedback and as more data are made available by local, state, and federal agencies. This includes incorporating additional indicators such as police stops and searches, police militarization, policies and procedures, and disciplinary outcomes. The full database, including source documentation, can be accessed <a href="https://drive.google.com/drive/folders/1iivJXgHgyXF9RR-wKYLnpXwXRCGVXlpE?usp=sharing" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Full Database') !!}>here</a>. We've also built an API for the Police Scorecard that can be accessed <a href="https://staywoke.docs.apiary.io/#reference/api-basics" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'API Docs') !!}>here</a>. If you have data to add to this project, analysis or visualizations using the data, or general inquiries, contact us.
+            </p>
 
-                <p class="c3"><span>Police departments in California reported reductions in police violence in 2018 - there were 9% fewer deadly force incidents statewide compared to 2017 and 8% fewer less lethal force incidents in 2018 among the 52 agencies that provided less lethal force data. These reductions in use of force happened despite arrest rates remaining constant at 1.1 million arrests per year.</span></p>
+            <p>
+                <strong>Data Team</strong><br/>
+                Allie Monck<br/>
+                Olivia Orta<br/>
+                Ritesh Ramchandani<br/>
+                Peter Schmalfeldt<br/>
+                Ariel Matos<br/>
+                Kirby Phares<br/>
+                Emily Biondo<br/>
+                Yael Grauer<br/>
+                Amadu Durham<br/>
+                Julia Deeb-Swihart<br/>
+                Mary Hammond<br/>
+                Frankie Wunschel
+            </p>
 
-                <iframe title="California Policing Data Trends, 2016-2018" aria-label="Table" id="datawrapper-chart-lSQxg" src="https://datawrapper.dwcdn.net/lSQxg/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
+            <p>
+                <strong>Partners</strong><br/>
+                MuckRock<br/>
+                Tableau<br/>
+                Microsoft
+            </p>
 
-                <p class="c3 c9"><span class="c1"></span></p>
+            <p>
+                <strong>Research Advisors</strong><br/>
+                Abdul Rad, Independent Researcher, PhD Candidate, University of Oxford
+                John Rappaport, Professor of Law, University of Chicago The Law School
+                Bocar Ba, Assistant Professor of Economics, UC Irvine
+            </p>
 
-                <p class="c3 number-list n2"><span class="c11 c4">Where Did Policing Outcomes Change Most?</span></p>
 
-                <p class="c3"><span>Changes in policing outcomes varied by jurisdiction. Stockton Police Department's overall score increased by 20% in 2018 - more than any other department in our analysis. This change was due, in part, to substantial reductions in Stockton police shootings in 2018 compared to previous years. Among departments that had 8 or more police shootings from 2016-19, Stockton Police Department had the largest reduction in police shootings in 2018.</span></p>
+            <h2 class="subtitle">
+                HOW WE COLLECTED THE DATA
+            </h2>
 
-                <iframe title="% Change in Police Shootings, 2018 vs 2016-2017 Average" aria-label="Arrow Plot" id="datawrapper-chart-wzGPf" src="https://datawrapper.dwcdn.net/wzGPf/2/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-                <p>&nbsp;</p>
-                <p class="c3"><span>Among other large California cities, San Diego, Fresno and Oakland's scores improved moderately while policing outcomes in San Jose, Los Angeles and San Francisco remained relatively constant. Outcomes worsened in Bakersfield which, along with Riverside, continued to have some of the worst policing outcomes in the state among larger cities.</span></p>
+            <p>
+                The Police Scorecard integrates data on police arrests, personnel, funding, incarceration rates and homicide clearance rates from official federal and state databases such as the FBI Uniform Crime Report (UCR), the Bureau of Justice Statistics' Annual Survey of Jails, the US Census Bureau's Survey of State and Local Government Finances and the California Department of Justice's OpenJustice database. Where agencies did not report data to one of these programs, data were sourced from local agency publications and media reports. Data on killings by police were obtained via the Mapping Police Violence database, which documents each case in which police directly caused the death of another person through the use of a firearm or any other type of force. Finally, data on non-fatal police use of force incidents and police misconduct complaints were obtained directly from police agencies via public records requests, annual reports and departments' open data sites. The full list and descriptions of each data source used in this project can be found in Appendix A below.
+            </p>
 
-                <iframe title="Changes in Police Department Scores from 2016-17 to 2018" aria-label="Column Chart" id="datawrapper-chart-eIG3V" src="https://datawrapper.dwcdn.net/eIG3V/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
+            <h2 class="subtitle">
+                HOW AGENCY SCORES ARE CALCULATED:
+            </h2>
 
-                <p class="c3 c9"><span class="c1"></span></p>
+            <p>
+                There are substantially different perspectives about what police should or should not do - and whether the institution of policing should continue to exist at all. These differences cannot all be resolved at once, but we believe there are a set of common principles that can provide an initial framework for evaluating <em>any</em> agency that responds to issues of public safety:
+            </p>
 
-                <p class="c3 number-list n3"><span class="c11 c4">Evaluating California Sheriff's Departments</span></p>
-
-                <p class="c3"><span>To more effectively evaluate Sheriff's Departments, we added new indicators that reflect the role of sheriffs in running county jails. In addition to the existing framework used to evaluate city police departments, we examined the sheriffs' jail incarceration rates, jail deaths per jail population, and transfers of immigrants to ICE. Based on this comprehensive evaluation, we found that Los Angeles County Sheriff and San Diego County Sheriff - the state's largest Sheriff's Departments - had among the worst scores of the 58 CA Sheriff's Departments. Between 2016-19, Los Angeles County Sheriff's Department used more deadly force during arrest than 86% of departments and had the worst level of discriminatory policing of any other Sheriff's Department in the state, as determined by our racial bias scoring methodology. San Diego Sheriff used more force than 87% of Sheriff's Departments, used more deadly force than 84% of Sheriff's Departments and had more jail deaths than 81% of these departments. This indicates the need for urgent interventions to hold Los Angeles County and San Diego County Sheriff's Departments accountable for addressing these issues, which could improve policing outcomes in counties that are home to 1 in every 3 Californians.</span></p>
-
-                <iframe title="CA County Sheriff's Scores" aria-label="Dot Plot" id="datawrapper-chart-IamVk" src="https://datawrapper.dwcdn.net/IamVk/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-
-                <p class="c3 c9"><span class="c1"></span></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section about bg-white" style="padding: 60px 20px;">
-        <div class="content">
-            <p class="c3"><span class="c4 subtitle">Key Findings from Analysis of 2016-2017 Policing Data:</span></p>
-
-            <ol class="c7 lst-kix_fckzbmam001m-0 start" start="1" style="margin-top: 40px;">
-                <li class="c3 c8 c6"><span>Most people arrested in California are arrested for low level offenses.</span><span class="c4">&nbsp;</span><span>Of 1,354,769 reported arrests made in 2016, 70% </span><span>were for misdemeanor offenses. Police made </span><span class="c4">1.8x </span><span>as many</span><span class="c4">&nbsp;</span><span>arrests for </span><span class="c4">drug possession</span><span>&nbsp;alone as they did for </span><span class="c4">all violent crimes combined.</span><sup class="c4"><a href="#ftnt1" id="ftnt_ref1">[1]</a></sup><span class="c11 c4">&nbsp;</span></li>
-            </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image5.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image5.png') }}" title=""></a></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="2">
-                <li class="c3 c8 c6"><span>Police discharged their firearms or otherwise used force causing death or </span><span>serious bodily injury</span><sup><a href="#ftnt2" id="ftnt_ref2">[2]</a></sup><span>&nbsp;in </span><span class="c4">1,276 incidents</span><span>&nbsp;from 2016-2017, killing 328 people and seriously injuring an additional 824 people. 647 of these incidents were police shootings, while the other half were other forms of police use of force that caused death or serious injury. </span><span class="c4">Overall</span><span>, </span><span class="c11 c4">half of people killed or seriously injured by police (49%) were unarmed. </span>
-
-                    <br />
-                    <br />
-
-                    <span>Police in San Bernardino, Riverside, Stockton, Long Beach, Fremont and Bakersfield used deadly force at </span><span class="c4">substantially higher rates </span><span>than other major cities in California. San Jose and Los Angeles police used deadly force at 3x the rate of police in </span><span>San Francisco and San Diego</span><span>. </span><span>And Oakland police had one of the lowest rates of deadly force, reflecting the substantial decline in use of force incidents that has followed </span><span class="c10"><a class="c12" href="http://www.oaklandmagazine.com/April-2017/The-Year-of-No-Shootings/">DOJ mandated reforms </a></span><span>to their use of force policies. </span></p>
-                    <p class="c3 c6"><span><a href="{{ asset('/images/findings/image1.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image1.png') }}" title=""></a></span>
-                 </li>
-            </ol>
-            <p class="c3 c9 c6"><span class="c1"></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="3">
-                <li class="c3 c6 c8"><span>In reviewing the policy manuals of 90 of the 100 California police departments, we find </span><span class="c4">California police have more permissive use of force standards than the national average.</span><span>&nbsp;Only 16 departments (18%) required officers to use de-escalation when possible prior to using force and only 7 departments (8%) required officers to use all available means of apprehension, including non-lethal force, prior to using </span><span>deadly</span><span class="c15">&nbsp;</span><span>force. This is significantly lower than the 42% and 43%, respectively, of the big city police departments nationwide that </span><span class="c10"><a class="c12" href="http://useofforceproject.org">have such policies in place</a></span><span>. In some places, that is beginning to change. We identified four departments that adopted new use of force policies requiring de-escalation during the 2016-2017 period - Stockton, Sacramento, San Francisco, and Los Angeles. </span><span class="c4">All four departments had </span><span class="c10 c4"><a class="c12" href="https://drive.google.com/file/d/1YNEIO19C4X-6tkU5ZhlXsj_MaVlkM7pp/view">fewer police shootings</a></span><span class="c4">&nbsp;in 2018, after these policies were enacted, than their average shootings rate during the years prior to this policy&rsquo;s enactment.</span></li>
-            </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image6.png') }}" target="_"><img alt="" class="narrow" src="{{ asset('/images/findings/image6.png') }}" title=""></a></span></p>
-            <p class="c3 c9 c6"><span class="c1"></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="4">
-                <li class="c3 c8 c6"><span class="c4">When people come forward to report police misconduct in California, it rarely leads to accountability</span><span>. Statewide, </span><span class="c4">only 1 in every 14 civilian complaints </span><span>of police misconduct was ruled in favor of civilians in 2016-2017. In 81% of jurisdictions, civilians reporting misconduct had less than a 1 in 5 chance of the complaint being ruled in their favor by police investigators. Complaints concerning police violence and racial/identity discrimination almost never resulted in accountability. Civilians reporting police </span><span class="c4">racial discrimination </span><span>had only a </span><span class="c4">1 in 64 chance of their complaint being upheld</span><span>&nbsp;and </span><span>civilians reporting </span><span class="c4">use of force complaints </span><span>had only a </span><span class="c4">1 in 78 chance of being upheld. This lack of administrative accountability for police violence mirrors the criminal justice system&rsquo;s approach towards police violence. </span><span>Of 647 police shootings statewide between 2016-2017</span><span class="c4">, </span><span>only </span><span class="c10"><a class="c12" href="http://mappingpoliceviolence.org">one</a></span><span>&nbsp;of these incidents has</span><span>&nbsp;resulted in an officer being prosecuted for breaking the law.</span></li>
-            </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image2.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image2.png') }}" title=""></a></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="5">
-                <li class="c3 c8 c6"><span class="c4">There&rsquo;s evidence of police racial bias in California, especially against black people. </span><span>Statewide, black people were arrested for misdemeanor offenses at </span><span class="c4">2.2x higher rate</span><span>&nbsp;per population than white people. </span><span class="c4">89 of California&rsquo;s 100 largest city police departments arrested black people for drug possession at higher rates than whites</span><span>, despite research showing similar rates of drug use and selling between the groups. And while police were more likely to arrest black people for low-level offenses, they were less </span><span>likely to find someone responsible for the most serious offense - homicide - when the victim was black</span><span class="c1">. California police reported finding a suspect in 76% of homicides of white victims from 2016-2017 compared to only 48% of Latinx victims and 48% of black victims.</span>
-
-                    <br />
-                    <br />
-
-                    <span class="c4">There was also evidence of racial bias in police use of force. </span><span class="c4">California police were 32% more likely to shoot when arresting a black person and 20% more likely to shoot when arresting a Latinx person compared to a white person.</span><span>&nbsp;Similarly, police were 23% more likely to kill or seriously injure a black person and 20% more likely to kill or seriously injure a Latinx person when making an arrest. And while </span><span class="c4">46% of white people</span><span class="c15 c4">&nbsp;killed or seriously injured </span><span class="c4">by police were unarmed, 52% of black people and 51% of Latinx people were. </span>
-
-                    <br />
-                    <br />
-
-                    <span><a href="{{ asset('/images/findings/image4.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image4.png') }}" class="narrow" title=""></a></span>
-
-                    <br />
-                    <br />
-
-                    <span>Finally, p</span><span class="c1">olice also appear to be more likely to shoot black and Latinx people as a first response rather than first attempting non-lethal force to resolve the situation. Police shot first, rather than first attempting a lower level of force, in 87% of police shootings of black people and 84% of Latinx people compared to 81% of police shootings of white people.</span>
-
-                    <br />
-                    <br />
-
-                    <span><a href="{{ asset('/images/findings/image3.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image3.png') }}" title=""></a></span>
-
+            <ol>
+                <li>
+                    The agency should prioritize addressing serious threats to public safety, <strong>not arresting or incarcerating people for low level offenses</strong>
                 </li>
-
+                <li>
+                    The agency should <strong>avoid the use of force</strong>, especially deadly force, to the greatest extent possible
+                </li>
+                <li>
+                    When people come forward to report misconduct by employees of the agency, it should result in some form of <strong>accountability</strong>
+                </li>
+                <li>
+                    When people call on the agency to solve the <strong>most serious crimes</strong> - those resulting in death - they should be able to trust that agency to find the person responsible
+                </li>
+                <li>
+                    The agency should accomplish these goals in ways that are <strong>not biased or discriminatory</strong>
+                </li>
+                <lli>
+                    The agency should accomplish these goals at the <strong>lowest cost possible</strong>, minimizing the financial burden on communities
+                </lli>
             </ol>
 
-            <p class="c3"><span>When these outcomes are evaluated together, it reveals a disturbing picture of policing within the state. </span><span class="c4">Most departments received a score lower than 60% - the equivalent of an F grade. </span><span>In some cases, these evaluations confirmed what has previously been reported. For example, Bakersfield Police Department, which has been </span><span class="c10"><a class="c12" href="https://www.theatlantic.com/politics/archive/2015/12/the-deadliest-county-for-police-killings-in-america/418359/">cited</a></span><span>&nbsp;as one of the deadliest departments in the nation, received the 4th lowest score among the 100 California departments. Other departments received scores that were more unexpected. For example, Carlsbad Police Department received the highest score. Further exploration of the organizational culture, leadership and practices of this department might produce valuable insights into how to improve outcomes in</span><span>&nbsp;other police departments.</span><span>&nbsp;By contrast, Beverly Hills Police Department received </span><span class="c10"><a class="c12" href="https://policescorecard.org/?city%3Dbeverly-hills">the lowest score</a></span><span class="c1">&nbsp;of all 100 departments, due to relatively high levels of police violence, severe racial inequities in law enforcement and a system that almost never holds officers accountable for misconduct. </span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>These findings should prompt further investigations and interventions targeting low-performing police departments within the state, not only from local policymakers but also potentially from the California Attorney General, who has the power to initiate pattern and practice investigations into local police agencies.</span></p>
-            <hr class="c14">
-            <div>
-                <p class="c5 c16"><a href="#ftnt_ref1" id="ftnt1">[1]</a><span class="c2">&nbsp;The number of arrests for drug possession has not declined significantly since marijuana legalization took effect on November 9, 2016. Of the 192k arrests for drug possession statewide in 2016, 6k of those arrests were for marijuana possession. There were also slightly </span><span class="c10 c2"><a class="c12" href="https://crime-data-explorer.fr.cloud.gov/explorer/state/california/arrest/2007/2017">more arrests</a></span><span class="c2">&nbsp;for drug possession overall in 2017 than in 2016. As such, the reported </span><span class="c10 c2"><a class="c12" href="https://www.mercurynews.com/2018/07/11/prop-64-didnt-legalize-every-cannabis-crime-but-arrests-are-falling-fast/">56% reduction</a></span><span class="c2 c18">&nbsp;in marijuana arrests in 2017 did not substantially change the total number of drug possession arrests in the state.</span></p>
-            </div>
-            <div>
-                <p class="c5 c16"><a href="#ftnt_ref2" id="ftnt2">[2]</a><span class="c19">&nbsp;</span><span class="c2">&ldquo;Serious bodily injury&rdquo; as defined by California&rsquo;s use of force reporting system means a bodily injury that involves a substantial risk of death, unconsciousness, protracted and obvious disfigurement, or protracted loss or impairment of the function of a bodily member or organ.</span></p>
-            </div>
+            <p>
+                Based on these principles, we obtained data from federal, state and local databases to evaluate over 13,200 municipal police departments and 2,800 county sheriff's departments, represented by a "score" from 0-100 with a score of 0 representing the worst outcomes and 100 representing outcomes most consistent with the principles stated above. The scores attributed to police agencies in our analysis should be interpreted as relative scores, showing how each agency compares to other agencies across four areas of policing: police violence, police accountability, police funding, and an evaluation of each agency's approach to law enforcement (for example, the extent to which an agency focuses on arresting people for low-level offenses or addressing serious crimes).
+            </p>
+
+            <p>
+                Using this methodology, a police department received a higher grade if it made <em>fewer arrests</em> for low level offenses, <em>used less force</em> during arrest, left em in arrests and use of force, <em>spent less money</em> on policing, and <em>upheld civilian complaints of police misconduct more often</em> than other agencies. In order to ensure appropriate comparisons among agencies with different roles and jurisdictions, municipal police departments are evaluated in comparison to other municipal police departments of similar sized jurisdictions and county sheriff's departments are evaluated in comparison to other county sheriff's departments of similar sized jurisdictions (jurisdictions with over 250,000 population are compared to one another, as are jurisdictions with 100,000-249,999 population, jurisdictions with 50,000-99,999 population, and those with < 50,000 population).
+            </p>
+
+
+            <h2 class="subtitle">
+                HERE ARE THE FACTORS THAT WERE USED TO CALCULATE EACH AGENCY'S SCORE:
+            </h2>
+
+            <h2 class="subtitle">
+                POLICE FUNDING SCORE
+            </h2>
+
+            <p>
+                The police funding score renders the amount of resources cities and counties spend on policing compared to other issues such as public health and housing/homelessness. This includes indicators measuring the total amount of budgetary expenditures on police and sheriff's departments, the average amount of money spent on police misconduct settlements (which usually are not paid from police budgets) and the amount of money taken from communities by law enforcement through fines and asset forfeiture. The police funding score also includes a measure tracking the total number of officers per population in each jurisdiction, since the size of the police force structures the police budget and evaluates the level of overall policing/police presence in communities (for example, <a href="https://www.policeforum.org/assets/docs/Free_Online_Documents/Budgeting/police%20department%20budgeting%20-%20a%20guide%20for%20law%20enforcement%20chief%20executives%202002.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Surveys of Law Enforcement') !!}>surveys</a> of law enforcement agencies find personnel costs such as officer salaries and benefits comprise an average of 85% of police budgets). Under the Police Scorecard's methodological framework, cities and counties that invest more resources per capita in policing communities and/or that impose more financial burden on communities through the use of fines and property seizures receive a lower score. The following formula was used to calculate this score:
+            </p>
+
+            <p>
+<pre>(
+    Percentile Police Funding per Population +
+    Percentile Number of Officers per Population +
+    Percentile Average Funds Spent on Misconduct Settlements +
+    Percentile Funds Taken From Communities in Fines and Forfeitures per Population
+) / 4</pre>
+            </p>
+
+            <h2 class="subtitle">
+                POLICE VIOLENCE SCORE:
+            </h2>
+
+            <p>
+                The police violence score takes into account how often police used higher levels of force against people including any time police discharged a firearm or used a taser, baton, OC spray, impact projectile or stranglehold against a civilian. Since the vast majority of use of force incidents occurred during an arrest, consistent with previous <a href="https://policingequity.org/images/pdfs-doc/CPE_SoJ_Race-Arrests-UoF_2016-07-08-1130.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Previous Police Violence Research') !!}>research</a> we benchmarked use of force incidents against the total number of arrests made and then factored in the severity of force used and whether the people force was used against were unarmed into each police department's police violence score.
+            </p>
+
+            <p>
+                Racial disparities in arrests and deadly force were also factored into each department's police violence score. Since there are similar rates of drug use among most racial and ethnic groups, disparities in which groups police arrest for drug possession suggest a biased approach to law enforcement. As such, we used data on racial disparities in drug possession arrests from the Uniform Crime Report as a proxy for estimating racial disparities in arrests. Disparities in drug possession arrest rates between Black and white populations and between Latinx and white populations, taking the most extreme of the disparities between the two and then converting this to a percentile score. To calculate a racial bias score for killings by police, we calculated the disparity in rates of killings by police between Black and white populations and between Latinx and white populations, taking the most extreme of the disparities between the two and then converting this to a percentile score. Then, we averaged the two percentile scores together to obtain an overall racial bias score representing the overall level of racial disparity in drug arrests and killings by police per arrest for each agency. This racial bias score was included as one of the four factors determining each department's police violence score. Our methodology is explained in detail <a href="https://github.com/campaignzero/ca-police-scorecard/blob/master/ca_police_scorecard.ipynb" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Methodology') !!}>here</a>. In summary, the following formula was used to calculate each department's police violence score:
+            </p>
+
+            <p>
+<pre>(
+    Percentile Less Lethal Force Used per Arrest +
+    Percentile Deadly Force Used per Arrest +
+    Percentile Unarmed Civilians Killed +
+    Percentile Racial Bias in Arrests and Deadly Force
+) / 4</pre>
+            </p>
+
+            <h2 class="subtitle">
+                POLICE ACCOUNTABILITY SCORE
+            </h2>
+
+            <p>
+                The police accountability score evaluates the extent to which investigations into civilian complaints of police misconduct result in a sustained finding of misconduct against the officers involved, which is usually the first step to imposing disciplinary consequences. The score accounts for both how police departments compare with one another in terms of their overall civilian complaint sustain rate and the severity of the misconduct allegations that were sustained against officers. For example, complaints alleging police committed a criminal offense and complaints alleging police used excessive force or discriminated against people received additional consideration compared to other allegations. The following formula was used to calculate this score:
+            </p>
+
+            <p>
+<pre>1/2 ( Percentile Civilian Complaints Sustained ) +
+1/2 ( Percent Discrimination, Excessive Force and Criminal Complaints Sustained )</pre>
+            </p>
+
+            <h2 class="subtitle">
+                APPROACH TO LAW ENFORCEMENT SCORE
+            </h2>
+
+            <p>
+                The approach to policing score evaluates the extent to which police departments focus on arresting people for low-level offenses or focusing on solving serious crimes. The score accounts for the proportion of the most serious crimes - homicide - that an agency solves as well as how each agency compares in terms of its approach to the lowest level offenses. We defined low level offenses as the combination of all arrests for drug offenses, public drunkenness and other alcohol-related offenses; vagrancy, loitering, gambling, disorderly conduct, prostitution, vandalism, and other minor non-violent offenses. These types of offenses are usually classified as misdemeanors and are often associated with issues of substance abuse, homelessness and sex work. This definition excludes all arrests for violent crimes, assaults, crimes against families and children, weapons offenses, sex offenses and all arrests for property crimes except for vandalism.<sup>[1]</sup> Higher rates of low level arrests per population suggest a department is engaging in aggressive "public order" or "broken-windows" policing practices that have not been proven to improve public safety and instead expose communities, especially marginalized communities, to increased policing, arrest and incarceration (for additional reading, see here, here and here). The following formula was used to calculate this score:
+            </p>
+
+            <p>
+<pre>(
+    Percentile Low Level Arrests per Population +
+    Percent Homicides Cleared
+) / 2</pre>
+            </p>
+
+            <h2 class="subtitle">
+                EVALUATING COUNTY SHERIFF'S DEPARTMENTS
+            </h2>
+
+            <p>
+                The Police Scorecard currently includes 2,878 county law enforcement agencies, covering 92% of all US counties (the remaining counties are largely policed by state police). In addition to the indicators used to evaluate municipal police departments, we added a set of indicators to evaluate county Sheriff's Departments that reflect their role in operating County Jails. This data includes:
+            </p>
+
+            <p>
+                <strong>1. Percentile of Jail Incarceration Rates per 1,000 Residents, 2018</strong>
+            </p>
+
+            <p>
+                This indicator displays each County Sheriff's Department's Average Daily Jail Population in 2018 divided by the total population of the Sheriff's Jurisdiction. This data was obtained from the Bureau of Justice Statistics 2018 Annual Survey of Jails (the most recent survey we could find with data on this issue that has been made public). Importantly, since sheriff's departments have primary jurisdiction over unincorporated areas within counties and the cities that do not operate their own police departments (these cities contract with the sheriff's department for law enforcement services), we estimated the total population of each jurisdiction by subtracting from the total county population the populations of each city that has its own municipal police department.
+            </p>
+
+            <p>
+                <strong>2. Percentile of Jail Deaths per 1,000 Avg Daily Jail Population, 2013-2019</strong>
+            </p>
+
+            <p>
+                This indicator displays the rate of deaths within each county's jails per 1,000 jail population from 2013-2019, based on data <a href="https://www.reuters.com/investigates/special-report/usa-jails-graphic/#:~:text=7%2C571Reuters%20documented%207%2C571%20inmate,the%20decade%20ending%20in%202019." target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Reuters Investigation Data') !!}>compiled</a> by Reuters investigators. To calculate this indicator, we divided the total number of jail deaths within each county from 2013-2019 by the countywide Average Daily Jail Population. We also included information about the reported cause of death in these cases.
+            </p>
+
+            <p>
+                <strong>3. Percent of Civilian Complaints in Detention Sustained from 2016-2019</strong>
+            </p>
+
+            <p>
+                This indicator displays the percentage of reported complaints in detention that were sustained from 2016-2019, as determined by the California Department of Justice's CCOPA database and data obtained from county agencies via public records requests.
+            </p>
+
+            <p>
+                <strong>4. Number of People Transferred to ICE in 2018</strong>
+            </p>
+
+            <p>
+                This indicator displays the number of people transferred to Immigration Enforcement from local jails in 2018 (previous years of data were unavailable), as reported to the Annual Survey of Jails 2018. Additionally, more detailed information on ICE transfers, including the proportion of transfers by alleged offense type is displayed for departments in California based on data obtained from the California Department of Justice's Values Act Transfers database.
+            </p>
+
+            <p>
+                <strong>5. Percent of People in Jail Without Being Convicted, 2018</strong>
+            </p>
+
+            <p>
+                This indicator evaluates the use of pre-trial detention within each County Sheriff's Department's jail. It measures the total number of people in each jail who were not yet convicted of the crime associated with their incarceration divided by each agency's total jail population, as reported to the Bureau of Justice Statistics 2018 Annual Survey of Jails. Since this was a one-time snapshot of each jail population on June 29, 2018, we used the total jail populations reported to the survey rather than average daily jail populations to evaluate the percent of the total who were unconvicted.
+            </p>
+
+
+            <p>
+                The first two of these indicators were included in each Sheriff's Department's initial Approach to Policing Score as such:
+            </p>
+
+            <p>
+<pre>(
+    Percentile Low Level Arrests per Population +
+    Percent Homicides Cleared +
+    Percentile Jail Incarceration Rate +
+    Percentile Jail Deaths per Jail Population
+) / 2</pre>
+            </p>
+
+            <p>
+                The Percent of Complaints in Detention Sustained are already incorporated into each department's overall complaint sustain rate which contributes to their Police Accountability Score. Additional indicators, including Transfers to ICE, will be factored into each department's score over time as we obtain more years of data to evaluate these issues. For example, we only have access to one year of data on ICE transfers: 2018.
+            </p>
+
+            <h1 class="title">APPENDIX A:</h1>
+
+            <h2 class="subtitle">DATA SOURCES:</h2>
+
+            <h2 class="subtitle">KILLINGS BY POLICE</h2>
+
+            <p>
+                DEFINITION: PEOPLE KILLED BY LAW ENFORCEMENT OFFICERS FROM 2013-2019.
+            </p>
+
+            <p>
+                We used the Mapping Police Violence database, which combines information on people killed by police from 2013-2019 sourced from public records requests, local media reports and other crowdsourced databases such as the Fatal Encounters database. This database includes information on 7,641 people killed by police nationwide from 2013-2019, 91% of whom were killed by one of the law enforcement agencies currently represented in the Police Scorecard. Importantly, this database allows for a more comprehensive evaluation of killings by police than would be possible using official data, since only about <a href="https://www.marketplace.org/2020/06/01/fbi-police-use-of-force-database/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '40% Reported') !!}>40%</a> of the nation's law enforcement reports data to the federal government's Use of Force Data Collection program and that data still has not been released publicly. The Mapping Police Violence database is also more expansive than the Washington Post's police shootings database because it includes cases where people are killed by types of police use of force in addition to fatal police shootings (i.e. killings by tasers, batons, chokeholds and intentional vehicle strikes) as well as cases that occurred prior to 2015. The database also evaluates whether each person killed by police was armed with a gun, armed with another weapon or vehicle, or unarmed at the time of the incident. Using the coding schema in the Mapping Police Violence database, cases were coded as unarmed when the person killed by police did not possess an actual weapon - which includes both people who had no object in their hands and people who had common/household objects like cell phones, spoons or a toy that may have been perceived to be a weapon but ended up not constituting a real threat.
+            </p>
+
+            <h2 class="subtitle">POLICE SHOOTINGS (BOTH FATAL AND NON-FATAL)</h2>
+
+            <p>
+                DEFINITION: ANY INCIDENT WHERE A FIREARM WAS DISCHARGED AT A PERSON, REGARDLESS OF WHETHER IT CAUSED INJURY OR DEATH
+            </p>
+
+            <p>
+                In the absence of comprehensive federal data on police shootings, we obtained data on the total number of police shootings incidents per year from individual law enforcement agencies across the country via public records requests, media databases and official databases in states that track police shootings systematically: California, Colorado, Illinois, Maryland and Minnesota. Since California's <a href="https://openjustice.doj.ca.gov/data" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'URSUS Collection Program') !!}>URSUS use of force data collection program</a> includes more detailed information about the circumstances of each police shooting incident - in particular which types of force were used in each incident - we were able to determine the proportion of each department's police shootings where officers discharged their firearms without attempting to use any less-lethal or non-lethal force option first or instead of escalating to deadly force. Similarly, the URSUS database requires agencies to report what objects, if any, officers perceived the person they used deadly force against to have and then what object they ended up being found to have as a result of the encounter. These data were used to calculate the proportion of police shootings incidents where police reportedly saw a gun but no gun was found.
+            </p>
+
+
+            <h2 class="subtitle">LESS LETHAL FORCE</h2>
+
+            <p>
+                DEFINITION: THE TOTAL NUMBER OF USES OF TASERS, BATONS, PROJECTILES, PEPPER SPRAY, OTHER WEAPONS AND STRANGLEHOLDS AGAINST CIVILIANS FROM 2016-2019
+            </p>
+
+            <p>
+                To obtain information on serious police use of force that did not rise to the level of deadly force, we submitted public records requests to the 500 largest police and county sheriff's departments nationwide asking for the total number of uses of force, by type of force used, from 2013-2019. 209 agencies sent us their data or published this information online. Detailed data showing use of force by force type for each responsive department can be found here. Each department varied in how they categorized and reported the use of force. For example, some police departments require officers to report all weaponless strikes and control holds used against a civilian, while others only require these types of force to be reported when they cause injury. Similarly, some departments require officers to report whenever they display a firearm or taser, while others only require them to report when these weapons are discharged. Given these reporting inconsistencies, we limited our analysis to more serious forms of force since these were more consistently reported and categorized among the agencies we obtained data from. This included uses of "less lethal" force such as tasers, batons, impact projectiles, OC spray and a form of stranglehold called a carotid restraint.
+            </p>
+
+            <p>
+                Police departments also differed in how they counted uses of force when more than one officer used force during a single encounter. For example, in cases where two officers both used a taser on the same person, some departments count this as two uses of force while others count it as one use of force. We evaluated how each department counted use of force by examining their use of force reporting policies, use of force data, and by following-up directly with departments for clarification. Based on this information, we determined that most departments that sent their use of force data counted cases where multiple officers used the same type of force as multiple uses of that type of force while counting it as one use of force when one officer uses the same type of force more than once in the same incident.
+            </p>
+
+            <p>
+                Despite these efforts, we recognize there may still be differences that were unaccounted for within each department's internal system for compiling and reporting uses of less lethal force. Moreover, we could not account for the degree to which force may have been systematically underreported by some agencies. This is a living project: we will continue to update the information on our site in response to feedback from law enforcement agencies and the public.
+            </p>
+
+            <h2 class="subtitle">CIVILIAN COMPLAINTS</h2>
+
+            <p>
+                DEFINITION: THE TOTAL NUMBER OF COMPLAINTS, BY TYPE OF COMPLAINT, REPORTED BY CIVILIANS AGAINST LAW ENFORCEMENT PERSONNEL FROM 2016-2019
+            </p>
+
+            <p>
+                The Police Scorecard includes the total number of complaints reported each year from 2016-2019, the number of those complaints that were sustained (i.e. upheld by investigators), with breakdowns for the total number of use of force complaints, complaints of police discrimination, and criminal complaints that were reported and the number of each that were sustained during that time period. To obtain these data, we submitted public records requests to local police and sheriff's departments and also requested data from state criminal justice agencies in the states that currently collect information on civilian complaints.
+            </p>
+
+            <p>
+                The composition and quality of these state databases varied substantially - as well as the types of information on this subject that we could obtain under each state's open records laws. For example, in California, all law enforcement agencies are required to provide the California Department of Justice with Citizens' Complaints Against Peace Officers (CCAPO) data through an annual summary. The information includes the number of criminal and non-criminal complaints reported by citizens, racial and identity profiling complaints, complaints of misconduct in jail (for sheriff's departments) and the findings from investigations into those complaints. In Maryland, by contrast, only the total number of sustained complaints involving an alleged criminal offense or a use of force incident causing death or serious injury are required to be reported to the state (and in many cases, agencies have failed to report even this information). Altogether, we found statewide databases containing at least some information on civilian complaints in California (total complaints by type and outcome), Maryland (sustained criminal complaints and complaints involving the use of deadly force), Texas (racial profiling complaints), and Minnesota (criminal and administrative investigations by type of allegation).
+            </p>
+
+            <p>
+                There are important limitations to consider regarding the current availability of data on police accountability within the United States. There are no national standards or systems for reporting complaints of police misconduct. There are differences in how each agency classifies and investigates these complaints. For example, some agencies only reported data on the number of investigations conducted into complaints rather than the total number of complaints received. Others reported data only on the number of allegations reported and sustained, but not the number of overall complaints reported or sustained (a single complaint can contain more than one allegation of misconduct, for example an officer who is alleged to engage in both discriminatory policing and excessive force in a single encounter). Where individualized data was made available by agencies, we used it to calculate data at the complaint (rather than allegation) level. Our database will continue to be updated in response to more detailed data obtained from agencies.
+            </p>
+
+            <h2 class="subtitle">ARRESTS</h2>
+
+            <p>
+                DEFINITION: THE TOTAL NUMBER OF ARRESTS REPORTED BY POLICE FROM 2013-2019.
+            </p>
+
+            <p>
+                Data on the number of each agency's arrests from 2013-2019 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic. We then compared our estimates to the data from states and cities that report arrests data by both race and ethnicity to evaluate their accuracy. The breakdown of arrests estimates by race and ethnicity as well as the data provided by these agencies is provided in Appendix below. Since police agencies in Florida and Illinois generally did not report arrests data to the FBI UCR, we obtained their arrest data from the <a href="https://www.fdle.state.fl.us/FSAC/Data-Statistics/UCR-Arrest-Data.aspx" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Florida Department of Law Enforcement') !!}>Florida Department of Law Enforcement</a> and from reports published by individual agencies in Illinois.
+            </p>
+
+            <p>
+                <em>Estimation of Arrests by Ethnicity (Hispanic and non-Hispanic):</em>
+            </p>
+
+            <p>
+                In order to evaluate racial disparities across departments, we need to have estimates for the number of Hispanic arrests, non-Hispanic White arrests, and non-Hispanic Black arrests that each department made from 2013-2019. Since UCR data prior to 2017 does not include information specifying how many Hispanic arrests each agency made; we used the ethnicity data each agency reported from 2017-2019 to estimate the number of Hispanic arrests made from 2013 to 2019 as follows:
+            </p>
+
+            <ul>
+                <li>
+                    Hispanic Arrest Proportion = Hispanic arrests 2017-2019 / (Hispanic Arrests 2017-2019 + Non-Hispanic Arrests 2017-2019)
+                </li>
+                <li>
+                    Hispanic Arrests 2013-2019<sup>[2]</sup> = Hispanic Arrest Proportion x (White Arrests + Black Arrests).
+                </li>
+            </ul>
+
+            <p>
+                Importantly, this methodology assumes that Hispanic arrests are either categorized as White or Black in the data reported to the UCR. In practice this may not always be how agencies code Hispanic arrests, but based on race and ethnicity data from larger agencies this appears to be a reasonable assumption. After estimating the Hispanic arrests from 2013-2019 as described above, we estimated the number of those Hispanic arrests who were racially White or Black using the Census proportions for the percentage of the population in that jurisdiction who identify as White and Hispanic, or Black and Hispanic. The proportions were calculated as follows:
+            </p>
+
+            <ul>
+                <li>
+                    Black-Hispanic Proportion = Census Percentage Black and Hispanic / (Census Percentage Black and Hispanic + Census Percentage White and Hispanic)
+                </li>
+                <li>
+                    White-Hispanic Proportion = Census Percentage White and Hispanic / (Census Percentage Black and Hispanic + Census Percentage White and Hispanic)
+                </li>
+            </ul>
+
+            <p>
+                Then to estimate the number of Hispanic arrests that were racially Black or White, we computed:
+            </p>
+
+            <ul>
+                <li>
+                    Black-Hispanic Arrests = Black-Hispanic Proportion x Black Arrests
+                </li>
+                <li>
+                    White-Hispanic Arrests = White-Hispanic Proportion x White Arrests
+                </li>
+                <li>
+                    Non-Hispanic Black Arrests = Black Arrests – Black and Hispanic Arrests
+                </li>
+                <li>
+                    Non-Hispanic White Arrests = White Arrests – White and Hispanic Arrests
+                </li>
+            </ul>
+
+            <p>
+                For some agencies, these computations resulted in negative values for Non-Hispanic Black Arrests or Non-Hispanic White Arrests, in which case we reallocated the number of Black-Hispanic Arrests or White-Hispanic Arrests to the other race category so that the negative arrests would equal 0. We also estimated confidence intervals for the number of Black-Hispanic Arrests and White-Hispanic Arrests by assuming these quantities were binomially-distributed with probability equal to Black-Hispanic proportion and White-Hispanic proportion. The same methodology above was used to estimate racial demographics of people arrested for drug possession in our racial disparity analysis.
+            </p>
+
+            <h2 class="subtitle">HOMICIDES REPORTED AND HOMICIDES SOLVED</h2>
+
+            <p>
+                DEFINITION: THE TOTAL NUMBER OF CRIMINAL HOMICIDES REPORTED AND THE TOTAL NUMBER CLEARED BY ARREST OR EXCEPTIONAL MEANS FROM 2013-2019
+            </p>
+
+            <p>
+                We obtained data on the number of criminal homicides reported and those that were cleared from 2013-2019 from the FBI Uniform Crime Report and Supplementary Homicide Report databases. Consistent with the definitions used by these databases, criminal homicides are classified as murder and non-negligent manslaughter but exclude suicides, accidents, "justifiable homicides" and deaths caused by negligence. Homicides were classified as "cleared" when they resulted in either an arrest or were cleared through "exceptional means" (These are cases in which there is sufficient evidence but an arrest is reportedly not possible, for example, if the person suspected has died). We recognize that homicides cleared by arrest or exceptional means is an imperfect measure of murders "solved," for a variety of reasons (for example, not everyone arrested ends up being guilty of the offense). However, the Uniform Crime Report does not distinguish between these outcomes and, as such, we are limited by the data that are currently available.
+            </p>
+
+            <p>
+                We also included in the scorecard statistics on proportion of homicides cleared by race of the victim. Since the Uniform Crime Report did not disaggregate agency-level homicide clearance rates by race of victim, we relied on the Supplementary Homicide Report (SHR) database with enhanced case-level data from the Murder Accountability Project (MAP) to determine the percent of homicides "solved" by race of the victim for each jurisdiction from 2013-2019. Importantly, since homicides tend to be reported to the SHR database an average of 5 months after each incident (depending on jurisdiction), fewer homicides are reported as solved in this dataset compared to the end-of-year Uniform Crime reports. According to MAP, 5-10% of homicides reported as unsolved at the time of reporting to the SHR were cleared later. As such, the SHR data should be interpreted as the proportion of homicides solved within a shorter time frame than the UCR, which is useful for evaluating police efficacy at solving homicides given the race of the victim.
+            </p>
+
+            <h2 class="subtitle">POLICE FUNDING</h2>
+
+            <p>
+                DEFINITION: THE TOTAL AMOUNT OF MONEY SPENT ON POLICING BY EACH CITY OR COUNTY FROM 2010-2020
+            </p>
+
+            <p>
+                This includes data on the total amount of city budget expenditures spent on policing in each city or county from 2010-2018 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. For many cities, we were also able to obtain more recent data (2019-2020) from budgetary documents on local governments' websites and the <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Police Funding Data for 72 Large Cities') !!}>police funding data for 72 large cities</a> created by the Vera Institute. The Scorecard also includes data on each local government's expenditures on other issues that impact public safety - such as funding for Health and for Housing and Community Development. In some cases, we found discrepancies between the Census Bureau's data and the data included in a city or county's budget documents. Where such discrepancies were found, we used the data in the city or county budget documents in our analysis, given they often provide more detail.
+            </p>
+
+            <p>
+                We used the <a href="https://www2.census.gov/programs-surveys/gov-finances/technical-documentation/questionnaires/historical-forms/2017/f28_2017_blank.pdf?#" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'US Census Bureau Definitions') !!}>definitions</a> established by the US Census Bureau to evaluate agency funding:
+            </p>
+
+            <p>
+                <em>Police expenditures</em> include all expenditures on police agencies; law enforcement activities of sheriff and constable offices; coroners; medical examiners; vehicular inspection activities; traffic control and safety activities; lock-up operations. The Census <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a> did not, however, include contributions to police pension funds as expenditures. Similarly, the amount of police expenditures represented in the Scorecard does not include spending on local court activities and correctional expenditures, which are tracked separately by the Census. Note that there may be differences between the amount of spending a local government reported to the Census and the spending projections published in budgetary documents. In order to ensure consistency across agencies, we relied on the Census data where possible.
+            </p>
+
+            <p>
+                <em>Health expenditures</em> includes expenditures for all public health activities, except the provision of hospital care which is tracked separately by the Census. Health expenditures include spending on all environmental health activities, health regulation and inspection, water and air pollution control, mosquito control, animal control warden, inspection of food handling establishments, ambulance and paramedic services not part of a fire department, public health nursing, vital statistics collection, and all other services performed directly by the public health department.
+            </p>
+
+            <p>
+                <em>Housing and community development expenditures</em> include all gross expenditures for urban renewal housing projects and similar activities.
+            </p>
+
+            <h2 class="subtitle">FINES AND FORFEITURES</h2>
+
+            <p>
+                DEFINITION: THE TOTAL VALUE OF PROPERTY AND CASH CONFISCATED THROUGH ASSET FORFEITURE OR COLLECTED BY FINES, 2010-2018
+            </p>
+
+            <p>
+                This includes data on the total amount of city budget revenues collected through fines or forfeitures in each city or county from 2010-2018 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. This measure can be used to assess potential excessive use of ticketing, civil asset forfeiture and other policing practices that often supplement police budgets by imposing an additional economic burden on communities.
+            </p>
+
+            <h2 class="subtitle">TOTAL NUMBER OF OFFICERS</h2>
+
+            <p>
+                DEFINITION: THE NUMBER OF SWORN LAW ENFORCEMENT OFFICERS EMPLOYED AT EACH AGENCY, 2013-2019
+            </p>
+
+            <p>
+                This includes data specifying the total number of sworn law enforcement officers employed by each agency as reported to the UCR LEOKA program. Sworn officers are defined as employees who "ordinarily carry a firearm and a badge, have full arrest powers, and are paid from governmental funds set aside specifically to pay sworn law enforcement."
+            </p>
+
+            <h2 class="subtitle">POLICE MISCONDUCT SETTLEMENTS</h2>
+
+            <p>
+                DEFINITION: THE AVERAGE AMOUNT SPENT ON POLICE MISCONDUCT SETTLEMENTS ANNUALLY FROM 2012-2014
+            </p>
+
+            <p>
+                This includes data specifying the average amount of money per year from 2012-2014 in settlements and judgements related to lawsuits against the 65 of America's largest law enforcement agencies - the largest study on this issue to date. Researchers obtained the data used in their analysis using public records requests to each agency, publishing the settlement amounts for each agency in the <a href="https://pdfs.semanticscholar.org/8a28/9aa5b4eb738c08d6995414c7dd396d808fc7.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'UCLA Law Review') !!}>UCLA Law Review</a>.
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="footnote"><sup>[1]</sup> Since the FBI’s UCR arrests database does not distinguish between lower level property crimes such as petty theft or shoplifting and more serious forms of theft, we were not able to include any arrests for petty theft or shoplifting within the low level arrests category. Similarly, arrests for non-DUI related traffic offenses are not reported to the UCR program. This likely results in an undercount of the total number of low level arrests made by each agency.</p>
+
+            <p class="footnote"><sup>[2]</sup> To avoid imprecise or unreliable estimates of this proportion, we excluded departments who had categorized fewer than 25% of their arrests by ethnicity or had fewer than 50 arrests categorized by ethnicity. Then to estimate the total number of Hispanic arrests between 2013-2018, we multiplied the Hispanic Arrest Proportion by the total number of arrests that were categorized by race as “White” or “Black”.</p>
         </div>
     </div>
 

@@ -5,6 +5,12 @@
             {{ getStateName($state)  }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department Scores
         </h1>
 
+        @if ($state === 'us')
+            <p>
+                <strong>Worst {{ count(array_slice($grades['all'], 0, 500)) }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Departments by Rank.</strong>
+            </p>
+        @endif
+
         <p>
             Rankings are based upon a 0 to 100 percentage scale. Departments with <strong>higher scores</strong> use
             <strong>less force</strong>, make <strong>fewer arrests</strong> for low level offenses, <strong>solve</strong>
@@ -60,7 +66,7 @@
                 <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach($grades['all'] as $index => $card) @if ($index < floor(count($grades['all']) / 2))
+                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index < floor(count(array_slice($grades['all'], 0, 500)) / 2) && $index)
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                     <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
@@ -79,7 +85,7 @@
                     <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach($grades['all'] as $index => $card) @if ($index >= floor(count($grades['all']) / 2))
+                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index >= floor(count(array_slice($grades['all'], 0, 500)) / 2))
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                         <a href="{{ $card['url_pretty'] }}"{!! ($index > (floor(count($grades['complete']) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
