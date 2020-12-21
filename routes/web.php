@@ -37,6 +37,15 @@ Route::get('/findings', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    $api = new ApiController();
+    $states = $api->fetchStates();
+
+    return view('about', [
+        'states' => $states
+    ]);
+});
+
 Route::get('/sandiego', function () {
     $api = new ApiController();
     $states = $api->fetchStates();

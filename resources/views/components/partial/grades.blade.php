@@ -5,17 +5,13 @@
             {{ getStateName($state)  }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department Scores
         </h1>
 
-        @if ($state === 'us')
-            <p>
-                <strong>Worst {{ count(array_slice($grades['all'], 0, 500)) }} {{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Departments by Rank.</strong>
-            </p>
-        @endif
-
         <p>
             Rankings are based upon a 0 to 100 percentage scale. Departments with <strong>higher scores</strong> use
             <strong>less force</strong>, make <strong>fewer arrests</strong> for low level offenses, <strong>solve</strong>
             murder cases more often, hold officers <strong>more accountable</strong> and <strong>spend less on policing</strong> overall.
         </p>
+
+        <p>Overall Scores for Depts where We Have Obtained the Most Data.</p>
 
         <p>Tap more to see an extended list.</p>
     </div>

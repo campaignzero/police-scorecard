@@ -12,6 +12,7 @@ const sassOptions = dev ? null : { sassOptions: { outputStyle: 'compressed' } };
  */
 mix.copyDirectory('resources/assets/js/plugins.js', 'public/js/plugins.js');
 mix.copyDirectory('resources/assets/maps', 'public/maps');
+mix.copyDirectory('resources/assets/pdf', 'public/pdf');
 mix.copyDirectory('resources/assets/fonts', 'public/fonts');
 mix.copyDirectory('resources/assets/images', 'public/images');
 mix.copyDirectory('resources/assets/san-diego', 'public/san-diego');
