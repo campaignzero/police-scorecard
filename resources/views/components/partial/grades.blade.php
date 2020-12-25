@@ -106,7 +106,7 @@
             <p class="partial-data"><strong>*</strong> An asterisk indicates this location did not publish enough data to evaluate. <strong>Click below to add data to the Scorecard.</strong></p>
         </div>
         <div class="right add-data">
-            <a href="https://forms.gle/WPC2Z6A92tBqxGWZ8" target="_blank" {!! trackData('Nav', 'Grades', 'Add New Data') !!}>Add New Data</a>
+            <a href="https://forms.gle/WPC2Z6A92tBqxGWZ8" rel="noopener" target="_blank" {!! trackData('Nav', 'Grades', 'Add New Data') !!}>Add New Data</a>
         </div>
     </div>
 </div>
