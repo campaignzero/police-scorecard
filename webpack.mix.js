@@ -11,6 +11,7 @@ const sassOptions = dev ? null : { sassOptions: { outputStyle: 'compressed' } };
  * Copy Static Asset Resources
  */
 mix.copyDirectory('resources/assets/js/plugins.js', 'public/js/plugins.js');
+mix.copyDirectory('resources/assets/js/home.plugins.js', 'public/js/home.plugins.js');
 mix.copyDirectory('resources/assets/maps', 'public/maps');
 mix.copyDirectory('resources/assets/pdf', 'public/pdf');
 mix.copyDirectory('resources/assets/fonts', 'public/fonts');
