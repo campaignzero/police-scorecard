@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -159,5 +160,18 @@ class ApiController extends Controller
         }
 
         return $this->makeRequest("/scorecard/search/{$keyword}");
+    }
+
+    public function mapSheriff() {
+        $geojson = $this->fetchNationwideMapData('sheriff');
+
+        return response()->json($geojson);
+    }
+
+    public function webSearch(Request $request) {
+        $keyword = $request->input('keyword');
+        $results = $this->search($keyword);
+
+        return response()->json($results);
     }
 }
