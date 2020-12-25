@@ -400,7 +400,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
         };
 
         // Handle Progress Bars
-        window.addEventListener(function() {
+        window.addEventListener('scroll', function() {
             clearTimeout(PoliceScorecard.debounce);
             PoliceScorecard.debounce = setTimeout(PoliceScorecard.animate, 10);
         }, { passive: true });
