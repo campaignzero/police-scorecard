@@ -69,20 +69,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608411754526">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecardDataTracker/Profile/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecardDataTracker/Profile/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608411754526" data-viz-desktop-height="860px" data-viz-mobile-height="460px" />
+                <div id="viz1608411754526">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecardDataTracker/Profile" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecardDataTracker/Profile/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -90,20 +88,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement0 = document.getElementById("viz1608411754526");
-                var vizElement0 = divElement0.getElementsByTagName("object")[0];
-                vizElement0.style.width = "100%";
-                if (divElement0.offsetWidth >= 940) {
-                    vizElement0.style.height = "860px";
-                } else {
-                    vizElement0.style.height = "460px";
-                }
-                var scriptElement0 = document.createElement("script");
-                scriptElement0.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement0.defer = true;
-                vizElement0.parentNode.insertBefore(scriptElement0, vizElement0);
-                </script>
             </p>
 
             <div class="divider"></div>
@@ -147,20 +131,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608525476357">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/DepartmentTotalsbyPopulationSize/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/DepartmentTotalsbyPopulationSize/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608525476357" data-viz-desktop-height="277px" data-viz-mobile-height="277px" />
+                <div id="viz1608525476357">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/DepartmentTotalsbyPopulationSize" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/DepartmentTotalsbyPopulationSize/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -168,16 +150,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement1 = document.getElementById("viz1608525476357");
-                var vizElement1 = divElement1.getElementsByTagName("object")[0];
-                vizElement1.style.width = "100%";
-                vizElement1.style.height = "277px";
-                var scriptElement1 = document.createElement("script");
-                scriptElement1.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement1.defer = true;
-                vizElement1.parentNode.insertBefore(scriptElement1, vizElement1);
-                </script>
             </p>
 
             <p>
@@ -189,20 +161,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608515880357" style="position: relative;">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/StateScores/1_rss.png" style="border: none;" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display: none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/StateScores/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608515880357" data-viz-desktop-height="807px" data-viz-mobile-height="460px" />
+                <div id="viz1608515880357" style="position: relative;">
+                    <object style="display: none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/StateScores" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/StateScores/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -210,21 +180,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement2 = document.getElementById("viz1608515880357");
-                var vizElement2 = divElement2.getElementsByTagName("object")[0];
-                vizElement2.style.width = "100%";
-
-                if (divElement2.offsetWidth >= 940) {
-                    vizElement2.style.height = "807px";
-                } else {
-                    vizElement2.style.height = "460px";
-                }
-                var scriptElement2 = document.createElement("script");
-                scriptElement2.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement2.defer = true;
-                vizElement2.parentNode.insertBefore(scriptElement2, vizElement2);
-                </script>
             </p>
 
             <p>
@@ -236,20 +191,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608496271669">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/BigCityScores/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/BigCityScores/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608496271669" data-viz-desktop-height="807px" data-viz-mobile-height="460px" />
+                <div id="viz1608496271669">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/BigCityScores" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/BigCityScores/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -257,21 +210,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement3 = document.getElementById("viz1608496271669");
-                var vizElement3 = divElement3.getElementsByTagName("object")[0];
-                vizElement3.style.width = "100%";
-
-                if (divElement3.offsetWidth >= 940) {
-                    vizElement3.style.height = "807px";
-                } else {
-                    vizElement3.style.height = "460px";
-                }
-                var scriptElement3 = document.createElement("script");
-                scriptElement3.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement3.defer = true;
-                vizElement3.parentNode.insertBefore(scriptElement3, vizElement3);
-                </script>
             </p>
 
             <div class="divider"></div>
@@ -287,20 +225,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608518127922">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestTrendsOverall/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestTrendsOverall/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608518127922" data-viz-desktop-height="420px" data-viz-mobile-height="402px" />
+                <div id="viz1608518127922">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/LowLevelArrestTrendsOverall" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestTrendsOverall/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -308,22 +244,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement4 = document.getElementById("viz1608518127922");
-                var vizElement4 = divElement4.getElementsByTagName("object")[0];
-
-                vizElement4.style.width = "100%";
-                vizElement4.style.height = "420px";
-
-                if (vizElement4.offsetWidth >= 500) {
-                    vizElement4.style.height = "402px";
-                }
-
-                var scriptElement4 = document.createElement("script");
-                scriptElement4.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement4.defer = true;
-                vizElement4.parentNode.insertBefore(scriptElement4, vizElement4);
-                </script>
             </p>
 
             <p>
@@ -331,20 +251,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608515841510">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestChanges/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608515841510" data-viz-desktop-height="527px" data-viz-mobile-height="460px" />
+                <div id="viz1608515841510">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/LowLevelArrestChanges" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestChanges/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -352,20 +270,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement5 = document.getElementById("viz1608515841510");
-                var vizElement5 = divElement5.getElementsByTagName("object")[0];
-                vizElement5.style.width = "100%";
-                if (divElement5.offsetWidth >= 940) {
-                    vizElement5.style.height = "527px";
-                } else {
-                    vizElement5.style.height = "460px";
-                }
-                var scriptElement5 = document.createElement("script");
-                scriptElement5.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement5.defer = true;
-                vizElement5.parentNode.insertBefore(scriptElement5, vizElement5);
-                </script>
             </p>
 
             <div class="divider"></div>
@@ -385,20 +289,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608518452695">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/ArrestDisparitiesin2019/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/ArrestDisparitiesin2019/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608518452695" data-viz-desktop-height="477px" data-viz-mobile-height="427px" />
+                <div id="viz1608518452695">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/ArrestDisparitiesin2019" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/ArrestDisparitiesin2019/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -406,38 +308,21 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement6 = document.getElementById("viz1608518452695");
-                var vizElement6 = divElement6.getElementsByTagName("object")[0];
-                vizElement6.style.width = "100%";
-
-                if (divElement6.offsetWidth >= 940) {
-                    vizElement6.style.height = "477px";
-                } else {
-                    vizElement6.style.height = "427px";
-                }
-                var scriptElement6 = document.createElement("script");
-                scriptElement6.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement6.defer = true;
-                vizElement6.parentNode.insertBefore(scriptElement6, vizElement6);
-                </script>
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608523779568">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/DrugArrestDisparities/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/DrugArrestDisparities/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608523779568" data-viz-desktop-height="627px" data-viz-mobile-height="500px" />
+                <div id="viz1608523779568">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/DrugArrestDisparities" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/DrugArrestDisparities/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -445,22 +330,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement7 = document.getElementById("viz1608523779568");
-                var vizElement7 = divElement7.getElementsByTagName("object")[0];
-                vizElement7.style.width = "100%";
-
-                if (divElement7.offsetWidth >= 940) {
-                    vizElement7.style.height = "627px";
-                } else {
-                    vizElement7.style.height = "500px";
-                }
-
-                var scriptElement7 = document.createElement("script");
-                scriptElement7.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement7.defer = true;
-                vizElement7.parentNode.insertBefore(scriptElement7, vizElement7);
-                </script>
             </p>
 
             <p>
@@ -484,20 +353,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608524943204">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/OfficersbyPopulationandCrimeRate/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/OfficersbyPopulationandCrimeRate/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608524943204" data-viz-desktop-height="377px" data-viz-mobile-height="377px" />
+                <div id="viz1608524943204">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/OfficersbyPopulationandCrimeRate" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/OfficersbyPopulationandCrimeRate/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -505,16 +372,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement8 = document.getElementById("viz1608524943204");
-                var vizElement8 = divElement8.getElementsByTagName("object")[0];
-                vizElement8.style.width = "100%";
-                vizElement8.style.height = "377px";
-                var scriptElement8 = document.createElement("script");
-                scriptElement8.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement8.defer = true;
-                vizElement8.parentNode.insertBefore(scriptElement8, vizElement8);
-                </script>
             </p>
 
             <div class="divider"></div>
@@ -534,20 +391,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608517153562">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceShootings/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceShootings/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608517153562" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608517153562">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/PoliceShootings" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceShootings/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -555,16 +410,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement9 = document.getElementById("viz1608517153562");
-                var vizElement9 = divElement9.getElementsByTagName("object")[0];
-                vizElement9.style.width = "100%";
-                vizElement9.style.height = "527px";
-                var scriptElement9 = document.createElement("script");
-                scriptElement9.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement9.defer = true;
-                vizElement9.parentNode.insertBefore(scriptElement9, vizElement9);
-                </script>
             </p>
 
             <p>
@@ -576,20 +421,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608516838184">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/LessLethalForceRates/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LessLethalForceRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608516838184" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608516838184">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/LessLethalForceRates" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/LessLethalForceRates/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -597,16 +440,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement10 = document.getElementById("viz1608516838184");
-                var vizElement10 = divElement10.getElementsByTagName("object")[0];
-                vizElement10.style.width = "100%";
-                vizElement10.style.height = "527px";
-                var scriptElement10 = document.createElement("script");
-                scriptElement10.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement10.defer = true;
-                vizElement10.parentNode.insertBefore(scriptElement10, vizElement10);
-                </script>
             </p>
 
             <p>
@@ -618,20 +451,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608517458685">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/StrangleholdRates/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/StrangleholdRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608517458685" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608517458685">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/StrangleholdRates" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/StrangleholdRates/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -639,16 +470,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement11 = document.getElementById("viz1608517458685");
-                var vizElement11 = divElement11.getElementsByTagName("object")[0];
-                vizElement11.style.width = "100%";
-                vizElement11.style.height = "527px";
-                var scriptElement11 = document.createElement("script");
-                scriptElement11.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement11.defer = true;
-                vizElement11.parentNode.insertBefore(scriptElement11, vizElement11);
-                </script>
             </p>
 
             <div class="divider"></div>
@@ -664,20 +485,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608516322532">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/ComplaintSustainRates/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/ComplaintSustainRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608516322532" data-viz-desktop-height="677px" data-viz-mobile-height="677px" />
+                <div id="viz1608516322532">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/ComplaintSustainRates" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/ComplaintSustainRates/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -685,16 +504,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement12 = document.getElementById("viz1608516322532");
-                var vizElement12 = divElement12.getElementsByTagName("object")[0];
-                vizElement12.style.width = "100%";
-                vizElement12.style.height = "677px";
-                var scriptElement12 = document.createElement("script");
-                scriptElement12.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement12.defer = true;
-                vizElement12.parentNode.insertBefore(scriptElement12, vizElement12);
-                </script>
             </p>
 
             <p>
@@ -718,20 +527,18 @@
             </p>
 
             <p class="tableau-chart">
-                <div class="tableauPlaceholder" id="viz1608524380099">
-                    <noscript>
-                        <a href="#"><img alt=" " src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1_rss.png" style="border: none" /></a>
-                    </noscript>
-                    <object class="tableauViz" style="display:none;">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608524380099" data-viz-desktop-height="627px" data-viz-mobile-height="627px" />
+                <div id="viz1608524380099">
+                    <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
                         <param name="site_root" value="" />
                         <param name="name" value="PoliceScorecard/PoliceFundingChanges" />
                         <param name="tabs" value="no" />
                         <param name="toolbar" value="yes" />
-                        <param name="static_image" value="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1.png" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
                         <param name="animate_transition" value="yes" />
-                        <param name="display_static_image" value="yes" />
+                        <param name="display_static_image" value="no" />
                         <param name="display_spinner" value="yes" />
                         <param name="display_overlay" value="yes" />
                         <param name="display_count" value="yes" />
@@ -739,16 +546,6 @@
                         <param name="filter" value="publish=yes" />
                     </object>
                 </div>
-                <script type="text/javascript">
-                var divElement13 = document.getElementById("viz1608524380099");
-                var vizElement13 = divElement13.getElementsByTagName("object")[0];
-                vizElement13.style.width = "100%";
-                vizElement13.style.height = "627px";
-                var scriptElement13 = document.createElement("script");
-                scriptElement13.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-                scriptElement13.defer = true;
-                vizElement13.parentNode.insertBefore(scriptElement13, vizElement13);
-                </script>
             </p>
 
             <div class="divider"></div>

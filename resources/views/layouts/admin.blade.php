@@ -151,9 +151,9 @@
                 @endif
             @endif
 
-            <a href="https://studio.mapbox.com/tilesets/policescorecard.aopjgh6s/" class="btn btn-primary" target="_blank">Open Tileset</a>&nbsp;
-            <a href="https://studio.mapbox.com/styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f/edit/#3.32/23.97/-110.11"  class="btn btn-default" target="_blank">Preview Tileset in Mapbox</a>&nbsp;
-            <a href="/" class="btn btn-default" target="_blank">Open Home Page</a>
+            <a href="https://studio.mapbox.com/tilesets/policescorecard.aopjgh6s/" class="btn btn-primary" rel="noopener" target="_blank">Open Tileset</a>&nbsp;
+            <a href="https://studio.mapbox.com/styles/policescorecard/ckdq6vklx0q3r1iqrwpiris3f/edit/#3.32/23.97/-110.11"  class="btn btn-default" rel="noopener" target="_blank">Preview Tileset in Mapbox</a>&nbsp;
+            <a href="/" class="btn btn-default" rel="noopener" target="_blank">Open Home Page</a>
         </div>
         @else
         <div class="container main" role="main">

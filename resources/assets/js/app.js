@@ -24,6 +24,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
     animate: function() {
         PoliceScorecard.animateProgressBars();
         PoliceScorecard.animateCheckMarks();
+        PoliceScorecard.lazyLoadTableau();
     },
 
     /**
@@ -696,6 +697,17 @@ window.PoliceScorecard = window.PoliceScorecard || {
     },
 
     /**
+     * Check if Element is Scrolled Into View
+     * @param {*} el
+     */
+    isAboutToBeScrolledIntoView: function(el) {
+        var bounding = el.getBoundingClientRect();
+        var bottom = (window.innerHeight || document.documentElement.clientHeight);
+
+        return ((bounding.top - 100) <= bottom);
+    },
+
+    /**
      * Load Map for State Abbreviation
      * @param {*} abbr
      */
@@ -1336,6 +1348,41 @@ window.PoliceScorecard = window.PoliceScorecard || {
             evt.preventDefault();
             evt.stopPropagation();
         }
+    },
+
+    lazyLoadTableau: function () {
+        Array.prototype.forEach.call(document.getElementsByClassName('tableau-placeholder'), function(el) {
+            if (PoliceScorecard.isAboutToBeScrolledIntoView(el)) {
+                var id = el.getAttribute('data-viz-id');
+                var desktop = el.getAttribute('data-viz-desktop-height');
+                var mobile = el.getAttribute('data-viz-mobile-height');
+
+                if (id && desktop && mobile && el.style.display !== 'none') {
+                    var divElement = document.getElementById(id);
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+
+                    divElement.style.width = '100%';
+                    vizElement.style.width = '100%';
+
+                    divElement.className = 'tableauPlaceholder';
+                    vizElement.className = 'tableauViz';
+
+                    if (divElement.offsetWidth >= 940) {
+                        divElement.style.height = desktop;
+                        vizElement.style.height = desktop;
+                    } else {
+                        divElement.style.height = mobile;
+                        vizElement.style.height = mobile;
+                    }
+
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+
+                    el.style.display = 'none';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                }
+            }
+        });
     }
 };
 
