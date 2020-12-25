@@ -43,10 +43,6 @@
         };
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js"></script>
-
+    <script src="{{ asset('/js/home.plugins.js') }}"></script>
     <script src="{{ mix('/js/home.js') }}"></script>
 @endsection
