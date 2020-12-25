@@ -400,10 +400,10 @@ window.PoliceScorecard = window.PoliceScorecard || {
         };
 
         // Handle Progress Bars
-        window.onscroll = function() {
+        window.addEventListener(function() {
             clearTimeout(PoliceScorecard.debounce);
             PoliceScorecard.debounce = setTimeout(PoliceScorecard.animate, 10);
-        };
+        }, { passive: true });
 
         // Fix bug where if user is already on middle of page, and hits refresh, they will still see animation correctly
         setTimeout(PoliceScorecard.animate, 250);

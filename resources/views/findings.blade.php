@@ -587,6 +587,6 @@ document.addEventListener('scroll', function() {
     } else if (doc.scrollTop > 100 && !doc.classList.contains('show-back-to-top')) {
         doc.classList.add('show-back-to-top');
     }
-}, false);
+}, { passive: true });
 </script>
 @endsection
