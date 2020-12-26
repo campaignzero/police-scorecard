@@ -512,10 +512,10 @@
 
             <div class="divider"></div>
 
-            <!-- 8. 90% of jurisdictions increased police funding from 2013-2018 -->
+            <!-- 8. 80% of jurisdictions increased police funding from 2013-2018 -->
 
             <h2 class="subtitle" id="increased-funding">
-                8. 90% of jurisdictions increased police funding from 2013-2018
+                8. 80% of jurisdictions increased police funding from 2013-2018
             </h2>
 
             <p>
@@ -523,12 +523,12 @@
             </p>
 
             <p>
-                Fewer than 10% of all jurisdictions cut police funding from 2013-2018 after accounting for the estimated <a href="https://www.usinflationcalculator.com/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '7.8%') !!}>7.8%</a> inflation during this period, according to the Census data. A review of municipal budgetary documents along with the Census data found only one of the nation's largest cities (over 400k population) cut police spending more than 10% from 2013-2018 - Detroit. Detroit cut its police budget 14% and cut other agency budgets after the city went through municipal bankruptcy.
+                20% of all jurisdictions cut police funding from 2013-2018 after accounting for the estimated <a href="https://www.usinflationcalculator.com/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '7.8%') !!}>7.8%</a> inflation during this period, according to the Census data. A review of municipal budgetary documents along with the Census data found only one of the nation's largest cities (over 400k population) cut police spending more than 10% from 2013-2018 - Detroit. Detroit cut its police budget 14% and cut other agency budgets after the city went through municipal bankruptcy.
             </p>
 
             <p class="tableau-chart">
-                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608524380099" data-viz-desktop-height="627px" data-viz-mobile-height="627px" />
-                <div id="viz1608524380099">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608567894757" data-viz-desktop-height="627px" data-viz-mobile-height="627px" />
+                <div id="viz1608567894757">
                     <object style="display:none;">
                         <param name="host_url" value="https://public.tableau.com/" />
                         <param name="embed_code_version" value="3" />
