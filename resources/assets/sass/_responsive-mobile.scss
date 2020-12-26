@@ -808,6 +808,10 @@
     .section.grades {
         padding-bottom: 50px;
 
+        .summary {
+            padding: 0 20px 20px 20px;
+        }
+
         h1.title {
             padding-left: 20px;
             padding-right: 20px;
