@@ -53,8 +53,7 @@
 
             <p>
                 <strong>Research Advisors</strong><br/>
-                Abdul Rad, Independent Researcher, PhD Candidate, University of Oxford
-                John Rappaport, Professor of Law, University of Chicago The Law School
+                Abdul Rad, Independent Researcher, PhD Candidate, University of Oxford<br/>
                 Bocar Ba, Assistant Professor of Economics, UC Irvine
             </p>
 
