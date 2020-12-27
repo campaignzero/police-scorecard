@@ -25,7 +25,7 @@
                             <li><a href="#more-heavily-policed" {!! trackData('Nav', 'Findings', 'More Heavily Policed') !!}>Black communities are more heavily policed</a></li>
                             <li><a href="#clear-pattern" {!! trackData('Nav', 'Findings', 'Clear Pattern') !!}>Some police departments show a clear pattern of using more force than other departments</a></li>
                             <li><a href="#misconduct-investigations" {!! trackData('Nav', 'Findings', 'Misconduct Investigations') !!}>Few departments regularly rule against officers in misconduct investigations</a></li>
-                            <li><a href="#increased-funding" {!! trackData('Nav', 'Findings', 'Increased Funding') !!}>90% of jurisdictions increased police funding from 2013-2018</a></li>
+                            <li><a href="#increased-funding" {!! trackData('Nav', 'Findings', 'Increased Funding') !!}>80% of jurisdictions increased police funding from 2013-2018</a></li>
                         </ol>
                     </li>
                     <li><a href="#conclusion" {!! trackData('Nav', 'Findings', 'Conclusion') !!}><strong>Conclusion</strong></a></li>
