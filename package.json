@@ -55,7 +55,7 @@
     },
     "homepage": "https://github.com/campaignzero/police-scorecard#readme",
     "devDependencies": {
-        "axios": "^0.19",
+        "axios": "^0.21",
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.5",
         "laravel-mix-versionhash": "^1.1.3",
