@@ -2406,7 +2406,7 @@
     }
     h2.subtitle {
         font-family: Barlow Condensed,sans-serif;
-        color: #000;
+        color: #5a6f83;
         padding: 0;
         font-size: 24px;
         line-height: 24px;
@@ -2525,6 +2525,42 @@
 
     img.tableau-placeholder {
         max-width: 100%;
+    }
+
+    .toc ul {
+        list-style: none;
+        margin: 0;
+
+        li {
+            margin-bottom: 4px;
+
+            strong {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .toc ol {
+        list-style-type: none;
+        counter-reset: section;
+        margin: 8px 0 8px 20px;
+
+        li {
+            margin-bottom: 4px;
+            position: relative;
+            margin-left: 15px;
+
+            &:before {
+                counter-increment: section;
+                content: counter(section);
+                position: absolute;
+                left: -20px;
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+                top: 0;
+            }
+        }
     }
 }
 

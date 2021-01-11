@@ -553,7 +553,7 @@
             <!-- Conclusion -->
 
             <h2 class="subtitle" id="conclusion">
-                Conclusion
+                CONCLUSION
             </h2>
 
             <p>
