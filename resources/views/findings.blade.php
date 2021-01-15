@@ -5,12 +5,17 @@
 @section('content')
     <x-partial.menu />
 
-    <div class="section findings">
+    <div class="section bg-dotted current-state">
         <div class="content">
+            Key Findings
+        </div>
+    </div>
 
-            <h1 class="title">
-                KEY FINDINGS
-            </h1>
+    <div class="section bg-light-gray findings toc">
+        <div class="content">
+            <h2 class="subtitle">
+                TABLE OF CONTENTS
+            </h2>
 
             <nav class="toc">
                 <ul>
@@ -31,8 +36,11 @@
                     <li><a href="#conclusion" {!! trackData('Nav', 'Findings', 'Conclusion') !!}><strong>Conclusion</strong></a></li>
                 </ul>
             </nav>
+        </div>
+    </div>
 
-            <div class="divider"></div>
+    <div class="section findings">
+        <div class="content">
 
             <h2 class="subtitle" id="intro">
                 WE EVALUATED POLICING IN AMERICA. HERE'S WHAT WE FOUND.
