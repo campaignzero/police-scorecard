@@ -2513,7 +2513,7 @@
                 text-decoration: none;
                 color: #000;
                 transition: color 0.25s;
-                font-weight: normal;
+                font-weight: bold;
 
                 &:hover {
                     color: #5a6f83;
@@ -2543,10 +2543,10 @@
     .toc ol {
         list-style-type: none;
         counter-reset: section;
-        margin: 8px 0 8px 20px;
+        margin: 12px 0 12px 20px;
 
         li {
-            margin-bottom: 4px;
+            margin-bottom: 12px;
             position: relative;
             margin-left: 15px;
 
@@ -2560,6 +2560,15 @@
                 font-weight: bold;
                 top: 0;
             }
+        }
+    }
+
+    &.toc {
+        padding-top: 40px;
+        margin-top: 20px;
+
+        h2.subtitle {
+            margin-top: 0;
         }
     }
 }
