@@ -118,7 +118,7 @@ $class_q = (is_numeric($scorecard['report']['percentile_drug_arrest_disparity'])
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell">&nbsp;</td>
                     </tr>
-                    <tr class="double {{ $class_d }}">
+                    <tr class="{{ $class_d }}">
                         <td class="table-label">Racial Disparities in Deadly Force</td>
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell divider">&nbsp;</td>
@@ -193,7 +193,7 @@ $class_q = (is_numeric($scorecard['report']['percentile_drug_arrest_disparity'])
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="double {{ $class_g }}">
+                    <tr class="{{ $class_g }}">
                         <td class="table-label">Arrest Rate for Low Level Offenses</td>
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell divider">&nbsp;</td>
