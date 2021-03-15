@@ -24,8 +24,8 @@
     @if ($scorecard['police_funding']['misconduct_settlement_source'])
     <p class="source-link-wrapper">
         Source:
-        <a href="{{ $scorecard['police_funding']['misconduct_settlement_source'] }}" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Funds Spent', 'UCLA Law Review') !!}>
-            UCLA Law Review
+        <a href="{{ $scorecard['police_funding']['misconduct_settlement_source'] }}" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Funds Spent', 'FiveThirtyEight analysis') !!}>
+            FiveThirtyEight analysis
         </a>
     </p>
     @endif

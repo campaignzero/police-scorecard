@@ -23,7 +23,7 @@
                     <li>
                         <a href="#data-availability" {!! trackData('Nav', 'Findings', 'Findings') !!}><strong>Findings</strong>
                         <ol>
-                            <li><a href="#data-availability" {!! trackData('Nav', 'Findings', 'Data Availability') !!}>Data availability</a></li>
+                            <li><a href="#data-availability" {!! trackData('Nav', 'Findings', 'Police Hide Data') !!}>Police continue to hide substantial amounts of data from the public</a></li>
                             <li><a href="#policing-differs" {!! trackData('Nav', 'Findings', 'Policing Differs') !!}>Policing differs substantially depending where you live</a></li>
                             <li><a href="#making-fewer-arrests" {!! trackData('Nav', 'Findings', 'Making Fewer Arrests') !!}>Police are making fewer arrests for low level offenses</a></li>
                             <li><a href="#racial-disparities-persist" {!! trackData('Nav', 'Findings', 'Racial Disparities Persist') !!}>As arrests decline, racial disparities persist</a></li>
@@ -56,10 +56,10 @@
 
             <div class="divider"></div>
 
-            <!-- 1. Data availability -->
+            <!-- 1. Police continue to hide substantial amounts of data from the public -->
 
             <h2 class="subtitle" id="data-availability">
-                1. Data availability
+                1. Police continue to hide substantial amounts of data from the public
             </h2>
 
             <p>
@@ -165,7 +165,8 @@
             </p>
 
             <p>
-                Policing outcomes varied by state. To compare agencies, we calculated scores for each agency using a 0-100% scale whereby departments with <strong>higher scores</strong> use <strong>less force</strong>, make <strong>fewer arrests for low level offenses, solve murder cases more often</strong>, hold officers <strong>more accountable</strong> and <strong>spend less</strong> on policing overall (Read more about our methodology <a href="/about" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Our Methodology') !!}>here</a>). Based on this methodology, the lowest score for the average police or sheriff's department in a state was a score of 46% in Nevada, while the highest score was 57% for the average agency in Pennsylvania. Notably, California, Florida, Georgia and Arizona had among the lowest policing scores in the nation.
+                Policing outcomes varied by state. To compare agencies, we calculated scores for each agency using a 0-100% scale whereby departments with <strong>higher scores</strong> use <strong>less force</strong>, make <strong>fewer arrests for low level offenses, solve murder cases more often</strong>, hold officers <strong>more accountable</strong> and <strong>spend less</strong> on policing overall (Read more about our methodology <a href="/about" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Our Methodology') !!}>here</a>).
+                Based on this methodology, Nevada and Georgia had among the lowest scores for the average police or sheriff's department in a state while Pennsylvania and Massachusetts had among the highest average scores.
             </p>
 
             <p class="tableau-chart">
@@ -195,7 +196,7 @@
             </p>
 
             <p>
-                There was also substantial variation in policing outcomes among city police departments and county sheriffs within each state - with the lowest scoring departments receiving scores at or below 30% and the highest scoring departments receiving scores above 60%. Among the largest police jurisdictions, those with over 400,000 population, Charlotte-Mecklenburg and El Paso police departments had the highest overall scores - making fewer low level arrests, using less force, and spending less on policing than other big city police departments. Further exploration of the organizational culture, leadership and practices of these departments might produce valuable insights into how to improve outcomes in other places. By contrast, police departments in Long Beach, Memphis and Kansas City, MO had the worst outcomes. This suggests the need for further investigation and intervention from local, state and federal authorities to better understand and address these issues.
+                There was also substantial variation in policing outcomes among city police departments and county sheriffs within each state - with the lowest scoring departments receiving scores at or below 30% and the highest scoring departments receiving scores above 60%. Among the largest police jurisdictions, those with over 400,000 population, Charlotte-Mecklenburg and El Paso police departments had among the highest overall scores - making fewer low level arrests, using less force, and spending less on policing than other big city police departments. Further exploration of the organizational culture, leadership and practices of these departments might produce valuable insights into how to improve outcomes in other places. By contrast, police departments in Long Beach, Memphis and Kansas City, MO had the worst outcomes. This suggests the need for further investigation and intervention from local, state and federal authorities to better understand and address these issues.
             </p>
 
             <p class="tableau-chart">
@@ -455,7 +456,7 @@
             </p>
 
             <p>
-                More than 40 departments specified the number of chokeholds or strangleholds used (Lateral Vascular Neck Restraints, Carotid Restraints and other neck restraints were included as strangleholds). Of these, the data show that a few departments were consistently outliers in using this tactic against people. Police departments in Santa Ana, San Diego, Long Beach and Minneapolis consistently reported using strangleholds against civilians at higher rates per arrest than other large police departments. Following widespread protests over police violence in 2020, <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1196" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'California') !!}>California</a> and <a href="https://www.npr.org/sections/live-updates-protests-for-racial-justice/2020/07/21/893444295/minnesota-lawmakers-ban-police-chokeholds-warrior-style-training" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Minnesota') !!}>Minnesota</a> passed laws in July and September, respectively, banning both chokeholds and strangleholds among these law enforcement agencies.
+                More than 40 departments specified the number of chokeholds or strangleholds used (Lateral Vascular Neck Restraints, Carotid Restraints and other neck restraints were included as strangleholds). Of these, the data show that a few departments were consistently outliers in using this tactic against people. Police departments in Santa Ana, San Diego, Long Beach and Minneapolis consistently reported using strangleholds against civilians at higher rates per arrest than other large police departments. Following widespread protests over police violence in 2020, <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1196" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'California') !!}>California</a> and <a href="https://www.npr.org/sections/live-updates-protests-for-racial-justice/2020/07/21/893444295/minnesota-lawmakers-ban-police-chokeholds-warrior-style-training" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Minnesota') !!}>Minnesota</a> passed laws banning both chokeholds and strangleholds among these law enforcement agencies.
             </p>
 
             <p class="tableau-chart">
@@ -489,7 +490,10 @@
             </h2>
 
             <p>
-                When people come forward to report police misconduct, it rarely leads to accountability. Among the 1,039 departments we obtained civilian complaint data from, <strong>only 1 in every 9 civilian complaints</strong> of police misconduct was ruled in favor of civilians. Examining the 418 jurisdictions that reported 5 or more complaints, there were only 41 jurisdictions sustained complaints at least one-third of the time and only 15 jurisdictions where the majority of civilian complaints reported were sustained. By contrast, Houston, Miami-Dade and Charlotte-Mecklenburg police sustained complaints in nearly half of all cases, suggesting the need for further examination of potential best-practices used by investigators in these jurisdictions to substantiate misconduct. Importantly, since no nationwide database exists to track police disciplinary consequences resulting from substantiated complaints, we do not know the full extent to which officers are held accountable even in many of the agencies with higher rates of sustained complaints.
+                When people come forward to report police misconduct, it rarely leads to accountability. Among the 1,039 departments we obtained civilian complaint data from, <strong>only 1 in every 9 civilian complaints</strong> of police misconduct was ruled in favor of civilians. Examining the 418 jurisdictions that reported 5 or more complaints, there were only 41 jurisdictions sustained complaints at least one-third of the time and only 15 jurisdictions where the majority of civilian complaints reported were sustained. By contrast, Houston, Miami-Dade and Charlotte-Mecklenburg police sustained complaints in nearly half of all cases, suggesting the need for further examination of potential best-practices used by investigators in these jurisdictions to substantiate misconduct.
+                Consistent with <a href="https://nixthe6.org/research/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'NixThe6 Past Research') !!}>past research</a> finding that police union contracts undermine accountability, departments were more likely to sustain misconduct complaints against officers in states like GA, TN, SC and NC that do not allow police unions to negotiate these contracts.
+                By contrast, departments in <a href="https://nixthe6.org/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'NixThe6 States') !!}>states</a> with "Police Bill of Rights" laws were less likely to sustain complaints of police misconduct - suggesting that these laws may also be barriers to police accountability.
+                Importantly, since no nationwide database exists to track police disciplinary consequences resulting from substantiated complaints, we do not know the full extent to which officers are held accountable even in many of the agencies with higher rates of sustained complaints.
             </p>
 
             <p class="tableau-chart">

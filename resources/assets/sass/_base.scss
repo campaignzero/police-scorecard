@@ -637,3 +637,12 @@ p.number-list {
     display: block;
     z-index: 500;
 }
+
+#campaign-zero-widget {
+    background-color: #FFF !important;
+
+    button.submit {
+        background-color: #5a6f83;
+        color: white;
+    }
+}
