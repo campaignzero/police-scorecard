@@ -57,6 +57,8 @@
             <span class="grade grade-incomplete"></span>
             <span class="percent">Incomplete</span>
         </a>
+
+
     </div>
 
     <div class="content">
@@ -66,11 +68,11 @@
                 <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index < floor(count(array_slice($grades['all'], 0, 500)) / 2) && $index)
+                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index < ceil(count(array_slice($grades['all'], 0, 500)) / 2))
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                     <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - ($index + 1 )) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>
@@ -85,11 +87,11 @@
                     <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
                 </tr>
-                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index >= floor(count(array_slice($grades['all'], 0, 500)) / 2))
+                @foreach(array_slice($grades['all'], 0, 500) as $index => $card) @if ($index >= ceil(count(array_slice($grades['all'], 0, 500)) / 2))
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
-                        <a href="{{ $card['url_pretty'] }}"{!! ($index > (floor(count($grades['complete']) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                        <a href="{{ $card['url_pretty'] }}"{!! ($index > (ceil(count($grades['complete']) / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
+                            <span class="agency-name">{{ $card['complete'] ? (count($grades['complete']) - ($index + 1 )) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>

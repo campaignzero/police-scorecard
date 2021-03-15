@@ -14,6 +14,9 @@
     <meta name="apple-mobile-web-app-title" content="Police Scorecard">
     <meta name="application-name" content="Police Scorecard">
 
+    <!-- Facebook META Data -->
+    <meta name="facebook-domain-verification" content="s43qlqcd2jhfsaiguh0h5xfa0l7wa5" />
+
     <!-- Twitter META Info -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="@samswey">

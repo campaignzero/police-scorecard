@@ -12,7 +12,7 @@
     <h2 class="score-divider grade grade-{{ getGradeClass($scorecard['report']['police_accountability_score']) }}">
         <span class="section-label">Section Score:</span>
         <span class="section-score">{{ num($scorecard['report']['police_accountability_score'], 0, '%') }}</span>
-        {!! getChange($scorecard['report']['change_police_accountability_score'], true, 'since \'16-17') !!}
+        {!! getChange($scorecard['report']['change_police_accountability_score'], true, 'since \'16') !!}
     </h2>
 
     @if (!empty($scorecard['police_accountability']['civilian_complaints_source_link']) && !empty($scorecard['police_accountability']['civilian_complaints_source']))

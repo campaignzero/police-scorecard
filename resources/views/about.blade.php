@@ -37,9 +37,6 @@
                 Ariel Matos<br/>
                 Kirby Phares<br/>
                 Emily Biondo<br/>
-                Yael Grauer<br/>
-                Amadu Durham<br/>
-                Julia Deeb-Swihart<br/>
                 Mary Hammond<br/>
                 Frankie Wunschel
             </p>
@@ -53,8 +50,10 @@
 
             <p>
                 <strong>Research Advisors</strong><br/>
+                MapBox<br/>
                 Abdul Rad, Independent Researcher, PhD Candidate, University of Oxford<br/>
-                Bocar Ba, Assistant Professor of Economics, UC Irvine
+                Bocar Ba, Assistant Professor of Economics, UC Irvine<br/>
+                Jeffrey Fagan, Professor of Law, Columbia University
             </p>
 
 
@@ -134,7 +133,7 @@
             </p>
 
             <p>
-                Racial disparities in arrests and deadly force were also factored into each department's police violence score. Since there are similar rates of drug use among most racial and ethnic groups, disparities in which groups police arrest for drug possession suggest a biased approach to law enforcement. As such, we used data on racial disparities in drug possession arrests from the Uniform Crime Report as a proxy for estimating racial disparities in arrests. Disparities in drug possession arrest rates between Black and white populations and between Latinx and white populations, taking the most extreme of the disparities between the two and then converting this to a percentile score. To calculate a racial bias score for killings by police, we calculated the disparity in rates of killings by police between Black and white populations and between Latinx and white populations, taking the most extreme of the disparities between the two and then converting this to a percentile score. Then, we averaged the two percentile scores together to obtain an overall racial bias score representing the overall level of racial disparity in drug arrests and killings by police per arrest for each agency. This racial bias score was included as one of the four factors determining each department's police violence score. Our methodology is explained in detail <a href="https://github.com/campaignzero/ca-police-scorecard/blob/master/ca_police_scorecard.ipynb" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Methodology') !!}>here</a>. In summary, the following formula was used to calculate each department's police violence score:
+                Racial disparities in deadly force were also factored into each department's police violence score. To calculate a racial disparity score for killings by police, we calculated the disparity in rates of killings by police per population between Black and white populations and between Latinx and white populations, taking the most extreme of the disparities between the two and then converting this to a percentile score relative to other departments. In summary, the following formula was used to calculate each department's police violence score:
             </p>
 
             <p>
@@ -142,7 +141,7 @@
     Percentile Less Lethal Force Used per Arrest +
     Percentile Deadly Force Used per Arrest +
     Percentile Unarmed Civilians Killed +
-    Percentile Racial Bias in Arrests and Deadly Force
+    Percentile Racial Disparities in Deadly Force
 ) / 4</pre>
             </p>
 
@@ -164,14 +163,15 @@
             </h2>
 
             <p>
-                The approach to policing score evaluates the extent to which police departments focus on arresting people for low-level offenses or focusing on solving serious crimes. The score accounts for the proportion of the most serious crimes - homicide - that an agency solves as well as how each agency compares in terms of its approach to the lowest level offenses. We defined low level offenses as the combination of all arrests for drug offenses, public drunkenness and other alcohol-related offenses; vagrancy, loitering, gambling, disorderly conduct, prostitution, vandalism, and other minor non-violent offenses. These types of offenses are usually classified as misdemeanors and are often associated with issues of substance abuse, homelessness and sex work. This definition excludes all arrests for violent crimes, assaults, crimes against families and children, weapons offenses, sex offenses and all arrests for property crimes except for vandalism.<sup>[1]</sup> Higher rates of low level arrests per population suggest a department is engaging in aggressive "public order" or "broken-windows" policing practices that have not been proven to improve public safety and instead expose communities, especially marginalized communities, to increased policing, arrest and incarceration (for additional reading, see here, here and here). The following formula was used to calculate this score:
+                The approach to policing score evaluates the extent to which police departments focus on arresting people for low-level offenses or focusing on solving serious crimes. The score accounts for the proportion of the most serious crimes - homicide - that an agency solves as well as how each agency compares in terms of its approach to the lowest level offenses. We defined low level offenses as the combination of all arrests for drug offenses, public drunkenness and other alcohol-related offenses; vagrancy, loitering, gambling, disorderly conduct, prostitution, vandalism, and other minor non-violent offenses. These types of offenses are usually classified as misdemeanors and are often associated with issues of substance abuse, homelessness and sex work. This definition excludes all arrests for violent crimes, assaults, crimes against families and children, weapons offenses, sex offenses and all arrests for property crimes except for vandalism.<sup>[1]</sup> Higher rates of low level arrests per population suggest a department is engaging in aggressive "public order" or "broken-windows" policing practices that have not been proven to improve public safety and instead expose communities, especially marginalized communities, to increased policing, arrest and incarceration (for additional reading, see here, here and here). Racial disparities in drug possession arrests were also factored into a department’s approach to policing score. Since there are similar rates of drug use among most racial and ethnic groups, disparities in which groups police arrest for drug possession suggest a biased approach to law enforcement. As such, we used data on racial disparities in drug possession arrests from the Uniform Crime Report as a proxy for estimating racial bias. Since departments in Florida do not report drug arrest data distinguishing possession and sales arrests, all drug arrests were used to calculate disparities in Florida. We calculated racial disparities both between Black and white populations and between Latinx and white populations, converting the most extreme of these two disparities to a percentile score for racial disparities in law enforcement.
             </p>
 
             <p>
 <pre>(
     Percentile Low Level Arrests per Population +
+    Percentile Racial Disparities in Drug Possession Arrests +
     Percent Homicides Cleared
-) / 2</pre>
+) / 3</pre>
             </p>
 
             <h2 class="subtitle">
@@ -230,10 +230,11 @@
             <p>
 <pre>(
     Percentile Low Level Arrests per Population +
+    Percentile Racial Disparities in Drug Possession Arrests +
     Percent Homicides Cleared +
     Percentile Jail Incarceration Rate +
     Percentile Jail Deaths per Jail Population
-) / 2</pre>
+) / 5</pre>
             </p>
 
             <p>
@@ -308,7 +309,8 @@
             </p>
 
             <p>
-                Data on the number of each agency's arrests from 2013-2019 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic. We then compared our estimates to the data from states and cities that report arrests data by both race and ethnicity to evaluate their accuracy. The breakdown of arrests estimates by race and ethnicity as well as the data provided by these agencies is provided in Appendix below. Since police agencies in Florida and Illinois generally did not report arrests data to the FBI UCR, we obtained their arrest data from the <a href="https://www.fdle.state.fl.us/FSAC/Data-Statistics/UCR-Arrest-Data.aspx" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Florida Department of Law Enforcement') !!}>Florida Department of Law Enforcement</a> and from reports published by individual agencies in Illinois.
+                Data on the number of each agency's arrests from 2013-2019 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic.
+                Since police agencies in Florida and Illinois generally did not report arrests data to the FBI UCR, we obtained their arrest data from the <a href="https://www.fdle.state.fl.us/FSAC/Data-Statistics/UCR-Arrest-Data.aspx" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Florida Department of Law Enforcement') !!}>Florida Department of Law Enforcement</a> and from reports published by individual agencies in Illinois.
             </p>
 
             <p>
@@ -432,6 +434,7 @@
 
             <p>
                 This includes data specifying the average amount of money per year from 2012-2014 in settlements and judgements related to lawsuits against the 65 of America's largest law enforcement agencies - the largest study on this issue to date. Researchers obtained the data used in their analysis using public records requests to each agency, publishing the settlement amounts for each agency in the <a href="https://pdfs.semanticscholar.org/8a28/9aa5b4eb738c08d6995414c7dd396d808fc7.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'UCLA Law Review') !!}>UCLA Law Review</a>.
+                In some cases, more recent data on police misconduct settlements were able to be obtained from recent media <a href="https://fivethirtyeight.com/features/police-misconduct-costs-cities-millions-every-year-but-thats-where-the-accountability-ends/" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Media Analyses') !!}>analyses</a>.
             </p>
 
             <div class="divider"></div>
