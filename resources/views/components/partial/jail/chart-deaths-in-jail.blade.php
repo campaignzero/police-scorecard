@@ -3,7 +3,7 @@
     <h3>Deaths in Jail</h3>
 
     <p>
-        {{ num(round(intval(str_replace(',', '', $scorecard['report']['total_jail_deaths_2016_2018'])))) }} Deaths
+        {{ num(round(intval(str_replace(',', '', $scorecard['report']['total_jail_deaths_2016_2018'])))) }} Deaths from 2013-19
         <span class="divider">&nbsp;|&nbsp;</span>
         {{ num($scorecard['report']['jail_deaths_per_1k_jail_population']) }} per 1k Jail Population
     </p>

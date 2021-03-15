@@ -43,6 +43,7 @@
 
             <p>
                 <strong>Partners</strong><br/>
+                MapBox<br/>
                 MuckRock<br/>
                 Tableau<br/>
                 Microsoft
@@ -50,7 +51,6 @@
 
             <p>
                 <strong>Research Advisors</strong><br/>
-                MapBox<br/>
                 Abdul Rad, Independent Researcher, PhD Candidate, University of Oxford<br/>
                 Bocar Ba, Assistant Professor of Economics, UC Irvine<br/>
                 Jeffrey Fagan, Professor of Law, Columbia University
