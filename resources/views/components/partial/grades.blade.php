@@ -75,6 +75,7 @@
                 $length = count($grades['all']);
                 $complete_length = count($grades['complete']);
                 $length = ($length > 500) ? 500 : $length;
+                $complete_length = ($complete_length > 500) ? 500 : $complete_length;
                 $grade_table = array_slice($grades['all'], 0, $length);
                 @endphp
                 @foreach($grade_table as $index => $card) @if ($index < floor($length / 2))
