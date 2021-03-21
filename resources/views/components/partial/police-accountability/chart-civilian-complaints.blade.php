@@ -7,18 +7,18 @@
     <p>
         {{ num($scorecard['police_accountability']['civilian_complaints_reported']) }} from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}
         <span class="divider">&nbsp;|&nbsp;</span>
-        {{ num($scorecard['police_accountability']['civilian_complaints_sustained'], 0, '%') }} Ruled in Favor of Civilians
+        {{ num($scorecard['report']['complaints_sustained'], 0, '%') }} Ruled in Favor of Civilians
     </p>
     @endif
 
-    @if (!isset($scorecard['police_accountability']['civilian_complaints_sustained']))
+    @if (!isset($scorecard['report']['complaints_sustained']))
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
     <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
-        <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['police_accountability']['civilian_complaints_sustained']), 'reverse') }}" data-percent="{{ output(intval($scorecard['police_accountability']['civilian_complaints_sustained']), 0, '%') }}"></div>
+        <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['report']['complaints_sustained']), 'reverse') }}" data-percent="{{ output(intval($scorecard['report']['complaints_sustained']), 0, '%') }}"></div>
     </div>
     <p class="note">&nbsp;</p>
     @endif
