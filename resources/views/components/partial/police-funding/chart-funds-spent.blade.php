@@ -18,7 +18,7 @@
     @endif
 
     <p class="note" style="margin-top: 0">
-        ^&nbsp; More Spending due to Misconduct than {{ num($scorecard['police_funding']['percentile_misconduct_settlements_per_population'], 0, '%', false) }} of Depts &nbsp;&nbsp;
+        ^&nbsp; More Spending due to Misconduct than {{ num($scorecard['police_funding']['percentile_misconduct_settlements_per_population'], 0, '%', true) }} of Depts &nbsp;&nbsp;
     </p>
 
     @if ($scorecard['police_funding']['misconduct_settlement_source'])

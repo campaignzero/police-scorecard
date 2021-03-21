@@ -3,9 +3,9 @@
     <h3>Number of officers per 1k population</h3>
 
     <p>
-        {{ $scorecard['police_funding']['total_officers_2018'] }} Officers
+        {{ num($scorecard['police_funding']['total_officers_2019']) }} Officers
         <span class="divider">&nbsp;|&nbsp;</span>
-        {{ $scorecard['police_funding']['officers_per_10k_population'], 2 }} per 10k Residents
+        {{ num($scorecard['police_funding']['officers_per_10k_population'], 2) }} per 10k Residents
     </p>
     <p>
         More Officers per Population than {{ num($scorecard['police_funding']['percentile_officers_per_population'], 0, '%', true) }} of Depts
