@@ -2089,6 +2089,26 @@
             background: $grade-incomplete;
         }
     }
+
+    .grade-scale-key {
+        line-height: 0;
+        font-size: 12px !important;
+        color: #333;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px !important;
+        margin-top: 30px !important;
+        text-align: center;
+
+        img {
+            max-width: 250px;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            margin-bottom: 3px;
+        }
+    }
 }
 
 .section.why {

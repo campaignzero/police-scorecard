@@ -13,7 +13,7 @@
     </div>
     @else
     <div class="progress-bar-wrapper">
-        <div class="progress-bar animate-bar always-bad" data-percent="{{ output(intval($scorecard['police_funding']['percentile_misconduct_settlements_per_population']), 0, '%') }}"></div>
+        <div class="progress-bar animate-bar always-bad" data-percent="{{ output(100 - intval($scorecard['police_funding']['percentile_misconduct_settlements_per_population']), 0, '%') }}"></div>
     </div>
     @endif
 
