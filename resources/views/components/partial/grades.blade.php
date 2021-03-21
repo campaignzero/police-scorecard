@@ -72,7 +72,7 @@
                     <th>Score</th>
                 </tr>
                 @php
-                $length = count($grades['complete']);
+                $length = count($grades['all']);
                 $length = ($length > 500) ? 500 : $length;
                 $grade_table = array_slice($grades['all'], 0, $length);
                 @endphp
