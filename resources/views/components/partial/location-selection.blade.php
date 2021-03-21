@@ -19,8 +19,7 @@
   @if ($scorecard['agency']['complete'] === false)
   <div class="content">
     <p class="incomplete-data">
-        * An asterisk indicates that this city <strong>does not have enough data</strong> to be included in our rankings—the scorecard below reflects this.
-        Efforts are currently underway to collect full data sets for all cities in the US.
+        * An asterisk indicates that this location <strong>has not provided enough data</strong> to be included in our rankings. We are still working to obtain comprehensive data from every jurisdiction in the nation.
     </p>
   </div>
   @endif
