@@ -73,6 +73,7 @@
                 </tr>
                 @php
                 $length = count($grades['all']);
+                $complete_length = count($grades['complete']);
                 $length = ($length > 500) ? 500 : $length;
                 $grade_table = array_slice($grades['all'], 0, $length);
                 @endphp
@@ -80,7 +81,7 @@
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                     <a href="{{ $card['url_pretty'] }}"{!! ($index > 7) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ $card['complete'] ? ($length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                            <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>
@@ -99,7 +100,7 @@
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
                     <td colspan="2">
                         <a href="{{ $card['url_pretty'] }}"{!! ($index > (ceil($length / 2) + 7)) ? ' class="show-more-only" tabindex="-1" aria-hidden="true"' : '' !!} {!! trackData('Nav', 'Grades', $card['agency_name']) !!}>
-                            <span class="agency-name">{{ $card['complete'] ? ($length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
+                            <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
                         </a>
