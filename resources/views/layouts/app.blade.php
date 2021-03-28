@@ -23,7 +23,7 @@
     <meta property="twitter:title" content="@yield('title')">
     <meta property="twitter:description" content="@yield('description')">
     <meta property="twitter:creator" content="@mrmidi">
-    <meta property="twitter:image:src" content="{{ asset('/img/card.jpg') }}">
+    <meta property="twitter:image:src" content="{{ asset('/images/card.jpg') }}">
     <meta property="twitter:domain" content="https://policescorecard.org">
 
     <!-- Open Graph protocol -->
@@ -31,7 +31,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="@yield('title')">
     <meta property="og:url" content="https://policescorecard.org">
-    <meta property="og:image" content="{{ asset('/img/card.jpg') }}">
+    <meta property="og:image" content="{{ asset('/images/card.jpg') }}">
     <meta property="og:site_name" content="@yield('title')">
     <meta property="og:description" content="@yield('description')">
 
