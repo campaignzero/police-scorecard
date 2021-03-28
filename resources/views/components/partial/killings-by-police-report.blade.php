@@ -39,7 +39,7 @@
       @endphp
 
       <div class="text">
-        @if($scorecard['police_accountability']['civilian_complaints_sustained'] === 0)
+        @if($scorecard['police_accountability']['civilian_complaints_reported'] === 0)
         <p><strong>0 complaints </strong> of misconduct were reported from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
         @elseif($black_disparity > 0 && $hispanic_disparity === 0 && $white_disparity === 0)
         <p><strong>100%</strong> of people killed by {{ $scorecard['agency']['name'] }} were Black.</p>
@@ -72,7 +72,7 @@
       <h2><strong>{{ num($scorecard['report']['total_arrests']) }}</strong> arrests made</h2>
 
       <div class="text">
-        <p>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }} of all arrests were for low-level, non-violent offenses from 2013-19.</p>
+        <p><strong>{{ num($scorecard['report']['percent_misdemeanor_arrests'], 0, '%') }}</strong> of all arrests were for low-level, non-violent offenses from 2013-19.</p>
       </div>
 
       <div class="chart chart-3">

@@ -13,7 +13,7 @@
         <span class="key key-white"></span> White
     </div>
 
-    <p>City Population</p>
+    <p>Population of Jurisdiction</p>
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar grouped key-red" data-percent="{{ output(floatval($scorecard['agency']['black_population']), 0, '%') }}">
             <span>{{ (intval($scorecard['agency']['black_population']) > 5) ? num(intval($scorecard['agency']['black_population']), 0, '%') : '' }}</span>
