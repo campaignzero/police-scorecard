@@ -17,7 +17,7 @@
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(100 - $scorecard['report']['percent_discrimination_complaints_sustained'], 'reverse') }}" data-percent="{{ output($scorecard['report']['percent_discrimination_complaints_sustained'], 0, '%') }}"></div>

@@ -14,7 +14,7 @@
 
     <x-partial.killings-by-police :type="$type" :scorecard="$scorecard" />
 
-    <x-partial.grades :type="$type" :grades="$grades" />
+    <x-partial.grades :state="$state" :type="$type" :grades="$grades" />
 
     <x-partial.about :type="$type" />
 
@@ -30,9 +30,11 @@
 @section('scripts')
     <script>
         var MB = {
-            type: '{{ $type }}',
+            boundaries: '{{ asset("/maps/boundaries-adm2-v3-us.json") }}',
+            police_style: 'mapbox://styles/policescorecard/{{ config("app.mapbox_police_style") }}?fresh=true',
+            sheriff_style: 'mapbox://styles/policescorecard/{{ config("app.mapbox_sheriff_style") }}?fresh=true',
             token: '{{ config("app.mapbox_token") }}',
-            boundaries: '{{ asset("/maps/boundaries-adm2-v3-us.json") }}'
+            type: '{{ $type }}'
         };
         var barChartData = {
             black: {{ (!isset($scorecard['total_black_population']) || $scorecard['total_black_population'] === 0) ? 0: round(($scorecard['total_black_people_killed'] / $scorecard['total_black_population']) * 100, 2) }},
@@ -41,10 +43,6 @@
         };
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js"></script>
-
+    <script src="{{ asset('/js/home.plugins.js') }}"></script>
     <script src="{{ mix('/js/home.js') }}"></script>
 @endsection

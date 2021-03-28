@@ -11,6 +11,8 @@ window.PoliceScorecard = window.PoliceScorecard || {
         debug: false
     },
 
+    isMobile: Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) <= 940,
+
     /**
      * DOM Elements used by App
      */
@@ -22,6 +24,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
     animate: function() {
         PoliceScorecard.animateProgressBars();
         PoliceScorecard.animateCheckMarks();
+        PoliceScorecard.lazyLoadTableau();
     },
 
     /**
@@ -58,10 +61,12 @@ window.PoliceScorecard = window.PoliceScorecard || {
     bindEvents: function() {
         // Cache Element Lookups
         PoliceScorecard.elm.$citySelect = document.getElementById('city-select');
+        PoliceScorecard.elm.$filterGrade = document.getElementsByClassName('filter-grade');
         PoliceScorecard.elm.$mainWrapper = document.getElementById('main');
         PoliceScorecard.elm.$menu = document.getElementById('menu');
         PoliceScorecard.elm.$menuToggle = document.getElementById('mobile-toggle');
         PoliceScorecard.elm.$modal = document.getElementById('modal-wrapper');
+        PoliceScorecard.elm.$mobileSearch = document.getElementById('mobile-search-wrapper');
         PoliceScorecard.elm.$modalClose = document.getElementById('modal-close');
         PoliceScorecard.elm.$modalContent = document.getElementById('modal-content');
         PoliceScorecard.elm.$modalLabel = document.getElementById('modal-label');
@@ -73,6 +78,14 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$resultsInfoContent = document.getElementById('results-info-content');
         PoliceScorecard.elm.$scoreCard = document.getElementById('score-card');
         PoliceScorecard.elm.$scoreLocation = document.getElementById('score-location');
+        PoliceScorecard.elm.$searchField = document.getElementById('search');
+        PoliceScorecard.elm.$searchFieldMobile = document.getElementById('mobile-search');
+        PoliceScorecard.elm.$searchForm = document.getElementById('search-form');
+        PoliceScorecard.elm.$searchFormMobile = document.getElementById('mobile-search-form');
+        PoliceScorecard.elm.$searchIcon = document.getElementById('search-icon');
+        PoliceScorecard.elm.$searchIconMobile = document.getElementById('search-icon');
+        PoliceScorecard.elm.$searchResultsContainer = document.getElementById('search-results-container');
+        PoliceScorecard.elm.$searchResultsContainerMobile = document.getElementById('mobile-search-results-container');
         PoliceScorecard.elm.$selectedCity = document.getElementsByClassName('selected-city');
         PoliceScorecard.elm.$selectedState = document.querySelector('#state-select a.active');
         PoliceScorecard.elm.$showLess = document.getElementById('show-less');
@@ -86,6 +99,8 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$stateSelect = document.getElementById('state-select');
         PoliceScorecard.elm.$stateSelection = document.getElementById('state-selection');
         PoliceScorecard.elm.$toggleAnimate = document.getElementById('toggle-animate');
+        PoliceScorecard.elm.$toggleSearch = document.querySelector('a.toggle-search');
+        PoliceScorecard.elm.$toggleMobileSearch = document.querySelector('a.toggle-mobile-search');
         PoliceScorecard.elm.$trackInput = document.querySelectorAll('input[data-track], textarea[data-track], select[data-track]');
         PoliceScorecard.elm.$trackLinks = document.querySelectorAll('a[data-track], button[data-track]');
         PoliceScorecard.elm.$usaMapLayer = document.getElementById('usa-map-layer');
@@ -99,10 +114,56 @@ window.PoliceScorecard = window.PoliceScorecard || {
         // Debounce Scroll Animations
         PoliceScorecard.debounce = false;
 
+        // Debounce Search
+        PoliceScorecard.debounceSearch = false;
+
         // Event Listeners
         if (PoliceScorecard.elm.$menuToggle) {
             PoliceScorecard.elm.$menuToggle.addEventListener('click', function() {
                 PoliceScorecard.elm.$menu.classList.toggle('open')
+            });
+        }
+
+        // Search Listeners
+        document.addEventListener('click', PoliceScorecard.clearSearch);
+
+        // Toggle Search Input Field Visibility
+        PoliceScorecard.elm.$toggleSearch.addEventListener('click', PoliceScorecard.toggleSearch);
+        PoliceScorecard.elm.$toggleMobileSearch.addEventListener('click', PoliceScorecard.toggleSearch);
+
+        if (PoliceScorecard.elm.$searchField) {
+            // Ignore Clicks inside Search Field
+            PoliceScorecard.elm.$searchField.addEventListener('click', function (evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            // Listen for Search Inputs
+            PoliceScorecard.elm.$searchField.addEventListener('keyup', function (evt){
+                PoliceScorecard.elm.$searchField.classList.remove('no-results');
+
+                clearTimeout(PoliceScorecard.debounceSearch);
+                PoliceScorecard.debounceSearch = setTimeout(function() {
+                    PoliceScorecard.doSearch(evt);
+                }, 250);
+            });
+        }
+
+        if (PoliceScorecard.elm.$searchFieldMobile) {
+            // Ignore Clicks inside Search Field
+            PoliceScorecard.elm.$searchFieldMobile.addEventListener('click', function (evt){
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            // Listen for Search Inputs
+            PoliceScorecard.elm.$searchFieldMobile.addEventListener('keyup', function (evt){
+                PoliceScorecard.elm.$searchFieldMobile.classList.remove('no-results');
+
+                clearTimeout(PoliceScorecard.debounceSearch);
+                PoliceScorecard.debounceSearch = setTimeout(function() {
+                    PoliceScorecard.doSearch(evt);
+                }, 250);
             });
         }
 
@@ -314,6 +375,13 @@ window.PoliceScorecard = window.PoliceScorecard || {
             });
         });
 
+        // Click Event for Filter Grade
+        Array.prototype.forEach.call(PoliceScorecard.elm.$filterGrade, function(el) {
+            el.addEventListener('click', function(evt) {
+                PoliceScorecard.filterGrades(evt);
+            });
+        });
+
         // Support Mouse Interaction with Mouse Pointer ( Touch events would not work on this map due to close proximity of markers )
         document.body.onmousedown = function(e) {
             if (!e) {
@@ -332,10 +400,10 @@ window.PoliceScorecard = window.PoliceScorecard || {
         };
 
         // Handle Progress Bars
-        window.onscroll = function() {
+        window.addEventListener('scroll', function() {
             clearTimeout(PoliceScorecard.debounce);
             PoliceScorecard.debounce = setTimeout(PoliceScorecard.animate, 10);
-        };
+        }, { passive: true });
 
         // Fix bug where if user is already on middle of page, and hits refresh, they will still see animation correctly
         setTimeout(PoliceScorecard.animate, 250);
@@ -385,12 +453,166 @@ window.PoliceScorecard = window.PoliceScorecard || {
     },
 
     /**
+     * Perform Search
+     */
+    doSearch: function(evt) {
+        var value = (window.PoliceScorecard.isMobile) ? PoliceScorecard.elm.$searchFieldMobile.value : PoliceScorecard.elm.$searchField.value
+
+        // Check if this was an escape key
+        if (evt.keyCode === 27) {
+            PoliceScorecard.clearSearch();
+        } else if ((evt.keyCode < 48 || evt.keyCode > 90) && evt.keyCode !== 8 && evt.keyCode !== 46) {
+            // Ignore Non Alphanumeric Keys
+            return;
+        } else if (value.length < 3) {
+            if (PoliceScorecard.elm.$searchField && !window.PoliceScorecard.isMobile) {
+                PoliceScorecard.elm.$searchField.classList.remove('no-results');
+                PoliceScorecard.elm.$searchResultsContainer.innerHTML = '';
+            }
+            if (PoliceScorecard.elm.$searchFieldMobile && window.PoliceScorecard.isMobile) {
+                PoliceScorecard.elm.$searchFieldMobile.classList.remove('no-results');
+                PoliceScorecard.elm.$searchResultsContainerMobile.innerHTML = '';
+            }
+        } else if (value.length >= 3) {
+             // Show Loading Icon
+            if (PoliceScorecard.elm.$searchIcon && !window.PoliceScorecard.isMobile) {
+                PoliceScorecard.elm.$searchIcon.classList.remove('fa-search');
+                PoliceScorecard.elm.$searchIcon.classList.add('fa-circle-o-notch');
+            }
+            if (PoliceScorecard.elm.$searchIconMobile && window.PoliceScorecard.isMobile) {
+                PoliceScorecard.elm.$searchIconMobile.classList.remove('fa-search');
+                PoliceScorecard.elm.$searchIconMobile.classList.add('fa-circle-o-notch');
+            }
+
+            // If there is a current AJAX call running, kill it, we're doing a new one
+            if (typeof PoliceScorecard.xhr !== 'undefined') {
+                PoliceScorecard.xhr.abort();
+            }
+
+            // Create New AJAX Request
+            PoliceScorecard.xhr = new XMLHttpRequest();
+            PoliceScorecard.xhr.open('POST', '/api/search');
+            PoliceScorecard.xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            PoliceScorecard.xhr.onload = function() {
+                if (PoliceScorecard.xhr.status === 200) {
+                    const results = JSON.parse(PoliceScorecard.xhr.responseText);
+
+                    if (!results || results.length === 0) {
+                        if (PoliceScorecard.elm.$searchField && !window.PoliceScorecard.isMobile) {
+                            PoliceScorecard.elm.$searchField.classList.add('no-results');
+                            PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+                        }
+                        if (PoliceScorecard.elm.$searchFieldMobile && window.PoliceScorecard.isMobile) {
+                            PoliceScorecard.elm.$searchFieldMobile.classList.add('no-results');
+                            PoliceScorecard.elm.$searchResultsContainerMobile.style.display = 'none';
+                        }
+                    } else {
+                        let html = '<ul>';
+
+                        Array.prototype.forEach.call(results, function(data) {
+                            html = html.concat('<li>');
+                            html = html.concat(`  <a href="${data.url}" class="search-result">`);
+                            html = html.concat(`    <div class="score grade-${data.class}">${data.score}</div>`);
+                            html = html.concat('    <div class="details">');
+                            html = html.concat(`      <div class="label">${data.label}</div>`);
+                            html = html.concat(`      <div class="type">${data.type}</div>`);
+                            html = html.concat('    </div>');
+                            html = html.concat('  </a>');
+                            html = html.concat('</li>');
+                        });
+
+                        html = html.concat('</ul>');
+
+                        if (PoliceScorecard.elm.$searchResultsContainer && !window.PoliceScorecard.isMobile) {
+                            PoliceScorecard.elm.$searchResultsContainer.innerHTML = html;
+                            PoliceScorecard.elm.$searchResultsContainer.style.display = 'block';
+                            PoliceScorecard.elm.$searchField.classList.remove('no-results');
+                        }
+                        if (PoliceScorecard.elm.$searchResultsContainerMobile && window.PoliceScorecard.isMobile) {
+                            PoliceScorecard.elm.$searchResultsContainerMobile.innerHTML = html;
+                            PoliceScorecard.elm.$searchResultsContainerMobile.style.display = 'block';
+                            PoliceScorecard.elm.$searchFieldMobile.classList.remove('no-results');
+                        }
+                    }
+
+                    if (PoliceScorecard.elm.$searchIcon && !window.PoliceScorecard.isMobile) {
+                        PoliceScorecard.elm.$searchIcon.classList.remove('fa-circle-o-notch');
+                        PoliceScorecard.elm.$searchIcon.classList.add('fa-search');
+                    }
+                    if (PoliceScorecard.elm.$searchIconMobile && window.PoliceScorecard.isMobile) {
+                        PoliceScorecard.elm.$searchIconMobile.classList.remove('fa-circle-o-notch');
+                        PoliceScorecard.elm.$searchIconMobile.classList.add('fa-search');
+                    }
+                } else if (PoliceScorecard.xhr.status !== 200) {
+                    if (PoliceScorecard.elm.$searchField && !window.PoliceScorecard.isMobile) {
+                        PoliceScorecard.elm.$searchField.classList.add('no-results');
+                        PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+                    }
+                    if (PoliceScorecard.elm.$searchFieldMobile && window.PoliceScorecard.isMobile) {
+                        PoliceScorecard.elm.$searchFieldMobile.classList.add('no-results');
+                        PoliceScorecard.elm.$searchResultsContainerMobile.style.display = 'none';
+                    }
+
+                    console.error('Request failed.  Returned status of ' + PoliceScorecard.xhr.status);
+                }
+
+                // Remove AJAX Request
+                delete PoliceScorecard.xhr;
+            };
+
+            PoliceScorecard.xhr.send(encodeURI('keyword=' + value));
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
+        }
+    },
+
+    /**
      * Listen for Escape Key
      * @param {*} evt
      */
     escapeKey: function(evt) {
         if (evt.keyCode == 27) {
             PoliceScorecard.closeModal();
+        }
+    },
+
+    /**
+     * Filter Grades
+     * @param {*} evt
+     */
+    filterGrades: function(evt) {
+        var data;
+
+        if (typeof evt.target !== 'undefined' && typeof evt.target.dataset !== 'undefined' && typeof evt.target.dataset.track !== 'undefined') {
+            data = evt.target.dataset;
+        } else if (typeof evt.target !== 'undefined' && typeof evt.target.parentNode !== 'undefined' && typeof evt.target.parentNode.dataset !== 'undefined' && typeof evt.target.parentNode.dataset.track !== 'undefined') {
+            data = evt.target.parentNode.dataset;
+        }
+
+        var grade = '.grade-' + data.grade;
+        var button = document.querySelector('.filter-grade' + grade);
+        var rows = document.querySelectorAll('.grade-row' + grade);
+
+        if (button.style.opacity < 1) {
+            button.style.opacity = 1;
+            // Show Grades
+            Array.prototype.forEach.call(rows, function(el) {
+                el.style.display = 'table-row';
+            });
+        } else {
+            button.style.opacity = 0.25;
+            // Hide Grades
+            Array.prototype.forEach.call(rows, function(el) {
+                el.style.display = 'none';
+            });
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
         }
     },
 
@@ -431,6 +653,30 @@ window.PoliceScorecard = window.PoliceScorecard || {
     },
 
     /**
+     * Hide Search Form
+     */
+    clearSearch: function () {
+        if (PoliceScorecard.elm.$searchField && !window.PoliceScorecard.isMobile) {
+            PoliceScorecard.elm.$searchField.classList.remove('no-results');
+            PoliceScorecard.elm.$searchForm.classList.remove('active');
+            PoliceScorecard.elm.$searchForm.reset();
+            PoliceScorecard.elm.$searchResultsContainer.innerHTML = '';
+            PoliceScorecard.elm.$searchResultsContainer.style.display = 'none';
+            PoliceScorecard.elm.$toggleSearch.classList.remove('active');
+        }
+        if (PoliceScorecard.elm.$searchFieldMobile && window.PoliceScorecard.isMobile) {
+            PoliceScorecard.elm.$searchFieldMobile.classList.remove('no-results');
+            PoliceScorecard.elm.$searchFormMobile.classList.remove('active');
+            PoliceScorecard.elm.$searchFormMobile.reset();
+            PoliceScorecard.elm.$searchResultsContainerMobile.innerHTML = '';
+            PoliceScorecard.elm.$searchResultsContainerMobile.style.display = 'none';
+            PoliceScorecard.elm.$mobileSearch.classList.remove('active');
+            PoliceScorecard.elm.$toggleMobileSearch.classList.remove('active');
+            PoliceScorecard.elm.$mainWrapper.classList.remove('search-open');
+        }
+    },
+
+    /**
      * Initialize App
      */
     init: function() {
@@ -448,6 +694,17 @@ window.PoliceScorecard = window.PoliceScorecard || {
             bounding.top >= 0 &&
             bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
         );
+    },
+
+    /**
+     * Check if Element is Scrolled Into View
+     * @param {*} el
+     */
+    isAboutToBeScrolledIntoView: function(el) {
+        var bounding = el.getBoundingClientRect();
+        var bottom = (window.innerHeight || document.documentElement.clientHeight);
+
+        return ((bounding.top - 100) <= bottom);
     },
 
     /**
@@ -1061,10 +1318,80 @@ window.PoliceScorecard = window.PoliceScorecard || {
         PoliceScorecard.elm.$otherButton.classList.toggle('active');
 
         myBarHistory.update();
+    },
+
+    /**
+     * Toggle Search Form
+     */
+    toggleSearch: function (evt) {
+        if (PoliceScorecard.elm.$searchForm && !window.PoliceScorecard.isMobile) {
+            PoliceScorecard.elm.$toggleSearch.classList.toggle('active');
+            PoliceScorecard.elm.$searchForm.classList.toggle('active');
+
+            if (PoliceScorecard.elm.$searchForm.classList.contains('active')) {
+                PoliceScorecard.elm.$searchField.focus();
+            }
+        }
+
+        if (PoliceScorecard.elm.$searchFormMobile && window.PoliceScorecard.isMobile) {
+            PoliceScorecard.elm.$mobileSearch.classList.toggle('active');
+            PoliceScorecard.elm.$toggleMobileSearch.classList.toggle('active');
+            PoliceScorecard.elm.$searchFormMobile.classList.toggle('active');
+            PoliceScorecard.elm.$mainWrapper.classList.toggle('search-open');
+
+            if (PoliceScorecard.elm.$searchFormMobile.classList.contains('active')) {
+                PoliceScorecard.elm.$searchFieldMobile.focus();
+            }
+        }
+
+        if (typeof evt !== 'undefined') {
+            evt.preventDefault();
+            evt.stopPropagation();
+        }
+    },
+
+    lazyLoadTableau: function () {
+        Array.prototype.forEach.call(document.getElementsByClassName('tableau-placeholder'), function(el) {
+            if (PoliceScorecard.isAboutToBeScrolledIntoView(el)) {
+                var id = el.getAttribute('data-viz-id');
+                var desktop = el.getAttribute('data-viz-desktop-height');
+                var mobile = el.getAttribute('data-viz-mobile-height');
+
+                if (id && desktop && mobile && el.style.display !== 'none') {
+                    var divElement = document.getElementById(id);
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+
+                    divElement.style.width = '100%';
+                    vizElement.style.width = '100%';
+
+                    divElement.className = 'tableauPlaceholder';
+                    vizElement.className = 'tableauViz';
+
+                    if (divElement.offsetWidth >= 940) {
+                        divElement.style.height = desktop;
+                        vizElement.style.height = desktop;
+                    } else {
+                        divElement.style.height = mobile;
+                        vizElement.style.height = mobile;
+                    }
+
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+
+                    el.style.display = 'none';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                }
+            }
+        });
     }
 };
 
 // Initialize App
 window.onload = function() {
     PoliceScorecard.init();
+};
+
+// Check Window Size
+window.onresize = function() {
+    window.PoliceScorecard.isMobile = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) <= 940;
 };

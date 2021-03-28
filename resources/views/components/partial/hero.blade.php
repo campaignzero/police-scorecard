@@ -11,9 +11,9 @@
 <div class="section hero home pad">
     <div class="content">
         <div class="header-intro home">
-            <h1>We obtained data on America's {{ $type === "sheriff" ? num($totalSheriff) : num($totalPolice) }} {{ $type === "sheriff" ? "sheriff's" : "police" }} departments.</h1>
+            <h1>We analyzed data on {{ $type === "sheriff" ? num($totalSheriff) : num($totalPolice) }} US {{ $type === "sheriff" ? "sheriff's" : "police" }} departments.</h1>
 
-            <h2>Read the <a href="/findings" style="color: #5a6f83; text-decoration: underline; font-weight: 400;" {!! trackData('Nav', 'Hero' , 'Findings' ) !!}>Findings.</a> See the Data for Each Department.</h2>
+            <h2>Read the <a href="/findings" style="color: #5a6f83; text-decoration: underline; font-weight: 400;" {!! trackData('External Nav', 'Hero' , 'Findings' ) !!}>Findings.</a> See the Data for Each Department.</h2>
 
             <div class="buttons">
                 <a href="/us/police-department" class="btn {{ $type === 'police-department' ? 'active' : '' }}" {!! trackData('Nav', 'Hero' , 'Police Depts' ) !!}>Police Depts</a>
@@ -40,6 +40,10 @@
             </div>
 
             <div id="mapbox-wrapper">
+                <div id="attributions">
+                    <a href="https://www.mapbox.com/about/maps/" rel="noopener nofollow" target="_blank" {!! trackData('External Nav', 'Map' , 'Mapbox' ) !!}>&copy; Mapbox</a>
+                </div>
+
                 <div id="usa-map" class="{{ $type }} {{ $location }}"></div>
                 <div id='alaska-overlay' class="{{ $type }} {{ $location }}"></div>
                 <div id='hawaii-overlay'class="{{ $type }} {{ $location }}"></div>

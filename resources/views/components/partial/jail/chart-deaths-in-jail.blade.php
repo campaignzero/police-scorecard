@@ -3,7 +3,7 @@
     <h3>Deaths in Jail</h3>
 
     <p>
-        {{ num(round(intval(str_replace(',', '', $scorecard['report']['total_jail_deaths_2016_2018'])))) }} Deaths
+        {{ num(round(intval(str_replace(',', '', $scorecard['report']['total_jail_deaths_2016_2018'])))) }} Deaths from 2013-19
         <span class="divider">&nbsp;|&nbsp;</span>
         {{ num($scorecard['report']['jail_deaths_per_1k_jail_population']) }} per 1k Jail Population
     </p>
@@ -25,7 +25,7 @@
         <div class="progress-bar animate-bar grouped key-grey" data-percent="{{ output(floatval(round((intval($scorecard['jail']['jail_deaths_investigating']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100)), 0, '%') }}">
             <span>{{ (intval(round((intval($scorecard['jail']['jail_deaths_investigating']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100)) > 5) ? output(round((intval($scorecard['jail']['jail_deaths_investigating']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100), 0, '%') : '' }}</span>
         </div>
-        <div class="progress-bar animate-bar grouped key-red" data-percent="{{ output(floatval(round((intval($scorecard['jail']['jail_deaths_other']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100)), 0, '%') }}">
+        <div class="progress-bar animate-bar grouped key-black" data-percent="{{ output(floatval(round((intval($scorecard['jail']['jail_deaths_other']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100)), 0, '%') }}">
             <span>{{ (intval(round((intval($scorecard['jail']['jail_deaths_other']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100)) > 5) ? output(round((intval($scorecard['jail']['jail_deaths_other']) / intval($scorecard['report']['total_jail_deaths_2016_2018'])) * 100), 0, '%') : '' }}</span>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['report']['percentile_jail_incarceration_per_1k_population']), 'reverse') }}" data-percent="{{ output(100 - intval($scorecard['report']['percentile_jail_incarceration_per_1k_population']), 0, '%') }}"></div>

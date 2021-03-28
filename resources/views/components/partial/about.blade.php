@@ -5,10 +5,7 @@
             About This Scorecard
         </h1>
         <p>
-            <strong>This is the first nationwide evaluation of policing in the United States.</strong> It was built
-            using data from state and federal databases, public records requests to local police departments, and media
-            reports. While police data is never perfect, and there are additional indicators that still need to be
-            tracked, the Police Scorecard is designed to provide insight into many important issues in policing.
+            <strong>This is the first nationwide evaluation of policing in the United States.</strong> It was built using data from state and federal databases, public records requests to local police departments, and media reports. While police data is never perfect, and there are additional indicators that still need to be tracked, the Police Scorecard is designed to provide insight into many important issues in policing.
         </p>
         <p>
             <a href="/about" class="button" {!! trackData('Nav', 'About', 'Methodology') !!}>methodology</a>
@@ -16,15 +13,7 @@
         </p>
         <p>&nbsp;</p>
         <p>
-            <strong>Use this Scorecard to identify issues within police departments that require the most urgent
-            interventions and hold officials accountable for implementing solutions.</strong> For example, cities
-            with higher rates of arrests for low level offenses could benefit most from solutions that create
-            alternatives to policing and arrest for these offenses. In cities where police make fewer arrests overall
-            but use more force when making arrests, communities could benefit significantly from policies designed to
-            hold police accountable for this behavior. And cities where complaints of police misconduct are rarely ruled
-            in favor of civilians could benefit from repealing provisions in local police union contracts and state
-            "Police Bill of Rights" laws that obstruct, delay and/or disqualify many investigations into police
-            misconduct.
+            <strong>Use this Scorecard to identify issues within police departments that require the most urgent interventions and hold officials accountable for implementing solutions.</strong> For example, cities with higher rates of low level arrests could benefit most from solutions that create alternatives to policing and arrest for these offenses. In cities where police make fewer arrests overall but use more force when making arrests, communities could benefit significantly from policies designed to hold police accountable for excessive force. And cities where complaints of police misconduct are rarely ruled in favor of civilians could benefit from creating an oversight structure to independently investigate these complaints.
         </p>
     </div>
     <div class="content">
@@ -44,11 +33,10 @@
                     <ul>
                         <li>
                         @if ($type === 'sheriff')
-                            <strong>Contact Your County Sheriff</strong>, share this scorecard with them and urge them
-                            to enact policies to address the issues you've identified.
+                            <strong>Contact Your County Sheriff</strong>, share your scorecard with them and urge them to enact policies to address the issues you've identified:
                         @else
-                            <strong>Contact your Mayor and Police Chief</strong>, share this scorecard with them and
-                            urge them to enact policies to address the issues you've identified.
+                            <strong>Contact your Mayor and Police Chief</strong>, share your scorecard with them and urge them to enact policies to address the issues you've identified:
+
                         @endif
 
                         @if (!empty($scorecard['agency']))
@@ -106,11 +94,11 @@
                 <div class="right number number-2">
                     <ul>
                         <li>
-                            <strong>Find your US Senator and US Representative</strong> using our Advocacy Tool and urge
-                            them to support the <strong>BREATHE Act</strong> to shift funding from policing and prisons
-                            to community-based alternatives that do not cause harm.
-                            <br />
-                            <a href="https://www.joincampaignzero.org/advocacy" class="button" rel="noopener" target="_blank" {!! trackData('External Nav', 'About', 'Advocacy Tool') !!}>Advocacy Tool</a>
+                            <strong>Find your US Senator</strong> using the Advocacy Tool and urge them to support the
+                            <strong>George Floyd Justice in Policing Act</strong> to give the federal government the tools to
+                            track policing practices nationwide and hold the police departments with the worst records accountable.
+                            <br /><br />
+                            <script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
                         </li>
                     </ul>
                 </div>

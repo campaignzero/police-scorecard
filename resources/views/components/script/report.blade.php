@@ -2,14 +2,14 @@
   var SCORECARD_STATE = '{{ $state }}';
   var SCORECARD_DATA = {!! json_encode($scorecard) !!};
   var map_data = {
-    city: {!! $type === 'police-department' ? getMapData($state, 'police-department', $grades) : 'null' !!} ,
-    sheriff: {!! $type === 'sheriff' ? getMapData($state, 'sheriff', $grades) : 'null' !!},
+    city: {!! $type === 'police-department' ? getMapData($state, 'police-department', $grades['all']) : 'null' !!} ,
+    sheriff: {!! $type === 'sheriff' ? getMapData($state, 'sheriff', $grades['all']) : 'null' !!},
     selected: {!! getMapLocation($type, $scorecard, $location) !!}
   };
 </script>
 
 <script src="/maps/us-{{ strtolower($state) }}-all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 @if (isset($scorecard['arrests']['arrests_2016']) && isset($scorecard['arrests']['arrests_2017']) && isset($scorecard['arrests']['arrests_2018']))
 <script>

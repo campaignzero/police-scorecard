@@ -4,6 +4,24 @@
     height: 100%;
     display: block;
 
+    #attributions {
+        position: absolute;
+        bottom: 10px;
+        right: 15%;
+        z-index: 10;
+        text-align: right;
+        z-index: 2;
+
+        a {
+            color: #999;
+            text-decoration: none;
+
+            &:hover, &:focus {
+                color: #333;
+            }
+        }
+    }
+
     #usa-map {
         height: 100%;
         width: 100%;
@@ -34,7 +52,7 @@
         overflow: visible !important;
     }
 
-    .mapboxgl-ctrl-logo.mapboxgl-compact {
+    .mapboxgl-ctrl-logo.mapboxgl-compact, .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
         display: none;
     }
 
@@ -209,21 +227,45 @@
             opacity: 0.75;
         }
     }
-
-    .mapboxgl-ctrl-logo {
-        width: 23px;
-        overflow: hidden;
-        transition: width 0.15s;
-
-        &:hover, &:focus {
-            width: 88px;
-            overflow: unset;
-        }
-    }
 }
 
 @media screen and (max-width: $bp-max-width) {
     #alaska-overlay, #hawaii-overlay {
         display: none;
+    }
+
+    #mapbox-wrapper {
+        #attributions {
+            right: 0;
+
+            a {
+                width: 20px;
+                overflow: hidden;
+                display: block;
+                white-space: nowrap;
+                transition: width 0.25s;
+                font-size: 20px;
+                color: #BBB;
+                font-weight: 400;
+
+                &:hover, &:focus {
+                    width: unset !important;
+                    overflow: unset !important;
+                    font-size: 12px;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .mapboxgl-ctrl-logo {
+        width: 23px !important;
+        overflow: hidden !important;
+        transition: width 0.15s;
+
+        &:hover, &:focus {
+            width: 88px !important;
+            overflow: unset !important;
+        }
     }
 }

@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
     /**
-     * @var GuzzleHttp API Client
+     * @var Http API Client
      */
     protected $client;
 
     /**
-     * Create new instance of GuzzleHttp
+     * Create new instance of Http
      */
     public function __construct() {
         $this->client = Http::withOptions([
@@ -94,7 +95,7 @@ class ApiController extends Controller
      *
      * @return mixed
      */
-    public function fetchGrades($state, $type, $limit = 1000) {
+    public function fetchGrades($state, $type, $limit = 500) {
         return $this->makeRequest("scorecard/grades/{$state}/{$type}?limit={$limit}");
     }
 
@@ -140,5 +141,37 @@ class ApiController extends Controller
      */
     public function fetchNationwideMapData($type) {
         return $this->makeRequest("/scorecard/map/us/{$type}?format=geojson");
+    }
+
+    /**
+     * Fetch Data for Specific State
+     *
+     * <code>
+     * $api = new ApiController();
+     * $search = api->search('St. Louis, MO');
+     * </code>
+     *
+     * @param $type
+     * @return mixed
+     */
+    public function search($keyword) {
+        if (!$keyword || strlen($keyword) < 3) {
+            return '[]';
+        }
+
+        return $this->makeRequest("/scorecard/search/{$keyword}");
+    }
+
+    public function mapSheriff() {
+        $geojson = $this->fetchNationwideMapData('sheriff');
+
+        return response()->json($geojson);
+    }
+
+    public function webSearch(Request $request) {
+        $keyword = $request->input('keyword');
+        $results = $this->search($keyword);
+
+        return response()->json($results);
     }
 }

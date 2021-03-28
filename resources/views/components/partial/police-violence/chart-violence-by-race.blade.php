@@ -13,7 +13,7 @@
         <span class="key key-white"></span> White
     </div>
 
-    <p>City Population</p>
+    <p>Population of Jurisdiction</p>
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar grouped key-red" data-percent="{{ output(floatval($scorecard['agency']['black_population']), 0, '%') }}">
             <span>{{ (intval($scorecard['agency']['black_population']) > 5) ? num(intval($scorecard['agency']['black_population']), 0, '%') : '' }}</span>
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <p class="note" style="margin-top: 0">^&nbsp; More Racial Disparities in Arrests and Deadly Force than {{ num((1 - intval($scorecard['report']['percentile_overall_disparity_index'])), 0, '%', true) }} of Depts &nbsp;&nbsp;</p>
+    <p class="note" style="margin-top: 0">^&nbsp; More Racial Disparities in Deadly Force than {{ num((1 - intval($scorecard['report']['percentile_overall_disparity_index'])), 0, '%', true) }} of Depts &nbsp;&nbsp;</p>
 
     <p class="source-link-wrapper">
         Source:

@@ -21,12 +21,19 @@ Use your favorite text editor and set the following values in `.env` to whatever
 ```
 APP_ENV=local
 APP_DEBUG=true
-APP_LOG_LEVEL=debug
-APP_URL=http://localhost
-BUGSNAG_API_KEY=
-SEGMENT_API_KEY=
-STAYWOKE_API_BASE=
-STAYWOKE_API_KEY=
+
+# If you are using Docker, use your Dev Machines IP Address with port 8000
+# ( e.g. http://192.168.1.123:8000 and NOT: `http://localhost:8000` or `http://127.0.0.1:8000` )
+APP_URL="http://192.168.1.123:8000"
+
+# Ask a Project Admin for These Values
+MAPBOX_TOKEN="pk.eyxxxxxxxxxxxxxxxxxxxxx"
+STAY_WOKE_API_BASE="http://192.168.1.123:5000"
+STAY_WOKE_API_KEY="A1B2C3D4-A1B2-C3D4-E5F6-A1B2C3D4E5F6"
+
+# If you need the Admin Route, set this to whatever you want
+STAY_WOKE_ADMIN_AUTH_USER=""
+STAY_WOKE_ADMIN_AUTH_PASS=""
 ```
 
 Setup Folder Permissions
@@ -36,7 +43,3 @@ Setup Folder Permissions
 chmod -R o+w bootstrap/cache
 chmod -R o+w storage
 ```
-
-__NOTE__: for `STAYWOKE_API_BASE` if you are connecting to an API running on your local development machine,
-you will need to set this to your local IP address.  Not, `http://localhost:5000` or `http://127.0.0.1:5000` but rather
-something like `http://192.168.1.123:5000`

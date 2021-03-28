@@ -13,19 +13,19 @@
     </div>
     @else
     <div class="progress-bar-wrapper">
-        <div class="progress-bar animate-bar always-bad" data-percent="{{ output(intval($scorecard['police_funding']['percentile_misconduct_settlements_per_population']), 0, '%') }}"></div>
+        <div class="progress-bar animate-bar always-bad" data-percent="{{ output(100 - intval($scorecard['police_funding']['percentile_misconduct_settlements_per_population']), 0, '%') }}"></div>
     </div>
     @endif
 
     <p class="note" style="margin-top: 0">
-        ^&nbsp; More Spending due to Misconduct than {{ num($scorecard['police_funding']['percentile_misconduct_settlements_per_population'], 0, '%', false) }} of Depts &nbsp;&nbsp;
+        ^&nbsp; More Spending due to Misconduct than {{ num($scorecard['police_funding']['percentile_misconduct_settlements_per_population'], 0, '%', true) }} of Depts &nbsp;&nbsp;
     </p>
 
     @if ($scorecard['police_funding']['misconduct_settlement_source'])
     <p class="source-link-wrapper">
         Source:
-        <a href="{{ $scorecard['police_funding']['misconduct_settlement_source'] }}" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Funds Spent', 'UCLA Law Review') !!}>
-            UCLA Law Review
+        <a href="{{ $scorecard['police_funding']['misconduct_settlement_source'] }}" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Funds Spent', $scorecard['police_funding']['misconduct_settlement_source_name']) !!}>
+            {{ $scorecard['police_funding']['misconduct_settlement_source_name'] }}
         </a>
     </p>
     @endif

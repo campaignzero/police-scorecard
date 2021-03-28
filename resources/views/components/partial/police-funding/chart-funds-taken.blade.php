@@ -15,7 +15,7 @@
             $scorecard['police_funding']['fines_forfeitures_2018'] +
             $scorecard['police_funding']['fines_forfeitures_2019']
         ), 2) }}
-        from 2010-17
+        from 2010-18
     </p>
 
     <p>

@@ -7,7 +7,7 @@
         url('../fonts/StateFace-Regular-webfont.svg#statefaceregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 
 /* CSS RESET */
@@ -636,4 +636,13 @@ p.number-list {
     text-decoration: none;
     display: block;
     z-index: 500;
+}
+
+#campaign-zero-widget {
+    background-color: #FFF !important;
+
+    button.submit {
+        background-color: #5a6f83;
+        color: white;
+    }
 }

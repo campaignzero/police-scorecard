@@ -1,20 +1,21 @@
 @php
-$class_a = (is_numeric($scorecard['report']['percentile_less_lethal_force'])) ? 'key percent-' . $scorecard['report']['percentile_less_lethal_force'] : 'incomplete';
-$class_b = (is_numeric($scorecard['report']['percentile_killed_by_police'])) ? 'key percent-' . $scorecard['report']['percentile_killed_by_police'] : 'incomplete';
-$class_c = (is_numeric($scorecard['report']['percentile_unarmed_killed_by_police'])) ? 'key percent-' . $scorecard['report']['percentile_unarmed_killed_by_police'] : 'incomplete';
-$class_d = (is_numeric($scorecard['report']['percentile_overall_disparity_index'])) ? 'key percent-' . $scorecard['report']['percentile_overall_disparity_index'] : 'incomplete';
-$class_e = (is_numeric($scorecard['report']['percentile_complaints_sustained'])) ? 'key percent-' . $scorecard['report']['percentile_complaints_sustained'] : 'incomplete';
-$class_f = (is_numeric($scorecard['report']['percent_criminal_complaints_sustained'])) ? 'key percent-' . $scorecard['report']['percent_criminal_complaints_sustained'] : 'incomplete';
-$class_g = (is_numeric($scorecard['report']['percentile_low_level_arrests_per_1k_population'])) ? 'key percent-' . $scorecard['report']['percentile_low_level_arrests_per_1k_population'] : 'incomplete';
-$class_h = (is_numeric($scorecard['report']['percent_murders_solved'])) ? 'key percent-' . $scorecard['report']['percent_murders_solved'] : 'incomplete';
-$class_i = (is_numeric($scorecard['report']['percentile_jail_incarceration_per_1k_population'])) ? 'key percent-' . $scorecard['report']['percentile_jail_incarceration_per_1k_population'] : 'incomplete';
-$class_j = (is_numeric($scorecard['report']['percentile_jail_deaths_per_1k_jail_population'])) ? 'key percent-' . $scorecard['report']['percentile_jail_deaths_per_1k_jail_population'] : 'incomplete';
-$class_k = (is_numeric($scorecard['police_funding']['percentile_police_spending_ratio'])) ? 'key percent-' . $scorecard['police_funding']['percentile_police_spending_ratio'] : 'incomplete';
-$class_l = (is_numeric($scorecard['police_funding']['percentile_misconduct_settlements_per_population'])) ? 'key percent-' . $scorecard['police_funding']['percentile_misconduct_settlements_per_population'] : 'incomplete';
-$class_m = (is_numeric($scorecard['police_funding']['percentile_fines_forfeitures_per_resident'])) ? 'key percent-' . $scorecard['police_funding']['percentile_fines_forfeitures_per_resident'] : 'incomplete';
-$class_n = (is_numeric($scorecard['police_funding']['percentile_officers_per_population'])) ? 'key percent-' . $scorecard['police_funding']['percentile_officers_per_population'] : 'incomplete';
-$class_o = (is_numeric($scorecard['report']['percent_use_of_force_complaints_sustained'])) ? 'key percent-' . $scorecard['report']['percent_use_of_force_complaints_sustained'] : 'incomplete';
-$class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_sustained'])) ? 'key percent-' . $scorecard['report']['percent_discrimination_complaints_sustained'] : 'incomplete';
+$class_a = (is_numeric($scorecard['report']['percentile_less_lethal_force'])) ? 'key percent-' . round($scorecard['report']['percentile_less_lethal_force']) : 'incomplete';
+$class_b = (is_numeric($scorecard['report']['percentile_killed_by_police'])) ? 'key percent-' . round($scorecard['report']['percentile_killed_by_police']) : 'incomplete';
+$class_c = (is_numeric($scorecard['report']['percentile_unarmed_killed_by_police'])) ? 'key percent-' . round($scorecard['report']['percentile_unarmed_killed_by_police']) : 'incomplete';
+$class_d = (is_numeric($scorecard['report']['overall_disparity_index'])) ? 'key percent-' . round($scorecard['report']['overall_disparity_index']) : 'incomplete';
+$class_e = (is_numeric($scorecard['report']['percentile_complaints_sustained'])) ? 'key percent-' . round($scorecard['report']['percentile_complaints_sustained']) : 'incomplete';
+$class_f = (is_numeric($scorecard['report']['percent_criminal_complaints_sustained'])) ? 'key percent-' . round($scorecard['report']['percent_criminal_complaints_sustained']) : 'incomplete';
+$class_g = (is_numeric($scorecard['report']['percentile_low_level_arrests_per_1k_population'])) ? 'key percent-' . round($scorecard['report']['percentile_low_level_arrests_per_1k_population']) : 'incomplete';
+$class_h = (is_numeric($scorecard['report']['percent_murders_solved'])) ? 'key percent-' . round($scorecard['report']['percent_murders_solved']) : 'incomplete';
+$class_i = (is_numeric($scorecard['report']['percentile_jail_incarceration_per_1k_population'])) ? 'key percent-' . round($scorecard['report']['percentile_jail_incarceration_per_1k_population']) : 'incomplete';
+$class_j = (is_numeric($scorecard['report']['percentile_jail_deaths_per_1k_jail_population'])) ? 'key percent-' . round($scorecard['report']['percentile_jail_deaths_per_1k_jail_population']) : 'incomplete';
+$class_k = (is_numeric($scorecard['report']['percentile_police_spending'])) ? 'key percent-' . round($scorecard['report']['percentile_police_spending']) : 'incomplete';
+$class_l = (is_numeric($scorecard['police_funding']['percentile_misconduct_settlements_per_population'])) ? 'key percent-' . round($scorecard['police_funding']['percentile_misconduct_settlements_per_population']) : 'incomplete';
+$class_m = (is_numeric($scorecard['police_funding']['percentile_fines_forfeitures_per_resident'])) ? 'key percent-' . round($scorecard['police_funding']['percentile_fines_forfeitures_per_resident']) : 'incomplete';
+$class_n = (is_numeric($scorecard['police_funding']['percentile_officers_per_population'])) ? 'key percent-' . round($scorecard['police_funding']['percentile_officers_per_population']) : 'incomplete';
+$class_o = (is_numeric($scorecard['report']['percent_use_of_force_complaints_sustained'])) ? 'key percent-' . round($scorecard['report']['percent_use_of_force_complaints_sustained']) : 'incomplete';
+$class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_sustained'])) ? 'key percent-' . round($scorecard['report']['percent_discrimination_complaints_sustained']) : 'incomplete';
+$class_q = (is_numeric($scorecard['report']['percentile_drug_arrest_disparity'])) ? 'key percent-' . round($scorecard['report']['percentile_drug_arrest_disparity']) : 'incomplete';
 @endphp
 
 <a name="scorecard-at-a-glance"></a>
@@ -28,9 +29,7 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
             Average for 4 Sections: <strong>{{ $scorecard['report']['overall_score'] }}%</strong>
         </h2>
 
-        <p>
-            ^ Compared to other {{ $type === "sheriff" ? "sheriff's" : "police" }} depts nationwide in {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }} residents.
-        </p>
+        <p>Scores range from 0-100% comparing {{ $type === 'sheriff' ? 'counties' : 'cities' }} with {{ $scorecard['police_funding']['comparison_group'] }}. {{ $type === 'sheriff' ? 'Counties' : 'Cities' }} with higher scores spend less on policing, use less force, are more likely to hold officers accountable and make fewer arrests for low-level offenses.</p>
     </div>
 
     <div class="content">
@@ -119,8 +118,8 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell">&nbsp;</td>
                     </tr>
-                    <tr class="double {{ $class_d }}">
-                        <td class="table-label">Racial Disparities in Arrests and Deadly Force</td>
+                    <tr class="{{ $class_d }}">
+                        <td class="table-label">Racial Disparities in Deadly Force</td>
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell divider">&nbsp;</td>
                         <td class="table-cell">&nbsp;</td>
@@ -194,7 +193,7 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="double {{ $class_g }}">
+                    <tr class="{{ $class_g }}">
                         <td class="table-label">Arrest Rate for Low Level Offenses</td>
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell divider">&nbsp;</td>
@@ -203,6 +202,13 @@ $class_p = (is_numeric($scorecard['report']['percent_discrimination_complaints_s
                     </tr>
                     <tr class="{{ $class_h }}">
                         <td class="table-label">Homicides Solved</td>
+                        <td class="table-cell">&nbsp;</td>
+                        <td class="table-cell divider">&nbsp;</td>
+                        <td class="table-cell">&nbsp;</td>
+                        <td class="table-cell">&nbsp;</td>
+                    </tr>
+                    <tr class="{{ $class_q }}">
+                        <td class="table-label">Racial Disparities in Drug Arrests</td>
                         <td class="table-cell">&nbsp;</td>
                         <td class="table-cell divider">&nbsp;</td>
                         <td class="table-cell">&nbsp;</td>

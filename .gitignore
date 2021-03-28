@@ -2,6 +2,8 @@
 /public/hot
 /public/storage
 /storage/*.key
+/storage/framework/cache
+/bootstrap/cache
 /vendor
 .env
 .env.backup
@@ -19,4 +21,9 @@ public/san-diego
 public/js
 public/css
 public/maps
+public/pdf
 public/mix-manifest.json
+bootstrap/cache
+storage/framework/cache
+storage/logs
+dist

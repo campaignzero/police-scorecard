@@ -2,7 +2,7 @@
     "name": "police-scorecard",
     "version": "1.0.0",
     "description": "Nationwide Police Scorecard",
-    "author": "Peter Schmalfeldt <me@peterschmalfeldt.com>",
+    "author": "",
     "keywords": [
         "CampaignZero",
         "Nationwide",
@@ -17,9 +17,9 @@
         "test-coverage": "./vendor/bin/phpunit -d memory_limit=1024M --log-junit 'reports/unitreport.xml' --coverage-html 'reports/clover_html' tests/",
         "test": "npm run test-lint && npm run test-unit",
         "clean": "rm -fr ./public/css && rm -fr ./public/fonts && rm -fr ./public/images && rm -fr ./public/js && rm -fr ./public/maps && rm -fr ./public/san-diego",
-        "clear-cache": "php artisan cache:clear && php artisan route:clear && php artisan config:clear && php artisan view:clear && php artisan config:cache",
+        "clear-cache": "php artisan cache:clear && php artisan route:clear && php artisan config:clear && php artisan view:clear && php artisan config:cache && php artisan route:cache",
         "dev": "npm run clean && npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --display=normal --display-chunks=false --display-entrypoints=false --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -30,7 +30,7 @@
         "opcache:config": "php artisan opcache:config",
         "opcache:status": "php artisan opcache:status",
         "docker:build": "docker-compose up -d --build",
-        "docker:clean": "docker-compose exec app php artisan cache:clear && docker-compose exec app php artisan route:clear && docker-compose exec app php artisan config:clear && docker-compose exec app php artisan view:clear && docker-compose exec app php artisan config:cache",
+        "docker:clean": "docker-compose exec app php artisan cache:clear && docker-compose exec app php artisan route:clear && docker-compose exec app php artisan config:clear && docker-compose exec app php artisan view:clear && docker-compose exec app php artisan config:cache && php artisan route:cache",
         "docker:down": "docker-compose down",
         "docker:logs": "docker-compose logs",
         "docker:opcache:clear": "docker-compose exec app php artisan opcache:clear",
@@ -50,7 +50,6 @@
         "type": "git",
         "url": "git+https://github.com/campaignzero/police-scorecard.git"
     },
-    "author": "",
     "bugs": {
         "url": "https://github.com/campaignzero/police-scorecard/issues"
     },
@@ -58,15 +57,19 @@
     "devDependencies": {
         "axios": "^0.19",
         "cross-env": "^7.0",
-        "laravel-mix": "^5.0.1",
+        "laravel-mix": "^5.0.5",
         "laravel-mix-versionhash": "^1.1.3",
-        "lodash": "^4.17.13",
+        "lodash": "^4.17.20",
         "npm-scripts-help": "^0.8.0",
-        "resolve-url-loader": "^3.1.0",
+        "pre-commit": "^1.2.2",
+        "resolve-url-loader": "^3.1.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
     },
+    "pre-commit": [
+        "test"
+    ],
     "scriptshelp": {
         "help-message": "Police Scorecard NPM Script Commands:",
         "start": {

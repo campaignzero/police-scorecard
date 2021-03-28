@@ -1,7 +1,14 @@
 /* RESPONSIVE MOBILE */
 @media screen and (max-width: $bp-max-width) {
     .hide-mobile {
-        display: none;
+        display: none !important;
+    }
+
+    .break-mobile {
+        display: block;
+        width: 100%;
+        height: 0px;
+        clear: both;
     }
 
     .section.at-a-glance {
@@ -10,7 +17,7 @@
             padding-right: 20px;
 
             p {
-                font-size: 9px;
+                font-size: 13px;
             }
         }
 
@@ -218,14 +225,14 @@
                 display: block;
             }
 
-            li {
+            & > ul > li {
                 display: block;
                 margin-right: 0;
                 line-height: 24px;
                 width: 100%;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-                a {
+                & > a {
                     color: #FFF;
                     text-transform: uppercase;
                     text-decoration: none;
@@ -508,6 +515,10 @@
                     vertical-align: middle;
                 }
             }
+        }
+
+        .section.grades table td {
+            max-width: calc(100vw - 80px);
         }
     }
 
@@ -797,6 +808,10 @@
     .section.grades {
         padding-bottom: 50px;
 
+        .summary {
+            padding: 0 20px 20px 20px;
+        }
+
         h1.title {
             padding-left: 20px;
             padding-right: 20px;
@@ -981,6 +996,16 @@
 
         .content.bt {
             margin-top: 10px;
+        }
+    }
+
+    .section.grades .filter-wrapper {
+        padding-left: 20px;
+    }
+
+    .section.findings {
+        .content {
+            padding: 0 20px;
         }
     }
 }

@@ -17,7 +17,7 @@
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <x-partial.no-data-found />
     @else
     <p>
         {{ num($scorecard['police_accountability']['complaints_in_detention_reported']) }} Reported

@@ -2,147 +2,604 @@
 
 @section('title', 'Findings')
 
-@section('styles')
-<style>sup a{font-size:10px;vertical-align:super;font-weight:700}p{margin-bottom:14px;line-height:28px}iframe{max-width:100%!important}.lst-kix_fckzbmam001m-6>li{counter-increment:lst-ctn-kix_fckzbmam001m-6}.lst-kix_uruhbdngh9zy-6>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-6}ol.lst-kix_fckzbmam001m-6.start{counter-reset:lst-ctn-kix_fckzbmam001m-6 0}.lst-kix_fckzbmam001m-7>li{counter-increment:lst-ctn-kix_fckzbmam001m-7}ol.lst-kix_fckzbmam001m-3.start{counter-reset:lst-ctn-kix_fckzbmam001m-3 0}.lst-kix_fckzbmam001m-7>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-7, lower-latin) ". "}.lst-kix_fckzbmam001m-6>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-6, decimal) ". "}ul.lst-kix_pr7wbpbcyk4v-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-7.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-7 0}.lst-kix_fckzbmam001m-8>li{counter-increment:lst-ctn-kix_fckzbmam001m-8}.lst-kix_uruhbdngh9zy-5>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-5}ul.lst-kix_pr7wbpbcyk4v-4{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-5{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-6{list-style-type:none}.lst-kix_fckzbmam001m-5>li{counter-increment:lst-ctn-kix_fckzbmam001m-5}ul.lst-kix_pr7wbpbcyk4v-7{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-0{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-1{list-style-type:none}.lst-kix_fckzbmam001m-1>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-1, lower-latin) ". "}ul.lst-kix_pr7wbpbcyk4v-2{list-style-type:none}ul.lst-kix_pr7wbpbcyk4v-3{list-style-type:none}.lst-kix_fckzbmam001m-2>li:before{content:""counter(lst-ctn-kix_fckzbmam001m-2, lower-roman) ". "}ol.lst-kix_fckzbmam001m-0.start{counter-reset:lst-ctn-kix_fckzbmam001m-0 0}.lst-kix_uruhbdngh9zy-8>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-8}ol.lst-kix_fckzbmam001m-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-1.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-1 0}ol.lst-kix_fckzbmam001m-1.start{counter-reset:lst-ctn-kix_fckzbmam001m-1 0}.lst-kix_fckzbmam001m-4>li{counter-increment:lst-ctn-kix_fckzbmam001m-4}.lst-kix_uruhbdngh9zy-3>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-3}ol.lst-kix_fckzbmam001m-2.start{counter-reset:lst-ctn-kix_fckzbmam001m-2 0}ol.lst-kix_fckzbmam001m-8.start{counter-reset:lst-ctn-kix_fckzbmam001m-8 0}ol.lst-kix_uruhbdngh9zy-8.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-8 0}ol.lst-kix_uruhbdngh9zy-2.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-2 0}ol.lst-kix_fckzbmam001m-4{list-style-type:none}ol.lst-kix_fckzbmam001m-5{list-style-type:none}ol.lst-kix_fckzbmam001m-6{list-style-type:none}ol.lst-kix_fckzbmam001m-7{list-style-type:none}ol.lst-kix_fckzbmam001m-0{list-style-type:none}ol.lst-kix_fckzbmam001m-1{list-style-type:none}ol.lst-kix_fckzbmam001m-2{list-style-type:none}ol.lst-kix_fckzbmam001m-3{list-style-type:none}.lst-kix_fckzbmam001m-0>li{counter-increment:lst-ctn-kix_fckzbmam001m-0}.lst-kix_z6y9fbn9tl0s-4>li:before{content:"\0025cb  "}.lst-kix_z6y9fbn9tl0s-6>li:before{content:"\0025cf  "}.lst-kix_z6y9fbn9tl0s-1>li:before{content:"\0025cb  "}.lst-kix_z6y9fbn9tl0s-5>li:before{content:"\0025a0  "}.lst-kix_z6y9fbn9tl0s-0>li:before{content:"\0025cf  "}.lst-kix_z6y9fbn9tl0s-8>li:before{content:"\0025a0  "}.lst-kix_z6y9fbn9tl0s-7>li:before{content:"\0025cb  "}ul.lst-kix_z6y9fbn9tl0s-1{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-2{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-0{list-style-type:none}ol.lst-kix_uruhbdngh9zy-6.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-6 0}.lst-kix_fckzbmam001m-1>li{counter-increment:lst-ctn-kix_fckzbmam001m-1}.lst-kix_z6y9fbn9tl0s-2>li:before{content:"\0025a0  "}.lst-kix_uruhbdngh9zy-0>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-0}.lst-kix_z6y9fbn9tl0s-3>li:before{content:"\0025cf  "}.lst-kix_uruhbdngh9zy-2>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-2, lower-roman) ". "}.lst-kix_uruhbdngh9zy-1>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-1, lower-latin) ". "}.lst-kix_uruhbdngh9zy-5>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-5, lower-roman) ". "}.lst-kix_uruhbdngh9zy-6>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-6, decimal) ". "}.lst-kix_uruhbdngh9zy-0>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-0, decimal) ". "}.lst-kix_uruhbdngh9zy-8>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-8, lower-roman) ". "}ol.lst-kix_fckzbmam001m-7.start{counter-reset:lst-ctn-kix_fckzbmam001m-7 0}ol.lst-kix_uruhbdngh9zy-3.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-3 0}.lst-kix_uruhbdngh9zy-7>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-7, lower-latin) ". "}.lst-kix_uruhbdngh9zy-2>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-2}.lst-kix_fckzbmam001m-2>li{counter-increment:lst-ctn-kix_fckzbmam001m-2}ol.lst-kix_uruhbdngh9zy-0.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-0 0}.lst-kix_uruhbdngh9zy-4>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-4, lower-latin) ". "}.lst-kix_uruhbdngh9zy-3>li:before{content:""counter(lst-ctn-kix_uruhbdngh9zy-3, decimal) ". "}.lst-kix_pr7wbpbcyk4v-8>li:before{content:"\0025a0  "}.lst-kix_pr7wbpbcyk4v-7>li:before{content:"\0025cb  "}ol.lst-kix_uruhbdngh9zy-4.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-4 0}.lst-kix_pr7wbpbcyk4v-4>li:before{content:"\0025cb  "}.lst-kix_pr7wbpbcyk4v-5>li:before{content:"\0025a0  "}.lst-kix_pr7wbpbcyk4v-6>li:before{content:"\0025cf  "}.lst-kix_fckzbmam001m-3>li{counter-increment:lst-ctn-kix_fckzbmam001m-3}.lst-kix_pr7wbpbcyk4v-0>li:before{content:"\0025cf  "}.lst-kix_pr7wbpbcyk4v-1>li:before{content:"\0025cb  "}.lst-kix_pr7wbpbcyk4v-3>li:before{content:"\0025cf  "}ol.lst-kix_fckzbmam001m-4.start{counter-reset:lst-ctn-kix_fckzbmam001m-4 0}.lst-kix_pr7wbpbcyk4v-2>li:before{content:"\0025a0  "}ol.lst-kix_uruhbdngh9zy-8{list-style-type:none}ol.lst-kix_fckzbmam001m-5.start{counter-reset:lst-ctn-kix_fckzbmam001m-5 0}.lst-kix_uruhbdngh9zy-7>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-7}ol.lst-kix_uruhbdngh9zy-6{list-style-type:none}ol.lst-kix_uruhbdngh9zy-7{list-style-type:none}ol.lst-kix_uruhbdngh9zy-4{list-style-type:none}ol.lst-kix_uruhbdngh9zy-5{list-style-type:none}ol.lst-kix_uruhbdngh9zy-2{list-style-type:none}ol.lst-kix_uruhbdngh9zy-3{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-7{list-style-type:none}ol.lst-kix_uruhbdngh9zy-0{list-style-type:none}.lst-kix_uruhbdngh9zy-1>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-1}ul.lst-kix_z6y9fbn9tl0s-8{list-style-type:none}ol.lst-kix_uruhbdngh9zy-1{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-5{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-6{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-3{list-style-type:none}ul.lst-kix_z6y9fbn9tl0s-4{list-style-type:none}.lst-kix_uruhbdngh9zy-4>li{counter-increment:lst-ctn-kix_uruhbdngh9zy-4}ol.lst-kix_uruhbdngh9zy-5.start{counter-reset:lst-ctn-kix_uruhbdngh9zy-5 0}ol{margin:0;padding:0}table td,table th{padding:0}.c10{text-decoration-skip-ink:none;-webkit-text-decoration-skip:none;color:#15c;text-decoration:underline}.c5{padding-top:0;padding-bottom:0;line-height:1;text-align:left}.c13{background-color:#fff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c12{color:inherit;text-decoration:inherit}.c7{padding:0;margin:0}.c0{margin:5px 0}.c14{width:33%;height:1px}.c16{orphans:2;widows:2}.c19{font-size:10pt}.c2{font-size:10pt}.c15{font-style:italic}.c8{padding-left:0}.c9{height:5pt}.c6{margin-left:0;margin-bottom:8px}.c4{font-weight:700}.subtitle{color:#464648;padding:0;font-size:28px;line-height:32px;font-weight:300;text-transform:uppercase;margin:14px 0;font-family:'Barlow Condensed',sans-serif}.c3 img{max-width:70%}</style>
-@endsection
-
 @section('content')
     <x-partial.menu />
 
-    <div class="section about">
+    <div class="section bg-dotted current-state">
         <div class="content">
-            <h1 class="title">
-                Key Findings
-            </h1>
-            <p class="c3"><span class="c4 subtitle">We built the first Scorecard to evaluate policing in California. Here&rsquo;s what we found.</span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>Nationwide protests demanding an end to police violence have </span><span class="c10"><a class="c12" href="https://bit.ly/2vCY7j1">shifted public opinion</a></span><span>&nbsp;over the </span><span>past five years</span><span>. An estimated </span><span class="c10"><a class="c12" href="https://www.vox.com/2019/3/22/18259865/great-awokening-white-liberals-race-polling-trump-2020">45 million</a></span><span>&nbsp;Americans have adopted more progressive views on race and racism since the protests </span><span>began</span><span>&nbsp;in 2014. But while public opinion has changed, </span><span>policing</span><span> outcomes in most places have not. The police killed </span><span class="c10"><a class="c12" href="https://www.theroot.com/here-s-how-many-people-police-killed-in-2018-1831469528">more people</a></span><span>&nbsp;</span><span>last year than the year before</span><span>, </span><span>racial disparities in outcomes such as </span><span class="c10"><a class="c12" href="https://ucr.fbi.gov/crime-in-the-u.s/2017/crime-in-the-u.s.-2017/tables/table-43">arrests</a></span><span>&nbsp;and </span><span class="c10"><a class="c12" href="https://mappingpoliceviolence.org/">deadly force</a></span><span>&nbsp;persist</span><span>, and the criminal justice system is not more likely to hold police accountable. In a country with 18,000 law enforcement agencies, each with different issues and outcomes, changing these outcomes on a nationwide scale requires sustained organizing and advocacy efforts in </span><span class="c15">every jurisdiction</span><span>. To do this, </span><span class="c11 c4">communities need the tools to effectively evaluate each law enforcement agency and hold them accountable to measurable results. </span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>But how do you evaluate the police?</span><span class="c4">&nbsp;</span><span>There are substantially different perspectives about what police should or should not do - and whether the institution of policing should continue to exist at all. These differences cannot all be resolved at once, but we believe there are a set of common principles that can provide an initial framework for evaluating </span><span>any </span><span class="c1">agency responsibility for protecting people from harm:</span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <div class="number-list">
-                <p class="c3 number-list n1" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should prioritize protecting people from violence, not arresting people for low level offenses</span></p>
-                <p class="c3 number-list n2" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should avoid the use of force, especially deadly force, to the greatest extent possible</span></p>
-                <p class="c3 number-list n3" style="min-height: 40px; display: flex; align-items: center;"><span>When people come forward to report misconduct by employees of the agency, it should result in some form of accountability</p>
-                <p class="c3 number-list n4" style="min-height: 40px; display: flex; align-items: center;"><span>When people call on the agency to help solve the most serious crimes - those resulting in death - they should be able to trust that agency to find the person responsible</span></p>
-                <p class="c3 number-list n5" style="min-height: 40px; display: flex; align-items: center;"><span>The agency should accomplish these goals in ways that are not biased or discriminatory</span></p>
-            </div>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>Based on these principles, </span><span class="c10"><a class="c12" href="http://joincampaignzero.org">Campaign Zero</a></span><span>&nbsp;obtained data from state and local agencies to evaluate California&rsquo;s 100 largest municipal police departments and converted each evaluation (represented by a &ldquo;score&rdquo; from 0-100) into an easy-to-understand letter grade. Using this methodology, a police department received a higher grade if it made </span><span class="c15">fewer arrests</span><span>&nbsp;for low level offenses, </span><span class="c15">used</span><span>&nbsp;</span><span class="c15">less force </span><span>during arrest, had </span><span class="c15">fewer homicides unsolved</span><span>, </span><span class="c15">did not have racial disparities</span><span>&nbsp;in arrests and use of force, and </span><span class="c15">upheld civilian complaints</span><span>&nbsp;of police misconduct more often than other police departments in the state. </span><span class="c4">See the grade each police department received, and the outcomes informing each grade, at </span><span class="c10 c4"><a class="c12" href="http://policescorecard.org">policescorecard.org. </a></span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-
+            Key Findings
         </div>
     </div>
 
-    <div class="section about bg-gray">
-        <div class="content text-white" style="padding-bottom: 60px;">
-            <p class="c3"><span class="c4 subtitle">The California Department of Justice recently made available data on policing in 2018.</span></p>
-            <div class="number-list">
+    <div class="section bg-light-gray findings toc">
+        <div class="content">
+            <h2 class="subtitle">
+                TABLE OF CONTENTS
+            </h2>
 
-                <p class="c3"><span>We've updated the Police Scorecard to include this information, and expanded our analysis to also evaluate every Sheriff's Department in the state. Here are some of the findings from our analysis:</span></p>
-
-                <p class="c3 number-list n1"><span class="c11 c4">California had Fewer Incidents of Police Violence in 2018:</span></p>
-
-                <p class="c3"><span>Police departments in California reported reductions in police violence in 2018 - there were 9% fewer deadly force incidents statewide compared to 2017 and 8% fewer less lethal force incidents in 2018 among the 52 agencies that provided less lethal force data. These reductions in use of force happened despite arrest rates remaining constant at 1.1 million arrests per year.</span></p>
-
-                <iframe title="California Policing Data Trends, 2016-2018" aria-label="Table" id="datawrapper-chart-lSQxg" src="https://datawrapper.dwcdn.net/lSQxg/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-
-                <p class="c3 c9"><span class="c1"></span></p>
-
-                <p class="c3 number-list n2"><span class="c11 c4">Where Did Policing Outcomes Change Most?</span></p>
-
-                <p class="c3"><span>Changes in policing outcomes varied by jurisdiction. Stockton Police Department's overall score increased by 20% in 2018 - more than any other department in our analysis. This change was due, in part, to substantial reductions in Stockton police shootings in 2018 compared to previous years. Among departments that had 8 or more police shootings from 2016-18, Stockton Police Department had the largest reduction in police shootings in 2018.</span></p>
-
-                <iframe title="% Change in Police Shootings, 2018 vs 2016-2017 Average" aria-label="Arrow Plot" id="datawrapper-chart-wzGPf" src="https://datawrapper.dwcdn.net/wzGPf/2/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-                <p>&nbsp;</p>
-                <p class="c3"><span>Among other large California cities, San Diego, Fresno and Oakland's scores improved moderately while policing outcomes in San Jose, Los Angeles and San Francisco remained relatively constant. Outcomes worsened in Bakersfield which, along with Riverside, continued to have some of the worst policing outcomes in the state among larger cities.</span></p>
-
-                <iframe title="Changes in Police Department Scores from 2016-17 to 2018" aria-label="Column Chart" id="datawrapper-chart-eIG3V" src="https://datawrapper.dwcdn.net/eIG3V/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-
-                <p class="c3 c9"><span class="c1"></span></p>
-
-                <p class="c3 number-list n3"><span class="c11 c4">Evaluating California Sheriff's Departments</span></p>
-
-                <p class="c3"><span>To more effectively evaluate Sheriff's Departments, we added new indicators that reflect the role of sheriffs in running county jails. In addition to the existing framework used to evaluate city police departments, we examined the sheriffs' jail incarceration rates, jail deaths per jail population, and transfers of immigrants to ICE. Based on this comprehensive evaluation, we found that Los Angeles County Sheriff and San Diego County Sheriff - the state's largest Sheriff's Departments - had among the worst scores of the 58 CA Sheriff's Departments. Between 2016-18, Los Angeles County Sheriff's Department used more deadly force during arrest than 86% of departments and had the worst level of discriminatory policing of any other Sheriff's Department in the state, as determined by our racial bias scoring methodology. San Diego Sheriff used more force than 87% of Sheriff's Departments, used more deadly force than 84% of Sheriff's Departments and had more jail deaths than 81% of these departments. This indicates the need for urgent interventions to hold Los Angeles County and San Diego County Sheriff's Departments accountable for addressing these issues, which could improve policing outcomes in counties that are home to 1 in every 3 Californians.</span></p>
-
-                <iframe title="CA County Sheriff's Scores" aria-label="Dot Plot" id="datawrapper-chart-IamVk" src="https://datawrapper.dwcdn.net/IamVk/1/" scrolling="no" frameborder="0"></iframe>
-                <script type="text/javascript">! function() {"use strict";window.addEventListener("message", function(a) {if (void 0 !== a.data["datawrapper-height"])for (var e in a.data["datawrapper-height"]) {var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");t && (t.style.height = a.data["datawrapper-height"][e] + "px")}})}();</script>
-
-                <p class="c3 c9"><span class="c1"></span></p>
-            </div>
+            <nav class="toc">
+                <ul>
+                    <li><a href="#intro" {!! trackData('Nav', 'Findings', 'Intro') !!}><strong>Intro</strong></a></li>
+                    <li>
+                        <a href="#data-availability" {!! trackData('Nav', 'Findings', 'Findings') !!}><strong>Findings</strong>
+                        <ol>
+                            <li><a href="#data-availability" {!! trackData('Nav', 'Findings', 'Police Hide Data') !!}>Police continue to hide substantial amounts of data from the public</a></li>
+                            <li><a href="#policing-differs" {!! trackData('Nav', 'Findings', 'Policing Differs') !!}>Policing differs substantially depending where you live</a></li>
+                            <li><a href="#making-fewer-arrests" {!! trackData('Nav', 'Findings', 'Making Fewer Arrests') !!}>Police are making fewer arrests for low level offenses</a></li>
+                            <li><a href="#racial-disparities-persist" {!! trackData('Nav', 'Findings', 'Racial Disparities Persist') !!}>As arrests decline, racial disparities persist</a></li>
+                            <li><a href="#more-heavily-policed" {!! trackData('Nav', 'Findings', 'More Heavily Policed') !!}>Black communities are more heavily policed</a></li>
+                            <li><a href="#clear-pattern" {!! trackData('Nav', 'Findings', 'Clear Pattern') !!}>Some police departments show a clear pattern of using more force than other departments</a></li>
+                            <li><a href="#misconduct-investigations" {!! trackData('Nav', 'Findings', 'Misconduct Investigations') !!}>Few departments regularly rule against officers in misconduct investigations</a></li>
+                            <li><a href="#increased-funding" {!! trackData('Nav', 'Findings', 'Increased Funding') !!}>80% of jurisdictions increased police funding from 2013-2018</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#conclusion" {!! trackData('Nav', 'Findings', 'Conclusion') !!}><strong>Conclusion</strong></a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 
-    <div class="section about bg-white" style="padding: 60px 20px;">
+    <div class="section findings">
         <div class="content">
-            <p class="c3"><span class="c4 subtitle">Key Findings from Analysis of 2016-2017 Policing Data:</span></p>
 
-            <ol class="c7 lst-kix_fckzbmam001m-0 start" start="1" style="margin-top: 40px;">
-                <li class="c3 c8 c6"><span>Most people arrested in California are arrested for low level offenses.</span><span class="c4">&nbsp;</span><span>Of 1,354,769 reported arrests made in 2016, 70% </span><span>were for misdemeanor offenses. Police made </span><span class="c4">1.8x </span><span>as many</span><span class="c4">&nbsp;</span><span>arrests for </span><span class="c4">drug possession</span><span>&nbsp;alone as they did for </span><span class="c4">all violent crimes combined.</span><sup class="c4"><a href="#ftnt1" id="ftnt_ref1">[1]</a></sup><span class="c11 c4">&nbsp;</span></li>
+            <h2 class="subtitle" id="intro">
+                WE EVALUATED POLICING IN AMERICA. HERE'S WHAT WE FOUND.
+            </h2>
+
+            <p>
+                Nationwide protests have <a href="https://www.vox.com/2020/6/26/21301066/public-opinion-shift-black-lives-matter" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Shifted Public Opinion') !!}>shifted public opinion</a> in support of systemic change. But while public opinion is changing, the police have continued to kill people at <a href="http://mappingpoliceviolence.org/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Similar Rates') !!}>similar rates</a> this year as they did last year. In a nation with thousands of law enforcement agencies, each with different issues and outcomes, changing policing outcomes on a nationwide scale requires sustained organizing and advocacy efforts in <em>every jurisdiction</em>. To do this, <strong>communities need the tools to effectively monitor police behavior and hold cities and counties accountable to producing measurable change</strong>.
+            </p>
+
+            <p>
+                To obtain and publish this information, we submitted public records requests to local police departments and combined the data obtained from these departments with federal databases tracking crime, arrests, financial and personnel records from thousands of municipal and county governments. This represents one of the largest-scale examinations of policing outcomes in the United States - including every municipal police department and county sheriff's department in the country. <strong>Here are initial findings from our analysis:</strong>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 1. Police continue to hide substantial amounts of data from the public -->
+
+            <h2 class="subtitle" id="data-availability">
+                1. Police continue to hide substantial amounts of data from the public
+            </h2>
+
+            <p>
+                The federal government does not publish comprehensive data on police violence or misconduct. In <a href="https://www.wnyc.org/story/police-misconduct-records/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '38 States') !!}>38 states</a>, laws restrict or prohibit agencies from making these records public. Even in states where this information is supposed to be public record, local police agencies often refuse to comply with public records requests or charge <a href="https://www.muckrock.com/foi/pinellas-county-10455/police-data-collection-project-pinellas-county-sheriffs-office-97754/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Exorbitant Fees') !!}>exorbitant fees</a> to produce these records. In some cases, like Rapid City South Dakota, police <a href="https://www.muckrock.com/foi/rapid-city-30141/police-data-collection-project-rapid-city-police-department-98427/#file-878340" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Have Refused') !!}>have refused</a> to provide even basic data on police use of force unless a court orders them to make these records public.
+            </p>
+
+            <p>
+                <a href="{{ asset('/pdf/sinyangwe_open_record_request_response_7.29.2020.pdf') }}" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Record Request Response') !!} class="image-link" title="Open PDF - Sinyangwe Open Record Request Response 7.29.2020">
+                    <img src="{{ asset('/images/findings/record-request.png') }}" alt="Sinyangwe Open Record Request Response 7.29.2020" />
+                </a>
+            </p>
+
+            <p>
+                As such, there are substantial limitations to the data we are able to collect from agencies and limitations on our capacity to make comparisons between agencies - especially when it comes to outcomes such as police misconduct complaints and police use of force. This is an ongoing project and more data will be published as it is obtained. Track our progress in compiling the data on use of force, misconduct complaints, arrests, police budgets and other indicators from over 16,000 law enforcement agencies using the interactive visualization below.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecardDataTracker/Profile/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608411754526" data-viz-desktop-height="860px" data-viz-mobile-height="460px" />
+                <div id="viz1608411754526">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecardDataTracker/Profile" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 2. Policing differs substantially depending where you live -->
+
+            <h2 class="subtitle" id="policing-differs">
+                2. Policing differs substantially depending where you live
+            </h2>
+
+            <p>
+                <strong>How Police Departments Are Compared:</strong>
+            </p>
+
+            <p>
+                The Police Scorecard includes data on all police and sheriff's departments that are the primary law enforcement agency for their jurisdiction. Each agency's reported outcomes are compared to the outcomes reported by other agencies of the same type, generally grouped by the following agency types:
+            </p>
+
+            <ol>
+                <li>Municipal Police Departments</li>
+                <li>County Sheriff's Departments</li>
             </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image5.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image5.png') }}" title=""></a></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="2">
-                <li class="c3 c8 c6"><span>Police discharged their firearms or otherwise used force causing death or </span><span>serious bodily injury</span><sup><a href="#ftnt2" id="ftnt_ref2">[2]</a></sup><span>&nbsp;in </span><span class="c4">1,276 incidents</span><span>&nbsp;from 2016-2017, killing 328 people and seriously injuring an additional 824 people. 647 of these incidents were police shootings, while the other half were other forms of police use of force that caused death or serious injury. </span><span class="c4">Overall</span><span>, </span><span class="c11 c4">half of people killed or seriously injured by police (49%) were unarmed. </span>
 
-                    <br />
-                    <br />
+            <p>
+                Among agencies of the same type, scores are calculated as percentiles relative to other departments with similar sized jurisdictions:
+            </p>
 
-                    <span>Police in San Bernardino, Riverside, Stockton, Long Beach, Fremont and Bakersfield used deadly force at </span><span class="c4">substantially higher rates </span><span>than other major cities in California. San Jose and Los Angeles police used deadly force at 3x the rate of police in </span><span>San Francisco and San Diego</span><span>. </span><span>And Oakland police had one of the lowest rates of deadly force, reflecting the substantial decline in use of force incidents that has followed </span><span class="c10"><a class="c12" href="http://www.oaklandmagazine.com/April-2017/The-Year-of-No-Shootings/">DOJ mandated reforms </a></span><span>to their use of force policies. </span></p>
-                    <p class="c3 c6"><span><a href="{{ asset('/images/findings/image1.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image1.png') }}" title=""></a></span>
-                 </li>
-            </ol>
-            <p class="c3 c9 c6"><span class="c1"></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="3">
-                <li class="c3 c6 c8"><span>In reviewing the policy manuals of 90 of the 100 California police departments, we find </span><span class="c4">California police have more permissive use of force standards than the national average.</span><span>&nbsp;Only 16 departments (18%) required officers to use de-escalation when possible prior to using force and only 7 departments (8%) required officers to use all available means of apprehension, including non-lethal force, prior to using </span><span>deadly</span><span class="c15">&nbsp;</span><span>force. This is significantly lower than the 42% and 43%, respectively, of the big city police departments nationwide that </span><span class="c10"><a class="c12" href="http://useofforceproject.org">have such policies in place</a></span><span>. In some places, that is beginning to change. We identified four departments that adopted new use of force policies requiring de-escalation during the 2016-2017 period - Stockton, Sacramento, San Francisco, and Los Angeles. </span><span class="c4">All four departments had </span><span class="c10 c4"><a class="c12" href="https://drive.google.com/file/d/1YNEIO19C4X-6tkU5ZhlXsj_MaVlkM7pp/view">fewer police shootings</a></span><span class="c4">&nbsp;in 2018, after these policies were enacted, than their average shootings rate during the years prior to this policy&rsquo;s enactment.</span></li>
-            </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image6.png') }}" target="_"><img alt="" class="narrow" src="{{ asset('/images/findings/image6.png') }}" title=""></a></span></p>
-            <p class="c3 c9 c6"><span class="c1"></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="4">
-                <li class="c3 c8 c6"><span class="c4">When people come forward to report police misconduct in California, it rarely leads to accountability</span><span>. Statewide, </span><span class="c4">only 1 in every 14 civilian complaints </span><span>of police misconduct was ruled in favor of civilians in 2016-2017. In 81% of jurisdictions, civilians reporting misconduct had less than a 1 in 5 chance of the complaint being ruled in their favor by police investigators. Complaints concerning police violence and racial/identity discrimination almost never resulted in accountability. Civilians reporting police </span><span class="c4">racial discrimination </span><span>had only a </span><span class="c4">1 in 64 chance of their complaint being upheld</span><span>&nbsp;and </span><span>civilians reporting </span><span class="c4">use of force complaints </span><span>had only a </span><span class="c4">1 in 78 chance of being upheld. This lack of administrative accountability for police violence mirrors the criminal justice system&rsquo;s approach towards police violence. </span><span>Of 647 police shootings statewide between 2016-2017</span><span class="c4">, </span><span>only </span><span class="c10"><a class="c12" href="http://mappingpoliceviolence.org">one</a></span><span>&nbsp;of these incidents has</span><span>&nbsp;resulted in an officer being prosecuted for breaking the law.</span></li>
-            </ol>
-            <p class="c3 c6"><span><a href="{{ asset('/images/findings/image2.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image2.png') }}" title=""></a></span></p>
-            <ol class="c7 lst-kix_fckzbmam001m-0" start="5">
-                <li class="c3 c8 c6"><span class="c4">There&rsquo;s evidence of police racial bias in California, especially against black people. </span><span>Statewide, black people were arrested for misdemeanor offenses at </span><span class="c4">2.2x higher rate</span><span>&nbsp;per population than white people. </span><span class="c4">89 of California&rsquo;s 100 largest city police departments arrested black people for drug possession at higher rates than whites</span><span>, despite research showing similar rates of drug use and selling between the groups. And while police were more likely to arrest black people for low-level offenses, they were less </span><span>likely to find someone responsible for the most serious offense - homicide - when the victim was black</span><span class="c1">. California police reported finding a suspect in 76% of homicides of white victims from 2016-2017 compared to only 48% of Latinx victims and 48% of black victims.</span>
-
-                    <br />
-                    <br />
-
-                    <span class="c4">There was also evidence of racial bias in police use of force. </span><span class="c4">California police were 32% more likely to shoot when arresting a black person and 20% more likely to shoot when arresting a Latinx person compared to a white person.</span><span>&nbsp;Similarly, police were 23% more likely to kill or seriously injure a black person and 20% more likely to kill or seriously injure a Latinx person when making an arrest. And while </span><span class="c4">46% of white people</span><span class="c15 c4">&nbsp;killed or seriously injured </span><span class="c4">by police were unarmed, 52% of black people and 51% of Latinx people were. </span>
-
-                    <br />
-                    <br />
-
-                    <span><a href="{{ asset('/images/findings/image4.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image4.png') }}" class="narrow" title=""></a></span>
-
-                    <br />
-                    <br />
-
-                    <span>Finally, p</span><span class="c1">olice also appear to be more likely to shoot black and Latinx people as a first response rather than first attempting non-lethal force to resolve the situation. Police shot first, rather than first attempting a lower level of force, in 87% of police shootings of black people and 84% of Latinx people compared to 81% of police shootings of white people.</span>
-
-                    <br />
-                    <br />
-
-                    <span><a href="{{ asset('/images/findings/image3.png') }}" target="_"><img alt="" src="{{ asset('/images/findings/image3.png') }}" title=""></a></span>
-
-                </li>
-
+            <ol>
+                <li>< 50,000 residents</li>
+                <li>50,000 - 100,000 residents</li>
+                <li>100,000 - 250,000 residents</li>
+                <li>250,000+ residents</li>
             </ol>
 
-            <p class="c3"><span>When these outcomes are evaluated together, it reveals a disturbing picture of policing within the state. </span><span class="c4">Most departments received a score lower than 60% - the equivalent of an F grade. </span><span>In some cases, these evaluations confirmed what has previously been reported. For example, Bakersfield Police Department, which has been </span><span class="c10"><a class="c12" href="https://www.theatlantic.com/politics/archive/2015/12/the-deadliest-county-for-police-killings-in-america/418359/">cited</a></span><span>&nbsp;as one of the deadliest departments in the nation, received the 4th lowest score among the 100 California departments. Other departments received scores that were more unexpected. For example, Carlsbad Police Department received the highest score. Further exploration of the organizational culture, leadership and practices of this department might produce valuable insights into how to improve outcomes in</span><span>&nbsp;other police departments.</span><span>&nbsp;By contrast, Beverly Hills Police Department received </span><span class="c10"><a class="c12" href="https://policescorecard.org/?city%3Dbeverly-hills">the lowest score</a></span><span class="c1">&nbsp;of all 100 departments, due to relatively high levels of police violence, severe racial inequities in law enforcement and a system that almost never holds officers accountable for misconduct. </span></p>
-            <p class="c3 c9"><span class="c1"></span></p>
-            <p class="c3"><span>These findings should prompt further investigations and interventions targeting low-performing police departments within the state, not only from local policymakers but also potentially from the California Attorney General, who has the power to initiate pattern and practice investigations into local police agencies.</span></p>
-            <hr class="c14">
-            <div>
-                <p class="c5 c16"><a href="#ftnt_ref1" id="ftnt1">[1]</a><span class="c2">&nbsp;The number of arrests for drug possession has not declined significantly since marijuana legalization took effect on November 9, 2016. Of the 192k arrests for drug possession statewide in 2016, 6k of those arrests were for marijuana possession. There were also slightly </span><span class="c10 c2"><a class="c12" href="https://crime-data-explorer.fr.cloud.gov/explorer/state/california/arrest/2007/2017">more arrests</a></span><span class="c2">&nbsp;for drug possession overall in 2017 than in 2016. As such, the reported </span><span class="c10 c2"><a class="c12" href="https://www.mercurynews.com/2018/07/11/prop-64-didnt-legalize-every-cannabis-crime-but-arrests-are-falling-fast/">56% reduction</a></span><span class="c2 c18">&nbsp;in marijuana arrests in 2017 did not substantially change the total number of drug possession arrests in the state.</span></p>
-            </div>
-            <div>
-                <p class="c5 c16"><a href="#ftnt_ref2" id="ftnt2">[2]</a><span class="c19">&nbsp;</span><span class="c2">&ldquo;Serious bodily injury&rdquo; as defined by California&rsquo;s use of force reporting system means a bodily injury that involves a substantial risk of death, unconsciousness, protracted and obvious disfigurement, or protracted loss or impairment of the function of a bodily member or organ.</span></p>
-            </div>
+            <p>
+                83% of the 16,146 agencies are municipal (city or town) police departments while the remaining 17% are county sheriff's departments. The vast majority of these agencies represent small towns and cities, with 93% of all agencies in the Scorecard policing in jurisdictions with fewer than 50,000 residents.
+            </p>
+
+            <p>
+                <strong>Most police agencies have jurisdictions with fewer than 50,000 residents.</strong>
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/DepartmentTotalsbyPopulationSize/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608525476357" data-viz-desktop-height="277px" data-viz-mobile-height="277px" />
+                <div id="viz1608525476357">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/DepartmentTotalsbyPopulationSize" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                <strong>State-Level Policing Outcomes</strong>
+            </p>
+
+            <p>
+                Policing outcomes varied by state. To compare agencies, we calculated scores for each agency using a 0-100% scale whereby departments with <strong>higher scores</strong> use <strong>less force</strong>, make <strong>fewer arrests for low level offenses, solve murder cases more often</strong>, hold officers <strong>more accountable</strong> and <strong>spend less</strong> on policing overall (Read more about our methodology <a href="/about" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Our Methodology') !!}>here</a>).
+                Based on this methodology, Nevada and Georgia had among the lowest scores for the average police or sheriff's department in a state while Pennsylvania and Massachusetts had among the highest average scores.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/StateScores/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608515880357" data-viz-desktop-height="807px" data-viz-mobile-height="460px" />
+                <div id="viz1608515880357" style="position: relative;">
+                    <object style="display: none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/StateScores" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                <strong>Local-Level Policing Outcomes</strong>
+            </p>
+
+            <p>
+                There was also substantial variation in policing outcomes among city police departments and county sheriffs within each state - with the lowest scoring departments receiving scores at or below 30% and the highest scoring departments receiving scores above 60%. Among the largest police jurisdictions, those with over 400,000 population, Charlotte-Mecklenburg and El Paso police departments had among the highest overall scores - making fewer low level arrests, using less force, and spending less on policing than other big city police departments. Further exploration of the organizational culture, leadership and practices of these departments might produce valuable insights into how to improve outcomes in other places.
+                By contrast, police departments in Chicago, Long Beach and Kansas City, MO had among the worst outcomes. This suggests the need for further investigation and intervention from local, state and federal authorities to better understand and address these issues.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/BigCityScores/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608496271669" data-viz-desktop-height="807px" data-viz-mobile-height="460px" />
+                <div id="viz1608496271669">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/BigCityScores" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 3. Police are making fewer arrests for low level offenses -->
+
+            <h2 class="subtitle" id="making-fewer-arrests">
+                3. Police are making fewer arrests for low level offenses
+            </h2>
+
+            <p>
+                <strong>Two-thirds of all arrests reported by law enforcement nationwide in 2019 were for low-level offenses</strong>, which include loitering, disorderly conduct, substance use, sex work and other offenses that are not crimes against people or property. This is 12x as many reported arrests as were made for violent crimes. Among big cities, police in Seattle, Boston and Detroit had the lowest arrest rates for low level offenses. By contrast, Louisville police arrested people for low level offenses at 5x higher rate than these cities. While some of these differences could reflect differences in crime, such large disparities between cities suggest major differences in how each city approaches law enforcement.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestTrendsOverall/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608518127922" data-viz-desktop-height="420px" data-viz-mobile-height="402px" />
+                <div id="viz1608518127922">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/LowLevelArrestTrendsOverall" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                Big cities appear to be shifting their approach to law enforcement more quickly than other parts of the country. <strong>Police departments representing jurisdictions with over 400,000 residents, on average, reported 23% fewer arrests overall and 26% fewer low level offenses in 2019 than they did in 2013</strong> - exceeding the 13% reduction in arrests and 11% reduction in low level arrests reported by other agencies during this time period. Cities like New York, Houston, Milwaukee, Nashville and Fort Worth led other big cities in reducing arrests for low level offenses - cutting these arrests by more than 60% from 2013-2019. These declines in the enforcement of low level offenses did not appear to change how agencies approached violent crime - big city police departments reported similar violent crime clearance rates during this period and actually made 3% <em>more</em> arrests overall for violent crime in 2019 than they had in 2013.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LowLevelArrestChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608515841510" data-viz-desktop-height="527px" data-viz-mobile-height="460px" />
+                <div id="viz1608515841510">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/LowLevelArrestChanges" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 4. As arrests decline, racial disparities persist -->
+
+            <h2 class="subtitle" id="racial-disparities-persist">
+                4. As arrests decline, racial disparities persist
+            </h2>
+
+            <p>
+                <strong>Black people were arrested at higher rates than white people in 92% of police jurisdictions</strong> reporting 100 or more arrests in 2019 - including every police department with a jurisdiction of over 400,000 population. Despite research <a href="https://www.cdc.gov/nchs/data/hus/2018/020.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Drug Rate Research') !!}>showing</a> Black and white people use drugs at similar rates, <strong>three-quarters of police departments arrested Black people for drug possession at higher rates than white people</strong>. Moreover, despite an overall decline in drug possession arrests in big cities, Black-white arrest disparities in these arrests have <em>grown</em> in many cities since 2013, a trend that has been <a href="https://datacollaborativeforjustice.org/wp-content/uploads/2020/04/Marijuana-Report.pdf" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Cited Trend') !!}>cited</a> in previous <a href="https://drugpolicy.org/legalization-status-report" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Previous Research') !!}>research</a>.
+            </p>
+
+            <p>
+                Though there were racial disparities in arrests in almost every jurisdiction, the most severe disparities tended to be found in smaller towns and cities. Of the 500 departments with the largest Black-white racial disparities in arrests, 4 in 5 had a population of fewer than 15,000 people. This highlights the need to expand and deepen policy and practice interventions beyond the largest cities to also reach more rural and small city jurisdictions.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/ArrestDisparitiesin2019/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608518452695" data-viz-desktop-height="477px" data-viz-mobile-height="427px" />
+                <div id="viz1608518452695">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/ArrestDisparitiesin2019" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/DrugArrestDisparities/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608523779568" data-viz-desktop-height="627px" data-viz-mobile-height="500px" />
+                <div id="viz1608523779568">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/DrugArrestDisparities" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                <strong>Disparities in Murder Clearance Rates</strong>
+            </p>
+
+            <p>
+                While police were more likely to arrest Black people for low level offenses, they were <em>less</em> likely to find someone responsible for the most serious offense - homicide - when the victim was Black. Nationwide, police reported finding a suspect in 88% of homicides of white victims from 2013-2019 compared to only 79% of Latinx victims and 78% of Black victims.
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 5. Black communities are more heavily policed -->
+
+            <h2 class="subtitle" id="more-heavily-policed">
+                5. Black communities are more heavily policed
+            </h2>
+
+            <p>
+                In addition to widespread racial disparities in arrests and murder clearance rates, communities with more Black residents tended to be more saturated with police officers, with more police officers per population, and also tended to spend more money on policing overall. Moreover, police agencies in Black communities confiscated more money and resources from residents through fines and forfeitures than police agencies in other jurisdictions. Even among jurisdictions with similar violent crime rates, there are consistently more police officers in communities where more Black people live.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/OfficersbyPopulationandCrimeRate/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608524943204" data-viz-desktop-height="377px" data-viz-mobile-height="377px" />
+                <div id="viz1608524943204">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/OfficersbyPopulationandCrimeRate" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 6. Some police departments show a clear pattern of using more force than other departments. -->
+
+            <h2 class="subtitle" id="clear-pattern">
+                6. Some police departments show a clear pattern of using more force than other departments.
+            </h2>
+
+            <p>
+                <strong>Police Shootings</strong>
+            </p>
+
+            <p>
+                Examining data obtained from big city police agencies on both fatal and nonfatal police shootings incidents from 2013-2019, police in Oakland, Miami, San Francisco and New York had among the lowest rates of police shootings per every 10,000 arrests they made. Detroit and Oklahoma City <em>consistently</em> had the highest rates of police shootings - Oklahoma City has had one of the top 3 highest rates of police shootings among big cities for 4 of the past 7 years while Detroit has had the highest rate of all agencies for 5 of the past 7 years. This suggests the need for urgent interventions from the US Department of Justice and/or state Attorney's General to restrict police use of force standards and strengthen independent accountability structures in these cities.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceShootings/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608517153562" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608517153562">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/PoliceShootings" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                <strong>Other Forms of Police Use of Force</strong>
+            </p>
+
+            <p>
+                We obtained detailed use of force data from many departments indicating the number of uses of police tasers, batons, strangleholds, pepper spray and other force involving "less lethal" weapons each year. Among larger cities, police in Long Beach and Mesa used these forms of force at higher rates than other large departments, while Baltimore City had the lowest rate of using "less lethal" force among other large cities in 2019 following a substantial decline in these use of force incidents since the federal government intervened in 2015 to investigate and mandate changes to the department's policies and practices.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/LessLethalForceRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608516838184" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608516838184">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/LessLethalForceRates" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                <strong>Chokeholds and Strangleholds:</strong>
+            </p>
+
+            <p>
+                More than 40 departments specified the number of chokeholds or strangleholds used (Lateral Vascular Neck Restraints, Carotid Restraints and other neck restraints were included as strangleholds). Of these, the data show that a few departments were consistently outliers in using this tactic against people. Police departments in Santa Ana, San Diego, Long Beach and Minneapolis consistently reported using strangleholds against civilians at higher rates per arrest than other large police departments. Following widespread protests over police violence in 2020, <a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1196" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'California') !!}>California</a> and <a href="https://www.npr.org/sections/live-updates-protests-for-racial-justice/2020/07/21/893444295/minnesota-lawmakers-ban-police-chokeholds-warrior-style-training" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Minnesota') !!}>Minnesota</a> passed laws banning both chokeholds and strangleholds among these law enforcement agencies.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/StrangleholdRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608517458685" data-viz-desktop-height="527px" data-viz-mobile-height="527px" />
+                <div id="viz1608517458685">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/StrangleholdRates" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 7. Few departments regularly rule against officers in misconduct investigations -->
+
+            <h2 class="subtitle" id="misconduct-investigations">
+                7. Few departments regularly rule against officers in misconduct investigations
+            </h2>
+
+            <p>
+                When people come forward to report police misconduct, it rarely leads to accountability. Among the 1,039 departments we obtained civilian complaint data from, <strong>only 1 in every 9 civilian complaints</strong> of police misconduct was ruled in favor of civilians. Examining the 418 jurisdictions that reported 5 or more complaints, there were only 41 jurisdictions sustained complaints at least one-third of the time and only 15 jurisdictions where the majority of civilian complaints reported were sustained. By contrast, Houston, Miami-Dade and Charlotte-Mecklenburg police sustained complaints in nearly half of all cases, suggesting the need for further examination of potential best-practices used by investigators in these jurisdictions to substantiate misconduct.
+                Consistent with <a href="https://nixthe6.org/research/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'NixThe6 Past Research') !!}>past research</a> finding that police union contracts undermine accountability, departments were more likely to sustain misconduct complaints against officers in states like GA, TN, SC and NC that do not allow police unions to negotiate these contracts.
+                By contrast, departments in <a href="https://nixthe6.org/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'NixThe6 States') !!}>states</a> with "Police Bill of Rights" laws were less likely to sustain complaints of police misconduct - suggesting that these laws may also be barriers to police accountability.
+                Importantly, since no nationwide database exists to track police disciplinary consequences resulting from substantiated complaints, we do not know the full extent to which officers are held accountable even in many of the agencies with higher rates of sustained complaints.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/ComplaintSustainRates/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608516322532" data-viz-desktop-height="677px" data-viz-mobile-height="677px" />
+                <div id="viz1608516322532">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/ComplaintSustainRates" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <p>
+                Among the types of allegations reported, more serious allegations like excessive force or discrimination allegations were even less likely to be ruled in favor civilians than other complaints. Civilians reporting police <strong>discrimination</strong> had only a <strong>1 in 76 chance</strong> of their complaint being upheld and civilians reporting <strong>use of force</strong> complaints had only a <strong>1 in 33 chance</strong> of being upheld. This lack of administrative accountability for police violence mirrors the criminal justice system's approach towards police violence. Only 1% of killings by police from 2013-2019 have resulted in an officer being charged with a crime and only 0.5% have resulted in a criminal conviction.
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- 8. 80% of jurisdictions increased police funding from 2013-2018 -->
+
+            <h2 class="subtitle" id="increased-funding">
+                8. 80% of jurisdictions increased police funding from 2013-2018
+            </h2>
+
+            <p>
+                Local government finances data reported to the US Census Bureau shows residents spend substantially different amounts on policing depending on which jurisdiction they live in - for example, residents in Baltimore City, Oakland and New York City spent 3-4x more per capita on policing than residents in El Paso, Virginia Beach or Indianapolis in 2018 (the latest year of data published by the Census Bureau). Police funding increased in almost every jurisdiction from 2013-2018 - the median jurisdiction increased police spending by 11% after adjusting for inflation.
+            </p>
+
+            <p>
+                20% of all jurisdictions cut police funding from 2013-2018 after accounting for the estimated <a href="https://www.usinflationcalculator.com/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '7.8%') !!}>7.8%</a> inflation during this period, according to the Census data. A review of municipal budgetary documents along with the Census data found only one of the nation's largest cities (over 400k population) cut police spending more than 10% from 2013-2018 - Detroit. Detroit cut its police budget 14% and cut other agency budgets after the city went through municipal bankruptcy.
+            </p>
+
+            <p class="tableau-chart">
+                <img src="https://public.tableau.com/static/images/Po/PoliceScorecard/PoliceFundingChanges/1_rss.png" class="tableau-placeholder" data-viz-id="viz1608567894757" data-viz-desktop-height="627px" data-viz-mobile-height="627px" />
+                <div id="viz1608567894757">
+                    <object style="display:none;">
+                        <param name="host_url" value="https://public.tableau.com/" />
+                        <param name="embed_code_version" value="3" />
+                        <param name="site_root" value="" />
+                        <param name="name" value="PoliceScorecard/PoliceFundingChanges" />
+                        <param name="tabs" value="no" />
+                        <param name="toolbar" value="yes" />
+                        <param name="static_image" value="{{ asset('/images/blank.png') }}" />
+                        <param name="animate_transition" value="yes" />
+                        <param name="display_static_image" value="no" />
+                        <param name="display_spinner" value="yes" />
+                        <param name="display_overlay" value="yes" />
+                        <param name="display_count" value="yes" />
+                        <param name="language" value="en" />
+                        <param name="filter" value="publish=yes" />
+                    </object>
+                </div>
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- Conclusion -->
+
+            <h2 class="subtitle" id="conclusion">
+                CONCLUSION
+            </h2>
+
+            <p>
+                When these outcomes are evaluated together, it reveals a disturbing picture of policing across the nation. While the federal government collects and publishes data on crime, arrests and police personnel from the vast majority of America's police agencies, only a fraction of these agencies make data available on police use of force, misconduct complaints, or settlements. Where such data are available, they show racially disparate policing outcomes and low rates of upholding police misconduct complaints in almost every location. Altogether, <strong>most departments received a score lower than 50% and no department scored higher than 70%, suggesting the need to thoroughly reimagine and transform the way the vast majority of cities and counties in the United States approach public safety.</strong>
+            </p>
+
+            <p>
+                The data also reveals that many of the nation's largest cities are making progress towards reducing police shootings by 39% and cutting arrests for low level offenses by 26%, on average, from 2013-2019. At the same time, Black communities continue to be disproportionately impacted by these policing practices and, even in many of these same cities, racial disparities are <em>increasing</em>. And the data also identify police departments that consistently demonstrate worse outcomes than other agencies - using force at multiple times the rate of the average agency of their size. These findings suggest the need for urgent investigations and interventions prioritizing the lowest-performing departments - especially smaller towns and big cities where racial disparities are most severe/increasing most rapidly. This includes interventions from local policymakers and pattern/practice investigations by state and federal attorneys general.
+            </p>
+
+            <a href="#main" class="back-to-top">
+                <i class="fa fa-chevron-circle-up"></i>
+                <span class="sr-only">Back to Top</span>
+            </a>
         </div>
     </div>
 
     <x-partial.footer :states="$states" />
+@endsection
+
+@section('scripts')
+<script>
+// Check Window Scroll
+document.addEventListener('scroll', function() {
+    var body = document.body; // IE 'quirks'
+    var doc = document.documentElement; // IE with doctype
+    doc = (doc.clientHeight) ? doc : body;
+
+    if (doc.scrollTop <= 100 && doc.classList.contains('show-back-to-top')) {
+        doc.classList.remove('show-back-to-top');
+    } else if (doc.scrollTop > 100 && !doc.classList.contains('show-back-to-top')) {
+        doc.classList.add('show-back-to-top');
+    }
+}, { passive: true });
+</script>
 @endsection

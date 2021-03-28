@@ -6,7 +6,7 @@
     <h3>Deadly Force</h3>
 
     @if (output($scorecard['police_violence']['all_deadly_force_incidents']) === '0')
-    <p class="good-job">Did Not Report Using Deadly Force in 2016-18</p>
+    <p class="good-job">Did Not Report Using Deadly Force in 2016-19</p>
     @else
     <p>
         {{ num($scorecard['report']['total_people_killed']) }} Killings by Police from 2013-19
@@ -23,7 +23,7 @@
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">City Did Not Provide Data</p>
+    <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['report']['percentile_killed_by_police']), 'reverse') }}" data-percent="{{ output(100 - intval($scorecard['report']['percentile_killed_by_police']), 0, '%') }}"></div>

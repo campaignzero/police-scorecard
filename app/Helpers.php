@@ -240,13 +240,14 @@ if (!function_exists('getStateName')) {
             'SD' => 'South Dakota',
             'TN' => 'Tennessee',
             'TX' => 'Texas',
+            'US' =>  'United States',
             'UT' => 'Utah',
             'VT' => 'Vermont',
             'VA' => 'Virginia',
             'WA' => 'Washington',
             'WV' => 'West Virginia',
             'WI' => 'Wisconsin',
-            'WY' => 'Wyoming',
+            'WY' => 'Wyoming'
         );
 
         return $states[strtoupper($abbr)];
@@ -263,13 +264,24 @@ if (!function_exists('getStateName')) {
  */
 if (!function_exists('getNationalGrades')) {
     function getNationalGrades($states, $type) {
-        $data = array();
+        $complete = array();
+        $incomplete = array();
 
         foreach($states as $abbr => $state) {
             if ($type === 'police-department' && !empty($state['police-department'])) {
                 foreach($state['police-department'] as $department) {
                     if ($department['complete']) {
-                        $data[] = array(
+                        $complete[] = array(
+                            'agency_name' => $department['agency_name'] . ', '.$abbr,
+                            'complete' => $department['complete'],
+                            'grade_class' => $department['grade_class'],
+                            'grade_letter' => $department['grade_letter'],
+                            'overall_score' => $department['overall_score'],
+                            'url_pretty' => $department['url_pretty'],
+                            'url' => $department['url']
+                        );
+                    } else {
+                        $incomplete[] = array(
                             'agency_name' => $department['agency_name'] . ', '.$abbr,
                             'complete' => $department['complete'],
                             'grade_class' => $department['grade_class'],
@@ -285,7 +297,17 @@ if (!function_exists('getNationalGrades')) {
             if ($type === 'sheriff' && !empty($state['sheriff'])) {
                 foreach($state['sheriff'] as $department) {
                     if ($department['complete']) {
-                        $data[] = array(
+                        $complete[] = array(
+                            'agency_name' => $department['agency_name'] . ', '.$abbr,
+                            'complete' => $department['complete'],
+                            'grade_class' => $department['grade_class'],
+                            'grade_letter' => $department['grade_letter'],
+                            'overall_score' => $department['overall_score'],
+                            'url_pretty' => $department['url_pretty'],
+                            'url' => $department['url']
+                        );
+                    } else {
+                        $incomplete[] = array(
                             'agency_name' => $department['agency_name'] . ', '.$abbr,
                             'complete' => $department['complete'],
                             'grade_class' => $department['grade_class'],
@@ -299,11 +321,19 @@ if (!function_exists('getNationalGrades')) {
             }
         }
 
-        usort($data, function($a, $b) {
+        usort($complete, function($a, $b) {
             return $a['overall_score'] > $b['overall_score'];
         });
 
-        return $data;
+        usort($incomplete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        return array(
+            'complete' => $complete,
+            'incomplete' => $incomplete,
+            'all' => array_merge($complete, $incomplete)
+        );
     }
 }
 
@@ -381,6 +411,7 @@ if (!function_exists('getNationalSummary')) {
         $total_arrests_2016 = 0;
         $total_arrests_2017 = 0;
         $total_arrests_2018 = 0;
+        $total_arrests_2019 = 0;
 
         foreach($states as $abbr => $state) {
             $total_arrests += $state['total_arrests'];
@@ -404,6 +435,7 @@ if (!function_exists('getNationalSummary')) {
             $total_arrests_2016 += $state['total_arrests_2016'];
             $total_arrests_2017 += $state['total_arrests_2017'];
             $total_arrests_2018 += $state['total_arrests_2018'];
+            $total_arrests_2019 += $state['total_arrests_2019'];
         }
 
         return array(
@@ -424,6 +456,7 @@ if (!function_exists('getNationalSummary')) {
             'total_arrests_2016' => $total_arrests_2016,
             'total_arrests_2017' => $total_arrests_2017,
             'total_arrests_2018' => $total_arrests_2018,
+            'total_arrests_2019' => $total_arrests_2019,
             'black_deadly_force_disparity_per_population' => (($total_black_people_killed / $total_black_population) / ($total_white_people_killed / $total_white_population)),
             'hispanic_deadly_force_disparity_per_population' => (($total_hispanic_people_killed / $total_hispanic_population) / ($total_white_people_killed / $total_white_population)),
             'times_more_misdemeanor_arrests_than_violent_crime' => ($total_low_level_arrests / $total_violent_crime_arrests)
@@ -1020,6 +1053,11 @@ if (!function_exists('generateArrestChart')) {
             $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2018'];
         }
 
+        if (isset($scorecard['arrests']['arrests_2019'])) {
+            $output['labels'][] = '2019';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2019'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1441,5 +1479,185 @@ if (!function_exists('getPoliceFundingChart')) {
             'housing' => $housing,
             'health' => $health
         ));
+    }
+}
+
+/**
+ * Sort Grades
+ *
+ * @param object $grades
+ *
+ * @return object
+ */
+if (!function_exists('sortGrades')) {
+    function sortGrades($grades) {
+        if (!is_array($grades)) {
+            return array();
+        }
+
+        $complete = array();
+        $incomplete = array();
+
+        foreach($grades as $grade) {
+            if ($grade['complete']) {
+                $complete[] = $grade;
+            } else {
+                $incomplete[] = $grade;
+            }
+        }
+
+        usort($complete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        usort($incomplete, function($a, $b) {
+            return $a['overall_score'] > $b['overall_score'];
+        });
+
+        return array(
+            'complete' => $complete,
+            'incomplete' => $incomplete,
+            'all' => array_merge($complete, $incomplete)
+        );
+    }
+}
+
+if (!function_exists('encodeNDJSON')) {
+    function encodeNDJSON($data) {
+        $nd_json = '';
+
+        array_walk($data, function ($item) use (&$nd_json) {
+            $nd_json .= json_encode($item, JSON_UNESCAPED_SLASHES) . PHP_EOL;
+        });
+
+        return $nd_json;
+    }
+}
+
+if (!function_exists('bytesToHuman')) {
+    function bytesToHuman($bytes) {
+        $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+        for ($i = 0; $bytes > 1024; $i++) $bytes /= 1024;
+        return round($bytes, 2) . ' ' . $units[$i];
+    }
+}
+
+/**
+ * Mapbox Update - PUT Mapbox Tiles from GeoJSON-LD
+ *
+ * @param string $url
+ * @param string $file_path
+ * @return void
+ */
+if (!function_exists('mapBoxUpdate')) {
+    function mapBoxUpdate($url, $file_path) {
+        $file = new CURLFile(realpath($file_path));
+
+        if (!$file) {
+            return array(
+                'success' => false,
+                'response' => 'Unable to Generate File for Upload'
+            );
+        }
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, array ('file' => $file));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
+
+        $result = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $curl_error = curl_error($ch);
+        }
+
+        curl_close($ch);
+
+        if (isset($curl_error)) {
+            return array(
+                'success' => false,
+                'response' => $curl_error
+            );
+        } else if ($result === FALSE) {
+            return array(
+                'success' => false,
+                'response' => 'Failed to Update Mapbox Tiles.'
+            );
+        } else {
+            $response = json_decode($result, true);
+
+            if (!$response) {
+                return array(
+                    'success' => false,
+                    'response' => 'No Response from Mapbox'
+                );
+            } else if (isset($response['message'])) {
+                return array(
+                    'success' => false,
+                    'response' => $response['message']
+                );
+            } else {
+                return array(
+                    'success' => true,
+                    'response' => $response
+                );
+            }
+        }
+    }
+}
+
+/**
+ * Mapbox Publish - Once Tiles are Updated, this will Publish
+ *
+ * @param string $url
+ * @return void
+ */
+if (!function_exists('mapBoxPublish')) {
+    function mapBoxPublish($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+
+        $result = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            $curl_error = curl_error($ch);
+        }
+
+        curl_close($ch);
+
+        if (isset($curl_error)) {
+            return array(
+                'success' => false,
+                'response' => $curl_error
+            );
+        } else if ($result === FALSE) {
+            return array(
+                'success' => false,
+                'response' => 'Failed to Publish Mapbox Tiles.'
+            );
+        } else {
+            $response = json_decode($result, true);
+
+            if (!$response) {
+                return array(
+                    'success' => false,
+                    'response' => 'No Response from Mapbox'
+                );
+            } else if (isset($response['message']) && !isset($response['jobId'])) {
+                return array(
+                    'success' => false,
+                    'response' => $response['message']
+                );
+            } else {
+                return array(
+                    'success' => true,
+                    'response' => $response
+                );
+            }
+        }
     }
 }

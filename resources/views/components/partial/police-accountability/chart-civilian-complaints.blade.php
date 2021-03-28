@@ -1,7 +1,7 @@
 <div class="stat-wrapper">
     <h3>Total civilian complaints</h3>
 
-    @if (output($scorecard['police_accountability']['civilian_complaints_reported']) === '0' || output($scorecard['report']['complaints_sustained']) === '0')
+    @if (output($scorecard['police_accountability']['civilian_complaints_reported']) === '0')
     <p>0 Complaints Reported</p>
     @else
     <p>
@@ -11,11 +11,11 @@
     </p>
     @endif
 
-    @if (!isset($scorecard['report']['complaints_sustained']) || (isset($scorecard['report']['complaints_sustained']) && empty($scorecard['report']['complaints_sustained'])))
+    @if (!isset($scorecard['report']['complaints_sustained']))
     <div class="progress-bar-wrapper">
         <div class="progress-bar no-data" style="width: 0"></div>
     </div>
-    <p class="note">&nbsp;</p>
+    <x-partial.no-data-found />
     @else
     <div class="progress-bar-wrapper">
         <div class="progress-bar animate-bar {{ progressBar(100 - intval($scorecard['report']['complaints_sustained']), 'reverse') }}" data-percent="{{ output(intval($scorecard['report']['complaints_sustained']), 0, '%') }}"></div>
