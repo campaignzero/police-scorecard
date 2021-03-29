@@ -3,6 +3,7 @@
 namespace App\View\Components\Partial;
 
 use Illuminate\View\Component;
+use Illuminate\Routing\UrlGenerator;
 
 class Footer extends Component
 {
@@ -21,9 +22,9 @@ class Footer extends Component
     {
         $this->states = $states;
         $this->state = $state;
-        $this->socialUrl = '';
-        $this->socialText = '';
-        $this->socialSubject = '';
+        $this->socialUrl = urlencode(url()->full());
+        $this->socialText = rawurlencode('Get the Data on Policing in America.  Get the Facts about US Police Departments at PoliceScorecard.org');;
+        $this->socialSubject = rawurlencode('Get the Data on Policing in America');
     }
 
     /**
