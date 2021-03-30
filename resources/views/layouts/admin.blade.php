@@ -334,6 +334,10 @@
                     $.ajax({
                         type: 'POST',
                         url: '{{ config("api.api_base") }}/{{ config("api.api_version") }}/update/scorecard',
+                        timeout: 0,
+                        xhrFields: {
+                            withCredentials: false
+                        },
                         data: {
                             token: '{{ config("api.admin_token") }}',
                             cleanImport: cleanImport
@@ -410,7 +414,7 @@
                 return false;
             }
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
         @endif
     </body>
