@@ -366,7 +366,8 @@
                                 });
 
                                 if (typeof response.data === 'number') {
-                                    $success.text('<li>Processed: ' + response.data + '</li>');
+                                    successTotal = response.data;
+                                    $success.append('<li>Processed: ' + response.data + '</li>');
                                 } else {
                                     $.each(response.data, function(key, row) {
                                         if (row.success && row.message !== 'Already Up To Date') {
