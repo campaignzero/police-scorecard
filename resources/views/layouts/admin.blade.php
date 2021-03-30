@@ -365,15 +365,19 @@
                                     $warnings.append('<li>' + row + '</li>');
                                 });
 
-                                $.each(response.data, function(key, row) {
-                                    if (row.success && row.message !== 'Already Up To Date') {
-                                        successTotal++;
-                                        $success.append('<li>' + row.location + '</li>');
-                                    } else if (row.message !== 'Already Up To Date') {
-                                        failedTotal++;
-                                        $failed.append('<li>' + row.location + ': ' + row.message + '<pre style="display: none">' + row.stack + '</pre></li>');
-                                    }
-                                });
+                                if (typeof response.data === 'number') {
+                                    $success.text('<li>Processed: ' + response.data + '</li>');
+                                } else {
+                                    $.each(response.data, function(key, row) {
+                                        if (row.success && row.message !== 'Already Up To Date') {
+                                            successTotal++;
+                                            $success.append('<li>' + row.location + '</li>');
+                                        } else if (row.message !== 'Already Up To Date') {
+                                            failedTotal++;
+                                            $failed.append('<li>' + row.location + ': ' + row.message + '<pre style="display: none">' + row.stack + '</pre></li>');
+                                        }
+                                    });
+                                }
 
                                 $warningsTotal.text(response.warnings.length.toLocaleString());
                                 $noticesTotal.text(response.notices.length.toLocaleString());
