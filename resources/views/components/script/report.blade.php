@@ -326,7 +326,7 @@
     if (policeFundingChart && typeof policeFundingChart.labels !== 'undefined' && policeFundingChart.labels.length > 0) {
       Highcharts.chart(document.getElementById('chart-police-funding'), {
         chart: {
-          type: 'area',
+          type: 'line',
           height: 300
         },
         legend: {
@@ -371,7 +371,14 @@
             padding: 8
           },
           pointFormatter: function() {
-            return '<span style="color:' + this.color + '; font-size: 16px; vertical-align: middle;">●</span> ' + this.series.name + ': <b>$' + this.y.toLocaleString() + '</b><br/>';
+            var shape = '●';
+            if (this.series.name === 'Health') {
+                shape = '■';
+            } else if (this.series.name === 'Housing') {
+                shape = '▴';
+            }
+
+            return '<span style="color:' + this.color + '; font-size: 16px; vertical-align: middle;">' + shape + '</span> ' + this.series.name + ': <b>$' + this.y.toLocaleString() + '</b><br/>';
           }
         },
         xAxis: {
@@ -398,7 +405,7 @@
             name: 'Health',
             lineColor: '#7c8894',
             marker: {
-              symbol: 'circle'
+              symbol: 'square'
             },
             data: policeFundingChart.health
           },
@@ -406,7 +413,7 @@
             name: 'Housing',
             lineColor: '#c5882a',
             marker: {
-              symbol: 'circle'
+              symbol: 'triangle'
             },
             data: policeFundingChart.housing
           }

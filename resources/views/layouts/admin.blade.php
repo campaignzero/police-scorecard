@@ -334,6 +334,10 @@
                     $.ajax({
                         type: 'POST',
                         url: '{{ config("api.api_base") }}/{{ config("api.api_version") }}/update/scorecard',
+                        timeout: 0,
+                        xhrFields: {
+                            withCredentials: false
+                        },
                         data: {
                             token: '{{ config("api.admin_token") }}',
                             cleanImport: cleanImport
@@ -365,15 +369,20 @@
                                     $warnings.append('<li>' + row + '</li>');
                                 });
 
-                                $.each(response.data, function(key, row) {
-                                    if (row.success && row.message !== 'Already Up To Date') {
-                                        successTotal++;
-                                        $success.append('<li>' + row.location + '</li>');
-                                    } else if (row.message !== 'Already Up To Date') {
-                                        failedTotal++;
-                                        $failed.append('<li>' + row.location + ': ' + row.message + '<pre style="display: none">' + row.stack + '</pre></li>');
-                                    }
-                                });
+                                if (typeof response.data === 'number') {
+                                    successTotal = response.data;
+                                    $success.append('<li>Processed: ' + response.data + '</li>');
+                                } else {
+                                    $.each(response.data, function(key, row) {
+                                        if (row.success && row.message !== 'Already Up To Date') {
+                                            successTotal++;
+                                            $success.append('<li>' + row.location + '</li>');
+                                        } else if (row.message !== 'Already Up To Date') {
+                                            failedTotal++;
+                                            $failed.append('<li>' + row.location + ': ' + row.message + '<pre style="display: none">' + row.stack + '</pre></li>');
+                                        }
+                                    });
+                                }
 
                                 $warningsTotal.text(response.warnings.length.toLocaleString());
                                 $noticesTotal.text(response.notices.length.toLocaleString());
@@ -405,7 +414,7 @@
                 return false;
             }
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
         @endif
     </body>
