@@ -230,8 +230,10 @@ p {
             color: $primary-orange;
             position: absolute;
             right: -40px;
-            top: 18px;
+            top: 12px;
             transform: rotate(45deg);
+            animation: bounce_select 1s 3 ease-in-out;
+            animation-delay: 3s;
         }
     }
 

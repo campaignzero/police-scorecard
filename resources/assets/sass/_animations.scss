@@ -27,3 +27,31 @@
         transform: rotate(3600deg);
     }
 }
+
+@keyframes bounce_select {
+    0% {
+        top: 12px;
+    }
+
+    50% {
+        top: 4px;
+    }
+
+    100% {
+        top: 12px;
+    }
+}
+
+@keyframes bounce_select_mobile {
+    0% {
+        top: 7px;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    100% {
+        top: 7px;
+    }
+}
