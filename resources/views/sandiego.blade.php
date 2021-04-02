@@ -55,7 +55,7 @@
             </div>
 
             <div class="right">
-                <a href="/assets/san-diego/police-scorecard-san-diego-report.pdf" target="_blank" class="read-methodology">
+                <a href="{{ asset('/san-diego/police-scorecard-san-diego-report.pdf') }}" target="_blank" class="read-methodology">
                     Read the Full Report<br>
                     <img src="{{ asset('/san-diego/report-screenshot.jpg') }}" />
                 </a>
