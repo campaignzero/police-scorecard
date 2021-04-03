@@ -6,8 +6,8 @@
     <h3>Arrests for Low Level Offenses</h3>
 
     <p>
-        {{ num(round(intval(str_replace(',', '', $scorecard['report']['total_arrests'])) * (intval($scorecard['report']['percent_misdemeanor_arrests']) / 100))) }}
-        Arrests <span class="divider">&nbsp;|&nbsp;</span>
+        {{ num($scorecard['arrests']['low_level_arrests']) }} Arrests
+        <span class="divider">&nbsp;|&nbsp;</span>
         {{ num($scorecard['report']['low_level_arrests_per_1k_population']) }} per 1k residents
     </p>
 
