@@ -94,9 +94,7 @@
                 <div class="right number number-2">
                     <ul>
                         <li>
-                            <strong>Find your US Senator</strong> using the Advocacy Tool and urge them to support the
-                            <strong>George Floyd Justice in Policing Act</strong> to give the federal government the tools to
-                            track policing practices nationwide and hold the police departments with the worst records accountable.
+                            <strong>Look up your state and federal representatives below</strong>, then tell them to take action to hold police accountable in your community.
                             <br /><br />
                             <script async src="https://embed.joincampaignzero.org/widget.js" charset="utf-8"></script>
                         </li>
