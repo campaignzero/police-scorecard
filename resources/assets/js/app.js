@@ -24,6 +24,7 @@ window.PoliceScorecard = window.PoliceScorecard || {
     animate: function() {
         PoliceScorecard.animateProgressBars();
         PoliceScorecard.animateCheckMarks();
+        PoliceScorecard.animatePercentScore();
         PoliceScorecard.lazyLoadTableau();
     },
 
@@ -51,6 +52,19 @@ window.PoliceScorecard = window.PoliceScorecard || {
                 var percent = el.getAttribute('data-percent');
                 el.style.width = percent;
                 el.classList.remove('animate-bar');
+            }
+        });
+    },
+
+    /**
+     * Animate Percent Score
+     */
+     animatePercentScore: function() {
+        PoliceScorecard.elm.$progressScores = document.getElementsByClassName('animate-score');
+
+        Array.prototype.forEach.call(PoliceScorecard.elm.$progressScores, function(el) {
+            if (PoliceScorecard.isScrolledIntoView(el)) {
+                el.classList.remove('animate-score');
             }
         });
     },
