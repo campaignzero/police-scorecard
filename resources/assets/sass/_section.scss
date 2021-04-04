@@ -704,6 +704,14 @@
                     font-size: 12px;
                     font-weight: bold;
                     margin-top: 4px;
+                    opacity: 1;
+                    transition: all 0.25s ease-in-out;
+                    right: calc(130px - (130px * 0));
+                }
+
+                &.animate-score::before {
+                    opacity: 0;
+                    right: calc(130px - (130px * 0)) !important;
                 }
 
                 &.double::before {
