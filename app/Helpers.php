@@ -1396,81 +1396,81 @@ if (!function_exists('getPoliceFundingChart')) {
         $housing = array();
         $health = array();
 
-        if ($funding['police_budget_2010'] && $funding['housing_budget_2010'] && $funding['health_budget_2010']) {
+        if ($funding['police_budget_2010'] || $funding['housing_budget_2010'] || $funding['health_budget_2010']) {
             $labels[] = '2010';
-            $police[] = intval($funding['police_budget_2010']);
-            $housing[] = intval($funding['housing_budget_2010']);
-            $health[] = intval($funding['health_budget_2010']);
+            $police[] = isset($funding['police_budget_2010']) ? intval($funding['police_budget_2010']) : null;
+            $housing[] = isset($funding['housing_budget_2010']) ? intval($funding['housing_budget_2010']) : null;
+            $health[] = isset($funding['health_budget_2010']) ? intval($funding['health_budget_2010']) : null;
         }
 
-        if ($funding['police_budget_2011'] && $funding['housing_budget_2011'] && $funding['health_budget_2011']) {
+        if ($funding['police_budget_2011'] || $funding['housing_budget_2011'] || $funding['health_budget_2011']) {
             $labels[] = '2011';
-            $police[] = intval($funding['police_budget_2011']);
-            $housing[] = intval($funding['housing_budget_2011']);
-            $health[] = intval($funding['health_budget_2011']);
+            $police[] = isset($funding['police_budget_2011']) ? intval($funding['police_budget_2011']) : null;
+            $housing[] = isset($funding['housing_budget_2011']) ? intval($funding['housing_budget_2011']) : null;
+            $health[] = isset($funding['health_budget_2011']) ? intval($funding['health_budget_2011']) : null;
         }
 
-        if ($funding['police_budget_2012'] && $funding['housing_budget_2012'] && $funding['health_budget_2012']) {
+        if ($funding['police_budget_2012'] || $funding['housing_budget_2012'] || $funding['health_budget_2012']) {
             $labels[] = '2012';
-            $police[] = intval($funding['police_budget_2012']);
-            $housing[] = intval($funding['housing_budget_2012']);
-            $health[] = intval($funding['health_budget_2012']);
+            $police[] = isset($funding['police_budget_2012']) ? intval($funding['police_budget_2012']) : null;
+            $housing[] = isset($funding['housing_budget_2012']) ? intval($funding['housing_budget_2012']) : null;
+            $health[] = isset($funding['health_budget_2012']) ? intval($funding['health_budget_2012']) : null;
         }
 
-        if ($funding['police_budget_2013'] && $funding['housing_budget_2013'] && $funding['health_budget_2013']) {
+        if ($funding['police_budget_2013'] || $funding['housing_budget_2013'] || $funding['health_budget_2013']) {
             $labels[] = '2013';
-            $police[] = intval($funding['police_budget_2013']);
-            $housing[] = intval($funding['housing_budget_2013']);
-            $health[] = intval($funding['health_budget_2013']);
+            $police[] = isset($funding['police_budget_2013']) ? intval($funding['police_budget_2013']) : null;
+            $housing[] = isset($funding['housing_budget_2013']) ? intval($funding['housing_budget_2013']) : null;
+            $health[] = isset($funding['health_budget_2013']) ? intval($funding['health_budget_2013']) : null;
         }
 
-        if ($funding['police_budget_2014'] && $funding['housing_budget_2014'] && $funding['health_budget_2014']) {
+        if ($funding['police_budget_2014'] || $funding['housing_budget_2014'] || $funding['health_budget_2014']) {
             $labels[] = '2014';
-            $police[] = intval($funding['police_budget_2014']);
-            $housing[] = intval($funding['housing_budget_2014']);
-            $health[] = intval($funding['health_budget_2014']);
+            $police[] = isset($funding['police_budget_2014']) ? intval($funding['police_budget_2014']) : null;
+            $housing[] = isset($funding['housing_budget_2014']) ? intval($funding['housing_budget_2014']) : null;
+            $health[] = isset($funding['health_budget_2014']) ? intval($funding['health_budget_2014']) : null;
         }
 
-        if ($funding['police_budget_2015'] && $funding['housing_budget_2015'] && $funding['health_budget_2015']) {
+        if ($funding['police_budget_2015'] || $funding['housing_budget_2015'] || $funding['health_budget_2015']) {
             $labels[] = '2015';
-            $police[] = intval($funding['police_budget_2015']);
-            $housing[] = intval($funding['housing_budget_2015']);
-            $health[] = intval($funding['health_budget_2015']);
+            $police[] = isset($funding['police_budget_2015']) ? intval($funding['police_budget_2015']) : null;
+            $housing[] = isset($funding['housing_budget_2015']) ? intval($funding['housing_budget_2015']) : null;
+            $health[] = isset($funding['health_budget_2015']) ? intval($funding['health_budget_2015']) : null;
         }
 
-        if ($funding['police_budget_2016'] && $funding['housing_budget_2016'] && $funding['health_budget_2016']) {
+        if ($funding['police_budget_2016'] || $funding['housing_budget_2016'] || $funding['health_budget_2016']) {
             $labels[] = '2016';
-            $police[] = intval($funding['police_budget_2016']);
-            $housing[] = intval($funding['housing_budget_2016']);
-            $health[] = intval($funding['health_budget_2016']);
+            $police[] = isset($funding['police_budget_2016']) ? intval($funding['police_budget_2016']) : null;
+            $housing[] = isset($funding['housing_budget_2016']) ? intval($funding['housing_budget_2016']) : null;
+            $health[] = isset($funding['health_budget_2016']) ? intval($funding['health_budget_2016']) : null;
         }
 
-        if ($funding['police_budget_2017'] && $funding['housing_budget_2017'] && $funding['health_budget_2017']) {
+        if ($funding['police_budget_2017'] || $funding['housing_budget_2017'] || $funding['health_budget_2017']) {
             $labels[] = '2017';
-            $police[] = intval($funding['police_budget_2017']);
-            $housing[] = intval($funding['housing_budget_2017']);
-            $health[] = intval($funding['health_budget_2017']);
+            $police[] = isset($funding['police_budget_2017']) ? intval($funding['police_budget_2017']) : null;
+            $housing[] = isset($funding['housing_budget_2017']) ? intval($funding['housing_budget_2017']) : null;
+            $health[] = isset($funding['health_budget_2017']) ? intval($funding['health_budget_2017']) : null;
         }
 
-        if ($funding['police_budget_2018'] && $funding['housing_budget_2018'] && $funding['health_budget_2018']) {
+        if ($funding['police_budget_2018'] || $funding['housing_budget_2018'] || $funding['health_budget_2018']) {
             $labels[] = '2018';
-            $police[] = intval($funding['police_budget_2018']);
-            $housing[] = intval($funding['housing_budget_2018']);
-            $health[] = intval($funding['health_budget_2018']);
+            $police[] = isset($funding['police_budget_2018']) ? intval($funding['police_budget_2018']) : null;
+            $housing[] = isset($funding['housing_budget_2018']) ? intval($funding['housing_budget_2018']) : null;
+            $health[] = isset($funding['health_budget_2018']) ? intval($funding['health_budget_2018']) : null;
         }
 
-        if ($funding['police_budget_2019'] && $funding['housing_budget_2019'] && $funding['health_budget_2019']) {
+        if ($funding['police_budget_2019'] || $funding['housing_budget_2019'] || $funding['health_budget_2019']) {
             $labels[] = '2019';
-            $police[] = intval($funding['police_budget_2019']);
-            $housing[] = intval($funding['housing_budget_2019']);
-            $health[] = intval($funding['health_budget_2019']);
+            $police[] = isset($funding['police_budget_2019']) ? intval($funding['health_budget_2019']) : null;
+            $housing[] = isset($funding['housing_budget_2019']) ? intval($funding['health_budget_2019']) : null;
+            $health[] = isset($funding['health_budget_2019']) ? intval($funding['health_budget_2019']) : null;
         }
 
-        if ($funding['police_budget_2020'] && $funding['housing_budget_2020'] && $funding['health_budget_2020']) {
+        if ($funding['police_budget_2020'] || $funding['housing_budget_2020'] || $funding['health_budget_2020']) {
             $labels[] = '2020';
-            $police[] = intval($funding['police_budget_2020']);
-            $housing[] = intval($funding['housing_budget_2020']);
-            $health[] = intval($funding['health_budget_2020']);
+            $police[] = isset($funding['police_budget_2020']) ? intval($funding['police_budget_2020']) : null;
+            $housing[] = isset($funding['housing_budget_2020']) ? intval($funding['housing_budget_2020']) : null;
+            $health[] = isset($funding['health_budget_2020']) ? intval($funding['health_budget_2020']) : null;
         }
 
         return json_encode(array(
