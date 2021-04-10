@@ -138,6 +138,25 @@ window.PoliceScorecard = window.PoliceScorecard || {
             });
         }
 
+        // Sort State Select by State Name
+        if (PoliceScorecard.elm.$stateSelect) {
+            // take items (parent.children) into array
+            let itemsArray = Array.prototype.slice.call(PoliceScorecard.elm.$stateSelect.children);
+
+            // sort items in array by custom criteria
+            itemsArray.sort(function (a, b) {
+                if (a.innerText < b.innerText) return -1;
+                if (a.innerText > b.innerText) return 1;
+                return 0;
+            });
+
+            // reorder items in the DOM
+            itemsArray.forEach(function (item) {
+                // one by one move to the end in correct order
+                PoliceScorecard.elm.$stateSelect.appendChild(item);
+            });
+        }
+
         // Search Listeners
         document.addEventListener('click', PoliceScorecard.clearSearch);
 

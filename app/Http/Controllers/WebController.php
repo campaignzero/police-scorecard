@@ -269,9 +269,13 @@ class WebController extends Controller
         $states = $api->fetchStates();
         $total = getStateTotal($states, $state);
 
+        $metaLocation = ($type === 'sheriff')
+            ? "{$scorecard['geo']['county']['name']}, {$scorecard['geo']['state']['abbr']}"
+            : "{$scorecard['geo']['city']['name']}, {$scorecard['geo']['state']['abbr']}";
+
         return view('report', [
-            'title' => "Police Scorecard: {$scorecard['geo']['state']['name']}",
-            'description' => "Get the facts about police violence and accountability in {$scorecard['geo']['state']['name']}. Evaluate each department and hold them accountable at PoliceScorecard.org",
+            'title' => "Police Scorecard: {$metaLocation}",
+            'description' => "Get the facts about police violence and accountability in {$metaLocation}. Evaluate each department and hold them accountable at PoliceScorecard.org",
             'grades' => sortGrades($grades),
             'location' => $location,
             'scorecard' => $scorecard,
