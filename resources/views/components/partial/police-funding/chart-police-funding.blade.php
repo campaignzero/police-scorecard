@@ -1,8 +1,16 @@
-@if (isset($scorecard['police_funding']['police_budget_2017']))
+@if (isset($scorecard['police_funding']['police_budget_2020']) || isset($scorecard['police_funding']['police_budget_2019']) || isset($scorecard['police_funding']['police_budget_2018']) || isset($scorecard['police_funding']['police_budget_2017']))
 <div class="stat-wrapper">
     <h3>Police Funding By Year</h3>
     <p>
+    @if (isset($scorecard['police_funding']['police_budget_2020']))
+        {{ nFormatter($scorecard['police_funding']['police_budget_2020'], 2) }}
+    @elseif (isset($scorecard['police_funding']['police_budget_2019']))
+        {{ nFormatter($scorecard['police_funding']['police_budget_2019'], 2) }}
+    @elseif (isset($scorecard['police_funding']['police_budget_2018']))
+        {{ nFormatter($scorecard['police_funding']['police_budget_2018'], 2) }}
+    @elseif (isset($scorecard['police_funding']['police_budget_2017']))
         {{ nFormatter($scorecard['police_funding']['police_budget_2017'], 2) }}
+    @endif
         <span class="divider">&nbsp;|&nbsp;</span>
         {{ nFormatter($scorecard['report']['police_spending_per_resident'], 2) }} per Resident
     </p>
