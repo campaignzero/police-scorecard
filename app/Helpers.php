@@ -1461,8 +1461,8 @@ if (!function_exists('getPoliceFundingChart')) {
 
         if ($funding['police_budget_2019'] || $funding['housing_budget_2019'] || $funding['health_budget_2019']) {
             $labels[] = '2019';
-            $police[] = isset($funding['police_budget_2019']) ? intval($funding['health_budget_2019']) : null;
-            $housing[] = isset($funding['housing_budget_2019']) ? intval($funding['health_budget_2019']) : null;
+            $police[] = isset($funding['police_budget_2019']) ? intval($funding['police_budget_2019']) : null;
+            $housing[] = isset($funding['housing_budget_2019']) ? intval($funding['housing_budget_2019']) : null;
             $health[] = isset($funding['health_budget_2019']) ? intval($funding['health_budget_2019']) : null;
         }
 
