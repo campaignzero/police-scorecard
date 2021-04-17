@@ -22,7 +22,7 @@
     $vehicle = floatval($scorecard['police_violence']['vehicle_people_killed']);
 
     $red = $unarmed;
-    $orange = ($alleged_gun - $unarmed >= 0) ? ($alleged_gun - $unarmed) : 0;
+    $orange = (($alleged_gun - $unarmed - $vehicle) >= 0) ? (($alleged_gun - $unarmed - $vehicle)) : 0;
     $white = ($orange > 0) ? (100 - $alleged_gun) : 0;
     $grey = $vehicle;
     ?>
