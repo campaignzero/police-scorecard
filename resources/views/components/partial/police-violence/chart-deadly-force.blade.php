@@ -9,9 +9,9 @@
     <p class="good-job">Did Not Report Using Deadly Force in 2016-19</p>
     @else
     <p>
-        {{ num($scorecard['report']['total_people_killed']) }} Killings by Police from 2013-19
+        {{ num($scorecard['report']['total_people_killed']) }} Killings by Police from 2013-20
         <span class="divider">&nbsp;|&nbsp;</span>
-        {{ num($scorecard['report']['killed_by_police_per_10k_arrests']) }} every 10k arrests
+        {{ num($scorecard['report']['killed_by_police_per_10k_arrests'], 1) }} every 10k arrests
     </p>
     @endif
 
