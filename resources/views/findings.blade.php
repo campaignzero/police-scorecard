@@ -63,7 +63,7 @@
             </h2>
 
             <p>
-                The federal government does not publish comprehensive data on police violence or misconduct. In <a href="https://www.wnyc.org/story/police-misconduct-records/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '38 States') !!}>38 states</a>, laws restrict or prohibit agencies from making these records public. Even in states where this information is supposed to be public record, local police agencies often refuse to comply with public records requests or charge <a href="https://www.muckrock.com/foi/pinellas-county-10455/police-data-collection-project-pinellas-county-sheriffs-office-97754/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Exorbitant Fees') !!}>exorbitant fees</a> to produce these records. In some cases, like Rapid City South Dakota, police <a href="https://www.muckrock.com/foi/rapid-city-30141/police-data-collection-project-rapid-city-police-department-98427/#file-878340" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Have Refused') !!}>have refused</a> to provide even basic data on police use of force unless a court orders them to make these records public.
+                The federal government does not publish comprehensive data on police violence or misconduct. In <a href="https://www.wnyc.org/story/police-misconduct-records/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', '36 States') !!}>36 states</a>, laws restrict or prohibit agencies from making these records public. Even in states where this information is supposed to be public record, local police agencies often refuse to comply with public records requests or charge <a href="https://www.muckrock.com/foi/pinellas-county-10455/police-data-collection-project-pinellas-county-sheriffs-office-97754/" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Exorbitant Fees') !!}>exorbitant fees</a> to produce these records. In some cases, like Rapid City South Dakota, police <a href="https://www.muckrock.com/foi/rapid-city-30141/police-data-collection-project-rapid-city-police-department-98427/#file-878340" target="_blank" rel="noopener" {!! trackData('External Nav', 'Findings', 'Have Refused') !!}>have refused</a> to provide even basic data on police use of force unless a court orders them to make these records public.
             </p>
 
             <p>
@@ -131,7 +131,7 @@
             </ol>
 
             <p>
-                83% of the 16,146 agencies are municipal (city or town) police departments while the remaining 17% are county sheriff's departments. The vast majority of these agencies represent small towns and cities, with 93% of all agencies in the Scorecard policing in jurisdictions with fewer than 50,000 residents.
+                Over 80% of the agencies in the Police Scorecard are municipal (city or town) police departments while the remaining agencies are county sheriff's departments. The vast majority of these agencies represent small towns and cities, with 93% of all agencies in the Scorecard policing in jurisdictions with fewer than 50,000 residents.
             </p>
 
             <p>
@@ -347,7 +347,8 @@
             </p>
 
             <p>
-                While police were more likely to arrest Black people for low level offenses, they were <em>less</em> likely to find someone responsible for the most serious offense - homicide - when the victim was Black. Nationwide, police reported finding a suspect in 88% of homicides of white victims from 2013-2019 compared to only 79% of Latinx victims and 78% of Black victims.
+                While police were more likely to arrest Black people for low level offenses, they were <em>less</em> likely to find someone responsible for the most serious offense - homicide - when the victim was Black.
+                Nationwide, police reported finding a suspect in 78% of homicides of white victims from 2013-2019 compared to only 63% of Latinx victims and 58% of Black victims.
             </p>
 
             <div class="divider"></div>
@@ -520,7 +521,8 @@
             </p>
 
             <p>
-                Among the types of allegations reported, more serious allegations like excessive force or discrimination allegations were even less likely to be ruled in favor civilians than other complaints. Civilians reporting police <strong>discrimination</strong> had only a <strong>1 in 76 chance</strong> of their complaint being upheld and civilians reporting <strong>use of force</strong> complaints had only a <strong>1 in 33 chance</strong> of being upheld. This lack of administrative accountability for police violence mirrors the criminal justice system's approach towards police violence. Only 1% of killings by police from 2013-2019 have resulted in an officer being charged with a crime and only 0.5% have resulted in a criminal conviction.
+                Among the types of allegations reported, more serious allegations like excessive force or discrimination allegations were even less likely to be ruled in favor civilians than other complaints. Civilians reporting police <strong>discrimination</strong> had only a <strong>1 in 49 chance</strong> of their complaint being upheld and civilians reporting <strong>use of force</strong> complaints had only a <strong>1 in 31 chance</strong> of being upheld. This lack of administrative accountability for police violence mirrors the criminal justice system's approach towards police violence.
+                Fewer than 2% of all killings by police from 2013-2020 have resulted in an officer being charged with a crime and fewer than 1% have resulted in a criminal conviction.
             </p>
 
             <div class="divider"></div>
@@ -570,7 +572,7 @@
             </h2>
 
             <p>
-                When these outcomes are evaluated together, it reveals a disturbing picture of policing across the nation. While the federal government collects and publishes data on crime, arrests and police personnel from the vast majority of America's police agencies, only a fraction of these agencies make data available on police use of force, misconduct complaints, or settlements. Where such data are available, they show racially disparate policing outcomes and low rates of upholding police misconduct complaints in almost every location. Altogether, <strong>most departments received a score lower than 50% and no department scored higher than 70%, suggesting the need to thoroughly reimagine and transform the way the vast majority of cities and counties in the United States approach public safety.</strong>
+                When these outcomes are evaluated together, it reveals a disturbing picture of policing across the nation. While the federal government collects and publishes data on crime, arrests and police personnel from the vast majority of America's police agencies, only a fraction of these agencies make data available on police use of force, misconduct complaints, or settlements. Where such data are available, they show racially disparate policing outcomes and low rates of upholding police misconduct complaints in almost every location. Altogether, <strong>most departments received a score lower than 50% and almost no departments scored higher than 70%, suggesting the need to thoroughly reimagine and transform the way the vast majority of cities and counties in the United States approach public safety.</strong>
             </p>
 
             <p>
