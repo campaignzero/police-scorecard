@@ -257,7 +257,7 @@
             </p>
 
             <p>
-                Big cities appear to be shifting their approach to law enforcement more quickly than other parts of the country. <strong>Police departments representing jurisdictions with over 400,000 residents reported 30% fewer arrests overall and 36% fewer arrests for low level offenses in 2019 than they did in 2013</strong> - exceeding the 13% reduction in arrests and 12% reduction in low level arrests reported by other agencies during this time period.
+                Big cities appear to be shifting their approach to law enforcement more quickly than other parts of the country. <strong>Police departments representing jurisdictions with over 400,000 residents reported 30% fewer arrests overall and 37% fewer arrests for low level offenses in 2019 than they did in 2013</strong> - exceeding the 13% reduction in arrests and 12% reduction in low level arrests reported by other agencies during this time period.
 
                 Cities like New York, Houston, Milwaukee, Nashville and Fort Worth led other big cities in reducing arrests for low level offenses - cutting these arrests by more than 60% from 2013-2019. These declines in the enforcement of low level offenses did not appear to change how agencies approached violent crime - big city police departments reported similar violent crime clearance rates during this period and actually made 3% <em>more</em> arrests overall for violent crime in 2019 than they had in 2013.
             </p>
