@@ -12,7 +12,7 @@
 
     <x-partial.hero :type="$type" :total="$total" :totalPolice="$totalPolice" :totalSheriff="$totalSheriff" />
 
-    <x-partial.killings-by-police :type="$type" :scorecard="$scorecard" />
+    <x-partial.killings-by-police :state="$state" :type="$type" :scorecard="$scorecard" />
 
     <x-partial.grades :state="$state" :type="$type" :grades="$grades" />
 

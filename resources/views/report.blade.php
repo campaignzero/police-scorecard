@@ -12,7 +12,7 @@
 
     <x-partial.at-a-glance :type="$type" :scorecard="$scorecard" />
 
-    <x-partial.killings-by-police-report :type="$type" :scorecard="$scorecard" />
+    <x-partial.killings-by-police-report :state="$state" :type="$type" :scorecard="$scorecard" />
 
     <!-- Police Funding -->
     <div class="section bb pad funding">

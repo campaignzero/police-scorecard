@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class KillingsByPolice extends Component
 {
     public $scorecard;
+    public $state;
     public $type;
 
     /**
@@ -14,9 +15,10 @@ class KillingsByPolice extends Component
      *
      * @return void
      */
-    public function __construct($scorecard = [], $type = 'police-department')
+    public function __construct($scorecard = [], $type = 'police-department', $state = 'us')
     {
         $this->scorecard = $scorecard;
+        $this->state = $state;
         $this->type = $type;
     }
 
