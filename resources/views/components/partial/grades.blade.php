@@ -85,7 +85,9 @@
                             <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
+                            @if (isset($card['change_overall_score']))
                             {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
+                            @endif
                         </a>
                     </td>
                 </tr>
@@ -105,7 +107,9 @@
                             <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
+                            @if (isset($card['change_overall_score']))
                             {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
+                            @endif
                         </a>
                     </td>
                 </tr>
