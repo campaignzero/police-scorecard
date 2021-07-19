@@ -1873,6 +1873,17 @@
         }
     }
 
+    tr.grade-row {
+        position: relative;
+
+        a.stats-change {
+            position: absolute;
+            right: 0;
+            top: 8px;
+            width: 26px;
+        }
+    }
+
     .add-new-data {
         border-top: 1px solid #979797;
         padding-top: 30px;
