@@ -412,6 +412,9 @@ if (!function_exists('getNationalSummary')) {
         $total_arrests_2017 = 0;
         $total_arrests_2018 = 0;
         $total_arrests_2019 = 0;
+        $total_arrests_2020 = 0;
+        $total_arrests_2021 = 0;
+        $total_arrests_2022 = 0;
 
         foreach($states as $abbr => $state) {
             $total_arrests += $state['total_arrests'];
@@ -436,6 +439,9 @@ if (!function_exists('getNationalSummary')) {
             $total_arrests_2017 += $state['total_arrests_2017'];
             $total_arrests_2018 += $state['total_arrests_2018'];
             $total_arrests_2019 += $state['total_arrests_2019'];
+            $total_arrests_2020 += $state['total_arrests_2020'];
+            $total_arrests_2021 += $state['total_arrests_2021'];
+            $total_arrests_2022 += $state['total_arrests_2022'];
         }
 
         return array(
@@ -457,6 +463,9 @@ if (!function_exists('getNationalSummary')) {
             'total_arrests_2017' => $total_arrests_2017,
             'total_arrests_2018' => $total_arrests_2018,
             'total_arrests_2019' => $total_arrests_2019,
+            'total_arrests_2020' => $total_arrests_2020,
+            'total_arrests_2021' => $total_arrests_2021,
+            'total_arrests_2022' => $total_arrests_2022,
             'black_deadly_force_disparity_per_population' => (($total_black_people_killed / $total_black_population) / ($total_white_people_killed / $total_white_population)),
             'hispanic_deadly_force_disparity_per_population' => (($total_hispanic_people_killed / $total_hispanic_population) / ($total_white_people_killed / $total_white_population)),
             'times_more_misdemeanor_arrests_than_violent_crime' => ($total_low_level_arrests / $total_violent_crime_arrests)
@@ -1058,6 +1067,21 @@ if (!function_exists('generateArrestChart')) {
             $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2019'];
         }
 
+        if (isset($scorecard['arrests']['arrests_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2020'];
+        }
+
+        if (isset($scorecard['arrests']['arrests_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2021'];
+        }
+
+        if (isset($scorecard['arrests']['arrests_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1144,6 +1168,27 @@ if (!function_exists('generateHistoryChart')) {
             $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2019'];
         }
 
+        if (isset($scorecard['police_violence']['less_lethal_force_2020']) || isset($scorecard['police_violence']['police_shootings_2020'])) {
+            $output['labels'][] = '2020';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2020'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2020'];
+        }
+
+        if (isset($scorecard['police_violence']['less_lethal_force_2021']) || isset($scorecard['police_violence']['police_shootings_2021'])) {
+            $output['labels'][] = '2021';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2021'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2021'];
+        }
+
+        if (isset($scorecard['police_violence']['less_lethal_force_2022']) || isset($scorecard['police_violence']['police_shootings_2022'])) {
+            $output['labels'][] = '2022';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2022'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1221,6 +1266,21 @@ if (!function_exists('generateBarChartFundsTaken')) {
             $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2019'];
         }
 
+        if (isset($scorecard['police_funding']['fines_forfeitures_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2020'];
+        }
+
+        if (isset($scorecard['police_funding']['fines_forfeitures_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2021'];
+        }
+
+        if (isset($scorecard['police_funding']['fines_forfeitures_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1281,6 +1341,21 @@ if (!function_exists('generateBarChartOfficers')) {
         if (isset($scorecard['police_funding']['total_officers_2019'])) {
             $output['labels'][] = '2019';
             $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2019'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2020'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2021'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2022'];
         }
 
         return json_encode($output);
@@ -1499,14 +1574,6 @@ if (!function_exists('getPoliceFundingChart')) {
             $housing[] = isset($funding['housing_budget_2022']) ? intval($funding['housing_budget_2022']) : null;
             $health[] = isset($funding['health_budget_2022']) ? intval($funding['health_budget_2022']) : null;
             $corrections[] = isset($funding['corrections_budget_2022']) ? intval($funding['corrections_budget_2022']) : null;
-        }
-
-        if (isset($funding['police_budget_2023']) || isset($funding['housing_budget_2023']) || isset($funding['health_budget_2023']) || isset($funding['corrections_budget_2023'])) {
-            $labels[] = '2023';
-            $police[] = isset($funding['police_budget_2023']) ? intval($funding['police_budget_2023']) : null;
-            $housing[] = isset($funding['housing_budget_2023']) ? intval($funding['housing_budget_2023']) : null;
-            $health[] = isset($funding['health_budget_2023']) ? intval($funding['health_budget_2023']) : null;
-            $corrections[] = isset($funding['corrections_budget_2023']) ? intval($funding['corrections_budget_2023']) : null;
         }
 
         return json_encode(array(

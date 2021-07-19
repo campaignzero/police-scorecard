@@ -292,8 +292,8 @@
         colors: [
           '#dc4646',
           '#7c8894',
-          '#c5882a',
-          '#a7cc84'
+          '#a7cc84',
+          '#c5882a'
         ],
         tooltip: {
           className: 'police-funding',
@@ -351,7 +351,7 @@
           },
           {
             name: 'Housing',
-            lineColor: '#c5882a',
+            lineColor: '#a7cc84',
             marker: {
               symbol: 'triangle'
             },
@@ -359,7 +359,7 @@
           },
           {
             name: 'Corrections',
-            lineColor: '#a7cc84',
+            lineColor: '#c5882a',
             marker: {
               symbol: 'diamond'
             },
