@@ -255,6 +255,8 @@
 </script>
 @endif
 
+<?php print_r($scorecard['police_funding']); ?>
+
 <script>
   var policeFundingChart = {!! getPoliceFundingChart($scorecard['police_funding']) !!};
   window.addEventListener('load', function() {
@@ -290,7 +292,8 @@
         colors: [
           '#dc4646',
           '#7c8894',
-          '#c5882a'
+          '#c5882a',
+          '#a7cc84'
         ],
         tooltip: {
           className: 'police-funding',
@@ -311,6 +314,8 @@
                 shape = '■';
             } else if (this.series.name === 'Housing') {
                 shape = '▴';
+            } else if (this.series.name === 'Corrections') {
+                shape = '⬥';
             }
 
             return '<span style="color:' + this.color + '; font-size: 16px; vertical-align: middle;">' + shape + '</span> ' + this.series.name + ': <b>$' + this.y.toLocaleString() + '</b><br/>';
@@ -351,6 +356,14 @@
               symbol: 'triangle'
             },
             data: policeFundingChart.housing
+          },
+          {
+            name: 'Corrections',
+            lineColor: '#a7cc84',
+            marker: {
+              symbol: 'diamond'
+            },
+            data: policeFundingChart.corrections
           }
         ]
       });

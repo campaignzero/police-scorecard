@@ -6,11 +6,12 @@
     <h3>Police Violence by race</h3>
 
     <div class="keys">
-        <span class="key key-red"></span> Black
-        <span class="key key-orange"></span> Latinx
-        <span class="key key-black"></span> API
-        <span class="key key-grey"></span> Other
-        <span class="key key-white"></span> White
+        <span class="key key-red tooltip" data-tooltip="Black"></span> Black
+        <span class="key key-orange tooltip" data-tooltip="Hispanic"></span> Latinx
+        <span class="key key-green tooltip" data-tooltip="Native American"></span> NA
+        <span class="key key-black tooltip" data-tooltip="Asian Pacific Islander"></span> API
+        <span class="key key-grey tooltip" data-tooltip="Other"></span> Other
+        <span class="key key-white tooltip" data-tooltip="White"></span> White
     </div>
 
     <p>Population of Jurisdiction</p>
@@ -20,6 +21,9 @@
         </div>
         <div class="progress-bar animate-bar grouped key-orange" data-percent="{{ output(floatval($scorecard['agency']['hispanic_population']), 0, '%') }}">
             <span>{{ (intval($scorecard['agency']['hispanic_population']) > 5) ? num(intval($scorecard['agency']['hispanic_population']), 0, '%') : '' }}</span>
+        </div>
+        <div class="progress-bar animate-bar grouped key-green" data-percent="{{ output(floatval($scorecard['agency']['native_american_population']), 0, '%') }}">
+            <span>{{ (intval($scorecard['agency']['native_american_population']) > 5) ? num(intval($scorecard['agency']['native_american_population']), 0, '%') : '' }}</span>
         </div>
         <div class="progress-bar animate-bar grouped key-black" data-percent="{{ output(floatval($scorecard['agency']['asian_pacific_population']), 0, '%') }}">
             <span>{{ (intval($scorecard['agency']['asian_pacific_population']) > 5) ? num(intval($scorecard['agency']['asian_pacific_population']), 0, '%') : '' }}</span>
@@ -40,6 +44,9 @@
         <div class="progress-bar animate-bar grouped key-orange" data-percent="{{ output(floatval($scorecard['report']['percent_hispanic_arrests']), 0, '%') }}">
             <span>{{ (intval($scorecard['report']['percent_hispanic_arrests']) > 5) ? num(intval($scorecard['report']['percent_hispanic_arrests']), 0, '%') : '' }}</span>
         </div>
+        <div class="progress-bar animate-bar grouped key-green" data-percent="{{ output(floatval($scorecard['report']['percent_native_american_arrests']), 0, '%') }}">
+            <span>{{ (intval($scorecard['report']['percent_native_american_arrests']) > 5) ? num(intval($scorecard['report']['percent_native_american_arrests']), 0, '%') : '' }}</span>
+        </div>
         <div class="progress-bar animate-bar grouped key-black" data-percent="{{ output(floatval($scorecard['report']['percent_asian_pacific_arrests']), 0, '%') }}">
             <span>{{ (intval($scorecard['report']['percent_asian_pacific_arrests']) > 5) ? num(intval($scorecard['report']['percent_asian_pacific_arrests']), 0, '%') : '' }}</span>
         </div>
@@ -58,6 +65,9 @@
         </div>
         <div class="progress-bar animate-bar grouped key-orange" data-percent="{{ output($scorecard['report']['percent_hispanic_deadly_force'], 0, '%') }}">
             <span>{{ ($scorecard['report']['percent_hispanic_deadly_force'] > 5) ? num($scorecard['report']['percent_hispanic_deadly_force'], 0, '%') : '' }}</span>
+        </div>
+        <div class="progress-bar animate-bar grouped key-green" data-percent="{{ output(floatval($scorecard['report']['percent_native_american_deadly_force']), 0, '%') }}">
+            <span>{{ (intval($scorecard['report']['percent_native_american_deadly_force']) > 5) ? num(intval($scorecard['report']['percent_native_american_deadly_force']), 0, '%') : '' }}</span>
         </div>
         <div class="progress-bar animate-bar grouped key-black" data-percent="{{ output($scorecard['report']['percent_asian_pacific_islander_deadly_force'], 0, '%') }}">
             <span>{{ ($scorecard['report']['percent_asian_pacific_islander_deadly_force'] > 5) ? num($scorecard['report']['percent_asian_pacific_islander_deadly_force'], 0, '%') : '' }}</span>

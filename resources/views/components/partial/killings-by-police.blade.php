@@ -22,7 +22,7 @@
             <h1><strong>{{ num($scorecard['total_complaints_reported']) }}</strong> civilian complaints of police misconduct</h1>
 
             <div class="text">
-                <p>Only <strong>1 in every {{ round($scorecard['total_complaints_reported'] / $scorecard['total_complaints_sustained']) }} complaints</strong> were ruled in favor of civilians from 2016-19.</p>
+                <p>Only <strong>1 in every {{ round($scorecard['total_complaints_reported'] / $scorecard['total_complaints_sustained']) }} complaints</strong> were ruled in favor of civilians from 2016-20.</p>
             </div>
 
             <div class="chart chart-2">

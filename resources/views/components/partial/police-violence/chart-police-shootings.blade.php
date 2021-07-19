@@ -4,7 +4,7 @@
 
     <p>
         {{ num((($scorecard['police_violence']['shot_first'] / $scorecard['report']['police_shootings_incidents'])*100), 0, '%') }}
-        of Shootings
+        of Shootings from 2016-20
         ({{ $scorecard['police_violence']['shot_first'] }}/{{ $scorecard['report']['police_shootings_incidents'] }})
     </p>
 
@@ -14,7 +14,7 @@
     </div>
     @else
     <div class="progress-bar-wrapper">
-        <div class="progress-bar animate-bar {{ (intval($scorecard['report']['percent_shot_first']) === 0) ? 'bright-green' : 'always-bad' }}" data-percent="{{ output(intval($scorecard['report']['percent_shot_first']), 0, '%') }}"></div>
+        <div class="progress-bar animate-bar {{ (intval($scorecard['report']['percent_shot_first']) === 0) ? 'bright-green' : 'always-bad' }}" data-percent="{{ output((intval($scorecard['police_violence']['shot_first']) /  intval( $scorecard['report']['police_shootings_incidents']) * 100), 0, '%') }}"></div>
     </div>
     @endif
 
