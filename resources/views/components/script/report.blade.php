@@ -255,8 +255,6 @@
 </script>
 @endif
 
-<?php print_r($scorecard['police_funding']); ?>
-
 <script>
   var policeFundingChart = {!! getPoliceFundingChart($scorecard['police_funding']) !!};
   window.addEventListener('load', function() {
