@@ -61,7 +61,7 @@
 
         @elseif($scorecard['police_accountability']['civilian_complaints_reported'] > 0)
 
-        <p><strong>{{ num($scorecard['report']['complaints_sustained'], 0, '%') }}</strong> were ruled in favor of civilians from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
+        <p><strong>{{ num(intval($scorecard['report']['complaints_sustained']), 0, '%') }}</strong> were ruled in favor of civilians from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
 
         @elseif(!$scorecard['report']['complaints_sustained'] || $scorecard['report']['complaints_sustained'] === 0)
 
