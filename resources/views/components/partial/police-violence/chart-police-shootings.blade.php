@@ -7,10 +7,10 @@
     $shot_first = isset($scorecard['police_violence']['shot_first']) ? $scorecard['police_violence']['shot_first'] : 0;
 
     $police_shootings_incidents = ($police_shootings_2016 + $police_shootings_2017 + $police_shootings_2018 + $police_shootings_2019 + $police_shootings_2020);
-    $percent_shot_first = ($shot_first / $police_shootings_incidents) * 100;
+    $percent_shot_first = $police_shootings_incidents > 0 ? ($shot_first / $police_shootings_incidents) * 100 : 0;
 @endphp
 
-@if (!empty($police_shootings_incidents) && !empty($percent_shot_first))
+@if ($percent_shot_first !== 0)
 <div class="stat-wrapper">
     <h3>Police Shootings Where Police Did Not Try Non-Deadly Force Before Shooting</h3>
 
