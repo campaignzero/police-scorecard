@@ -68,8 +68,9 @@
         <div class="left">
             <table>
                 <tr>
-                <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
+                    <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
+                    <th>4YR</th>
                 </tr>
                 @php
                 $length = count($grades['all']);
@@ -85,10 +86,12 @@
                             <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
-                            @if (isset($card['change_overall_score']))
-                            {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
-                            @endif
                         </a>
+                    </td>
+                    <td>
+                    @if (isset($card['change_overall_score']))
+                        {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
+                    @endif
                     </td>
                 </tr>
                 @endif @endforeach
@@ -99,6 +102,7 @@
                 <tr>
                     <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
+                    <th>4YR</th>
                 </tr>
                 @foreach($grade_table as $index => $card) @if ($index >= floor($length / 2))
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">
@@ -107,10 +111,12 @@
                             <span class="agency-name">{{ $card['complete'] ? ($complete_length - $index) . '.' : '*' }} {{ $card['agency_name'] }}</span>
                             <span class="grade grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}"></span>
                             <span class="percent">{{ $card['overall_score'] }}%</span>
-                            @if (isset($card['change_overall_score']))
-                            {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
-                            @endif
                         </a>
+                    </td>
+                    <td>
+                    @if (isset($card['change_overall_score']))
+                    {!! getChange($card['change_overall_score'], true, 'since \'16') !!}
+                    @endif
                     </td>
                 </tr>
                 @endif @endforeach

@@ -1877,10 +1877,10 @@
         position: relative;
 
         a.stats-change {
-            position: absolute;
-            right: 0;
-            top: 8px;
+            display: block;
             width: 26px;
+            position: absolute;
+            top: 8px;
         }
     }
 
