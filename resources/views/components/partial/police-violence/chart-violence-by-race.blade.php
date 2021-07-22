@@ -3,7 +3,7 @@
         <span class="sr-only">Open in New Window</span>
     </a>
 
-    <h3>Police Violence by race</h3>
+    <h3>Police Violence by Race</h3>
 
     <div class="keys">
         <span class="key key-red tooltip" data-tooltip="Black"></span> Black
@@ -109,6 +109,7 @@
     <p class="source-link-wrapper">
         Source:
         <a href="https://crime-data-explorer.fr.cloud.gov/explorer/national/united-states/arrest" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Violence by Race', 'Uniform Crime Report') !!}>Uniform Crime Report</a>,
-        <a href="https://mappingpoliceviolence.org" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Violence by Race', 'Mapping Police Violence') !!}>Mapping Police Violence</a>
+        <a href="https://mappingpoliceviolence.org" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Violence by Race', 'Mapping Police Violence') !!}>Mapping Police Violence</a>,
+        <a href="https://www.icpsr.umich.edu/web/NACJD/studies/37323" class="source-link" rel="noopener" target="_blank" {!! trackData('External Nav', 'Violence by Race', 'LEMAS') !!}>LEMAS</a>
     </p>
 </div>
