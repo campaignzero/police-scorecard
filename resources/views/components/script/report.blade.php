@@ -290,6 +290,7 @@
         colors: [
           '#dc4646',
           '#7c8894',
+          '#a7cc84',
           '#c5882a'
         ],
         tooltip: {
@@ -311,6 +312,8 @@
                 shape = '■';
             } else if (this.series.name === 'Housing') {
                 shape = '▴';
+            } else if (this.series.name === 'Corrections') {
+                shape = '⬥';
             }
 
             return '<span style="color:' + this.color + '; font-size: 16px; vertical-align: middle;">' + shape + '</span> ' + this.series.name + ': <b>$' + this.y.toLocaleString() + '</b><br/>';
@@ -346,11 +349,19 @@
           },
           {
             name: 'Housing',
-            lineColor: '#c5882a',
+            lineColor: '#a7cc84',
             marker: {
               symbol: 'triangle'
             },
             data: policeFundingChart.housing
+          },
+          {
+            name: 'Corrections',
+            lineColor: '#c5882a',
+            marker: {
+              symbol: 'diamond'
+            },
+            data: policeFundingChart.corrections
           }
         ]
       });

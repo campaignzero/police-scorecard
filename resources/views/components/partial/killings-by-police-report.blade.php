@@ -8,12 +8,12 @@
 
   <div class="content">
     <div class="one-third">
-      <h2><strong>{{ $scorecard['report']['total_people_killed'] }}</strong> Killings by Police</h2>
+      <h2><strong>{{ num(intval($scorecard['report']['total_people_killed']), 0) }}</strong> Killings by Police</h2>
 
       <div class="text">
-        @if($scorecard['report']['total_people_killed'] === 0)
-        <p>{{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department did not kill anyone from 2013-20</p>
-        @elseif($scorecard['report']['total_people_killed'] === 1)
+        @if(intval($scorecard['report']['total_people_killed']) === 0)
+        <p>This agency did not reportedly kill anyone from 2013-20.</p>
+        @elseif(intval($scorecard['report']['total_people_killed']) === 1)
         <p>{{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department killed 1 person from 2013-20.</p>
         @elseif(num($scorecard['report']['black_deadly_force_disparity_per_population'], 1, 'x') === '0x' &&  num($scorecard['report']['hispanic_deadly_force_disparity_per_population'], 1, 'x') === '0x')
         <p>{{ $scorecard['report']['total_people_killed'] }} people killed by {{ $scorecard['agency']['name'] }} {{ ($type === 'police-department') ? 'Police' : 'Sheriff' }} Department from 2013-20</p>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="one-third">
-      <h2><strong>{{ num($scorecard['police_accountability']['civilian_complaints_reported']) }}</strong> civilian complaint{{$scorecard['police_accountability']['civilian_complaints_reported'] === 1 ? '' : 's' }} of police misconduct</h2>
+      <h2><strong>{{ num(intval($scorecard['police_accountability']['civilian_complaints_reported'])) }}</strong> civilian complaint{{$scorecard['police_accountability']['civilian_complaints_reported'] === 1 ? '' : 's' }} of police misconduct</h2>
 
       @php
       $black_disparity = (!isset($scorecard['agency']['black_population']) || $scorecard['agency']['black_population'] === 0) ? 0 : round(($scorecard['police_violence']['black_people_killed'] / $scorecard['agency']['black_population']) * 100, 2);
@@ -61,7 +61,7 @@
 
         @elseif($scorecard['police_accountability']['civilian_complaints_reported'] > 0)
 
-        <p><strong>{{ num($scorecard['report']['complaints_sustained'], 0, '%') }}</strong> were ruled in favor of civilians from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
+        <p><strong>{{ num(intval($scorecard['report']['complaints_sustained']), 0, '%') }}</strong> were ruled in favor of civilians from {{ $scorecard['police_accountability']['years_of_complaints_data'] }}.</p>
 
         @elseif(!$scorecard['report']['complaints_sustained'] || $scorecard['report']['complaints_sustained'] === 0)
 

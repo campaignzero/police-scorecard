@@ -195,15 +195,15 @@
             </p>
 
             <p>
-                This indicator displays the rate of deaths within each county's jails per 1,000 jail population from 2013-2019, based on data <a href="https://www.reuters.com/investigates/special-report/usa-jails-graphic/#:~:text=7%2C571Reuters%20documented%207%2C571%20inmate,the%20decade%20ending%20in%202019." target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Reuters Investigation Data') !!}>compiled</a> by Reuters investigators. To calculate this indicator, we divided the total number of jail deaths within each county from 2013-2019 by the countywide Average Daily Jail Population. We also included information about the reported cause of death in these cases.
+                This indicator displays the rate of deaths within each county's jails per 1,000 jail population from 2013-2020, based on data <a href="https://www.reuters.com/investigates/special-report/usa-jails-graphic/#:~:text=7%2C571Reuters%20documented%207%2C571%20inmate,the%20decade%20ending%20in%202019." target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Reuters Investigation Data') !!}>compiled</a> by Reuters investigators. To calculate this indicator, we divided the total number of jail deaths within each county from 2013-2020 by the countywide Average Daily Jail Population. We also included information about the reported cause of death in these cases.
             </p>
 
             <p>
-                <strong>3. Percent of Civilian Complaints in Detention Sustained from 2016-2019</strong>
+                <strong>3. Percent of Civilian Complaints in Detention Sustained from 2016-2020</strong>
             </p>
 
             <p>
-                This indicator displays the percentage of reported complaints in detention that were sustained from 2016-2019, as determined by the California Department of Justice's CCOPA database and data obtained from county agencies via public records requests.
+                This indicator displays the percentage of reported complaints in detention that were sustained from 2016-2020, as determined by the California Department of Justice's CCOPA database and data obtained from county agencies via public records requests.
             </p>
 
             <p>
@@ -248,7 +248,7 @@
             <h2 class="subtitle">KILLINGS BY POLICE</h2>
 
             <p>
-                DEFINITION: PEOPLE KILLED BY LAW ENFORCEMENT OFFICERS FROM 2013-2019.
+                DEFINITION: PEOPLE KILLED BY LAW ENFORCEMENT OFFICERS FROM 2013-2020.
             </p>
 
             <p>
@@ -269,11 +269,11 @@
             <h2 class="subtitle">LESS LETHAL FORCE</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF USES OF TASERS, BATONS, PROJECTILES, PEPPER SPRAY, OTHER WEAPONS AND STRANGLEHOLDS AGAINST CIVILIANS FROM 2013-2019
+                DEFINITION: THE TOTAL NUMBER OF USES OF TASERS, BATONS, PROJECTILES, PEPPER SPRAY, OTHER WEAPONS AND STRANGLEHOLDS AGAINST CIVILIANS FROM 2013-2020
             </p>
 
             <p>
-                To obtain information on serious police use of force that did not rise to the level of deadly force, we submitted public records requests to the 500 largest police and county sheriff's departments nationwide asking for the total number of uses of force, by type of force used, from 2013-2019. 209 agencies sent us their data or published this information online. Detailed data showing use of force by force type for each responsive department can be found <a href="https://docs.google.com/spreadsheets/d/1AJFk9ILwxg2oJEDP4xj0C9Qi9lZLJNnxKG5NNPO__GA/edit" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Responsive Departments') !!}>here</a>. Each department varied in how they categorized and reported the use of force. For example, some police departments require officers to report all weaponless strikes and control holds used against a civilian, while others only require these types of force to be reported when they cause injury. Similarly, some departments require officers to report whenever they display a firearm or taser, while others only require them to report when these weapons are discharged. Given these reporting inconsistencies, we limited our analysis to more serious forms of force since these were more consistently reported and categorized among the agencies we obtained data from. This included uses of "less lethal" force such as tasers, batons, impact projectiles, OC spray and a form of stranglehold called a carotid restraint.
+                To obtain information on serious police use of force that did not rise to the level of deadly force, we submitted public records requests to the 500 largest police and county sheriff's departments nationwide asking for the total number of uses of force, by type of force used, from 2013-2020. 209 agencies sent us their data or published this information online. Detailed data showing use of force by force type for each responsive department can be found <a href="https://docs.google.com/spreadsheets/d/1AJFk9ILwxg2oJEDP4xj0C9Qi9lZLJNnxKG5NNPO__GA/edit" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Responsive Departments') !!}>here</a>. Each department varied in how they categorized and reported the use of force. For example, some police departments require officers to report all weaponless strikes and control holds used against a civilian, while others only require these types of force to be reported when they cause injury. Similarly, some departments require officers to report whenever they display a firearm or taser, while others only require them to report when these weapons are discharged. Given these reporting inconsistencies, we limited our analysis to more serious forms of force since these were more consistently reported and categorized among the agencies we obtained data from. This included uses of "less lethal" force such as tasers, batons, impact projectiles, OC spray and a form of stranglehold called a carotid restraint.
             </p>
 
             <p>
@@ -287,11 +287,11 @@
             <h2 class="subtitle">CIVILIAN COMPLAINTS</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF COMPLAINTS, BY TYPE OF COMPLAINT, REPORTED BY CIVILIANS AGAINST LAW ENFORCEMENT PERSONNEL FROM 2016-2019
+                DEFINITION: THE TOTAL NUMBER OF COMPLAINTS, BY TYPE OF COMPLAINT, REPORTED BY CIVILIANS AGAINST LAW ENFORCEMENT PERSONNEL FROM 2016-2020
             </p>
 
             <p>
-                The Police Scorecard includes the total number of complaints reported each year from 2016-2019, the number of those complaints that were sustained (i.e. upheld by investigators), with breakdowns for the total number of use of force complaints, complaints of police discrimination, and criminal complaints that were reported and the number of each that were sustained during that time period. To obtain these data, we submitted public records requests to local police and sheriff's departments and also requested data from state criminal justice agencies in the states that currently collect information on civilian complaints.
+                The Police Scorecard includes the total number of complaints reported each year from 2016-2020, the number of those complaints that were sustained (i.e. upheld by investigators), with breakdowns for the total number of use of force complaints, complaints of police discrimination, and criminal complaints that were reported and the number of each that were sustained during that time period. To obtain these data, we submitted public records requests to local police and sheriff's departments and also requested data from state criminal justice agencies in the states that currently collect information on civilian complaints.
             </p>
 
             <p>
@@ -305,11 +305,11 @@
             <h2 class="subtitle">ARRESTS</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF ARRESTS REPORTED BY POLICE FROM 2013-2019.
+                DEFINITION: THE TOTAL NUMBER OF ARRESTS REPORTED BY POLICE FROM 2013-2020.
             </p>
 
             <p>
-                Data on the number of each agency's arrests from 2013-2019 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic.
+                Data on the number of each agency's arrests from 2013-2020 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic.
                 Since police agencies in Florida and Illinois generally did not report arrests data to the FBI UCR, we obtained their arrest data from the <a href="https://www.fdle.state.fl.us/FSAC/Data-Statistics/UCR-Arrest-Data.aspx" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Florida Department of Law Enforcement') !!}>Florida Department of Law Enforcement</a> and from reports published by individual agencies in Illinois.
             </p>
 
@@ -318,7 +318,7 @@
             </p>
 
             <p>
-                In order to evaluate racial disparities across departments, we need to have estimates for the number of Hispanic arrests, non-Hispanic White arrests, and non-Hispanic Black arrests that each department made from 2013-2019. Since UCR data prior to 2017 does not include information specifying how many Hispanic arrests each agency made; we used the ethnicity data each agency reported from 2017-2019 to estimate the number of Hispanic arrests made from 2013 to 2019 as follows:
+                In order to evaluate racial disparities across departments, we need to have estimates for the number of Hispanic arrests, non-Hispanic White arrests, and non-Hispanic Black arrests that each department made from 2013-2020. Since UCR data prior to 2017 does not include information specifying how many Hispanic arrests each agency made; we used the ethnicity data each agency reported from 2017-2019 to estimate the number of Hispanic arrests made from 2013 to 2019 as follows:
             </p>
 
             <ul>
@@ -326,12 +326,12 @@
                     Hispanic Arrest Proportion = Hispanic arrests 2017-2019 / (Hispanic Arrests 2017-2019 + Non-Hispanic Arrests 2017-2019)
                 </li>
                 <li>
-                    Hispanic Arrests 2013-2019<sup>[2]</sup> = Hispanic Arrest Proportion x (White Arrests + Black Arrests).
+                    Hispanic Arrests 2013-2020<sup>[2]</sup> = Hispanic Arrest Proportion x (White Arrests + Black Arrests).
                 </li>
             </ul>
 
             <p>
-                Importantly, this methodology assumes that Hispanic arrests are either categorized as White or Black in the data reported to the UCR. In practice this may not always be how agencies code Hispanic arrests, but based on race and ethnicity data from larger agencies this appears to be a reasonable assumption. After estimating the Hispanic arrests from 2013-2019 as described above, we estimated the number of those Hispanic arrests who were racially White or Black using the Census proportions for the percentage of the population in that jurisdiction who identify as White and Hispanic, or Black and Hispanic. The proportions were calculated as follows:
+                Importantly, this methodology assumes that Hispanic arrests are either categorized as White or Black in the data reported to the UCR. In practice this may not always be how agencies code Hispanic arrests, but based on race and ethnicity data from larger agencies this appears to be a reasonable assumption. After estimating the Hispanic arrests from 2013-2020 as described above, we estimated the number of those Hispanic arrests who were racially White or Black using the Census proportions for the percentage of the population in that jurisdiction who identify as White and Hispanic, or Black and Hispanic. The proportions were calculated as follows:
             </p>
 
             <ul>
@@ -369,15 +369,15 @@
             <h2 class="subtitle">HOMICIDES REPORTED AND HOMICIDES SOLVED</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF CRIMINAL HOMICIDES REPORTED AND THE TOTAL NUMBER CLEARED BY ARREST OR EXCEPTIONAL MEANS FROM 2013-2019
+                DEFINITION: THE TOTAL NUMBER OF CRIMINAL HOMICIDES REPORTED AND THE TOTAL NUMBER CLEARED BY ARREST OR EXCEPTIONAL MEANS FROM 2013-2020
             </p>
 
             <p>
-                We obtained data on the number of criminal homicides reported and those that were cleared from 2013-2019 from the FBI Uniform Crime Report and Supplementary Homicide Report databases. Consistent with the definitions used by these databases, criminal homicides are classified as murder and non-negligent manslaughter but exclude suicides, accidents, "justifiable homicides" and deaths caused by negligence. Homicides were classified as "cleared" when they resulted in either an arrest or were cleared through "exceptional means" (These are cases in which there is sufficient evidence but an arrest is reportedly not possible, for example, if the person suspected has died). We recognize that homicides cleared by arrest or exceptional means is an imperfect measure of murders "solved," for a variety of reasons (for example, not everyone arrested ends up being guilty of the offense). However, the Uniform Crime Report does not distinguish between these outcomes and, as such, we are limited by the data that are currently available.
+                We obtained data on the number of criminal homicides reported and those that were cleared from 2013-2020 from the FBI Uniform Crime Report and Supplementary Homicide Report databases. Consistent with the definitions used by these databases, criminal homicides are classified as murder and non-negligent manslaughter but exclude suicides, accidents, "justifiable homicides" and deaths caused by negligence. Homicides were classified as "cleared" when they resulted in either an arrest or were cleared through "exceptional means" (These are cases in which there is sufficient evidence but an arrest is reportedly not possible, for example, if the person suspected has died). We recognize that homicides cleared by arrest or exceptional means is an imperfect measure of murders "solved," for a variety of reasons (for example, not everyone arrested ends up being guilty of the offense). However, the Uniform Crime Report does not distinguish between these outcomes and, as such, we are limited by the data that are currently available.
             </p>
 
             <p>
-                We also included in the scorecard statistics on proportion of homicides cleared by race of the victim. Since the Uniform Crime Report did not disaggregate agency-level homicide clearance rates by race of victim, we relied on the Supplementary Homicide Report (SHR) database with enhanced case-level data from the Murder Accountability Project (MAP) to determine the percent of homicides "solved" by race of the victim for each jurisdiction from 2013-2019. Importantly, since homicides tend to be reported to the SHR database an average of 5 months after each incident (depending on jurisdiction), fewer homicides are reported as solved in this dataset compared to the end-of-year Uniform Crime reports. According to MAP, 5-10% of homicides reported as unsolved at the time of reporting to the SHR were cleared later. As such, the SHR data should be interpreted as the proportion of homicides solved within a shorter time frame than the UCR, which is useful for evaluating police efficacy at solving homicides given the race of the victim.
+                We also included in the scorecard statistics on proportion of homicides cleared by race of the victim. Since the Uniform Crime Report did not disaggregate agency-level homicide clearance rates by race of victim, we relied on the Supplementary Homicide Report (SHR) database with enhanced case-level data from the Murder Accountability Project (MAP) to determine the percent of homicides "solved" by race of the victim for each jurisdiction from 2013-2020. Importantly, since homicides tend to be reported to the SHR database an average of 5 months after each incident (depending on jurisdiction), fewer homicides are reported as solved in this dataset compared to the end-of-year Uniform Crime reports. According to MAP, 5-10% of homicides reported as unsolved at the time of reporting to the SHR were cleared later. As such, the SHR data should be interpreted as the proportion of homicides solved within a shorter time frame than the UCR, which is useful for evaluating police efficacy at solving homicides given the race of the victim.
             </p>
 
             <h2 class="subtitle">POLICE FUNDING</h2>
@@ -387,7 +387,7 @@
             </p>
 
             <p>
-                This includes data on the total amount of city budget expenditures spent on policing in each city or county from 2010-2018 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. For many cities, we were also able to obtain more recent data (2019-2020) from budgetary documents on local governments' websites and the <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Police Funding Data for 72 Large Cities') !!}>police funding data for 72 large cities</a> created by the Vera Institute. The Scorecard also includes data on each local government's expenditures on other issues that impact public safety - such as funding for Health and for Housing and Community Development. In some cases, we found discrepancies between the Census Bureau's data and the data included in a city or county's budget documents. Where such discrepancies were found, we used the data in the city or county budget documents in our analysis, given they often provide more detail.
+                This includes data on the total amount of city budget expenditures spent on policing in each city or county from 2010-2019 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. For many cities, we were also able to obtain more recent data (2019-2020) from budgetary documents on local governments' websites and the <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Police Funding Data for 72 Large Cities') !!}>police funding data for 72 large cities</a> created by the Vera Institute. The Scorecard also includes data on each local government's expenditures on other issues that impact public safety - such as funding for Health and for Housing and Community Development. In some cases, we found discrepancies between the Census Bureau's data and the data included in a city or county's budget documents. Where such discrepancies were found, we used the data in the city or county budget documents in our analysis, given they often provide more detail.
             </p>
 
             <p>
@@ -409,17 +409,17 @@
             <h2 class="subtitle">FINES AND FORFEITURES</h2>
 
             <p>
-                DEFINITION: THE TOTAL VALUE OF PROPERTY AND CASH CONFISCATED THROUGH ASSET FORFEITURE OR COLLECTED BY FINES, 2010-2018
+                DEFINITION: THE TOTAL VALUE OF PROPERTY AND CASH CONFISCATED THROUGH ASSET FORFEITURE OR COLLECTED BY FINES, 2010-2019
             </p>
 
             <p>
-                This includes data on the total amount of city budget revenues collected through fines or forfeitures in each city or county from 2010-2018 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. This measure can be used to assess potential excessive use of ticketing, civil asset forfeiture and other policing practices that often supplement police budgets by imposing an additional economic burden on communities.
+                This includes data on the total amount of city budget revenues collected through fines or forfeitures in each city or county from 2010-2019 as reported to the Census Bureau's <a href="https://www.census.gov/data/datasets/2017/econ/local/public-use-datasets.html" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Annual Survey of State and Local Government Finances') !!}>Annual Survey of State and Local Government Finances</a>. This measure can be used to assess potential excessive use of ticketing, civil asset forfeiture and other policing practices that often supplement police budgets by imposing an additional economic burden on communities.
             </p>
 
             <h2 class="subtitle">TOTAL NUMBER OF OFFICERS</h2>
 
             <p>
-                DEFINITION: THE NUMBER OF SWORN LAW ENFORCEMENT OFFICERS EMPLOYED AT EACH AGENCY, 2013-2019
+                DEFINITION: THE NUMBER OF SWORN LAW ENFORCEMENT OFFICERS EMPLOYED AT EACH AGENCY, 2013-2020
             </p>
 
             <p>
@@ -441,7 +441,7 @@
 
             <p class="footnote"><sup>[1]</sup> Since the FBI’s UCR arrests database does not distinguish between lower level property crimes such as petty theft or shoplifting and more serious forms of theft, we were not able to include any arrests for petty theft or shoplifting within the low level arrests category. Similarly, arrests for non-DUI related traffic offenses are not reported to the UCR program. This likely results in an undercount of the total number of low level arrests made by each agency.</p>
 
-            <p class="footnote"><sup>[2]</sup> To avoid imprecise or unreliable estimates of this proportion, we excluded departments who had categorized fewer than 25% of their arrests by ethnicity or had fewer than 50 arrests categorized by ethnicity. Then to estimate the total number of Hispanic arrests between 2013-2018, we multiplied the Hispanic Arrest Proportion by the total number of arrests that were categorized by race as “White” or “Black”.</p>
+            <p class="footnote"><sup>[2]</sup> To avoid imprecise or unreliable estimates of this proportion, we excluded departments who had categorized fewer than 25% of their arrests by ethnicity or had fewer than 50 arrests categorized by ethnicity. Then to estimate the total number of Hispanic arrests between 2013-2020, we multiplied the Hispanic Arrest Proportion by the total number of arrests that were categorized by race as “White” or “Black”.</p>
         </div>
     </div>
 

@@ -277,6 +277,7 @@ if (!function_exists('getNationalGrades')) {
                             'grade_class' => $department['grade_class'],
                             'grade_letter' => $department['grade_letter'],
                             'overall_score' => $department['overall_score'],
+                            'change_overall_score' => $department['change_overall_score'],
                             'url_pretty' => $department['url_pretty'],
                             'url' => $department['url']
                         );
@@ -287,6 +288,7 @@ if (!function_exists('getNationalGrades')) {
                             'grade_class' => $department['grade_class'],
                             'grade_letter' => $department['grade_letter'],
                             'overall_score' => $department['overall_score'],
+                            'change_overall_score' => $department['change_overall_score'],
                             'url_pretty' => $department['url_pretty'],
                             'url' => $department['url']
                         );
@@ -303,6 +305,7 @@ if (!function_exists('getNationalGrades')) {
                             'grade_class' => $department['grade_class'],
                             'grade_letter' => $department['grade_letter'],
                             'overall_score' => $department['overall_score'],
+                            'change_overall_score' => $department['change_overall_score'],
                             'url_pretty' => $department['url_pretty'],
                             'url' => $department['url']
                         );
@@ -313,6 +316,7 @@ if (!function_exists('getNationalGrades')) {
                             'grade_class' => $department['grade_class'],
                             'grade_letter' => $department['grade_letter'],
                             'overall_score' => $department['overall_score'],
+                            'change_overall_score' => $department['change_overall_score'],
                             'url_pretty' => $department['url_pretty'],
                             'url' => $department['url']
                         );
@@ -412,6 +416,9 @@ if (!function_exists('getNationalSummary')) {
         $total_arrests_2017 = 0;
         $total_arrests_2018 = 0;
         $total_arrests_2019 = 0;
+        $total_arrests_2020 = 0;
+        $total_arrests_2021 = 0;
+        $total_arrests_2022 = 0;
 
         foreach($states as $abbr => $state) {
             $total_arrests += $state['total_arrests'];
@@ -436,6 +443,9 @@ if (!function_exists('getNationalSummary')) {
             $total_arrests_2017 += $state['total_arrests_2017'];
             $total_arrests_2018 += $state['total_arrests_2018'];
             $total_arrests_2019 += $state['total_arrests_2019'];
+            $total_arrests_2020 += $state['total_arrests_2020'];
+            $total_arrests_2021 += $state['total_arrests_2021'];
+            $total_arrests_2022 += $state['total_arrests_2022'];
         }
 
         return array(
@@ -457,6 +467,9 @@ if (!function_exists('getNationalSummary')) {
             'total_arrests_2017' => $total_arrests_2017,
             'total_arrests_2018' => $total_arrests_2018,
             'total_arrests_2019' => $total_arrests_2019,
+            'total_arrests_2020' => $total_arrests_2020,
+            'total_arrests_2021' => $total_arrests_2021,
+            'total_arrests_2022' => $total_arrests_2022,
             'black_deadly_force_disparity_per_population' => (($total_black_people_killed / $total_black_population) / ($total_white_people_killed / $total_white_population)),
             'hispanic_deadly_force_disparity_per_population' => (($total_hispanic_people_killed / $total_hispanic_population) / ($total_white_people_killed / $total_white_population)),
             'times_more_misdemeanor_arrests_than_violent_crime' => ($total_low_level_arrests / $total_violent_crime_arrests)
@@ -1058,6 +1071,21 @@ if (!function_exists('generateArrestChart')) {
             $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2019'];
         }
 
+        if (isset($scorecard['arrests']['arrests_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2020'];
+        }
+
+        if (isset($scorecard['arrests']['arrests_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2021'];
+        }
+
+        if (isset($scorecard['arrests']['arrests_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['arrests']['arrests_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1144,6 +1172,27 @@ if (!function_exists('generateHistoryChart')) {
             $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2019'];
         }
 
+        if (isset($scorecard['police_violence']['less_lethal_force_2020']) || isset($scorecard['police_violence']['police_shootings_2020'])) {
+            $output['labels'][] = '2020';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2020'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2020'];
+        }
+
+        if (isset($scorecard['police_violence']['less_lethal_force_2021']) || isset($scorecard['police_violence']['police_shootings_2021'])) {
+            $output['labels'][] = '2021';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2021'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2021'];
+        }
+
+        if (isset($scorecard['police_violence']['less_lethal_force_2022']) || isset($scorecard['police_violence']['police_shootings_2022'])) {
+            $output['labels'][] = '2022';
+
+            $output['datasets'][0]['data'][] = $scorecard['police_violence']['police_shootings_2022'];
+            $output['datasets'][1]['data'][] = $scorecard['police_violence']['less_lethal_force_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1221,6 +1270,21 @@ if (!function_exists('generateBarChartFundsTaken')) {
             $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2019'];
         }
 
+        if (isset($scorecard['police_funding']['fines_forfeitures_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2020'];
+        }
+
+        if (isset($scorecard['police_funding']['fines_forfeitures_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2021'];
+        }
+
+        if (isset($scorecard['police_funding']['fines_forfeitures_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['fines_forfeitures_2022'];
+        }
+
         return json_encode($output);
     }
 }
@@ -1281,6 +1345,21 @@ if (!function_exists('generateBarChartOfficers')) {
         if (isset($scorecard['police_funding']['total_officers_2019'])) {
             $output['labels'][] = '2019';
             $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2019'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2020'])) {
+            $output['labels'][] = '2020';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2020'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2021'])) {
+            $output['labels'][] = '2021';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2021'];
+        }
+
+        if (isset($scorecard['police_funding']['total_officers_2022'])) {
+            $output['labels'][] = '2022';
+            $output['datasets'][0]['data'][] = $scorecard['police_funding']['total_officers_2022'];
         }
 
         return json_encode($output);
@@ -1395,89 +1474,118 @@ if (!function_exists('getPoliceFundingChart')) {
         $police = array();
         $housing = array();
         $health = array();
+        $corrections = array();
 
-        if ($funding['police_budget_2010'] || $funding['housing_budget_2010'] || $funding['health_budget_2010']) {
+        if (isset($funding['police_budget_2010']) || isset($funding['housing_budget_2010']) || isset($funding['health_budget_2010']) || isset($funding['corrections_budget_2010'])) {
             $labels[] = '2010';
             $police[] = isset($funding['police_budget_2010']) ? intval($funding['police_budget_2010']) : null;
             $housing[] = isset($funding['housing_budget_2010']) ? intval($funding['housing_budget_2010']) : null;
             $health[] = isset($funding['health_budget_2010']) ? intval($funding['health_budget_2010']) : null;
+            $corrections[] = isset($funding['corrections_budget_2010']) ? intval($funding['corrections_budget_2010']) : null;
         }
 
-        if ($funding['police_budget_2011'] || $funding['housing_budget_2011'] || $funding['health_budget_2011']) {
+        if (isset($funding['police_budget_2011']) || isset($funding['housing_budget_2011']) || isset($funding['health_budget_2011']) || isset($funding['corrections_budget_2011'])) {
             $labels[] = '2011';
             $police[] = isset($funding['police_budget_2011']) ? intval($funding['police_budget_2011']) : null;
             $housing[] = isset($funding['housing_budget_2011']) ? intval($funding['housing_budget_2011']) : null;
             $health[] = isset($funding['health_budget_2011']) ? intval($funding['health_budget_2011']) : null;
+            $corrections[] = isset($funding['corrections_budget_2011']) ? intval($funding['corrections_budget_2011']) : null;
         }
 
-        if ($funding['police_budget_2012'] || $funding['housing_budget_2012'] || $funding['health_budget_2012']) {
+        if (isset($funding['police_budget_2012']) || isset($funding['housing_budget_2012']) || isset($funding['health_budget_2012']) || isset($funding['corrections_budget_2012'])) {
             $labels[] = '2012';
             $police[] = isset($funding['police_budget_2012']) ? intval($funding['police_budget_2012']) : null;
             $housing[] = isset($funding['housing_budget_2012']) ? intval($funding['housing_budget_2012']) : null;
             $health[] = isset($funding['health_budget_2012']) ? intval($funding['health_budget_2012']) : null;
+            $corrections[] = isset($funding['corrections_budget_2012']) ? intval($funding['corrections_budget_2012']) : null;
         }
 
-        if ($funding['police_budget_2013'] || $funding['housing_budget_2013'] || $funding['health_budget_2013']) {
+        if (isset($funding['police_budget_2013']) || isset($funding['housing_budget_2013']) || isset($funding['health_budget_2013']) || isset($funding['corrections_budget_2013'])) {
             $labels[] = '2013';
             $police[] = isset($funding['police_budget_2013']) ? intval($funding['police_budget_2013']) : null;
             $housing[] = isset($funding['housing_budget_2013']) ? intval($funding['housing_budget_2013']) : null;
             $health[] = isset($funding['health_budget_2013']) ? intval($funding['health_budget_2013']) : null;
+            $corrections[] = isset($funding['corrections_budget_2013']) ? intval($funding['corrections_budget_2013']) : null;
         }
 
-        if ($funding['police_budget_2014'] || $funding['housing_budget_2014'] || $funding['health_budget_2014']) {
+        if (isset($funding['police_budget_2014']) || isset($funding['housing_budget_2014']) || isset($funding['health_budget_2014']) || isset($funding['corrections_budget_2014'])) {
             $labels[] = '2014';
             $police[] = isset($funding['police_budget_2014']) ? intval($funding['police_budget_2014']) : null;
             $housing[] = isset($funding['housing_budget_2014']) ? intval($funding['housing_budget_2014']) : null;
             $health[] = isset($funding['health_budget_2014']) ? intval($funding['health_budget_2014']) : null;
+            $corrections[] = isset($funding['corrections_budget_2014']) ? intval($funding['corrections_budget_2014']) : null;
         }
 
-        if ($funding['police_budget_2015'] || $funding['housing_budget_2015'] || $funding['health_budget_2015']) {
+        if (isset($funding['police_budget_2015']) || isset($funding['housing_budget_2015']) || isset($funding['health_budget_2015']) || isset($funding['corrections_budget_2015'])) {
             $labels[] = '2015';
             $police[] = isset($funding['police_budget_2015']) ? intval($funding['police_budget_2015']) : null;
             $housing[] = isset($funding['housing_budget_2015']) ? intval($funding['housing_budget_2015']) : null;
             $health[] = isset($funding['health_budget_2015']) ? intval($funding['health_budget_2015']) : null;
+            $corrections[] = isset($funding['corrections_budget_2015']) ? intval($funding['corrections_budget_2015']) : null;
         }
 
-        if ($funding['police_budget_2016'] || $funding['housing_budget_2016'] || $funding['health_budget_2016']) {
+        if (isset($funding['police_budget_2016']) || isset($funding['housing_budget_2016']) || isset($funding['health_budget_2016']) || isset($funding['corrections_budget_2016'])) {
             $labels[] = '2016';
             $police[] = isset($funding['police_budget_2016']) ? intval($funding['police_budget_2016']) : null;
             $housing[] = isset($funding['housing_budget_2016']) ? intval($funding['housing_budget_2016']) : null;
             $health[] = isset($funding['health_budget_2016']) ? intval($funding['health_budget_2016']) : null;
+            $corrections[] = isset($funding['corrections_budget_2016']) ? intval($funding['corrections_budget_2016']) : null;
         }
 
-        if ($funding['police_budget_2017'] || $funding['housing_budget_2017'] || $funding['health_budget_2017']) {
+        if (isset($funding['police_budget_2017']) || isset($funding['housing_budget_2017']) || isset($funding['health_budget_2017']) || isset($funding['corrections_budget_2017'])) {
             $labels[] = '2017';
             $police[] = isset($funding['police_budget_2017']) ? intval($funding['police_budget_2017']) : null;
             $housing[] = isset($funding['housing_budget_2017']) ? intval($funding['housing_budget_2017']) : null;
             $health[] = isset($funding['health_budget_2017']) ? intval($funding['health_budget_2017']) : null;
+            $corrections[] = isset($funding['corrections_budget_2017']) ? intval($funding['corrections_budget_2017']) : null;
         }
 
-        if ($funding['police_budget_2018'] || $funding['housing_budget_2018'] || $funding['health_budget_2018']) {
+        if (isset($funding['police_budget_2018']) || isset($funding['housing_budget_2018']) || isset($funding['health_budget_2018']) || isset($funding['corrections_budget_2018'])) {
             $labels[] = '2018';
             $police[] = isset($funding['police_budget_2018']) ? intval($funding['police_budget_2018']) : null;
             $housing[] = isset($funding['housing_budget_2018']) ? intval($funding['housing_budget_2018']) : null;
             $health[] = isset($funding['health_budget_2018']) ? intval($funding['health_budget_2018']) : null;
+            $corrections[] = isset($funding['corrections_budget_2018']) ? intval($funding['corrections_budget_2018']) : null;
         }
 
-        if ($funding['police_budget_2019'] || $funding['housing_budget_2019'] || $funding['health_budget_2019']) {
+        if (isset($funding['police_budget_2019']) || isset($funding['housing_budget_2019']) || isset($funding['health_budget_2019']) || isset($funding['corrections_budget_2019'])) {
             $labels[] = '2019';
             $police[] = isset($funding['police_budget_2019']) ? intval($funding['police_budget_2019']) : null;
             $housing[] = isset($funding['housing_budget_2019']) ? intval($funding['housing_budget_2019']) : null;
             $health[] = isset($funding['health_budget_2019']) ? intval($funding['health_budget_2019']) : null;
+            $corrections[] = isset($funding['corrections_budget_2019']) ? intval($funding['corrections_budget_2019']) : null;
         }
 
-        if ($funding['police_budget_2020'] || $funding['housing_budget_2020'] || $funding['health_budget_2020']) {
+        if (isset($funding['police_budget_2020']) || isset($funding['housing_budget_2020']) || isset($funding['health_budget_2020']) || isset($funding['corrections_budget_2020'])) {
             $labels[] = '2020';
             $police[] = isset($funding['police_budget_2020']) ? intval($funding['police_budget_2020']) : null;
             $housing[] = isset($funding['housing_budget_2020']) ? intval($funding['housing_budget_2020']) : null;
             $health[] = isset($funding['health_budget_2020']) ? intval($funding['health_budget_2020']) : null;
+            $corrections[] = isset($funding['corrections_budget_2020']) ? intval($funding['corrections_budget_2020']) : null;
+        }
+
+        if (isset($funding['police_budget_2021']) || isset($funding['housing_budget_2021']) || isset($funding['health_budget_2021']) || isset($funding['corrections_budget_2021'])) {
+            $labels[] = '2021';
+            $police[] = isset($funding['police_budget_2021']) ? intval($funding['police_budget_2021']) : null;
+            $housing[] = isset($funding['housing_budget_2021']) ? intval($funding['housing_budget_2021']) : null;
+            $health[] = isset($funding['health_budget_2021']) ? intval($funding['health_budget_2021']) : null;
+            $corrections[] = isset($funding['corrections_budget_2021']) ? intval($funding['corrections_budget_2021']) : null;
+        }
+
+        if (isset($funding['police_budget_2022']) || isset($funding['housing_budget_2022']) || isset($funding['health_budget_2022']) || isset($funding['corrections_budget_2022'])) {
+            $labels[] = '2022';
+            $police[] = isset($funding['police_budget_2022']) ? intval($funding['police_budget_2022']) : null;
+            $housing[] = isset($funding['housing_budget_2022']) ? intval($funding['housing_budget_2022']) : null;
+            $health[] = isset($funding['health_budget_2022']) ? intval($funding['health_budget_2022']) : null;
+            $corrections[] = isset($funding['corrections_budget_2022']) ? intval($funding['corrections_budget_2022']) : null;
         }
 
         return json_encode(array(
             'labels' => $labels,
             'police' => $police,
             'housing' => $housing,
-            'health' => $health
+            'health' => $health,
+            'corrections' => $corrections
         ));
     }
 }
