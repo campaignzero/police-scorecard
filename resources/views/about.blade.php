@@ -305,11 +305,11 @@
             <h2 class="subtitle">ARRESTS</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF ARRESTS REPORTED BY POLICE FROM 2013-2020.
+                DEFINITION: THE TOTAL NUMBER OF ARRESTS REPORTED BY POLICE FROM 2013-2019.
             </p>
 
             <p>
-                Data on the number of each agency's arrests from 2013-2020 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic.
+                Data on the number of each agency's arrests from 2013-2019 were obtained from the FBI Uniform Crime Report. However, since this database classifies arrests by race separately than arrests by ethnicity, we used US Census population data to estimate the number of Black and white arrestees who were also classified as Hispanic.
                 Since police agencies in Florida and Illinois generally did not report arrests data to the FBI UCR, we obtained their arrest data from the <a href="https://www.fdle.state.fl.us/FSAC/Data-Statistics/UCR-Arrest-Data.aspx" target="_blank" rel="noopener" {!! trackData('External Nav', 'About', 'Florida Department of Law Enforcement') !!}>Florida Department of Law Enforcement</a> and from reports published by individual agencies in Illinois.
             </p>
 
@@ -369,11 +369,11 @@
             <h2 class="subtitle">HOMICIDES REPORTED AND HOMICIDES SOLVED</h2>
 
             <p>
-                DEFINITION: THE TOTAL NUMBER OF CRIMINAL HOMICIDES REPORTED AND THE TOTAL NUMBER CLEARED BY ARREST OR EXCEPTIONAL MEANS FROM 2013-2020
+                DEFINITION: THE TOTAL NUMBER OF CRIMINAL HOMICIDES REPORTED AND THE TOTAL NUMBER CLEARED BY ARREST OR EXCEPTIONAL MEANS FROM 2013-2019
             </p>
 
             <p>
-                We obtained data on the number of criminal homicides reported and those that were cleared from 2013-2020 from the FBI Uniform Crime Report and Supplementary Homicide Report databases. Consistent with the definitions used by these databases, criminal homicides are classified as murder and non-negligent manslaughter but exclude suicides, accidents, "justifiable homicides" and deaths caused by negligence. Homicides were classified as "cleared" when they resulted in either an arrest or were cleared through "exceptional means" (These are cases in which there is sufficient evidence but an arrest is reportedly not possible, for example, if the person suspected has died). We recognize that homicides cleared by arrest or exceptional means is an imperfect measure of murders "solved," for a variety of reasons (for example, not everyone arrested ends up being guilty of the offense). However, the Uniform Crime Report does not distinguish between these outcomes and, as such, we are limited by the data that are currently available.
+                We obtained data on the number of criminal homicides reported and those that were cleared from 2013-2019 from the FBI Uniform Crime Report and Supplementary Homicide Report databases. Consistent with the definitions used by these databases, criminal homicides are classified as murder and non-negligent manslaughter but exclude suicides, accidents, "justifiable homicides" and deaths caused by negligence. Homicides were classified as "cleared" when they resulted in either an arrest or were cleared through "exceptional means" (These are cases in which there is sufficient evidence but an arrest is reportedly not possible, for example, if the person suspected has died). We recognize that homicides cleared by arrest or exceptional means is an imperfect measure of murders "solved," for a variety of reasons (for example, not everyone arrested ends up being guilty of the offense). However, the Uniform Crime Report does not distinguish between these outcomes and, as such, we are limited by the data that are currently available.
             </p>
 
             <p>
