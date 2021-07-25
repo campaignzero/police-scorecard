@@ -70,7 +70,7 @@
                 <tr>
                     <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
-                    <th>4YR</th>
+                    <th>5YR</th>
                 </tr>
                 @php
                 $length = count($grades['all']);
@@ -102,7 +102,7 @@
                 <tr>
                     <th width="80%">{{ $type === 'sheriff' ? "Sheriff's" : "Police" }} Department</th>
                     <th>Score</th>
-                    <th>4YR</th>
+                    <th>5YR</th>
                 </tr>
                 @foreach($grade_table as $index => $card) @if ($index >= floor($length / 2))
                 <tr class="grade-row grade-{{ $card['complete'] ? $card['grade_class'] : 'incomplete' }}" data-grade="{{ $card['grade_class'] }}">

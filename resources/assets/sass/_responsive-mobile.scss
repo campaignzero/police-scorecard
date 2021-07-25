@@ -462,12 +462,11 @@
                     line-height: 18px;
                 }
 
-                p.keys {
+                .keys {
                     white-space: nowrap;
-                    padding-top: 8px;
 
                     .key {
-                        margin: 0 4px 0 8px;
+                        margin: 0 1px 0 5px;
 
                         &:first-child {
                             margin-left: 0;
