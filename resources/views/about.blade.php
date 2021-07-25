@@ -318,7 +318,7 @@
             </p>
 
             <p>
-                In order to evaluate racial disparities across departments, we need to have estimates for the number of Hispanic arrests, non-Hispanic White arrests, and non-Hispanic Black arrests that each department made from 2013-2020. Since UCR data prior to 2017 does not include information specifying how many Hispanic arrests each agency made; we used the ethnicity data each agency reported from 2017-2019 to estimate the number of Hispanic arrests made from 2013 to 2019 as follows:
+                In order to evaluate racial disparities across departments, we need to have estimates for the number of Hispanic arrests, non-Hispanic White arrests, and non-Hispanic Black arrests that each department made from 2013-2019. Since UCR data prior to 2017 does not include information specifying how many Hispanic arrests each agency made; we used the ethnicity data each agency reported from 2017-2019 to estimate the number of Hispanic arrests made from 2013 to 2019 as follows:
             </p>
 
             <ul>
@@ -326,7 +326,7 @@
                     Hispanic Arrest Proportion = Hispanic arrests 2017-2019 / (Hispanic Arrests 2017-2019 + Non-Hispanic Arrests 2017-2019)
                 </li>
                 <li>
-                    Hispanic Arrests 2013-2020<sup>[2]</sup> = Hispanic Arrest Proportion x (White Arrests + Black Arrests).
+                    Hispanic Arrests 2013-2019<sup>[2]</sup> = Hispanic Arrest Proportion x (White Arrests + Black Arrests).
                 </li>
             </ul>
 

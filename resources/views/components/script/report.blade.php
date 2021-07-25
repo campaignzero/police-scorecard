@@ -76,50 +76,53 @@
 @if(isset($scorecard['police_violence']['police_shootings_2016']) && isset($scorecard['police_violence']['police_shootings_2017']) && isset($scorecard['police_violence']['police_shootings_2018']))
 <script>
   window.addEventListener('load', function() {
-    var ctx = document.getElementById('bar-chart-history').getContext('2d');
-    var historyChartData = {!! generateHistoryChart($scorecard) !!};
-    window.myBarHistory = new Chart(ctx, {
-      type: 'bar',
-      data: historyChartData,
-      options: {
-        animation: {
-          duration: 0,
-        },
-        maintainAspectRatio: false,
-        responsive: document.documentElement.clientWidth > 940 ? false : true,
-        legend: {
-          display: false,
-        },
-        title: {
-          display: false,
-        },
-        tooltips: {
-          mode: 'index',
-          intersect: false
-        },
-        scales: {
-          xAxes: [{
-            stacked: true,
-            gridLines: {
-              color: "rgba(0, 0, 0, 0)",
-            }
-          }],
-          yAxes: [{
-            stacked: true,
-            gridLines: {
-              color: "rgba(0, 0, 0, 0)",
+    var $chart = document.getElementById('bar-chart-history');
+    if ($chart) {
+        var ctx = $chart.getContext('2d');
+        var historyChartData = {!! generateHistoryChart($scorecard) !!};
+        window.myBarHistory = new Chart(ctx, {
+        type: 'bar',
+        data: historyChartData,
+        options: {
+            animation: {
+            duration: 0,
             },
-            ticks: {
-              beginAtZero: true,
-              maxTicksLimit: 2,
-              callback: function(value, index, values) {
-                return (value === 0) ? '' : Math.round(value);
-              }
+            maintainAspectRatio: false,
+            responsive: document.documentElement.clientWidth > 940 ? false : true,
+            legend: {
+            display: false,
+            },
+            title: {
+            display: false,
+            },
+            tooltips: {
+            mode: 'index',
+            intersect: false
+            },
+            scales: {
+            xAxes: [{
+                stacked: true,
+                gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+            yAxes: [{
+                stacked: true,
+                gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+                },
+                ticks: {
+                beginAtZero: true,
+                maxTicksLimit: 2,
+                callback: function(value, index, values) {
+                    return (value === 0) ? '' : Math.round(value);
+                }
+                }
+            }]
             }
-          }]
         }
-      }
-    });
+        });
+    }
   });
 
 </script>
