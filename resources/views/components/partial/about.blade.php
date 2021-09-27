@@ -113,6 +113,6 @@
     </div>
     <div class="content">
         <p>&nbsp;</p>
-        <p>If you have feedback, questions about the project, or need support with an advocacy campaign, contact our Project Lead, <a href="mailto:sam@thisisthemovement.org" {!! trackData('Nav', 'About', 'Email Sam') !!}>Samuel Sinyangwe</a>.</p>
+        <p>If you have feedback, questions about the project, or need support with an advocacy campaign, contact our Project Lead, <a href="mailto:samswey1@gmail.com" {!! trackData('Nav', 'About', 'Email Sam') !!}>Samuel Sinyangwe</a>.</p>
     </div>
 </div>
