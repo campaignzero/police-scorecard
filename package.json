@@ -62,7 +62,7 @@
         "lodash": "^4.17.20",
         "npm-scripts-help": "^0.8.0",
         "pre-commit": "^1.2.2",
-        "resolve-url-loader": "^3.1.2",
+        "resolve-url-loader": "^5.0.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
